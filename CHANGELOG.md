@@ -3,6 +3,13 @@
 All notable changes to this project will be documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+### 2026-03-30
+- Increased arXiv API retry resilience from 3 to 4 attempts and extended initial backoff from 2 to 15 seconds to accommodate stricter arXiv rate limiting, reducing failed ingestion runs during peak query periods.
+- Added weekend detection logic to run_pipeline() to explicitly warn operators that arXiv publishes Monday–Friday only, preventing false alarms when weekend runs legitimately return zero new papers.
+- Removed unused `json` imports from reporter.py and dashboard/app.py to reduce dependency surface and improve code hygiene.
+- Fixed string interpolation in fallback report generation to eliminate unnecessary f-string when no variable substitution is needed.
+
+
 ---
 
 ## [0.1.0] â€” 2026-03-29

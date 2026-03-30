@@ -43,7 +43,11 @@ def run_pipeline() -> dict:
 
     Returns a summary dict with run statistics.
     """
-    run_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    now_utc = datetime.now(timezone.utc)
+    run_date = now_utc.strftime("%Y-%m-%d")
+    # arXiv publishes Mon–Fri; weekend runs are expected to return 0 new papers
+    if now_utc.weekday() >= 5:  # 5=Sat, 6=Sun
+        logger.info("Weekend run — arXiv does not publish new papers on weekends. Pipeline will proceed but date_filter=True will likely return 0 papers.")
     logger.info("=== ARIA pipeline starting — %s ===", run_date)
 
     with Database() as db:

@@ -6,7 +6,6 @@ Claude API to draft a structured intelligence brief — a synthesized, readable
 summary of what's significant in today's research and why it matters.
 """
 
-import json
 import logging
 import os
 from datetime import datetime, timezone
@@ -128,7 +127,7 @@ def _fallback_report(papers: list[dict], decision: dict, date: str) -> str:
     notable = _select_notable_papers(papers, max_papers=5)
     lines = [
         f"# ARIA Intelligence Brief — {date}",
-        f"\n**Note:** Generated in fallback mode (Claude API unavailable)\n",
+        "\n**Note:** Generated in fallback mode (Claude API unavailable)\n",
         f"**Papers analyzed:** {stats.get('paper_count', len(papers))}  ",
         f"**Avg novelty:** {stats.get('avg_novelty', 0):.1f}/10  ",
         f"**Triggers:** {', '.join(decision.get('trigger_names', []))}\n",

@@ -19,8 +19,8 @@ logger = logging.getLogger('aria.ingest')
 # Constants
 ARXIV_API_BASE_URL = "https://export.arxiv.org/api/query"
 DEFAULT_CATEGORIES = ["cs.AI", "cs.LG", "q-bio.*", "cs.RO"]
-MAX_RETRIES = 3
-INITIAL_BACKOFF = 2  # seconds
+MAX_RETRIES = 4
+INITIAL_BACKOFF = 15  # seconds — arXiv rate limits require longer waits
 
 def get_categories() -> list[str]:
     """Returns the list of monitored arXiv categories."""
