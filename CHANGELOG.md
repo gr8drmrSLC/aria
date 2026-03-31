@@ -10,6 +10,11 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 - Fixed string interpolation in fallback report generation to eliminate unnecessary f-string when no variable substitution is needed.
 
 
+### 2026-03-30 - [review and update this description]
+Files changed: dashboard/app.py runner.py
+- TODO: describe what changed and why
+
+
 ---
 
 ## [0.1.0] — 2026-03-29

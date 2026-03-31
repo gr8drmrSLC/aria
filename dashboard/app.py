@@ -8,10 +8,14 @@ Designed to run alongside the pipeline on EC2 (or locally for demo).
 import os
 import sys
 
+from dotenv import load_dotenv
 from flask import Flask, abort, jsonify, render_template
 
+# Load .env from project root
+load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env"))
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-from core.store import Database
+from core.store import Database  # noqa: E402
 
 app = Flask(__name__)
 app.config["JSON_SORT_KEYS"] = False

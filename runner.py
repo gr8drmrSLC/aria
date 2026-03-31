@@ -16,8 +16,13 @@ import os
 import sys
 from datetime import datetime, timezone
 
+from dotenv import load_dotenv
+
 # Ensure project root is on path when run directly
 sys.path.insert(0, os.path.dirname(__file__))
+
+# Load .env from project root before any other imports read env vars
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
 from core.ingest import fetch_papers, get_categories
 from core.store import Database
