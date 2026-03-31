@@ -2,6 +2,71 @@
 
 ---
 
+## Profile About Section — Who you are and what this represents
+
+*This goes in the About section of your LinkedIn profile. Tone: honest, direct, no jargon. You are not a software engineer — you are someone who identifies problems, designs automated solutions using AI, and builds tools that keep working without you.*
+
+---
+
+I'm not a software engineer. I don't write code from scratch. What I do is design systems — I identify a problem, map out what an automated solution should do, and use AI tools to build it. The result is usually something that keeps running on its own long after the initial build.
+
+ARIA is a good example. I wanted a way to monitor research across AI, machine learning, biology, and robotics without reading hundreds of papers a day. So I designed a system that does it automatically — it pulls every new submission from arXiv each morning, uses Claude AI to score each one for significance, and decides on its own whether what it found is worth writing a report about. No alerts telling it what to do. It just runs.
+
+The same underlying pattern — monitor a data source, apply AI analysis, make an autonomous decision, produce an output — is something I've applied to options trading and prediction markets as well. The domain changes. The structure doesn't.
+
+What I'm good at is seeing where that structure fits, defining what the system should decide and when, and building it in a way that doesn't require constant maintenance. The goal is always a tool that works while you're doing something else.
+
+---
+
+## Project Entry — ARIA (for LinkedIn Projects section)
+
+*This goes under Projects on your profile. Keep it factual and grounded.*
+
+**Project name:** ARIA — Autonomous Research Intelligence Agent
+
+**Description:**
+ARIA monitors the arXiv research database daily across artificial intelligence, machine learning, quantitative biology, and robotics. It uses the Claude API to score each new paper for novelty, tracks rolling baselines by category, and applies four independent anomaly triggers to decide autonomously whether the day's research activity is significant enough to publish an intelligence brief. When it decides yes, it writes one.
+
+I designed this as a demonstration of a reusable pattern: any high-volume data source — research papers, market filings, pricing data, news feeds, job postings — can be monitored with the same architecture. The system ingests, analyzes, decides, and reports without ongoing human input.
+
+Built with Python, the Anthropic Claude API, arXiv API, SQLite, Flask, and APScheduler. Runs on a daily schedule on AWS EC2.
+
+**Link:** https://github.com/gr8drmrSLC/aria
+
+---
+
+## The honest framing — use this if anyone asks
+
+If a recruiter, hiring manager, or engineer asks about your background, this is the accurate version:
+
+*"I'm not a software engineer by training. I design automated systems and use AI to build them. I understand how these systems work at the architecture level — the data flow, the decision logic, the tradeoffs — but I'm not the person writing low-level code from memory. What I build tends to be production-ready in the sense that it runs continuously, handles errors, logs what it does, and doesn't need babysitting. ARIA is a fair representation of that."*
+
+This is a defensible and genuinely interesting position. The people building the most useful AI tools right now are often not traditional engineers — they're people who understand a problem domain and know how to direct AI to solve it. That's a real skill and a growing one.
+
+---
+
+## What ARIA demonstrates as a reusable pattern
+
+*Use this framing in conversations or posts to show the broader applicability:*
+
+The core loop ARIA uses is:
+
+1. **Ingest** — pull structured data from a live source on a schedule
+2. **Analyze** — use an AI model to score or classify each item against defined criteria
+3. **Decide** — compare results against a historical baseline and determine if action is warranted
+4. **Act** — generate an output (report, alert, trade, email) only when the threshold is met
+
+The same loop applies to:
+- **Market research** — monitor competitor pricing pages, product releases, or review sites daily; flag when something changes materially
+- **Investment signals** — monitor SEC filings, earnings transcripts, or news feeds; surface anomalies before the market prices them in
+- **Hiring intelligence** — track job postings across target companies; detect when a company starts hiring aggressively in a new area
+- **Regulatory monitoring** — watch agency comment periods, rule filings, or legislative trackers; alert when something relevant moves
+- **Customer intelligence** — monitor review platforms or social signals for a product category; detect sentiment shifts early
+
+The domain is a variable. The architecture is the same.
+
+---
+
 ## Option A: Project announcement post (conversational)
 
 ---
