@@ -222,10 +222,10 @@ class Database:
         return [dict(row) for row in cursor.fetchall()]
 
     def get_paper_count_today(self) -> int:
-        """Counts papers published on the current date."""
+        """Counts papers ingested in the last 24 hours (uses ingested_at, not published date)."""
         self.connect()
         cursor = self.conn.cursor()
-        today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
-        cursor.execute("SELECT COUNT(*) FROM papers WHERE published LIKE ?", (f"{today}%",))
+        cutoff = (datetime.now(timezone.utc) - timedelta(hours=24)).isoformat()
+        cursor.execute("SELECT COUNT(*) FROM papers WHERE ingested_at >= ?", (cutoff,))
         result = cursor.fetchone()
         return result[0] if result else 0

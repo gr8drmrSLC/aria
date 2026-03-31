@@ -15,6 +15,12 @@ Files changed: dashboard/app.py runner.py
 - TODO: describe what changed and why
 
 
+### 2026-03-31
+- Changed dashboard default port from 5050 to 5051 to avoid conflicts with commonly used services and reduce deployment friction.
+- Corrected `get_paper_count_today()` logic to count papers ingested in the last 24 hours rather than papers published today, aligning metric with actual data pipeline timing and improving accuracy of ingestion rate monitoring.
+- Switched from string-based `published` column query to timestamp-based `ingested_at` column comparison, enabling precise 24-hour rolling window tracking instead of calendar-day boundaries that could miscount papers depending on timezone and ingestion timing.
+
+
 ---
 
 ## [0.1.0] — 2026-03-29
