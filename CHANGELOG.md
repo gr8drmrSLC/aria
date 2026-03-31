@@ -21,6 +21,13 @@ Files changed: dashboard/app.py runner.py
 - Switched from string-based `published` column query to timestamp-based `ingested_at` column comparison, enabling precise 24-hour rolling window tracking instead of calendar-day boundaries that could miscount papers depending on timezone and ingestion timing.
 
 
+### 2026-03-31
+- Migrated markdown rendering from client-side (marked.js CDN) to server-side Python markdown library, eliminating external CDN dependency and enabling offline dashboard operation.
+- Added markdown content pre-processing in `report_detail()` endpoint with support for tables and fenced code blocks, improving report presentation consistency and reducing JavaScript complexity.
+- Removed Marked.js CDN script tag and client-side rendering logic from report template, reducing initial page load burden and JavaScript execution overhead.
+- Added "About ARIA" informational strip to dashboard homepage explaining the system's autonomous workflow, monitoring scope, anomaly triggers, and decision criteria—improving user onboarding and system transparency.
+
+
 ---
 
 ## [0.1.0] â€” 2026-03-29

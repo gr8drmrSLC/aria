@@ -257,6 +257,64 @@
       border-radius: 2px;
     }
 
+    /* ─── About strip ────────────────────────────────────────────── */
+    .about-strip {
+      background: var(--bg-card);
+      border: 1px solid var(--rule-light);
+      padding: 1.25rem 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-strip h2 {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 0.6rem;
+    }
+
+    .about-acronym {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.15rem 0.75rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .about-acronym .letter {
+      font-family: var(--mono);
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 1rem;
+    }
+
+    .about-acronym .meaning {
+      align-self: center;
+    }
+
+    .about-desc {
+      font-size: 0.83rem;
+      color: var(--ink-light);
+      line-height: 1.55;
+      border-top: 1px solid var(--rule-light);
+      padding-top: 0.75rem;
+      margin-top: 0.1rem;
+    }
+
+    .about-triggers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      margin-top: 0.65rem;
+      font-size: 0.78rem;
+    }
+
+    .about-trigger { display: flex; align-items: center; gap: 0.35rem; }
+    .about-trigger .dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+
     /* ─── Empty states ────────────────────────────────────────────── */
     .empty {
       padding: 3rem;
@@ -316,6 +374,30 @@
 </header>
 
 <main class="page">
+
+  <!-- ─── ABOUT ARIA ──────────────────────────────────────────────── -->
+  <div class="about-strip">
+    <h2>About This System</h2>
+    <div class="about-acronym">
+      <span class="letter">A</span><span class="meaning"><strong>Autonomous</strong> — runs on a daily schedule without human prompting</span>
+      <span class="letter">R</span><span class="meaning"><strong>Research</strong> — monitors arXiv across AI, machine learning, biology, and robotics</span>
+      <span class="letter">I</span><span class="meaning"><strong>Intelligence</strong> — analyzes each paper with Claude AI, scoring novelty and identifying themes</span>
+      <span class="letter">A</span><span class="meaning"><strong>Agent</strong> — decides independently when activity is significant enough to publish a brief</span>
+    </div>
+    <p class="about-desc">
+      Every weekday ARIA ingests new arXiv submissions across cs.AI, cs.LG, q-bio, and cs.RO,
+      scores each paper for novelty (0&ndash;10) using the Claude API, then runs four independent anomaly
+      triggers against a 30-day rolling baseline. When any trigger fires, Claude drafts a structured
+      intelligence brief — executive summary, key findings, emerging themes, and notable papers.
+      No human curation. No manual prompts. ARIA decides what&rsquo;s worth reporting.
+    </p>
+    <div class="about-triggers">
+      <div class="about-trigger"><span class="dot" style="background:#1a5276"></span><span><strong>Volume Spike</strong> &mdash; paper count &gt; 1.5&times; 30-day baseline</span></div>
+      <div class="about-trigger"><span class="dot" style="background:#145a32"></span><span><strong>Cross-Domain Cluster</strong> &mdash; papers bridging AI + biology or robotics</span></div>
+      <div class="about-trigger"><span class="dot" style="background:#6e2f8b"></span><span><strong>Novelty Burst</strong> &mdash; &gt;30% of papers score &ge;7/10</span></div>
+      <div class="about-trigger"><span class="dot" style="background:#935116"></span><span><strong>Significance Surge</strong> &mdash; avg novelty &gt; 1.3&times; baseline mean</span></div>
+    </div>
+  </div>
 
   <!-- ─── INTELLIGENCE REPORTS ─────────────────────────────────────── -->
   <hr class="section-rule">

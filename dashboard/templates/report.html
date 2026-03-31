@@ -65,8 +65,6 @@
       text-align: center; background: var(--bg-card);
     }
   </style>
-  <!-- Marked.js for markdown rendering -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 
@@ -87,9 +85,8 @@
     {% endfor %}
   </div>
 
-  <div class="report-body" id="report-content">
-    <!-- Content rendered by marked.js below -->
-    <noscript><pre>{{ report.content }}</pre></noscript>
+  <div class="report-body">
+    {{ report.content_html }}
   </div>
 
   <p style="margin-top:2rem;">
@@ -101,9 +98,5 @@
   ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
 </footer>
 
-<script>
-  const raw = {{ report.content | tojson }};
-  document.getElementById('report-content').innerHTML = marked.parse(raw);
-</script>
 </body>
 </html>

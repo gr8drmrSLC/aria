@@ -8,8 +8,10 @@ Designed to run alongside the pipeline on EC2 (or locally for demo).
 import os
 import sys
 
+import markdown as md
 from dotenv import load_dotenv
 from flask import Flask, abort, jsonify, render_template
+from markupsafe import Markup
 
 # Load .env from project root
 load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env"))
@@ -66,6 +68,10 @@ def report_detail(report_id: int):
         db.close()
     if not report:
         abort(404)
+    # Render markdown server-side — no CDN dependency, works offline
+    report["content_html"] = Markup(
+        md.markdown(report["content"] or "", extensions=["tables", "fenced_code"])
+    )
     return render_template("report.html", report=report)
 
 
