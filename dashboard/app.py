@@ -36,7 +36,7 @@ def _get_db():
 def index():
     db = _get_db()
     try:
-        reports = db.get_reports(limit=10)
+        reports = db.get_reports(limit=7)
         papers = db.get_recent_papers(hours=48)
         stats = {
             "total_reports": len(db.get_reports(limit=1000)),

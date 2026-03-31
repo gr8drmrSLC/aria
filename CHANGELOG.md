@@ -28,6 +28,13 @@ Files changed: dashboard/app.py runner.py
 - Added "About ARIA" informational strip to dashboard homepage explaining the system's autonomous workflow, monitoring scope, anomaly triggers, and decision criteria—improving user onboarding and system transparency.
 
 
+### 2026-03-31
+- Reduced dashboard homepage report display from 10 to 7 to improve page load performance and surface fresher content above the fold.
+- Rewrote ARIA system description and trigger explanations to be more accessible and conversational, moving away from jargon toward business-friendly language that emphasizes autonomous decision-making and cross-domain intelligence.
+- Added "View all reports" link to homepage reports section to guide users toward the full archive without cluttering the landing page.
+- Fixed HTML entity encoding (changed em-dashes and smart quotes from corrupted UTF-8 to proper HTML entities) for consistent rendering across browsers.
+
+
 ---
 
 ## [0.1.0] â€” 2026-03-29

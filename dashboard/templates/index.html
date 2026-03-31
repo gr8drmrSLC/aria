@@ -379,23 +379,24 @@
   <div class="about-strip">
     <h2>About This System</h2>
     <div class="about-acronym">
-      <span class="letter">A</span><span class="meaning"><strong>Autonomous</strong> — runs on a daily schedule without human prompting</span>
-      <span class="letter">R</span><span class="meaning"><strong>Research</strong> — monitors arXiv across AI, machine learning, biology, and robotics</span>
-      <span class="letter">I</span><span class="meaning"><strong>Intelligence</strong> — analyzes each paper with Claude AI, scoring novelty and identifying themes</span>
-      <span class="letter">A</span><span class="meaning"><strong>Agent</strong> — decides independently when activity is significant enough to publish a brief</span>
+      <span class="letter">A</span><span class="meaning"><strong>Autonomous</strong> &mdash; runs every weekday on a schedule with no human input</span>
+      <span class="letter">R</span><span class="meaning"><strong>Research</strong> &mdash; reads every new paper submitted to arXiv across AI, machine learning, biology, and robotics</span>
+      <span class="letter">I</span><span class="meaning"><strong>Intelligence</strong> &mdash; uses the Claude API to score each paper for novelty, extract its core themes, and flag cross-domain connections</span>
+      <span class="letter">A</span><span class="meaning"><strong>Agent</strong> &mdash; makes its own decision about whether today&rsquo;s research is significant enough to write a report</span>
     </div>
     <p class="about-desc">
-      Every weekday ARIA ingests new arXiv submissions across cs.AI, cs.LG, q-bio, and cs.RO,
-      scores each paper for novelty (0&ndash;10) using the Claude API, then runs four independent anomaly
-      triggers against a 30-day rolling baseline. When any trigger fires, Claude drafts a structured
-      intelligence brief — executive summary, key findings, emerging themes, and notable papers.
-      No human curation. No manual prompts. ARIA decides what&rsquo;s worth reporting.
+      Each morning ARIA pulls every new submission from arXiv across four research domains (cs.AI, cs.LG, q-bio, cs.RO)
+      and sends them in batches to the Claude API, which scores each paper from 0&ndash;10 for novelty and identifies
+      its key themes. ARIA then compares today&rsquo;s results against a 30-day rolling baseline it maintains
+      per category to detect four types of anomalies. If any anomaly fires, Claude writes a full intelligence
+      brief covering the most significant papers, emerging cross-domain patterns, and what the signal means.
+      The brief is published here automatically. Nothing is curated by hand &mdash; ARIA decides what matters.
     </p>
     <div class="about-triggers">
-      <div class="about-trigger"><span class="dot" style="background:#1a5276"></span><span><strong>Volume Spike</strong> &mdash; paper count &gt; 1.5&times; 30-day baseline</span></div>
-      <div class="about-trigger"><span class="dot" style="background:#145a32"></span><span><strong>Cross-Domain Cluster</strong> &mdash; papers bridging AI + biology or robotics</span></div>
-      <div class="about-trigger"><span class="dot" style="background:#6e2f8b"></span><span><strong>Novelty Burst</strong> &mdash; &gt;30% of papers score &ge;7/10</span></div>
-      <div class="about-trigger"><span class="dot" style="background:#935116"></span><span><strong>Significance Surge</strong> &mdash; avg novelty &gt; 1.3&times; baseline mean</span></div>
+      <div class="about-trigger"><span class="dot" style="background:#1a5276"></span><span><strong>Volume Spike</strong> &mdash; more papers than usual were submitted today (1.5&times; the 30-day average)</span></div>
+      <div class="about-trigger"><span class="dot" style="background:#145a32"></span><span><strong>Cross-Domain Cluster</strong> &mdash; an unusual number of papers are bridging AI and biology or robotics simultaneously</span></div>
+      <div class="about-trigger"><span class="dot" style="background:#6e2f8b"></span><span><strong>Novelty Burst</strong> &mdash; more than 30% of today&rsquo;s papers scored &ge;7/10, a concentration that rarely occurs</span></div>
+      <div class="about-trigger"><span class="dot" style="background:#935116"></span><span><strong>Significance Surge</strong> &mdash; today&rsquo;s average novelty score is running 30% above the historical mean</span></div>
     </div>
   </div>
 
@@ -404,6 +405,10 @@
   <p class="section-head">Intelligence Reports — Published by ARIA</p>
 
   {% if reports %}
+  <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.75rem;">
+    <span></span>
+    <a href="/reports" style="font-family:var(--sans);font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;">View all reports &rarr;</a>
+  </div>
   <div class="columns">
     {% for report in reports %}
     <article class="report-card">
