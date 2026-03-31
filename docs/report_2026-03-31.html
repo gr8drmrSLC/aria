@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-03-31 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-03-31</span>
+    <span>134 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 131 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 77/134 papers (57%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-03-31</h1>
+<h2>Executive Summary</h2>
+<p>An unusually dense concentration of high-novelty work (57% of analyzed papers) landed today across AI safety, robotics, geometry, and quantum systems — with 131 of 134 papers bridging multiple domains. The dominant signal is a maturation of <em>principled foundations</em>: researchers are no longer just scaling systems but formally bounding what those systems can and cannot do, and building hardware and simulation infrastructure to close the sim-to-real gap at scale.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Information-theoretic AI safety hits a hard wall.</strong> <strong>"Information-Theoretic Limits of Safety Verification for Self-Improving Systems"</strong> proves that no classifier-based safety gate can simultaneously permit unbounded beneficial self-modification and maintain bounded cumulative risk — and demonstrates a concrete verification escape route via Lipschitz ball verifiers for LoRA-tuned transformers. This is not a heuristic warning; it is a formal impossibility result with direct implications for any deployed RLHF or self-improving pipeline.</p>
+</li>
+<li>
+<p><strong>Clinical VLMs are measuring prompt engineering, not pathology.</strong> <strong>"The Scaffold Effect"</strong> shows that across 12 open-weight VLMs evaluated on neuroimaging, apparent multimodal gains are driven by prompt framing rather than image content — even when the MRI data carries no reliable diagnostic signal. Any clinical AI deployment claiming multimodal superiority without this ablation should be treated as unvalidated.</p>
+</li>
+<li>
+<p><strong>Temporal variability resolves the complexity-stability paradox.</strong> <strong>"Will a time-varying complex system be stable?"</strong> delivers an exact random-matrix-theoretic generalization of May's 1972 result, proving rigorously that time-varying interactions <em>improve</em> stability and delay replica-symmetry breaking. This closes a 50-year theoretical gap simultaneously relevant to ecology, neuroscience, and large neural network dynamics.</p>
+</li>
+<li>
+<p><strong>Reinforcement learning gets a language-native reward signal with zero ground truth.</strong> <strong>"SOLE-R1: Video-Language Reasoning as the Sole Reward for On-Robot Reinforcement Learning"</strong> trains a VLM reward model end-to-end as the <em>only</em> RL signal, achieving zero-shot online robot learning that outperforms GPT-5 and Gemini-3-Pro as evaluators. The key advance is robustness to partial observability and distribution shift — the two failure modes that have blocked VLM-as-reward approaches.</p>
+</li>
+<li>
+<p><strong>Program analysis is blind at the LLM API boundary — and now has a fix.</strong> <strong>"Crossing the NL/PL Divide"</strong> is the first formalization of the NL/PL information-flow gap in LLM-integrated code, providing a taint-analysis-compatible taxonomy and achieving F1=0.923 on boundary-crossing flows. As LLM API calls become standard program constructs, this directly enables security tooling for prompt injection and data exfiltration.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three convergent patterns dominate today's corpus. First, <em>geometry as a unifying language</em>: <strong>"Geometry-aware similarity metrics for neural representations"</strong> (Riemannian manifolds for representational analysis), <strong>"Categorical Perception in LLM Hidden States"</strong> (geometric warping at tokenization boundaries), and the complexity-stability paper (random matrix geometry) all treat the shape of high-dimensional spaces as the primary object of study rather than a visualization afterthought. This signals a methodological shift — intrinsic geometry is becoming the standard lens for understanding both biological and artificial neural systems. Second, <em>closing sim-to-real gaps at every layer of the stack</em>: <strong>Tac2Real</strong> (visuotactile RL), <strong>SOLE-R1</strong> (reward modeling), and <strong>SHOW3D</strong> (in-the-wild 3D hand-object data) collectively address the three bottlenecks — physics fidelity, reward specification, and training data realism — that have kept contact-rich manipulation in the lab. These are not independent papers; they constitute a coordinated infrastructure buildout. Third, <em>formal limits on AI system properties</em>: the safety verification impossibility result, the NL/PL boundary formalization, and the corruption-robust MARLHF paper all share an architecture of proving what cannot be done before proposing what can. This is a welcome maturation signal — the field is developing the mathematical vocabulary to bound its own capabilities.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Information-Theoretic Limits of Safety Verification for Self-Improving Systems</td>
+<td>8.5</td>
+<td>cs.LG, cs.AI, stat.ML</td>
+<td>https://arxiv.org/abs/2603.28650v1</td>
+</tr>
+<tr>
+<td>Geometry-aware similarity metrics for neural representations on Riemannian and statistical manifolds</td>
+<td>8.5</td>
+<td>cs.LG, cs.AI, math.DG, q-bio.NC</td>
+<td>https://arxiv.org/abs/2603.28764v1</td>
+</tr>
+<tr>
+<td>Will a time-varying complex system be stable?</td>
+<td>8.5</td>
+<td>cond-mat.dis-nn, q-bio.PE</td>
+<td>https://arxiv.org/abs/2603.28464v1</td>
+</tr>
+<tr>
+<td>SOLE-R1: Video-Language Reasoning as the Sole Reward for On-Robot Reinforcement Learning</td>
+<td>8.3</td>
+<td>cs.RO, cs.CL, cs.CV</td>
+<td>https://arxiv.org/abs/2603.28730v1</td>
+</tr>
+<tr>
+<td>The Scaffold Effect: How Prompt Framing Drives Apparent Multimodal Gains in Clinical VLM Evaluation</td>
+<td>8.3</td>
+<td>cs.AI, cs.LG</td>
+<td>https://arxiv.org/abs/2603.28387v1</td>
+</tr>
+<tr>
+<td>Crossing the NL/PL Divide: Information Flow Analysis Across the NL/PL Boundary in LLM-Integrated Code</td>
+<td>8.2</td>
+<td>cs.SE, cs.AI</td>
+<td>https://arxiv.org/abs/2603.28345v1</td>
+</tr>
+<tr>
+<td>A Foldable and Agile Soft Electromagnetic Robot for Multimodal Navigation in Confined and Unstructured Environments</td>
+<td>8.5</td>
+<td>cs.RO, physics.app-ph</td>
+<td>https://arxiv.org/abs/2603.28362v1</td>
+</tr>
+<tr>
+<td>OptINC: Optical In-Network-Computing for Scalable Distributed Learning</td>
+<td>8.1</td>
+<td>cs.LG, cs.AR</td>
+<td>https://arxiv.org/abs/2603.28290v1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>The impossibility result in <strong>"Information-Theoretic Limits of Safety Verification for Self-Improving Systems"</strong> deserves immediate attention from anyone operating RLHF pipelines or planning agentic deployments with self-modification capability. The formal bound is not about current system scale — it applies to the classifier-gate architecture itself, meaning incremental safety improvements within that paradigm face a structural ceiling. The Lipschitz ball verifier escape demonstrated for LoRA suggests that constrained fine-tuning regimes may offer a tractable path forward, but the security community should begin treating this escape route as an attack surface. Separately, watch the intersection of <strong>SOLE-R1</strong> and <strong>Tac2Real</strong>: if a language-native reward signal can supervise contact-rich manipulation policies trained in high-fidelity tactile simulation with zero-shot real-world transfer, the remaining bottleneck for autonomous robot learning in unstructured environments shrinks dramatically. The combination of these two capabilities, if validated at broader task diversity, would represent a phase transition in what can be learned without human-designed reward functions.</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>

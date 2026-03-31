@@ -35,6 +35,14 @@ Files changed: dashboard/app.py runner.py
 - Fixed HTML entity encoding (changed em-dashes and smart quotes from corrupted UTF-8 to proper HTML entities) for consistent rendering across browsers.
 
 
+### 2026-03-31
+- Created a comprehensive single-page HTML dashboard (`docs/index.html`) to visualize ARIA's daily research intelligence output, enabling stakeholders to browse flagged papers and triggered reports without requiring backend infrastructure.
+- Implemented a responsive grid-based layout with report cards, paper feed tables, and novelty scoring visualizations to surface research signals in an editorially-designed format optimized for both desktop and mobile consumption.
+- Embedded real-time clock and dynamic statistics (papers processed, reports filed, 48-hour feed count) to communicate system activity and freshness at a glance.
+- Designed a trigger taxonomy visualization documenting the four detection mechanisms (Volume, Cross-domain, Novelty, Surge) with color-coded badges to help users understand why specific papers were surfaced.
+- Built the dashboard as a static artifact suitable for daily automated generation and distribution, reducing operational overhead while maintaining accessibility for non-technical stakeholders.
+
+
 ---
 
 ## [0.1.0] — 2026-03-29
