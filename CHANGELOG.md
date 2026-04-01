@@ -43,6 +43,13 @@ Files changed: dashboard/app.py runner.py
 - Built the dashboard as a static artifact suitable for daily automated generation and distribution, reducing operational overhead while maintaining accessibility for non-technical stakeholders.
 
 
+### 2026-04-01
+- Automated daily GitHub Pages publication via scheduled workflow that triggers 90 minutes after ARIA's main pipeline, ensuring the live dashboard reflects the latest analysis without manual intervention.
+- Integrated static page export process (`export_static.py`) that pulls updated metrics and report data from the live ARIA API and commits changes to the `docs/` directory with automated git workflows.
+- Added direct link to live dashboard in README to improve discoverability and establish the published GitHub Pages site as the primary user-facing interface for ARIA intelligence briefs.
+- Reorganized report card structure to use versioned report directory (`reports/1.html`, `reports/2.html`) instead of date-based naming, enabling cleaner URL schema and easier archival management.
+
+
 ---
 
 ## [0.1.0] — 2026-03-29

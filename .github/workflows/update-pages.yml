@@ -1,0 +1,38 @@
+name: Update GitHub Pages
+
+on:
+  schedule:
+    # 08:30 UTC Mon-Fri — 90 minutes after ARIA's 07:00 UTC pipeline run
+    - cron: '30 8 * * 1-5'
+  workflow_dispatch:  # allow manual trigger from the GitHub Actions tab
+
+jobs:
+  update-pages:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Export static pages from live dashboard
+        run: python scripts/export_static.py
+        env:
+          ARIA_API: http://aria-agent.duckdns.org
+
+      - name: Commit and push updated docs/
+        run: |
+          git config user.name "ARIA Bot"
+          git config user.email "aria-bot@noreply.github.com"
+          git add docs/
+          git diff --cached --quiet && echo "No changes to commit" || \
+            git commit -m "chore: update GitHub Pages $(date -u +%Y-%m-%d)" && git push

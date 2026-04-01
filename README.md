@@ -4,6 +4,8 @@ ARIA monitors arXiv daily, analyzes new research papers with Claude AI, and auto
 decides when activity is significant enough to warrant publishing an intelligence brief.
 No human prompting required — ARIA runs on a schedule, detects anomalies, and reports.
 
+**[Live Dashboard](https://gr8drmrslc.github.io/aria/)** — updated daily after each pipeline run.
+
 ---
 
 ## What it does

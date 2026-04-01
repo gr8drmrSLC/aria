@@ -42,21 +42,22 @@ IMAGES_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "post_imag
 # ── Content ───────────────────────────────────────────────────────────────────
 
 ABOUT_TEXT = (
-    "I'm not a software engineer. I don't write code from scratch. What I do is design "
-    "systems — I identify a problem, map out what an automated solution should do, and use "
-    "AI tools to build it. The result is usually something that keeps running on its own "
-    "long after the initial build.\n\n"
+    "I design systems that automate complex workflows. I identify a problem, define what the "
+    "solution should do, and use AI tools to build it. The end result runs on its own and "
+    "keeps working long after the initial build.\n\n"
     "ARIA is a good example. I wanted a way to monitor research across AI, machine learning, "
     "biology, and robotics without reading hundreds of papers a day. So I designed a system "
-    "that does it automatically — it pulls every new submission from arXiv each morning, uses "
+    "that does it automatically. It pulls every new submission from arXiv each morning, uses "
     "Claude AI to score each one for significance, and decides on its own whether what it "
-    "found is worth writing a report about. No alerts telling it what to do. It just runs.\n\n"
-    "The same underlying pattern — monitor a data source, apply AI analysis, make an autonomous "
-    "decision, produce an output — is something I've applied to options trading and prediction "
-    "markets as well. The domain changes. The structure doesn't.\n\n"
-    "What I'm good at is seeing where that structure fits, defining what the system should "
-    "decide and when, and building it in a way that doesn't require constant maintenance. "
-    "The goal is always a tool that works while you're doing something else."
+    "found is worth writing a report about. No prompting. No manual curation. It just runs.\n\n"
+    "The same pattern applies to options trading and prediction markets: monitor a data source, "
+    "apply AI analysis, make an autonomous decision, and produce an output. The domain changes. "
+    "The structure doesn't.\n\n"
+    "My background is in product and project management, workflow design, and digital marketing "
+    "backed by data analysis. That foundation shapes how I think about what a system should do, "
+    "where decisions get made, and what output actually matters. AI tools have made it possible "
+    "to act on that thinking directly. The gap between having an idea for an automated solution "
+    "and having a working one has never been smaller, and the work I've built reflects that."
 )
 
 PROJECT_NAME = "ARIA — Autonomous Research Intelligence Agent"
@@ -72,9 +73,12 @@ PROJECT_DESCRIPTION = (
     "the same architecture. The system ingests, analyzes, decides, and reports without ongoing "
     "human input.\n\n"
     "Built with Python, the Anthropic Claude API, arXiv API, SQLite, Flask, and APScheduler. "
-    "Runs on a daily schedule on AWS EC2. "
-    "Source: https://github.com/gr8drmrSLC/aria"
+    "Runs on a daily schedule on AWS EC2.\n\n"
+    "Live dashboard: http://aria-agent.duckdns.org\n"
+    "Source code: https://github.com/gr8drmrSLC/aria"
 )
+
+PROJECT_URL = "http://aria-agent.duckdns.org"
 
 POST_TEXT = (
     "I built an agent that reads the entire arXiv AI, ML, biology, and robotics feed every "
@@ -412,6 +416,102 @@ def add_project(page, dry_run: bool = False) -> bool:
     return True
 
 
+# ── Task: Edit existing ARIA project ─────────────────────────────────────────
+
+def edit_project(page, dry_run: bool = False) -> bool:
+    log.info("=== Editing existing ARIA project ===")
+
+    # Navigate to the details/projects page — edit links with entityUrn are only there,
+    # not on the main profile page.
+    projects_url = (
+        "https://www.linkedin.com/in/stephenthoemmes/details/projects"
+        "?profileUrn=urn%3Ali%3Afsd_profile%3AACoAABlDRvABIcY41W2KdmP0GfdfK50wvn91xkI"
+    )
+    page.goto(projects_url, timeout=20000)
+    _delay(2500, 4000)
+
+    # Find the edit link for the ARIA project.
+    # On this page, each project has an add-edit/PROJECT link with entityUrn in the query string.
+    # The "add new" button has no entityUrn. Filter to links that do, then match "ARIA" text.
+    project_edit_link = page.evaluate("""
+        () => {
+            const links = [...document.querySelectorAll('a[href*="add-edit/PROJECT"]')];
+            const editLinks = links.filter(l => l.href.includes('entityUrn'));
+            if (editLinks.length === 0) return null;
+            // Find the one nearest to "ARIA" text
+            for (const l of editLinks) {
+                const section = l.closest('li, section, div') ||
+                                l.parentElement && l.parentElement.closest('li, section, div');
+                if (section && section.innerText.includes('ARIA')) return l.href;
+            }
+            return editLinks[0].href;
+        }
+    """)
+
+    if not project_edit_link:
+        log.error("  Could not find existing ARIA project edit link")
+        _screenshot(page, "edit_project_not_found")
+        return False
+
+    log.info(f"  Found project edit link")
+    page.goto(project_edit_link, timeout=15000)
+    _delay(1500, 2500)
+    _screenshot(page, "edit_project_modal")
+
+    if dry_run:
+        log.info("[DRY RUN] Would update project description and URL")
+        log.info(f"  URL field: {PROJECT_URL}")
+        log.info(f"  Desc ends with: ...{PROJECT_DESCRIPTION[-120:]}")
+        _close_modal(page)
+        return True
+
+    # Update description
+    desc_sel = "textarea[id*='PROJECT']"
+    try:
+        desc_el = page.wait_for_selector(desc_sel, timeout=5000, state="visible")
+        desc_el.click()
+        _delay(200, 400)
+        page.keyboard.press("Control+a")
+        _delay(200, 400)
+        desc_el.fill(PROJECT_DESCRIPTION)
+        _delay(500, 900)
+        log.info("  Description updated")
+    except Exception as e:
+        log.warning(f"  Description field not found: {e}")
+
+    # Update URL field to live dashboard
+    url_selectors = [
+        "input[type='url']",
+        "input[id*='url']",
+        "input[name*='url']",
+        "input[placeholder*='URL']",
+        "input[placeholder*='url']",
+    ]
+    for sel in url_selectors:
+        try:
+            el = page.wait_for_selector(sel, timeout=3000, state="visible")
+            if el:
+                el.click()
+                _delay(200, 400)
+                page.keyboard.press("Control+a")
+                el.fill(PROJECT_URL)
+                _delay(300, 600)
+                log.info(f"  URL set to: {PROJECT_URL}")
+                break
+        except Exception:
+            continue
+
+    _screenshot(page, "edit_project_filled")
+
+    if not _save_modal(page):
+        return False
+
+    _delay(2000, 3500)
+    _screenshot(page, "edit_project_saved")
+    log.info("  ARIA project updated")
+    return True
+
+
 # ── Task: Create post with images ─────────────────────────────────────────────
 
 def _focus_shadow_editor(page) -> bool:
@@ -597,14 +697,15 @@ def create_post(page, image_paths: list[str], dry_run: bool = False) -> bool:
 def main():
     parser = argparse.ArgumentParser(description="Update LinkedIn profile with ARIA content")
     parser.add_argument("--about", action="store_true", help="Update About section")
-    parser.add_argument("--project", action="store_true", help="Add ARIA project")
+    parser.add_argument("--project", action="store_true", help="Add ARIA as a new project")
+    parser.add_argument("--edit-project", action="store_true", help="Edit existing ARIA project (update description + URL)")
     parser.add_argument("--post", action="store_true", help="Take screenshots and publish post")
     parser.add_argument("--screenshots", action="store_true", help="Take dashboard screenshots only")
     parser.add_argument("--all", dest="run_all", action="store_true", help="Run all tasks (default)")
     parser.add_argument("--dry-run", action="store_true", help="Navigate forms but do not save")
     args = parser.parse_args()
 
-    if not any([args.about, args.project, args.post, args.screenshots, args.run_all]):
+    if not any([args.about, args.project, args.edit_project, args.post, args.screenshots, args.run_all]):
         args.run_all = True
 
     if args.run_all:
@@ -621,7 +722,7 @@ def main():
             log.info(f"Screenshots saved to: {IMAGES_DIR}")
             return
 
-    if not args.about and not args.project and not args.post:
+    if not args.about and not args.project and not args.edit_project and not args.post:
         return
 
     _check_session(SESSION_PATH)
@@ -652,6 +753,14 @@ def main():
                     log.error(f"Project failed: {e}")
                     _screenshot(page, "err_project")
                     results["project"] = False
+
+            if args.edit_project:
+                try:
+                    results["edit_project"] = edit_project(page, dry_run=args.dry_run)
+                except Exception as e:
+                    log.error(f"Edit project failed: {e}")
+                    _screenshot(page, "err_edit_project")
+                    results["edit_project"] = False
 
             if args.post:
                 try:

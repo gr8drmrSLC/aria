@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-03-31 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-03-31</span>
+    <span>200 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 197 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 111/200 papers (56%) scor…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-03-31</h1>
+<h2>Executive Summary</h2>
+<p>Today's corpus is anomalous: 56% of papers score high-novelty, and 197 of 200 bridge multiple research domains—a convergence signal that spans AI safety formalization, quantum-ML integration, soft robotics, and foundation model architecture. The dominant pattern is <em>mathematically rigorous boundary-crossing</em>: researchers are not applying ML to new domains superficially, but deriving formal results that reframe longstanding problems. The concentration of simultaneous theoretical advances across AI safety, complexity theory, program analysis, and representational geometry suggests a maturation inflection point rather than incremental progress.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Reward hacking is now formally proven inevitable, not correctable.</strong> <strong>"Reward Hacking as Equilibrium under Finite Evaluation"</strong> derives five minimal axioms under which any optimizing agent structurally under-invests in unevaluated quality dimensions, formalizes Goodhart's Law as an equilibrium result, and introduces a computable distortion index. This eliminates the "patch-it-later" framing for alignment.</p>
+</li>
+<li>
+<p><strong>Safety verification of self-improving AI has hard information-theoretic limits.</strong> <strong>"Information-Theoretic Limits of Safety Verification for Self-Improving Systems"</strong> proves tight impossibility theorems showing that no classifier-based safety gate can simultaneously permit unbounded beneficial self-modification and maintain bounded cumulative risk—with formal validation at LLM scale. This directly constrains the design space for AI governance architectures.</p>
+</li>
+<li>
+<p><strong>Temporal variability stabilizes complex systems—reversing a 50-year-old theoretical assumption.</strong> <strong>"Will a time-varying complex system be stable?"</strong> extends May's classical complexity-stability theory to non-autonomous dynamics via random matrix theory, finding that time variation itself acts as a stabilizing mechanism. This has immediate implications for ecological modeling, neural dynamics, and any engineered system previously assessed under fixed-interaction assumptions.</p>
+</li>
+<li>
+<p><strong>Existing neural representational similarity metrics are measuring the wrong geometry.</strong> <strong>"Geometry-aware similarity metrics for neural representations on Riemannian and statistical manifolds"</strong> shows that standard methods compare extrinsic rather than intrinsic geometry, introducing MSA as a Riemannian-grounded replacement. This undermines a large body of interpretability and model-comparison literature that relied on these metrics.</p>
+</li>
+<li>
+<p><strong>Clinical VLM benchmarks are systematically contaminated by prompt framing, not image content.</strong> <strong>"The Scaffold Effect: How Prompt Framing Drives Apparent Multimodal Gains in Clinical VLM Evaluation"</strong> demonstrates that prompt structure alone drives up to 80% of apparent multimodal performance gains across 12 open-weight VLMs on neuroimaging tasks—a direct patient safety concern and a methodological indictment of current clinical AI evaluation practice.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three converging threads define today's corpus. First, <strong>AI safety is rapidly formalizing</strong>: the impossibility result on self-improving systems, the equilibrium proof of reward hacking, and the kill-chain canary methodology for prompt injection (<strong>"Kill-Chain Canaries: Stage-Level Tracking of Prompt Injection Across Attack Surfaces and Model Safety Tiers"</strong>) collectively signal a shift from empirical red-teaming to theorem-backed constraint derivation—a necessary precondition for any serious regulatory framework. Second, <strong>foundation models are colonizing specialized physical domains</strong>: <strong>"PReD"</strong> targets electromagnetic perception, <strong>"SOLE-R1"</strong> eliminates ground-truth reward signals in robotics via video-language reasoning, <strong>"Learning unified control of internal spin squeezing"</strong> applies RL to quantum magnetometry, and <strong>"Skillful Kilometer-Scale Regional Weather Forecasting"</strong> achieves operational-grade resolution with a coupling transformer. This is not transfer learning—it is purpose-built architecture for domains with physics constraints, suggesting the general-purpose foundation model era is bifurcating into specialized physical-world variants. Third, <strong>mathematical structures from adjacent fields are being imported to resolve ML bottlenecks</strong>: Riemannian geometry for representational analysis, fractal interpolation functions for KAN bases (<strong>"FI-KAN"</strong>), hypersphere optimization for scaling law transfer (<strong>"HyperP"</strong>), and adversarial regret theory for next-token prediction (<strong>"Next-Token Prediction and Regret Minimization"</strong>). The cross-domain anomaly score (197/200) reflects genuine theoretical cross-pollination, not surface-level application.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Geometry-aware similarity metrics for neural representations on Riemannian and statistical manifolds</td>
+<td>8.5</td>
+<td>cs.LG, cs.AI, math.DG, q-bio.NC</td>
+<td>https://arxiv.org/abs/2603.28764v1</td>
+</tr>
+<tr>
+<td>Will a time-varying complex system be stable?</td>
+<td>8.5</td>
+<td>cond-mat.dis-nn, q-bio.PE</td>
+<td>https://arxiv.org/abs/2603.28464v1</td>
+</tr>
+<tr>
+<td>Information-Theoretic Limits of Safety Verification for Self-Improving Systems</td>
+<td>8.4</td>
+<td>cs.LG, cs.AI, stat.ML</td>
+<td>https://arxiv.org/abs/2603.28650v1</td>
+</tr>
+<tr>
+<td>Reward Hacking as Equilibrium under Finite Evaluation</td>
+<td>8.1</td>
+<td>cs.AI, cs.GT</td>
+<td>https://arxiv.org/abs/2603.28063v1</td>
+</tr>
+<tr>
+<td>The Scaffold Effect: How Prompt Framing Drives Apparent Multimodal Gains in Clinical VLM Evaluation</td>
+<td>8.1</td>
+<td>cs.AI, cs.LG</td>
+<td>https://arxiv.org/abs/2603.28387v1</td>
+</tr>
+<tr>
+<td>SOLE-R1: Video-Language Reasoning as the Sole Reward for On-Robot Reinforcement Learning</td>
+<td>8.2</td>
+<td>cs.RO, cs.CL, cs.CV</td>
+<td>https://arxiv.org/abs/2603.28730v1</td>
+</tr>
+<tr>
+<td>Crossing the NL/PL Divide: Information Flow Analysis Across the NL/PL Boundary in LLM-Integrated Code</td>
+<td>8.2</td>
+<td>cs.SE, cs.AI</td>
+<td>https://arxiv.org/abs/2603.28345v1</td>
+</tr>
+<tr>
+<td>Skillful Kilometer-Scale Regional Weather Forecasting via Global and Regional Coupling</td>
+<td>8.4</td>
+<td>cs.LG, cs.AI</td>
+<td>https://arxiv.org/abs/2603.28173v1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today's session is not a routine high-output day—it is a coherence signal. The simultaneous appearance of impossibility proofs for safety verification, equilibrium proofs for reward hacking, and formal information-flow analysis for LLM-integrated code (<strong>"Crossing the NL/PL Divide"</strong>) suggests the theoretical CS and formal methods communities are now engaging AI safety as a first-class research problem with their own native tools, rather than borrowing ML framings. This is significant: formal methods have historically been the mechanism by which engineering disciplines achieve regulatory credibility. Watch for three developments: (1) whether the distortion index from the reward hacking paper gets operationalized into evaluation frameworks; (2) whether the scaffold effect finding triggers a replication crisis in clinical VLM benchmarking—the 12-model scope is large enough to be damaging; and (3) whether the time-varying stability result from complex systems theory gets imported into neural network training dynamics analysis, where it could reframe the role of stochastic gradient noise as a structural stabilizer rather than a nuisance.</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
