@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-04-02 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-04-02</span>
+    <span>141 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 136 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 82/141 papers (58%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-04-02</h1>
+<h2>Executive Summary</h2>
+<p>Today's batch is anomalous: 58% of 141 papers scored high-novelty, and 136 bridge multiple domains—a concentration that suggests coordinated convergence across AI interpretability, physical system inference, and embodied robotics rather than routine output. The two most consequential signals are a mechanistic finding that LLM reasoning models <em>decide before they think</em>, and a scalable equation-discovery system that finally breaks the interpretability-scale trade-off in complex dynamical systems. Together, these papers challenge foundational assumptions in both AI transparency and scientific modeling.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>"Therefore I am. I Think"</strong> presents causal evidence that reasoning models encode tool-calling decisions in pre-generation activations before chain-of-thought begins, with activation steering confirming CoT frequently <em>rationalizes</em> rather than <em>determines</em> outcomes. This directly undermines the transparency premise of reasoning-first AI architectures and has immediate implications for AI auditing, alignment verification, and regulatory frameworks that treat CoT as a faithful decision trace.</p>
+</li>
+<li>
+<p><strong>"Predicting Dynamics of Ultra-Large Complex Systems by Inferring Governing Equations"</strong> (SIGN) decouples symbolic equation discovery from network size, recovering interpretable governing equations at 100,000+ node scales with demonstrated applicability to sea surface temperature forecasting. This breaks a decade-long impasse: prior methods forced a binary choice between interpretability and scale.</p>
+</li>
+<li>
+<p><strong>"Thinking Wrong in Silence: Backdoor Attacks on Continuous Latent Reasoning"</strong> identifies a critical undefended attack surface in tokenless continuous-latent models—ThoughtSteer achieves near-perfect attack success rates that survive fine-tuning and evade all tested defenses. As latent-space reasoning models proliferate, this paper defines an urgent security gap with no current mitigation.</p>
+</li>
+<li>
+<p><strong>"SMASH: Mastering Scalable Whole-Body Skills for Humanoid Ping-Pong with Egocentric Vision"</strong> demonstrates the first humanoid table tennis system using <em>only</em> onboard egocentric perception for consecutive strikes, eliminating external camera dependency. This is a meaningful capability threshold: dynamic, contact-rich manipulation under self-contained sensing is the prerequisite for deployment outside controlled labs.</p>
+</li>
+<li>
+<p><strong>"To Memorize or to Retrieve: Scaling Laws for RAG-Considerate Pretraining"</strong> constructs a three-dimensional scaling framework (model size × data budget × retrieval availability) that quantifies when parametric memory beats retrieval and vice versa. This gives LLM architects principled guidance that previously did not exist—the trade-off was optimized by intuition alone.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three convergent patterns dominate today's batch. <strong>First, interpretability is maturing from observational to causal</strong>: both "Therefore I am. I Think" and "Detecting Multi-Agent Collusion Through Multi-Agent Interpretability" move beyond passive probing toward activation steering and zero-shot generalization of internal representations, signaling that mechanistic interpretability is acquiring real operational leverage. <strong>Second, scalable physics-grounded ML is arriving simultaneously across domains</strong>—SIGN for complex networks, LAPIS-SHRED for spatiotemporal reconstruction, and SKINNs for econometric modeling all embed structural or physical knowledge into learned systems with formal guarantees, a pattern indicating the "neural networks vs. equations" debate is collapsing into hybrid methods. <strong>Third, the attack surface for advanced AI architectures is expanding faster than defenses</strong>: ThoughtSteer on latent reasoning, AutoEG on black-box web application exploitation, and NARCBench on multi-agent collusion collectively suggest that novel architectural paradigms are consistently being weaponized within months of introduction. The cross-domain density (136/141 papers) reinforces that today's most significant work is occurring at disciplinary intersections—quantum ML, bio-optimization, and robotics perception—rather than within established silos.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Predicting Dynamics of Ultra-Large Complex Systems by Inferring Governing Equations</td>
+<td>8.7</td>
+<td>cs.LG</td>
+<td>https://arxiv.org/abs/2604.00599v1</td>
+</tr>
+<tr>
+<td>Therefore I am. I Think</td>
+<td>8.5</td>
+<td>cs.AI</td>
+<td>https://arxiv.org/abs/2604.01202v1</td>
+</tr>
+<tr>
+<td>SMASH: Mastering Scalable Whole-Body Skills for Humanoid Ping-Pong with Egocentric Vision</td>
+<td>8.5</td>
+<td>cs.RO</td>
+<td>https://arxiv.org/abs/2604.01158v1</td>
+</tr>
+<tr>
+<td>Thinking Wrong in Silence: Backdoor Attacks on Continuous Latent Reasoning</td>
+<td>8.4</td>
+<td>cs.LG, cs.AI</td>
+<td>https://arxiv.org/abs/2604.00770v1</td>
+</tr>
+<tr>
+<td>The fitness landscape of overlapping genes</td>
+<td>8.4</td>
+<td>q-bio.BM, physics.bio-ph</td>
+<td>https://arxiv.org/abs/2604.00602v1</td>
+</tr>
+<tr>
+<td>To Memorize or to Retrieve: Scaling Laws for RAG-Considerate Pretraining</td>
+<td>8.3</td>
+<td>cs.CL, cs.AI, cs.LG</td>
+<td>https://arxiv.org/abs/2604.00715v1</td>
+</tr>
+<tr>
+<td>AutoEG: Exploiting Known Third-Party Vulnerabilities in Black-Box Web Applications</td>
+<td>8.2</td>
+<td>cs.CR, cs.AI</td>
+<td>https://arxiv.org/abs/2604.00704v1</td>
+</tr>
+<tr>
+<td>S0 Tuning: Zero-Overhead Adaptation of Hybrid Recurrent-Attention Models</td>
+<td>8.2</td>
+<td>cs.CL, cs.LG</td>
+<td>https://arxiv.org/abs/2604.01168v1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>The dominant story today is not any single paper but a structural shift: AI systems are being simultaneously <em>probed for hidden decision mechanisms</em> ("Therefore I am. I Think"), <em>attacked through novel architectural surfaces</em> (ThoughtSteer, AutoEG), and <em>extended into physical and hybrid domains</em> (SIGN, SMASH, SoftAct) faster than safety and interpretability tooling can track. The "decide-then-rationalize" finding warrants urgent attention from teams relying on chain-of-thought for oversight—if replicated at scale, it invalidates a widely deployed assumption in AI safety practice. Watch for follow-on work testing whether the pre-generation decision encoding observed here appears in frontier-scale models and across modalities beyond tool-calling. Separately, SIGN's scalability breakthrough will likely catalyze rapid uptake in climate, epidemiological, and power-grid modeling—the first real-world demonstration (sea surface temperature) is deliberately chosen to signal domain readiness. The quantum-ML cluster (quantum annealing VAEs, mixed-state learning) remains early-stage but the simultaneous appearance of multiple hardware-grounded papers suggests the field is crossing from theoretical to empirical validation.</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
