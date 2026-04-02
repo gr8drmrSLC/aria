@@ -12,3 +12,5 @@ venv/
 .DS_Store
 scripts/screenshot_*.png
 scripts/post_images/*.png
+scripts/update_linkedin.py
+scripts/diag_*.png

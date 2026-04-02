@@ -64,6 +64,12 @@ Files changed: dashboard/app.py runner.py
 - Updated GitHub repository link placement and framing to position source code transparency as a trust mechanism rather than a technical footnote, supporting the credibility of autonomous reporting claims.
 
 
+### 2026-04-02
+- Removed `scripts/update_linkedin.py` to decouple LinkedIn profile automation from the core ARIA research agent, reducing external dependencies and operational complexity tied to third-party session management.
+- Added `scripts/update_linkedin.py` and `scripts/diag_*.png` to `.gitignore` to prevent accidental commits of LinkedIn automation scripts and diagnostic screenshot artifacts.
+- Eliminated 793 lines of Playwright-based LinkedIn browser automation (profile updates, project creation, post publishing) to focus ARIA on its primary mission: autonomous research analysis rather than social media integration.
+
+
 ---
 
 ## [0.1.0] — 2026-03-29
