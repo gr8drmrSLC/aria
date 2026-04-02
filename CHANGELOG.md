@@ -57,6 +57,13 @@ Files changed: dashboard/app.py runner.py
 - Reinforced link-based citation pattern in system instructions to maintain formatting consistency across all report sections and reduce friction in researcher workflows.
 
 
+### 2026-04-02
+- Migrated dashboard URL configuration from hardcoded localhost to environment variable with production fallback, enabling ARIA to operate across development and production environments without code changes.
+- Rewrote LinkedIn post narrative to emphasize real-world detection impact over technical architecture, shifting from explanatory content to demonstrated value through three consecutive days of autonomous anomaly detection and field convergence signals.
+- Refactored post copy to lead with outcomes (three intelligence briefs generated autonomously) rather than system mechanics, making the autonomous decision-making capability the primary narrative driver for audience engagement.
+- Updated GitHub repository link placement and framing to position source code transparency as a trust mechanism rather than a technical footnote, supporting the credibility of autonomous reporting claims.
+
+
 ---
 
 ## [0.1.0] — 2026-03-29

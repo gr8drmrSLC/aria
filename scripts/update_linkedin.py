@@ -36,7 +36,7 @@ SESSION_PATH = os.path.normpath(os.path.join(
 ))
 
 PROFILE_URL = "https://www.linkedin.com/in/stephenthoemmes/"
-DASHBOARD_URL = "http://localhost:5051"
+DASHBOARD_URL = os.environ.get("ARIA_DASHBOARD_URL", "http://aria-agent.duckdns.org")
 IMAGES_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "post_images")
 
 # ── Content ───────────────────────────────────────────────────────────────────
@@ -81,27 +81,32 @@ PROJECT_DESCRIPTION = (
 PROJECT_URL = "http://aria-agent.duckdns.org"
 
 POST_TEXT = (
-    "I built an agent that reads the entire arXiv AI, ML, biology, and robotics feed every "
-    "morning and decides — without being asked — whether what it found is worth telling you about.\n\n"
-    "It's called ARIA: Autonomous Research Intelligence Agent.\n\n"
-    "Here's what it does on its own:\n\n"
-    "Pulls every new paper from cs.AI, cs.LG, q-bio, and cs.RO via the arXiv API\n\n"
-    "Asks Claude to score each paper for novelty on a scale of 0 to 10 and identify its core themes\n\n"
-    "Runs four independent anomaly detectors against a rolling 30-day baseline:\n"
-    "   Volume Spike: is today's submission count unusually high?\n"
-    "   Cross-Domain Cluster: are AI and biology papers converging on the same idea?\n"
-    "   Novelty Burst: is an unusual share of papers scoring high?\n"
-    "   Significance Surge: is the average novelty score above baseline?\n\n"
-    "When any detector fires, Claude drafts a full intelligence brief. "
-    "Everything lands on a newspaper-style dashboard with a live paper feed and published reports.\n\n"
-    "No daily prompt from me. No manual curation. ARIA runs at 07:00 UTC and decides.\n\n"
-    "The interesting challenge was the decision layer. How do you give a system a principled "
-    "standard for what counts as significant without hardcoding a fixed threshold? "
-    "The answer is baseline-relative thresholds. ARIA learns what normal looks like for each "
-    "category over 30 days and then flags meaningful deviations. The first month is bootstrapping. "
-    "After that, it has its own sense of what is routine.\n\n"
-    "Built with Python, the Anthropic Claude API, arXiv API, Flask, SQLite, and APScheduler.\n\n"
-    "GitHub: https://github.com/gr8drmrSLC/aria"
+    "Three days running. Three intelligence briefs. ARIA was not asked. It decided.\n\n"
+    "ARIA is an autonomous research agent I built to monitor the arXiv feed across AI, machine "
+    "learning, biology, and robotics. Each morning it reads every new submission, scores each "
+    "paper for novelty using the Claude API, and runs four anomaly detectors against a rolling "
+    "30-day baseline. When the data is statistically unusual, it writes a report. "
+    "When nothing stands out, it stays quiet.\n\n"
+    "This week it has not been quiet.\n\n"
+    "March 31: 197 of 200 papers bridged multiple research domains simultaneously. "
+    "The dominant pattern was mathematically rigorous boundary crossing across AI safety, "
+    "quantum methods, and theoretical foundations.\n\n"
+    "April 1: Autonomous AI agents produced wet-lab-validated scientific output for the first "
+    "time at scale, alongside a convergence toward physics-informed frameworks for understanding "
+    "neural architectures.\n\n"
+    "April 2: Two signals stood out. First, a mechanistic finding that LLM reasoning models "
+    "decide before they think, with direct implications for how we interpret chain-of-thought "
+    "reasoning. Second, a scalable equation discovery system that breaks the interpretability "
+    "and scale trade-off in complex dynamical systems.\n\n"
+    "Each of these fired ARIA's cross-domain cluster detector, meaning the volume of papers "
+    "simultaneously bridging AI, biology, and robotics has been consistently elevated across "
+    "all three days. Whether that reflects a genuine convergence moment in the field or a "
+    "baseline still calibrating on three days of data, the pattern is consistent "
+    "and worth watching.\n\n"
+    "The source code is open. If you want to see how the pipeline is structured, how the "
+    "anomaly detection works, or how Claude is used for paper scoring and report generation, "
+    "everything is available here:\n\n"
+    "https://github.com/gr8drmrSLC/aria"
 )
 
 # ── Logging ───────────────────────────────────────────────────────────────────
