@@ -90,12 +90,12 @@ Top papers by novelty (for briefing):
 
 Write a structured intelligence brief in markdown with these sections:
 1. **Executive Summary** (2-3 sentences: what's happening today and why it matters)
-2. **Key Findings** (3-5 bullet points, each citing a specific paper with its title in bold)
+2. **Key Findings** (3-5 bullet points; for each paper cited, format its title as a markdown link: [Paper Title](arxiv_url))
 3. **Emerging Themes** (paragraph identifying cross-paper patterns and what they signal)
-4. **Notable Papers** (table: | Title | Score | Categories | URL |, top 5-8 papers)
+4. **Notable Papers** (table with columns: Title | Score | Categories | Link; format each Title cell as [title](arxiv_url) and each Link cell as [arXiv](arxiv_url); top 5-8 papers)
 5. **Analyst Note** (1 paragraph: ARIA's assessment of the significance and what to watch next)
 
-Be specific. Use paper titles. Explain implications. No filler."""
+Be specific. Use paper titles as markdown links throughout. Explain implications. No filler."""
 
     logger.info("Generating intelligence brief for %s (%d papers)", date, len(notable))
 

@@ -50,6 +50,13 @@ Files changed: dashboard/app.py runner.py
 - Reorganized report card structure to use versioned report directory (`reports/1.html`, `reports/2.html`) instead of date-based naming, enabling cleaner URL schema and easier archival management.
 
 
+### 2026-04-02
+- Converted paper title citations in Key Findings section from bold text to clickable markdown links pointing to arXiv URLs, enabling direct navigation to source materials in generated briefs.
+- Enhanced Notable Papers table formatting to use dual markdown links—one for paper titles and one for the Link column—improving accessibility and reducing URL ambiguity in structured reports.
+- Updated reporter prompt guidance to enforce consistent markdown link usage throughout briefing output, ensuring users can instantly access papers without manual URL lookup.
+- Reinforced link-based citation pattern in system instructions to maintain formatting consistency across all report sections and reduce friction in researcher workflows.
+
+
 ---
 
 ## [0.1.0] â€” 2026-03-29
