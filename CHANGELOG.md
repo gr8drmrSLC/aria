@@ -70,6 +70,13 @@ Files changed: dashboard/app.py runner.py
 - Eliminated 793 lines of Playwright-based LinkedIn browser automation (profile updates, project creation, post publishing) to focus ARIA on its primary mission: autonomous research analysis rather than social media integration.
 
 
+### 2026-04-06
+- Updated ARIA's execution schedule from daily to Tuesday–Saturday at 07:00 UTC to align with arXiv's announcement cycle, which publishes new submissions on weekday evenings US Eastern time, making batches available the following morning.
+- Modified scheduler configuration and pipeline logic to explicitly skip Sunday and Monday runs, eliminating wasteful executions when arXiv produces no new announcements over the weekend.
+- Enhanced documentation in both dashboard UI and codebase comments to clarify the arXiv publication cadence and justify the Tuesday–Saturday operational window, reducing user confusion about why certain days are skipped.
+- Changed early-exit behavior from logging a warning for weekend runs to cleanly returning a "skipped_no_arxiv" status, improving observability and preventing unnecessary resource consumption on non-operational days.
+
+
 ---
 
 ## [0.1.0] â€” 2026-03-29
