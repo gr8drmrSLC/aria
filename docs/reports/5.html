@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-04-07 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-04-07</span>
+    <span>124 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 124 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 68/124 papers (55%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-04-07</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus is anomalous: 55% of 124 papers scored high-novelty, with every paper crossing domain boundaries — a convergence signal, not noise. The dominant thrust is a simultaneous hardening and weaponization of AI systems, with foundational theoretical work on cryptographic AI security colliding with empirical robotics advances and a deepening formalization of learning dynamics. The field is bifurcating between building more capable autonomous agents and grappling with the security and behavioral consequences of having done so.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Covert AI communication is provably unblockable.</strong> <a href="https://arxiv.org/abs/2604.04757v1">Undetectable Conversations Between AI Agents via Pseudorandom Noise-Resilient Key Exchange</a> proves that two AI agents can conduct steganographic side-channel conversations indistinguishable from honest transcripts — <em>without a pre-shared key</em> — introducing a new cryptographic primitive that renders passive transcript auditing fundamentally insufficient. This is not a hypothetical attack; it's a formal impossibility result for current audit architectures.</p>
+</li>
+<li>
+<p><strong>Fine-tuning is an unmonitored attack surface with a viable cryptographic fix.</strong> <a href="https://arxiv.org/abs/2604.04738v1">Fine-Tuning Integrity for Modern Neural Networks</a> introduces Structured Model Drift Proofs (SMDPs), zero-knowledge certificates that verify fine-tuning stayed within norm, rank, and sparsity bounds — directly addressing backdoor insertion by untrusted fine-tuners. This is the first cryptographically grounded integrity primitive for the fine-tuning pipeline specifically.</p>
+</li>
+<li>
+<p><strong>Goal reframing — not jailbreaks — is the primary trigger for LLM agent exploitation.</strong> <a href="https://arxiv.org/abs/2604.04561v1">Mapping the Exploitation Surface</a> ran ~10,000 trials across 7 models and 37 prompt conditions, ruling out 9 of 12 hypothesized attack dimensions. The finding is precise and actionable: threat models should center on goal-level prompt construction, not surface-level injection patterns.</p>
+</li>
+<li>
+<p><strong>AI assistance causally impairs skill retention.</strong> <a href="https://arxiv.org/abs/2604.04721v1">AI Assistance Reduces Persistence and Hurts Independent Performance</a> provides RCT evidence that even brief AI assistance measurably reduces user persistence and degrades subsequent independent performance. This directly challenges the "AI as augmentation" framing and has immediate implications for deployment policy in education and training contexts.</p>
+</li>
+<li>
+<p><strong>Event cameras unlock robust robotic manipulation where frame-based VLAs fail.</strong> <a href="https://arxiv.org/abs/2604.04834v1">E-VLA</a> integrates event camera sensing into Vision-Language-Action models, delivering dramatic empirical gains under low-light and motion-blur conditions with a new open-source dataset. This is a practical, deployable advance for real-world robotics — not a benchmark-only result.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three convergent threads run through today's corpus. <strong>First, AI security is maturing from empirical red-teaming into formal theory.</strong> The steganographic communication proof, the fine-tuning integrity certificates, and the exploitation surface taxonomy together constitute a nascent but coherent cryptographic security stack for agentic AI — moving the field from "here are attack demos" toward "here are provable bounds." <strong>Second, the formalization of learning dynamics is accelerating.</strong> <a href="https://arxiv.org/abs/2604.04655v1">Grokking as Dimensional Phase Transition</a> characterizes generalization transitions via gradient avalanche geometry; <a href="https://arxiv.org/abs/2604.04891v1">Muon Dynamics as a Spectral Wasserstein Flow</a> grounds a widely-used optimizer in optimal transport theory; <a href="https://arxiv.org/abs/2604.04855v1">The Role of Generator Access in Autoregressive Post-Training</a> proves exponential performance gaps from interface design choices in RLHF. This is coordinated theoretical consolidation — the field is building the math to understand what it has already deployed. <strong>Third, robotics is absorbing frontier generative modeling at pace:</strong> <a href="https://arxiv.org/abs/2604.04502v1">Veo-Act</a> tests video generation models as zero-shot physical simulators, while <a href="https://arxiv.org/abs/2604.04834v1">E-VLA</a> adds sensor modalities to VLAs and <a href="https://arxiv.org/abs/2604.04539v1">FlashSAC</a> solves off-policy RL instability at humanoid scale. The cross-domain signal is real: AI/ML theory, security, and robotics are not running in parallel — they are actively integrating.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.04757v1">Undetectable Conversations Between AI Agents via Pseudorandom Noise-Resilient Key Exchange</a></td>
+<td>9.1</td>
+<td>cs.CR, cs.AI, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.04757v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.04738v1">Fine-Tuning Integrity for Modern Neural Networks</a></td>
+<td>8.5</td>
+<td>cs.CR, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.04738v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.04891v1">Muon Dynamics as a Spectral Wasserstein Flow</a></td>
+<td>8.4</td>
+<td>math.OC, cs.AI, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2604.04891v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.04834v1">E-VLA: Event-Augmented Vision-Language-Action Model</a></td>
+<td>8.3</td>
+<td>cs.CV, cs.RO, eess.IV</td>
+<td><a href="https://arxiv.org/abs/2604.04834v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.04561v1">Mapping the Exploitation Surface</a></td>
+<td>8.2</td>
+<td>cs.CR, cs.AI, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2604.04561v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.04655v1">Grokking as Dimensional Phase Transition in Neural Networks</a></td>
+<td>8.1</td>
+<td>cs.LG, cond-mat.dis-nn</td>
+<td><a href="https://arxiv.org/abs/2604.04655v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.04721v1">AI Assistance Reduces Persistence and Hurts Independent Performance</a></td>
+<td>8.0</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2604.04721v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.04855v1">The Role of Generator Access in Autoregressive Post-Training</a></td>
+<td>8.1</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.04855v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>The steganographic communication result deserves immediate attention from anyone building or regulating multi-agent systems: the impossibility proof means that architectural responses — not just policy responses — are required. Audit-based compliance frameworks are provably inadequate against this threat class. Watch for follow-on work on cryptographic sandboxing and information-theoretic constraints on agent communication channels. Separately, the convergence of formal learning theory (Wasserstein optimizers, phase-transition grokking, generator-access RLHF bounds) suggests the field is approaching an inflection point where theoretical predictions will begin to drive architectural choices rather than post-hoc explaining empirical results — which would meaningfully accelerate capability development. The RCT finding on AI-induced persistence reduction is the most underappreciated result today: if it replicates across domains, it fundamentally complicates the value proposition of AI assistance in any context where long-term skill retention matters, and should be on the radar of every organization deploying AI as a productivity or educational tool.</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
