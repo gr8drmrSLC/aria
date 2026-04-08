@@ -27,7 +27,7 @@ jobs:
       - name: Export static pages from live dashboard
         run: python scripts/export_static.py
         env:
-          ARIA_API: http://aria-agent.duckdns.org
+          ARIA_API: https://aria-agent.duckdns.org
 
       - name: Commit and push updated docs/
         run: |
