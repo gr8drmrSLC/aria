@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-04-09 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-04-09</span>
+    <span>124 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 120 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 61/124 papers (49%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-04-09</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's batch is anomalous: 49% of 124 papers scored high-novelty, and 97% bridge multiple domains — a statistical signature of a field in active reorganization rather than incremental progress. The dominant signal is the maturation of differentiable and physics-informed ML from niche technique to production-grade infrastructure, appearing simultaneously across coastal engineering, nuclear reactors, control theory, and genomics. Concurrently, foundational theory is catching up to practice in several long-standing gaps: Pareto regret bounds, NNGP convergence, AdaBoost dynamics, and offline RL regularization all receive definitive treatments today.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Differentiable simulation reaches coastal engineering.</strong> <a href="https://arxiv.org/abs/2604.07129v1">A solver-in-the-loop framework for end-to-end differentiable coastal hydrodynamics</a> (AegirJAX) delivers a fully differentiable non-hydrostatic shallow-water solver in JAX, unlocking gradient-based inversion for bathymetry estimation, source inversion, and structural optimization — problems previously blocked by the cost of deriving discrete adjoints. This is a direct template for other PDE-governed engineering domains.</p>
+</li>
+<li>
+<p><strong>Multi-objective bandit theory is now closed.</strong> <a href="https://arxiv.org/abs/2604.07096v1">Are Stochastic Multi-objective Bandits Harder than Single-objective Bandits?</a> resolves a long-open question by proving Pareto regret is governed by the maximum sub-optimality gap and delivering a matching optimal algorithm. The answer — no, they are not fundamentally harder — will reshape assumptions in multi-objective RL and decision-making under uncertainty.</p>
+</li>
+<li>
+<p><strong>Machine unlearning gets a practical foundation.</strong> <a href="https://arxiv.org/abs/2604.07328v1">How to sketch a learning algorithm</a> introduces arithmetic circuit sketching with complex-direction higher-order derivatives for efficient data deletion, with a stability assumption explicitly compatible with deep networks. Given regulatory pressure on the right to be forgotten, this is immediately relevant to production ML compliance workflows.</p>
+</li>
+<li>
+<p><strong>Offline RL's pessimism assumption is overturned.</strong> <a href="https://arxiv.org/abs/2604.06738v1">Beyond Pessimism: Offline Learning in KL-regularized Games</a> achieves O(1/n) sample complexity — versus the prior O(1/√n) — without pessimistic value estimation in KL-regularized zero-sum games. This has direct implications for RLHF and KL-constrained fine-tuning pipelines where offline data quality is heterogeneous.</p>
+</li>
+<li>
+<p><strong>DNA language models don't understand 3D genome structure.</strong> <a href="https://arxiv.org/abs/2604.07196v1">Probing 3D Chromatin Structure Awareness in Evo2 DNA Language Model</a> finds that Evo2-7B, despite million-token context sufficient to span entire TADs, fails to capture higher-order chromatin organization. This exposes a fundamental ceiling for current genomic foundation models and directly motivates architecture or training data changes before these models are trusted for regulatory element prediction.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three convergent patterns dominate today's batch. First, <strong>physics-ML integration is crossing from research to engineering infrastructure</strong>: AegirJAX for coastal hydrodynamics, <a href="https://arxiv.org/abs/2604.07292v1">Graph Neural ODE Digital Twins for Control-Oriented Reactor Thermal-Hydraulic Forecasting Under Partial Observability</a> for nuclear reactors, and <a href="https://arxiv.org/abs/2604.07069v1">Controller Design for Structured State-space Models via Contraction Theory</a> for data-driven control all deliver deployable artifacts — not proofs of concept — with formal guarantees. This is the signal that the field is transitioning from "can we?" to "how do we scale and certify?" Second, <strong>foundational theory is retroactively validating deployed practice</strong>: NNGP methods have been used in production for years; today's <a href="https://arxiv.org/abs/2604.07267v1">The Theory and Practice of Highly Scalable Gaussian Process Regression with Nearest Neighbours</a> proves minimax optimality and explains observed robustness. Similarly, the AdaBoost counterexample and Pareto bandit resolution close open problems that practitioners have worked around empirically. This retroactive formalization typically precedes a wave of algorithmic refinement. Third, <strong>agentic LLM safety and infrastructure are maturing in parallel</strong>: <a href="https://arxiv.org/abs/2604.07223v1">TraceSafe: A Systematic Assessment of LLM Guardrails on Multi-Step Tool-Calling Trajectories</a> identifies mid-trajectory vulnerability as the primary attack surface for autonomous agents, while <a href="https://arxiv.org/abs/2604.06956v1">NestPipe: Large-Scale Recommendation Training on 1,500+ Accelerators via Nested Pipelining</a> addresses the infrastructure layer. The cross-domain breadth (120/124 papers) suggests these are not isolated advances but components of a coordinated capability expansion.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.07129v1">A solver-in-the-loop framework for end-to-end differentiable coastal hydrodynamics</a></td>
+<td>8.5</td>
+<td>physics.flu-dyn, cs.LG, math.NA</td>
+<td><a href="https://arxiv.org/abs/2604.07129v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.07096v1">Are Stochastic Multi-objective Bandits Harder than Single-objective Bandits?</a></td>
+<td>8.5</td>
+<td>cs.LG, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2604.07096v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.07328v1">How to sketch a learning algorithm</a></td>
+<td>8.4</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.07328v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.06738v1">Beyond Pessimism: Offline Learning in KL-regularized Games</a></td>
+<td>8.4</td>
+<td>cs.GT, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.06738v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.07055v1">AdaBoost Does Not Always Cycle: A Computer-Assisted Counterexample</a></td>
+<td>8.2</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.07055v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.07303v1">Robots that learn to evaluate models of collective behavior</a></td>
+<td>8.1</td>
+<td>cs.RO</td>
+<td><a href="https://arxiv.org/abs/2604.07303v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.07196v1">Probing 3D Chromatin Structure Awareness in Evo2 DNA Language Model</a></td>
+<td>7.8</td>
+<td>q-bio.GN</td>
+<td><a href="https://arxiv.org/abs/2604.07196v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.07069v1">Controller Design for Structured State-space Models via Contraction Theory</a></td>
+<td>7.8</td>
+<td>eess.SY, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.07069v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>The simultaneous closure of multiple long-standing open problems — AdaBoost cycling (12 years), Pareto bandit complexity, NNGP convergence theory — alongside genuinely new infrastructure papers (AegirJAX, NestPipe, TraceSafe-Bench) in a single day is statistically improbable as coincidence. More likely, this reflects a maturation inflection: the ML research community is simultaneously consolidating the theoretical foundations of the last decade's empirical advances while deploying the next generation of agentic and physics-coupled systems. The finding to watch most closely is the Evo2 chromatin probing result — if genomic foundation models lack 3D structural awareness despite sufficient context length, it implies</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>

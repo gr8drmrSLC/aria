@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-04-10 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-04-10</span>
+    <span>188 papers analyzed</span>
+    
+      <span class="trigger-tag">Volume spike: 188 papers today vs. 106 h…</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 186 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 97/188 papers (52%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-04-10</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus is anomalous on three simultaneous axes: 1.5× volume surge, 52% high-novelty concentration, and near-universal cross-domain bridging (186/188 papers). The dominant signal is a convergence of classical ML infrastructure concerns—training efficiency, model composition, safety—with frontier physical systems including quantum hardware, photonic computing, and biological motor control. The practical ceiling on fault-tolerant quantum computation may be meaningfully higher than consensus assumes, and the boundary between "foundation model" and "physical simulator" is collapsing faster than most roadmaps anticipate.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Quantum decoding breakthrough with immediate hardware relevance.</strong> <a href="https://arxiv.org/abs/2604.08358v1">Scalable Neural Decoders for Practical Fault-Tolerant Quantum Computation</a> reports a CNN decoder achieving ~17× lower logical error rates and 3–5 orders of magnitude higher throughput than current LDPC decoders, while uncovering a novel "waterfall" error-suppression regime. This directly attacks the classical-decoder bottleneck that has been the primary practical obstacle between current LDPC code theory and deployable fault-tolerant hardware. If the throughput claims hold under adversarial benchmarking, this compresses the timeline to practical QEC by years.</p>
+</li>
+<li>
+<p><strong>Synthetic data generation becomes a programmable primitive.</strong> <a href="https://arxiv.org/abs/2604.08423v1">Synthetic Data for any Differentiable Target</a> introduces Dataset Policy Gradient (DPG), an RL framework that treats synthetic data generators as policies optimizable against any differentiable downstream metric. The demonstration of embedding QR codes into model weights via SFT alone is not a party trick—it signals that the information channel between synthetic data and target model weights is far broader and more controllable than previously understood. This has immediate implications for supply-chain security and adversarial data poisoning at scale.</p>
+</li>
+<li>
+<p><strong>Frozen model composition challenges the fine-tuning paradigm.</strong> <a href="https://arxiv.org/abs/2604.08335v1">Dead Weights, Live Signals: Feedforward Graphs of Frozen Language Models</a> shows that heterogeneous LLMs connected via 17.6M trainable projection parameters—with all base model weights frozen—can substantially outperform constituent models on benchmarks. This is not parameter-efficient fine-tuning; it is architecture-level ensembling without gradient flow into base weights, enabled by the geometric compatibility of LLM latent spaces. It challenges the assumption that capability improvement requires touching pretrained weights.</p>
+</li>
+<li>
+<p><strong>Catastrophic forgetting is suppression, not erasure—and reversible with minimal data.</strong> <a href="https://arxiv.org/abs/2604.08388v1">Awakening the Sleeping Agent</a> demonstrates that Goedel-Prover-V2, after 1.8M-example domain specialization that nearly eliminates general tool-use, recovers full cross-domain function-calling ability from just 100 domain-specific agentic traces. This has immediate implications for post-training pipelines: capability loss from SFT should be treated as a recoverable suppression state, not permanent damage, and monitored accordingly.</p>
+</li>
+<li>
+<p><strong>Attention-layer manipulation is the new frontier for agent adversarial attacks.</strong> <a href="https://arxiv.org/abs/2604.08005v1">Preference Redirection via Attention Concentration</a> (PRAC) bypasses output-level defenses by targeting the internal attention distribution of vision-language models in computer use agents, demonstrating cross-model generalization. As GUI-interacting agents reach production deployments, this attack surface—currently undefended—becomes critical infrastructure risk.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three convergent patterns dominate today's corpus. <strong>First, physical computing substrates are being colonized by ML methodology at an accelerating rate.</strong> <a href="https://arxiv.org/abs/2604.08358v1">Scalable Neural Decoders</a> (quantum), <a href="https://arxiv.org/abs/2604.08432v1">Small-scale photonic Kolmogorov-Arnold networks</a> (optics), and <a href="https://arxiv.org/abs/2604.07928v1">Generative 3D Gaussian Splatting for Atmospheric Downscaling</a> (climate simulation) all represent ML methods crossing into domains where classical algorithms have been entrenched for decades—and winning. <strong>Second, there is a coherent push toward foundation models for physical and biological signal decoding.</strong> <a href="https://arxiv.org/abs/2604.08537v1">Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding</a>, <a href="https://arxiv.org/abs/2604.08168v1">ViVa: A Video-Generative Value Model for Robot RL</a>, and <a href="https://arxiv.org/abs/2604.08312v1">Neuromodulation supports robust rhythmic pattern transitions</a> collectively suggest the field is converging on general-purpose decoders for neural and physical dynamics, not task-specific models. <strong>Third, the economics of model capability are being renegotiated.</strong> <a href="https://arxiv.org/abs/2604.08335v1">Dead Weights, Live Signals</a>, <a href="https://arxiv.org/abs/2604.08388v1">Awakening the Sleeping Agent</a>, and <a href="https://arxiv.org/abs/2604.08477v1">SUPERNOVA</a> all argue—from different angles—that current models are underutilized relative to their latent capability, and that small, targeted interventions (17.6M parameters, 100 traces, curated data mixtures) can unlock disproportionate gains. This converging theme has direct implications for compute allocation strategy.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.08358v1">Scalable Neural Decoders for Practical Fault-Tolerant Quantum Computation</a></td>
+<td>9.0</td>
+<td>quant-ph, cs.AI, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.08358v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.08423v1">Synthetic Data for any Differentiable Target</a></td>
+<td>8.8</td>
+<td>cs.CL, cs.AI, cs.LG, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2604.08423v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.08335v1">Dead Weights, Live Signals: Feedforward Graphs of Frozen Language Models</a></td>
+<td>8.5</td>
+<td>cs.LG, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2604.08335v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.08504v1">Differentially Private Language Generation and Identification in the Limit</a></td>
+<td>8.3</td>
+<td>stat.ML, cs.AI, cs.CL, cs.DS</td>
+<td><a href="https://arxiv.org/abs/2604.08504v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.08537v1">Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding</a></td>
+<td>8.2</td>
+<td>cs.LG, q-bio.NC</td>
+<td><a href="https://arxiv.org/abs/2604.08537v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.08432v1">Small-scale photonic Kolmogorov-Arnold networks using standard telecom nonlinear modules</a></td>
+<td>8.1</td>
+<td>physics.optics, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2604.08432v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.08005v1">Preference Redirection via Attention Concentration: An Attack on Computer Use Agents</a></td>
+<td>8.1</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.08005v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.08388v1">Awakening the Sleeping Agent</a></td>
+<td>8.1</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2604.08388v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today's volume and novelty anomalies are unlikely to be coincidental noise</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
