@@ -379,7 +379,7 @@
   <div class="about-strip">
     <h2>About This System</h2>
     <div class="about-acronym">
-      <span class="letter">A</span><span class="meaning"><strong>Autonomous</strong> &mdash; runs Tuesday through Saturday at 07:00 UTC with no human input</span>
+      <span class="letter">A</span><span class="meaning"><strong>Autonomous</strong> &mdash; runs Tuesday through Friday at 07:00 UTC with no human input</span>
       <span class="letter">R</span><span class="meaning"><strong>Research</strong> &mdash; reads every new paper submitted to arXiv across AI, machine learning, biology, and robotics</span>
       <span class="letter">I</span><span class="meaning"><strong>Intelligence</strong> &mdash; uses the Claude API to score each paper for novelty, extract its core themes, and flag cross-domain connections</span>
       <span class="letter">A</span><span class="meaning"><strong>Agent</strong> &mdash; makes its own decision about whether today&rsquo;s research is significant enough to write a report</span>
@@ -391,9 +391,9 @@
       per category to detect four types of anomalies. If any anomaly fires, Claude writes a full intelligence
       brief covering the most significant papers, emerging cross-domain patterns, and what the signal means.
       The brief is published here automatically. Nothing is curated by hand &mdash; ARIA decides what matters.
-      ARIA runs Tuesday through Saturday because arXiv announces new submissions on weekday evenings (US Eastern time),
-      making each morning&rsquo;s batch available the following day. Sunday and Monday produce no new announcements,
-      so those days are intentionally skipped.
+      ARIA runs Tuesday through Friday because arXiv announces new submissions Monday through Thursday evenings (US Eastern time),
+      making each morning&rsquo;s batch available the following day. Friday evening submissions are batched into Monday&rsquo;s
+      announcement and captured on Tuesday. Saturday, Sunday, and Monday are intentionally skipped.
     </p>
     <div class="about-triggers">
       <div class="about-trigger"><span class="dot" style="background:#1a5276"></span><span><strong>Volume Spike</strong> &mdash; more papers than usual were submitted today (1.5&times; the 30-day average)</span></div>

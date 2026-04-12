@@ -77,6 +77,12 @@ Files changed: dashboard/app.py runner.py
 - Changed early-exit behavior from logging a warning for weekend runs to cleanly returning a "skipped_no_arxiv" status, improving observability and preventing unnecessary resource consumption on non-operational days.
 
 
+### 2026-04-12
+- Adjusted ARIA's execution schedule from Tuesday–Saturday to Tuesday–Friday at 07:00 UTC to align with arXiv's actual submission announcement window (Monday–Thursday evenings ET), eliminating wasteful Saturday runs that yielded no new papers.
+- Updated scheduler configuration and weekday skip logic in `runner.py` to exclude Saturday, Sunday, and Monday (weekdays 5, 6, 0) instead of only Sunday and Monday, reflecting the corrected operational window.
+- Clarified documentation to explain that Friday evening arXiv submissions are batched into Monday's announcement and captured during Tuesday's processing cycle, improving transparency on the data availability timing.
+
+
 ---
 
 ## [0.1.0] â€” 2026-03-29

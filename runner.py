@@ -50,11 +50,13 @@ def run_pipeline() -> dict:
     """
     now_utc = datetime.now(timezone.utc)
     run_date = now_utc.strftime("%Y-%m-%d")
-    # arXiv announces new submissions Tuesday–Saturday evenings ET.
-    # ARIA runs Tuesday–Saturday at 07:00 UTC to capture the prior evening's batch.
-    # Sunday and Monday runs are skipped — no announcements occur over the weekend.
-    if now_utc.weekday() in (0, 6):  # 0=Monday, 6=Sunday
-        logger.info("Monday/Sunday run — arXiv does not announce new papers over the weekend. Skipping.")
+    # arXiv announces new submissions Monday–Thursday evenings ET.
+    # Friday's announcement covers Thu–Fri submissions, but those papers don't
+    # appear in the API until Monday's processing cycle.
+    # ARIA runs Tuesday–Friday at 07:00 UTC to capture the prior evening's batch.
+    # Saturday, Sunday, and Monday runs are skipped.
+    if now_utc.weekday() in (5, 6, 0):  # 5=Saturday, 6=Sunday, 0=Monday
+        logger.info("Saturday/Sunday/Monday run — no new arXiv papers available. Skipping.")
         return {"status": "skipped_no_arxiv", "date": run_date}
     logger.info("=== ARIA pipeline starting — %s ===", run_date)
 
@@ -167,7 +169,7 @@ def main():
         sys.exit(1)
 
     scheduler = BlockingScheduler(timezone="UTC")
-    scheduler.add_job(run_pipeline, "cron", day_of_week="tue-sat", hour=args.hour, minute=0)
+    scheduler.add_job(run_pipeline, "cron", day_of_week="tue-fri", hour=args.hour, minute=0)
     logger.info("ARIA scheduler started — running Tue-Sat at %02d:00 UTC", args.hour)
     logger.info("Press Ctrl+C to stop")
 
