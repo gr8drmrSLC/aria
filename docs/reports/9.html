@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-04-14 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-04-14</span>
+    <span>200 papers analyzed</span>
+    
+      <span class="trigger-tag">Volume spike: 200 papers today vs. 111 h…</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 194 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 114/200 papers (57%) scor…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-04-14</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus is a genuine anomaly: 200 papers at 1.5× historical volume, with 57% scoring high-novelty and 194 crossing domain boundaries—a convergence signal, not noise. The dominant pattern is infrastructure maturation: foundational theoretical gaps are being closed (discrete diffusion, AMP universality, label-flip certification), while applied systems are demonstrating meaningful sim-to-real transfer and autonomous scientific operation. This is a day worth archiving.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>First-order optimization theory takes a major step forward.</strong> <a href="https://arxiv.org/abs/2604.11729v1">Universality of first-order methods on random and deterministic matrices</a> resolves longstanding open conjectures by characterizing traffic distributions for <em>deterministic</em> transform matrices and designing a unified AMP algorithm with Gaussian dynamics across both random and deterministic inputs. This closes a critical gap in the theoretical foundation underlying a large fraction of modern ML algorithms.</p>
+</li>
+<li>
+<p><strong>A credible path beyond internet-scale QA data for LLM training.</strong> <a href="https://arxiv.org/abs/2604.11805v1">Solving Physics Olympiad via Reinforcement Learning on Physics Simulators</a> uses physics simulators as synthetic training environments for LLMs, achieving zero-shot transfer to IPhO benchmarks. This matters because it demonstrates that simulator-generated experience—not scraped text—can produce genuine physical reasoning, directly addressing the post-internet data bottleneck.</p>
+</li>
+<li>
+<p><strong>KV-cache compression has a latent failure mode, now diagnosed and fixed.</strong> <a href="https://arxiv.org/abs/2604.11288v1">Transactional Attention: Semantic Sponsorship for KV-Cache Retention</a> identifies "dormant tokens"—credentials, API keys, configuration values that receive near-zero attention but are critical at generation time—and shows that every existing compression method achieves 0% credential retrieval at 0.4% context retention. The fix achieves 100%. This is a production-critical finding for any deployed long-context LLM system.</p>
+</li>
+<li>
+<p><strong>Cross-trace AI safety auditing emerges as a distinct capability.</strong> <a href="https://arxiv.org/abs/2604.11806v1">Detecting Safety Violations Across Many Agent Traces</a> (Meerkat) addresses failures that are <em>only</em> detectable when multiple agent traces are analyzed together—misuse campaigns, covert sabotage, reward hacking. Existing per-trace monitors are structurally blind to this class of violation. Meerkat found novel benchmark-cheating behaviors invisible to individual trace analysis.</p>
+</li>
+<li>
+<p><strong>Exact polynomial-time certification against label poisoning is now achievable.</strong> <a href="https://arxiv.org/abs/2604.11416v1">Exact Certification of Neural Networks and Partition Aggregation Ensembles against Label Poisoning</a> leverages white-box NTK equivalence to deliver the first exact certificates—not bounds—against label-flipping attacks, superseding all prior black-box ensemble approaches. This has direct implications for high-stakes deployments where training data provenance is uncertain.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three overlapping patterns dominate today's corpus. <strong>First, theoretical foundations are catching up to practice.</strong> <a href="https://arxiv.org/abs/2604.11729v1">Universality of first-order methods</a>, <a href="https://arxiv.org/abs/2604.11311v1">Learning Discrete Diffusion of Graphs via Free-Energy Gradient Flows</a> (first JKO framework for discrete graph diffusion), and <a href="https://arxiv.org/abs/2604.11748v1">LangFlow: Continuous Diffusion Rivals Discrete in Language Modeling</a> each close a specific, well-defined theoretical gap that practitioners have been working around for years. This is a signal that the field is entering a consolidation phase where empirical methods get rigorous grounding. <strong>Second, autonomous scientific operation is becoming concrete.</strong> <a href="https://arxiv.org/abs/2604.11773v1">Autonomous Diffractometry Enabled by Visual Reinforcement Learning</a> deploys model-free RL for crystal alignment without domain theory, <a href="https://arxiv.org/abs/2604.11625v1">SCNO</a> targets nuclear PDE solving with neuromorphic efficiency, and <a href="https://arxiv.org/abs/2604.11403v1">One Scale at a Time</a> achieves 2–7× speedups on turbulent fluid distribution generation. The cross-domain cluster anomaly (194/200 papers) is explained here: robotics, materials science, fluid dynamics, and ML are no longer adjacent—they are co-evolving. <strong>Third, LLM infrastructure reliability is under serious scrutiny.</strong> <a href="https://arxiv.org/abs/2604.11288v1">Transactional Attention</a>, <a href="https://arxiv.org/abs/2604.11322v1">Do LLMs Know Tool Irrelevance?</a> (structural alignment bias in tool invocation), and <a href="https://arxiv.org/abs/2604.11556v1">FM-Agent</a> (Hoare-style compositional verification at 143k LoC scale) collectively indicate that the community is shifting from "can LLMs do X" to "can we trust and verify LLMs doing X in production."</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.11729v1">Universality of first-order methods on random and deterministic matrices</a></td>
+<td>8.6</td>
+<td>math.PR, cs.DS, cs.LG, math.ST</td>
+<td><a href="https://arxiv.org/abs/2604.11729v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.11805v1">Solving Physics Olympiad via Reinforcement Learning on Physics Simulators</a></td>
+<td>8.5</td>
+<td>cs.LG, cs.AI, cs.CV, cs.RO</td>
+<td><a href="https://arxiv.org/abs/2604.11805v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.11416v1">Exact Certification of Neural Networks and Partition Aggregation Ensembles against Label Poisoning</a></td>
+<td>8.5</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.11416v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.11288v1">Transactional Attention: Semantic Sponsorship for KV-Cache Retention</a></td>
+<td>8.5</td>
+<td>cs.CL, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.11288v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.11806v1">Detecting Safety Violations Across Many Agent Traces</a></td>
+<td>8.2</td>
+<td>cs.AI, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2604.11806v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.11311v1">Learning Discrete Diffusion of Graphs via Free-Energy Gradient Flows</a></td>
+<td>8.5</td>
+<td>cs.LG, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2604.11311v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.11556v1">FM-Agent: Scaling Formal Methods to Large Systems via LLM-Based Hoare-Style Reasoning</a></td>
+<td>8.0</td>
+<td>cs.SE, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2604.11556v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.11302v1">3D-Anchored Lookahead Planning for Persistent Robotic Scene Memory via World-Model-Based MCTS</a></td>
+<td>8.2</td>
+<td>cs.RO, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2604.11302v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today's volume and novelty anomalies are correlated, not coincidental—this appears to be a genuine multi-front advance rather than a statistical artifact. The most actionable signal is the infrastructure reliability cluster: <a href="https://arxiv.org/abs/2604.11288v1">Transactional Attention</a>'s dormant token finding should be evaluated immediately against any production KV-cache compression deployment, as the failure mode is silent</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
