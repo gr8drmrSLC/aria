@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-04-15 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-04-15</span>
+    <span>168 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 163 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 93/168 papers (55%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief</h1>
+<p><strong>Date:</strong> 2026-04-15 | <strong>Corpus:</strong> 168 papers | <strong>Anomaly Status:</strong> 🔴 ACTIVE — Novelty burst + cross-domain convergence</p>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus is statistically anomalous: 55% of papers scored high-novelty (93/168), against a baseline where such concentration typically indicates a field-level inflection point rather than routine incremental progress. The dominant signal is a simultaneous tightening of foundations across ML theory, LLM safety/efficiency, and embodied robotics — three domains that are converging faster than the research community's ability to integrate them. Several papers resolve long-standing open problems or establish new fundamental limits, making this an unusually high-value batch for researchers tracking where the field's theoretical ceiling currently sits.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>ML theory reaches a new floor on two fronts simultaneously.</strong> <a href="https://arxiv.org/abs/2604.12952v1">An Optimal Sauer Lemma Over $k$-ary Alphabets</a> closes a gap that has left multiclass PAC learning bounds suboptimal for decades, tightening generalization guarantees from multiple recent high-profile works. Concurrently, <a href="https://arxiv.org/abs/2604.12951v1">The Verification Tax: Fundamental Limits of AI Auditing in the Rare-Error Regime</a> proves a minimax lower bound showing that calibration verification becomes statistically harder as models improve — a paradox with direct regulatory and deployment consequences. Both results are negative in the sense that they bound what is achievable, and both are practically urgent.</p>
+</li>
+<li>
+<p><strong>Relational foundation models cross a critical threshold.</strong> <a href="https://arxiv.org/abs/2604.12596v1">KumoRFM-2: Scaling Foundation Models for Relational Learning</a> is the first few-shot foundation model demonstrated to surpass supervised approaches on relational benchmarks at billion-scale, directly challenging the assumption that tabular/relational domains require task-specific supervised pipelines. This is a meaningful milestone for enterprise ML, where multi-table relational data is the norm, not the exception.</p>
+</li>
+<li>
+<p><strong>LLM architecture efficiency gets a rigorous theoretical scaffold.</strong> <a href="https://arxiv.org/abs/2604.12946v1">Parcae: Scaling Laws For Stable Looped Language Models</a> derives stability conditions and novel scaling laws for looped architectures via dynamical systems analysis, providing a principled alternative to depth-scaling with strong compute-efficiency implications. Combined with <a href="https://arxiv.org/abs/2604.12374v1">Nemotron 3 Super</a>'s hybrid Mamba-Attention MoE at 120B (12B active) parameters with NVFP4 pre-training, there is now both theoretical scaffolding and an open-source proof-of-concept for post-transformer architectural strategies.</p>
+</li>
+<li>
+<p><strong>Robotics safety and data bottlenecks addressed in tandem.</strong> <a href="https://arxiv.org/abs/2604.12447v1">HazardArena: Evaluating Semantic Safety in Vision-Language-Action Models</a> exposes a systematic VLA vulnerability where correct action execution induces unsafe physical outcomes — a safety gap invisible to existing success-rate metrics. Meanwhile, <a href="https://arxiv.org/abs/2604.12565v1">Scalable Trajectory Generation for Whole-Body Mobile Manipulation</a> removes the data acquisition bottleneck for whole-body robot learning with an 80x GPU-parallelized speedup. Both papers address the gap between lab capability and real-world deployment.</p>
+</li>
+<li>
+<p><strong>Unlearning and calibration in LLMs gain traction as first-class problems.</strong> <a href="https://arxiv.org/abs/2604.12820v1">RePAIR: Interactive Machine Unlearning through Prompt-Aware Model Repair</a> introduces training-free inference-time selective unlearning via pseudoinverse activation updates, achieving near-zero forget scores without provider-side retraining. <a href="https://arxiv.org/abs/2604.12632v1">Calibration-Aware Policy Optimization for Reasoning LLMs</a> proves that GRPO-style training systematically induces overconfidence and provides a regret-bounded AUC surrogate fix. Both signal that the post-training stack is being stress-tested in new dimensions beyond benchmark accuracy.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three convergent themes structure today's output. <strong>First, foundations are being stress-tested and tightened across the board</strong> — from information geometry (<a href="https://arxiv.org/abs/2604.12725v1">On Higher-Order Geometric Refinements of Classical Covariance Asymptotics</a> deriving curvature-aware n⁻² corrections for singular models) to combinatorial learning theory to statistical field theory (<a href="https://arxiv.org/abs/2604.12827v1">Loop Corrections to the Training and Generalization Errors of Random Feature Models</a> applying EFT loop expansions to neural generalization). This is not typical theoretical housekeeping; these are results that change what practitioners can assume about their models. <strong>Second, the LLM post-training stack is fragmenting into specialized sub-problems</strong> — calibration, unlearning, alignment bias correction (SOAR's exposure bias fix), and reasoning — each now acquiring dedicated theory and methods. This suggests the field is moving from monolithic RLHF pipelines toward modular, composable post-training interventions, which has significant implications for model governance. <strong>Third, embodied AI is accumulating the infrastructure stack it has long lacked</strong>: safety benchmarks (HazardArena), scalable data generation (AutoMoMa), multimodal contact-aware policies (HTD's touch dreaming), and agentic reasoning benchmarks (ARGOS's multi-camera person search under information asymmetry). The 163/168 cross-domain papers are not coincidental — biology, robotics, and ML theory are actively borrowing each other's tools, as evidenced by the Golgi complex paper (<a href="https://arxiv.org/abs/2604.12930v1">Building and maintaining a System of Intracellular Compartments</a>) using nonequilibrium dynamical systems formalism that directly mirrors language from ML optimization theory.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.12725v1">On Higher-Order Geometric Refinements of Classical Covariance Asymptotics</a></td>
+<td>8.6</td>
+<td>math.ST, cs.LG, math.AG</td>
+<td><a href="https://arxiv.org/abs/2604.12725v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.12952v1">An Optimal Sauer Lemma Over $k$-ary Alphabets</a></td>
+<td>8.5</td>
+<td>cs.LG, math.CO, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2604.12952v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.12596v1">KumoRFM-2: Scaling Foundation Models for Relational Learning</a></td>
+<td>8.5</td>
+<td>cs.LG, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2604.12596v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.12951v1">The Verification Tax: Fundamental Limits of AI Auditing in the Rare-Error Regime</a></td>
+<td>8.1</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.12951v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.12946v1">Parcae: Scaling Laws For Stable Looped Language Models</a></td>
+<td>8.2</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.12946v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.12447v1">HazardArena: Evaluating Semantic Safety in VLA Models</a></td>
+<td>8.3</td>
+<td>cs.RO</td>
+<td><a href="https://arxiv.org/abs/2604.12447v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.12820v1">RePAIR: Interactive Machine Unlearning through Prompt-Aware Model Repair</a></td>
+<td>8.3</td>
+<td>cs.AI, cs.CL</td>
+<td>[arXiv](https://arxiv.org/abs/2604.12</td>
+</tr>
+</tbody>
+</table>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
