@@ -83,6 +83,13 @@ Files changed: dashboard/app.py runner.py
 - Clarified documentation to explain that Friday evening arXiv submissions are batched into Monday's announcement and captured during Tuesday's processing cycle, improving transparency on the data availability timing.
 
 
+### 2026-04-19
+- Added budget guard to `core/analyst.py` and `core/reporter.py` with a $5.00 USD spend ceiling per session to prevent runaway API costs from a leaked Anthropic API key; `_charge()` function tracks token usage across Claude calls and raises `BudgetExceeded` to halt execution when limit is exceeded.
+- Expanded `.gitignore` to exclude `.env.*`, `*.pem`, and `*.key` files to prevent accidental credential exposure beyond the base `.env` file.
+- Created `SECURITY.md` documenting the threat model, secrets inventory, budget guard implementation, and incident response procedures for API key or LinkedIn cookie exposure.
+- Added `tests/smoke_test.py` smoke test suite covering core imports, budget guard enforcement, cross-domain filtering, decision logic, and `.gitignore` coverage validation to gate deployments.
+
+
 ---
 
 ## [0.1.0] — 2026-03-29

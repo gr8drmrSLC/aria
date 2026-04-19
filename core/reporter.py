@@ -12,6 +12,8 @@ from datetime import datetime, timezone
 
 import anthropic
 
+from core.analyst import _charge
+
 logger = logging.getLogger("aria.reporter")
 
 MODEL = os.environ.get("ARIA_MODEL", "claude-sonnet-4-6")
@@ -106,6 +108,7 @@ Be specific. Use paper titles as markdown links throughout. Explain implications
             system=SYSTEM_PROMPT,
             messages=[{"role": "user", "content": prompt}],
         )
+        _charge(MODEL, message.usage)
         content = message.content[0].text
     except Exception as exc:
         logger.error("Claude API call failed for report generation: %s", exc)
