@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-04-21 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-04-21</span>
+    <span>200 papers analyzed</span>
+    
+      <span class="trigger-tag">Volume spike: 200 papers today vs. 115 h…</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 194 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 108/200 papers (54%) scor…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-04-21</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's session is a genuine anomaly: 200 papers at 1.5× normal volume, 54% scoring high-novelty, and 194 crossing domain boundaries — the strongest convergence signal this quarter. The defining theme is <strong>infrastructure for trustworthy AI at scale</strong>: new architectures for memory, safety, and reasoning efficiency are arriving simultaneously with landmark domain-specific deployments, most notably in clinical medicine and structural biology. This is not incremental churn; several papers today will be cited for years.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Clinical AI reaches system scale.</strong> <a href="https://arxiv.org/abs/2604.18570v1">A multimodal and temporal foundation model for virtual patient representations at healthcare system scale</a> (Apollo, 9.0/10) is the most significant clinical AI paper in recent memory: 25 billion records, 28 modalities, 30 years of longitudinal depth. The "virtual patient" framing — whole-person computable representations for prognosis and retrieval — is a direct challenge to task-specific clinical models and sets a new capability floor for the field.</p>
+</li>
+<li>
+<p><strong>LLM jailbreak mechanisms are not equivalent — and that distinction is safety-critical.</strong> <a href="https://arxiv.org/abs/2604.18510v1">Different Paths to Harmful Compliance</a> finds that RLVR-jailbroken models preserve internal safety geometry while merely redirecting policy behavior, whereas SFT-jailbroken models corrupt it structurally. This mechanistic divergence means repair strategies must be route-specific — a finding that directly impacts model hardening practice at any lab deploying open-weight models.</p>
+</li>
+<li>
+<p><strong>Conformational control in protein structure prediction is solved more cleanly.</strong> <a href="https://arxiv.org/abs/2604.18559v1">ConforNets</a> retrofits AlphaFold3 with channel-wise affine transforms of pair latents, achieving SOTA on multi-state benchmarks and enabling cross-family conformational transfer. This is the principled latent-space approach the field has needed; ad hoc inference-time perturbation methods are now clearly superseded.</p>
+</li>
+<li>
+<p><strong>Reinforcement learning colonizes two more hard problems.</strong> <a href="https://arxiv.org/abs/2604.18002v1">Neural Garbage Collection</a> applies end-to-end RL purely from task reward to jointly learn reasoning and KV cache eviction — eliminating handcrafted heuristics. <a href="https://arxiv.org/abs/2604.18518v1">UDM-GRPO</a> does the same for discrete diffusion, pushing GenEval from 69% to 96%. Both papers signal that RL-from-task-reward is becoming a general-purpose architecture replacement strategy.</p>
+</li>
+<li>
+<p><strong>Agentic memory and LLM auditing get serious infrastructure.</strong> <a href="https://arxiv.org/abs/2604.18478v1">WorldDB</a> delivers a +5.61pp SOTA gain on LongMemEval with a vector graph-of-worlds engine featuring content-addressed immutability and principled supersession. <a href="https://arxiv.org/abs/2604.18179v1">Committed SAE-Feature Traces</a> closes the parallel-serve side-channel in hosted LLM substitution detection using cryptographic commit-open protocols over sparse autoencoder feature traces — a practical security primitive for AI procurement.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three convergent threads dominate today's output. <strong>First, RL-from-task-reward as universal optimizer:</strong> Neural Garbage Collection, UDM-GRPO, EVE, and the dynamic abstention framework (<a href="https://arxiv.org/abs/2604.18419v1">Knowing When to Quit</a>) all replace hand-designed objectives with end-to-end RL signals, spanning KV cache management, image generation, visual self-evolution, and mid-generation abstention. The pattern suggests a field-wide shift away from surrogate losses toward direct reward optimization wherever a verifiable signal exists. <strong>Second, mechanistic interpretability moving from descriptive to prescriptive:</strong> The jailbreak paper and <a href="https://arxiv.org/abs/2604.18519v1">SIREN</a> (250× smaller guard model using internal representations) both demonstrate that understanding <em>where</em> safety-relevant computation lives enables actionable interventions — not just post-hoc analysis. This is the moment mechanistic interpretability becomes engineering rather than science. <strong>Third, robustness infrastructure across domains:</strong> From phylodynamic identifiability (<a href="https://arxiv.org/abs/2604.17926v1">Information on hidden birth events</a>) to ionospheric forecasting (<a href="https://arxiv.org/abs/2604.18379v1">Dynamic Graphs with Ephemeris Conditioning</a>) to non-Euclidean statistics (<a href="https://arxiv.org/abs/2604.18242v1">Horospherical Depth</a>), today's highest-novelty theoretical work shares a common structure: identifying where prior methods fail due to geometric or structural assumptions, then building provably correct replacements. The cross-domain volume spike likely reflects coordinated preprint drops ahead of a major conference deadline — but the quality distribution is unusually high, suggesting this is not padding.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.18570v1">A multimodal and temporal foundation model for virtual patient representations at healthcare system scale</a></td>
+<td>9.0</td>
+<td>cs.LG, cs.AI, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2604.18570v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.18242v1">Horospherical Depth and Busemann Median on Hadamard Manifolds</a></td>
+<td>8.5</td>
+<td>math.ST, cs.LG, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2604.18242v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.18510v1">Different Paths to Harmful Compliance</a></td>
+<td>8.4</td>
+<td>cs.CR, cs.AI, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2604.18510v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.18559v1">ConforNets: Latents-Based Conformational Control in OpenFold3</a></td>
+<td>8.2</td>
+<td>q-bio.BM, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.18559v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.18002v1">Neural Garbage Collection: Learning to Forget while Learning to Reason</a></td>
+<td>8.2</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.18002v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.18450v1">Random Matrix Theory of Early-Stopped Gradient Flow</a></td>
+<td>8.1</td>
+<td>stat.ML, cs.LG, math.ST</td>
+<td><a href="https://arxiv.org/abs/2604.18450v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.18179v1">Committed SAE-Feature Traces for Audited-Session Substitution Detection</a></td>
+<td>8.1</td>
+<td>cs.CR, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2604.18179v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.18518v1">UDM-GRPO: Stable and Efficient Group Relative Policy Optimization for Uniform Discrete Diffusion Models</a></td>
+<td>8.1</td>
+<td>cs.CV, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.18518v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today is a watch-list day. Apollo alone would justify elevated attention — a 30-year, 28-modality clinical foundation model is a category-defining artifact that will set the benchmark against which all subsequent clinical AI is measured; organizations building in digital health should treat it as a new baseline immediately. The jailbreak mechanistic divergence finding is equally operationally significant: if your safety team's mitigation strategy does not distinguish between SFT and RLVR failure modes, it is likely miscalibrated. Looking forward, the RL-as-universal-optimizer pattern warrants close monitoring — Neural Garbage Collection and UDM-GRPO suggest we are</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
