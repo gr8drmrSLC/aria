@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-04-22 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-04-22</span>
+    <span>138 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 136 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 71/138 papers (51%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief</h1>
+<p><strong>Date:</strong> 2026-04-22 | <strong>Corpus:</strong> 138 papers | <strong>Avg Novelty:</strong> 6.8/10</p>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus is unusually dense with foundational work: 51% of papers scored high-novelty, and 136/138 bridge multiple domains — a convergence signal, not noise. The dominant pattern is <strong>formalization of previously empirical phenomena</strong> across ML theory, biology, and robotics, with several papers resolving long-standing open questions rather than merely improving benchmarks. The AI-biology interface is maturing rapidly, with two papers establishing new computational primitives for biological sequence and cell research.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Online learning theory gets a unifying reduction.</strong> <a href="https://arxiv.org/abs/2604.19592v1">An Efficient Black-Box Reduction from Online Learning to Multicalibration, and a New Route to Φ-Regret Minimization</a> resolves a major open question by establishing a GGM-style reduction that connects no-regret learning, multicalibration, and Φ-regret minimization through expected variational inequality solvers — bypassing fixed-point machinery entirely. This likely reshapes how theorists approach online calibration and game-theoretic learning in a unified framework.</p>
+</li>
+<li>
+<p><strong>A critical benchmark consensus collapses under scrutiny.</strong> <a href="https://arxiv.org/abs/2604.19514v1">When Graph Structure Becomes a Liability</a> demonstrates that the widely-cited superiority of GCN, GraphSAGE, GAT, and EvolveGCN over feature-only baselines on the Elliptic Bitcoin Dataset is an artifact of evaluation leakage. Under a strictly inductive, leakage-free protocol, Random Forest on raw features matches or outperforms all GNN variants. This is a direct methodological warning for practitioners deploying graph learning in fraud detection.</p>
+</li>
+<li>
+<p><strong>Edge-of-stability generalization gets its first rigorous theory.</strong> <a href="https://arxiv.org/abs/2604.19740v1">Generalization at the Edge of Stability</a> introduces a "sharpness dimension" grounded in Lyapunov dimension theory to formally characterize why chaotic large-learning-rate training often generalizes better. The framework subsumes prior trace- and spectral-norm-based bounds and provides a new theoretical handle on grokking — a phenomenon that has resisted formal explanation.</p>
+</li>
+<li>
+<p><strong>RNA therapeutic design gains exact thermodynamic algorithms.</strong> <a href="https://arxiv.org/abs/2604.19718v1">Direct RNA sequence design under codon constraints</a> is the first method to perform global RNA sequence optimization with respect to a fully detailed thermodynamic free energy model, using tensor-based algorithms enabling GPU-parallelized Boltzmann sampling over the codon design space. Direct implications for mRNA vaccine and therapeutic design pipelines.</p>
+</li>
+<li>
+<p><strong>Test-time training scaling is fixed with EM.</strong> <a href="https://arxiv.org/abs/2604.19295v1">TEMPO</a> identifies reward signal drift as the fundamental reason TTT plateaus and introduces a principled EM-based recalibration step that prior methods omit. It theoretically subsumes RLVR and naive TTT as incomplete variants, achieving substantial gains on hard reasoning benchmarks — relevant to anyone scaling inference-time compute for reasoning models.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three cross-cutting patterns dominate today's corpus. <strong>First, formalization of empirical phenomena:</strong> papers on edge-of-stability training, benign overfitting in ViTs (<a href="https://arxiv.org/abs/2604.19724v1">Benign Overfitting in Adversarial Training for Vision Transformers</a>), Q-learning stability (<a href="https://arxiv.org/abs/2604.19569v1">Lyapunov-Certified Direct Switching Theory for Q-Learning</a>), and the Φ-regret reduction all convert previously observed or conjectured behaviors into rigorous theory with actionable bounds. This is characteristic of a field entering a consolidation phase after a period of empirical acceleration. <strong>Second, equation-free methods reaching parity with physics-based approaches:</strong> the <a href="https://arxiv.org/abs/2604.19465v1">neural operator stability framework</a> and <a href="https://arxiv.org/abs/2604.19296v1">DOPE's debiased functional estimation</a> both treat physical simulation as a black box, extracting dynamical structure via automatic differentiation and semiparametric statistics respectively — a methodological shift with broad implications for scientific ML. <strong>Third, AI agents acquiring domain-specific safety and verification infrastructure:</strong> <a href="https://arxiv.org/abs/2604.19606v1">AblateCell</a> addresses reproducibility in AI virtual cell research, <a href="https://arxiv.org/abs/2604.19657v1">GAAP</a> enforces information flow control in personal agent pipelines, <a href="https://arxiv.org/abs/2604.19638v1">SafetyALFRED</a> exposes hazard-mitigation gaps in embodied agents, and the <a href="https://arxiv.org/abs/2604.19533v1">Cyber Defense Benchmark</a> quantifies LLM threat-hunting failure rates at 3.8% recall. The safety and verification layer for autonomous agents is being built in parallel across robotics, biology, cybersecurity, and personal computing simultaneously.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.19592v1">An Efficient Black-Box Reduction from Online Learning to Multicalibration</a></td>
+<td>8.7</td>
+<td>cs.LG, cs.GT</td>
+<td><a href="https://arxiv.org/abs/2604.19592v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.19740v1">Generalization at the Edge of Stability</a></td>
+<td>8.5</td>
+<td>cs.LG, cs.AI, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2604.19740v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.19212v1">The Logical Expressiveness of Topological Neural Networks</a></td>
+<td>8.5</td>
+<td>cs.LG, cs.LO</td>
+<td><a href="https://arxiv.org/abs/2604.19212v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.19606v1">AblateCell: A Reproduce-then-Ablate Agent for Virtual Cell Repositories</a></td>
+<td>8.4</td>
+<td>cs.AI, cs.MA</td>
+<td><a href="https://arxiv.org/abs/2604.19606v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.19718v1">Direct RNA sequence design under codon constraints</a></td>
+<td>8.2</td>
+<td>q-bio.QM</td>
+<td><a href="https://arxiv.org/abs/2604.19718v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.19295v1">TEMPO: Scaling Test-time Training for Large Reasoning Models</a></td>
+<td>8.2</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.19295v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.19514v1">When Graph Structure Becomes a Liability</a></td>
+<td>8.1</td>
+<td>cs.LG, cs.CR</td>
+<td><a href="https://arxiv.org/abs/2604.19514v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.19734v1">UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning</a></td>
+<td>8.0</td>
+<td>cs.RO, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2604.19734v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>The 51% high-novelty rate is not explained by any single subfield breakthrough — it is distributed across theory, biology, robotics, and security, which is the more significant signal. When a broad novelty burst coincides with nearly universal cross-domain bridging, it typically precedes a period of rapid methodological cross-pollination rather than isolated advances. Watch specifically for: (1) the GGM multicalibration reduction being applied to online fairness and mechanism design, where Φ-regret is underexplored; (2) the tensor-based RNA design framework moving into wet-lab validation pipelines, which would mark a meaningful acceleration in mRNA therapeutic development timelines; (3</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
