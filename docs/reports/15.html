@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-04-23 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-04-23</span>
+    <span>155 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 149 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 82/155 papers (53%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-04-23</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's batch exhibits an unusually high concentration of high-novelty work (53%), with nearly all papers bridging multiple domains — a strong signal of disciplinary convergence rather than incremental progress. The dominant pattern is the systematic application of principled mathematical structures (geometric, information-theoretic, probabilistic) to close longstanding gaps in physical simulation, biological design, and AI governance. Several papers represent genuine firsts in their domains, not marginal improvements.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Physics-ML integration reaches structural maturity.</strong> <a href="https://arxiv.org/abs/2604.20797v1">Gauge-Equivariant Graph Neural Networks for Lattice Gauge Theories</a> provides the first general framework for embedding local non-Abelian gauge symmetry into GNN message passing — closing a gap that has blocked physics-informed ML from engaging seriously with quantum field theory and strongly correlated matter. This is foundational infrastructure, not a benchmark paper.</p>
+</li>
+<li>
+<p><strong>AI hallucination is a physical simulation problem, not just a language problem.</strong> <a href="https://arxiv.org/abs/2604.20372v1">AI models of unstable flow exhibit hallucination</a> presents the first systematic mechanistic evidence linking spectral bias in neural operators (e.g., Fourier Neural Operator) to hallucinated solutions in fluid dynamics — visually plausible but physically wrong. This reframes hallucination as a structural failure mode extending well beyond LLMs, with serious implications for scientific ML deployment.</p>
+</li>
+<li>
+<p><strong>Generative pretraining for vision may parallel LLM emergence.</strong> <a href="https://arxiv.org/abs/2604.20329v1">Image Generators are Generalist Vision Learners</a> ("Vision Banana") provides the strongest evidence to date that image generation pretraining transfers broadly across 2D and 3D vision tasks via lightweight instruction tuning — analogous to how LLMs generalize from next-token prediction. If this holds at scale, it repositions generative vision models as foundation models for perception.</p>
+</li>
+<li>
+<p><strong>Regulatory DNA design gains inference-time alignment.</strong> <a href="https://arxiv.org/abs/2604.20488v1">Conditional Monte Carlo Tree Diffusion for Designing Cell-Type-Specific and Biologically Faithful Regulatory DNA</a> (DNA-CRAFT) is the first method to couple class-conditioned discrete diffusion with Monte Carlo tree search for test-time alignment in genomics, achieving cell-type specificity while preserving regulatory grammar. This is directly relevant for gene therapy vector design.</p>
+</li>
+<li>
+<p><strong>AI governance gets a formal measurement framework.</strong> <a href="https://arxiv.org/abs/2604.20711v1">Participatory provenance as representational auditing for AI-mediated public consultation</a> introduces optimal-transport-based auditing of AI-synthesized public consultation outputs, empirically demonstrating systematic exclusion of dissenting voices in an actual government process. This is the first formally grounded accountability tool for a rapidly scaling AI governance failure mode.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three cross-cutting patterns are visible across this batch. <strong>First, geometric and algebraic structure is being encoded directly into architectures</strong> — gauge equivariance in GNNs, SPD manifolds with Lie group structure in <a href="https://arxiv.org/abs/2604.20308v1">Sheaf Neural Networks on SPD Manifolds</a>, and surrogate functionals in <a href="https://arxiv.org/abs/2604.20458v1">Surrogate Functionals for Machine-Learned Orbital-Free DFT</a> all reflect a maturation away from ad hoc inductive biases toward principled representation. <strong>Second, inference-time computation is being treated as a design variable</strong>, not an afterthought: DNA-CRAFT uses MCTS at inference, <a href="https://arxiv.org/abs/2604.20800v1">LEXIS</a> uses discrete VQ-VAE manifolds for interaction priors, and <a href="https://arxiv.org/abs/2604.20723v1">Tokenised Flow Matching for Hierarchical SBI</a> exploits hierarchical factorization to reduce simulation cost — all inverting the assumption that capability is fixed post-training. <strong>Third, the empirical grounding of AI systems in real-world deployments is producing surprising and important negative results</strong>: hallucination in fluid simulators, systematic representational bias in government consultation tools, and the <a href="https://arxiv.org/abs/2604.20779v1">SWE-chat</a> dataset revealing bimodal real-world coding agent usage patterns that diverge sharply from curated benchmarks. Collectively, these signal a field simultaneously building more principled foundations and confronting unanticipated deployment failures — a productive tension.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.20797v1">Gauge-Equivariant Graph Neural Networks for Lattice Gauge Theories</a></td>
+<td>8.5</td>
+<td>cond-mat.str-el, cs.LG, hep-lat</td>
+<td><a href="https://arxiv.org/abs/2604.20797v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.20711v1">Participatory provenance as representational auditing for AI-mediated public consultation</a></td>
+<td>8.5</td>
+<td>cs.AI, cs.HC</td>
+<td><a href="https://arxiv.org/abs/2604.20711v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.20488v1">Conditional Monte Carlo Tree Diffusion for Designing Cell-Type-Specific and Biologically Faithful Regulatory DNA</a></td>
+<td>8.5</td>
+<td>q-bio.GN</td>
+<td><a href="https://arxiv.org/abs/2604.20488v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.20372v1">AI models of unstable flow exhibit hallucination</a></td>
+<td>8.5</td>
+<td>physics.flu-dyn, cs.AI, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.20372v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.20308v1">Sheaf Neural Networks on SPD Manifolds: Second-Order Geometric Representation Learning</a></td>
+<td>8.5</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.20308v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.20595v1">An explicit operator explains end-to-end computation in the modern neural networks used for sequence and language modeling</a></td>
+<td>8.4</td>
+<td>cs.NE, cs.LG, nlin.AO</td>
+<td><a href="https://arxiv.org/abs/2604.20595v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.20329v1">Image Generators are Generalist Vision Learners</a></td>
+<td>8.1</td>
+<td>cs.CV, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2604.20329v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.20682v1">Variance Is Not Importance: Structural Analysis of Transformer Compressibility Across Model Scales</a></td>
+<td>8.1</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.20682v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today's batch should be read as a milestone date rather than a routine sample. The 53% high-novelty rate, combined with 96% cross-domain bridging, indicates a convergence inflection — multiple fields are simultaneously consuming ML as infrastructure while exporting domain structure back into architecture design. The two most strategically important findings are probably the fluid dynamics hallucination paper and the gauge-equivariant GNN: the former because it establishes that hallucination is an architectural failure mode with physics-domain consequences (expect this to become a major research thread in scientific ML reliability), and the latter because it opens the door to training ML models directly on lattice QCD configurations and non-Abelian gauge theories at scale, which has been a blocking problem for years. Watch for follow-on work applying the gauge-equivariant GNN framework to finite-temperature phase transitions and strongly correlated electrons, and for the fluid hallucination result to prompt adversarial evaluation frameworks for neural operators across CFD, weather modeling, and plasma physics. The participatory provenance paper is the governance paper most likely to have direct policy impact in the near term, given active regulatory interest in AI-mediated democratic processes.</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
