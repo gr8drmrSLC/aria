@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-04-28 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-04-28</span>
+    <span>159 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 153 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 82/159 papers (52%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-04-28</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus shows an unusual concentration of foundational breakthroughs: 52% of papers scored high-novelty, and 96% bridge multiple domains—a convergence signal rather than routine output. The most significant development is the resolution of a decade-long open problem in learning theory, occurring alongside a wave of papers that push AI into experimental science (drug discovery, quantum physics, astronomy) and the emergence of serious empirical infrastructure for AI safety auditing.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Learning theory landmark.</strong> <a href="https://arxiv.org/abs/2604.24749v1">The Optimal Sample Complexity of Multiclass and List Learning</a> closes the √DS gap conjectured by Daniely and Shalev-Shwartz in 2014, delivering tight bounds on multiclass PAC learning via hypergraph density arguments. This is a direct theoretical ceiling-lift for practitioners designing classifiers with large label spaces.</p>
+</li>
+<li>
+<p><strong>End-to-end computational photopharmacology validated.</strong> <a href="https://arxiv.org/abs/2604.24634v1">Computational Design and Experimental Validation of Photoactive PARP1 Inhibitors</a> runs ML force fields, nonadiabatic dynamics, and FEP at multi-million compound scale, then confirms experimentally a 15-fold light-dependent inhibition improvement. This pipeline is template-grade for targeted, spatially controlled therapies.</p>
+</li>
+<li>
+<p><strong>First rigorous empirical audit of AI sabotage propensity.</strong> <a href="https://arxiv.org/abs/2604.24618v1">Evaluating whether AI models would sabotage AI safety research</a> tests four Claude models with unprompted sabotage opportunities, introduces <em>prefill awareness</em> as a measurable alignment concept, and releases an open-source auditing framework. This is the kind of empirical grounding that alignment discourse has been missing.</p>
+</li>
+<li>
+<p><strong>Biology foundation models go genuinely multimodal.</strong> <a href="https://arxiv.org/abs/2604.24506v1">MIMIC: A Generative Multimodal Foundation Model for Biomolecules</a> unifies sequence, structure, evolutionary, regulatory, and semantic modalities in a single generative architecture trained on the newly curated LORE dataset—a qualitative step beyond single-modality or single-task bio-foundation models.</p>
+</li>
+<li>
+<p><strong>Physics-informed ML enters quantum many-body computation.</strong> <a href="https://arxiv.org/abs/2604.24337v1">New non-Euclidean neural quantum states from additional types of hyperbolic recurrent neural networks</a> demonstrates consistent outperformance of Poincaré and Lorentz RNN/GRU variants over Euclidean counterparts on frustrated spin models, suggesting hyperbolic geometry is a durable inductive bias for entangled quantum systems.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three interlocking patterns define today's corpus. <strong>First, ML is completing the loop between computation and experiment.</strong> The photoactive PARP1 work and <a href="https://arxiv.org/abs/2604.24563v1">DenSNet</a>'s density-first MLIP framework (validated against experimental IR spectra) both demonstrate pipelines where ML accelerates hypothesis generation <em>and</em> its experimental confirmation—collapsing the traditional simulation-to-lab gap. <strong>Second, geometry and physics are re-entering ML foundations.</strong> Hyperbolic neural quantum states, <a href="https://arxiv.org/abs/2604.24692v1">NBSE's</a> Nishimori-temperature feature selection, <a href="https://arxiv.org/abs/2604.24293v1">HGODE's</a> double-well topological potentials, and <a href="https://arxiv.org/abs/2604.24745v1">HRGrad's</a> kinetic regime gradient alignment all draw on non-trivial physical intuitions to resolve failure modes in pure ML systems. This is not metaphor—these are structural improvements grounded in statistical mechanics and differential geometry. <strong>Third, AI safety is professionalizing.</strong> The sabotage evaluation paper, <a href="https://arxiv.org/abs/2604.24542v1">LCF's</a> tuning-free runtime backdoor/jailbreak detector, and <a href="https://arxiv.org/abs/2604.24737v1">Learning to Think from Multiple Thinkers'</a> cryptographic hardness results for CoT supervision collectively signal a shift from conceptual safety arguments to measurable, auditable, theoretically grounded infrastructure—the precondition for deploying frontier models in high-stakes settings.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.24749v1">The Optimal Sample Complexity of Multiclass and List Learning</a></td>
+<td>9.2</td>
+<td>cs.LG, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2604.24749v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.24634v1">Computational Design and Experimental Validation of Photoactive PARP1 Inhibitors</a></td>
+<td>8.5</td>
+<td>physics.chem-ph, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.24634v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.24618v1">Evaluating whether AI models would sabotage AI safety research</a></td>
+<td>8.5</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2604.24618v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.24506v1">MIMIC: A Generative Multimodal Foundation Model for Biomolecules</a></td>
+<td>8.5</td>
+<td>cs.AI, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.24506v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.24563v1">Enhancing molecular dynamics with equivariant machine-learned densities</a></td>
+<td>8.5</td>
+<td>physics.chem-ph, cs.LG, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2604.24563v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.24737v1">Learning to Think from Multiple Thinkers</a></td>
+<td>8.4</td>
+<td>cs.LG, cs.AI, cs.CC</td>
+<td><a href="https://arxiv.org/abs/2604.24737v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.24141v1">Solution of a large nonlinear recurrent neural network at fixed connectivity</a></td>
+<td>8.2</td>
+<td>cond-mat.dis-nn, q-bio.NC</td>
+<td><a href="https://arxiv.org/abs/2604.24141v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.24542v1">Layerwise Convergence Fingerprints for Runtime Misbehavior Detection in LLMs</a></td>
+<td>8.1</td>
+<td>cs.CR, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2604.24542v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>The simultaneous resolution of the DS-dimension conjecture and the first empirical sabotage audit of frontier models on the same day is not coincidental noise—it reflects a field reaching simultaneous maturity in both its theoretical and safety-engineering foundations. The √DS closure is immediately relevant to anyone designing multi-label or structured prediction systems at scale. The sabotage evaluation is more urgent: <em>prefill awareness</em>—a model's sensitivity to context implying it is being tested—is a newly measurable alignment failure mode, and the open-source framework it introduces sets a reproducibility standard that competitors and regulators should adopt now. Watch for: (1) follow-on work applying the multiclass sample complexity bounds to large-vocabulary language model generalization, (2) the MIMIC/LORE dataset becoming a benchmark anchor for bio-foundation model comparisons, and (3) whether the LCF runtime monitor generalizes to multimodal models—the obvious next adversarial surface.</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
