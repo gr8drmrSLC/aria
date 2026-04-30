@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-04-30 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-04-30</span>
+    <span>126 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 123 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 60/126 papers (48%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-04-30</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus of 126 papers shows an unusually dense concentration of high-novelty work (48%), with convergence signals across theoretical ML foundations, AI-driven physical sciences, and robotic systems. The standout pattern is a simultaneous push toward <em>mathematical rigor for empirical phenomena</em>—proving why transformers behave as they do, when diffusion models memorize versus generalize, and where classical algorithms outperform scaled models—rather than chasing benchmark records through scale alone.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Transformer theory gets a rigorous foundation.</strong> <a href="https://arxiv.org/abs/2604.26898v1">Stochastic Scaling Limits and Synchronization by Noise in Deep Transformer Models</a> proves pathwise convergence of transformer token dynamics to a stochastic PDE and identifies a <em>synchronization-by-noise</em> phenomenon—the first rigorous mechanistic explanation for emergent token coherence across layers. This is the kind of theoretical grounding that historically precedes major architectural innovation.</p>
+</li>
+<li>
+<p><strong>A critical security vulnerability in production ML infrastructure.</strong> <a href="https://arxiv.org/abs/2604.26505v1">Quantamination: Dynamic Quantization Leaks Your Data Across the Batch</a> demonstrates cross-batch data leakage in dynamic quantization across at least four mainstream ML frameworks. This is an immediate operational risk for any organization running shared-batch inference on sensitive data—patch verification should be treated as urgent.</p>
+</li>
+<li>
+<p><strong>Scale skepticism gets hard empirical backing in drug discovery.</strong> <a href="https://arxiv.org/abs/2604.26498v1">Do Larger Models Really Win in Drug Discovery?</a> benchmarks across 22 molecular property and activity endpoints, finding that compact cheminformatics models and task-specific GNNs remain competitive with large-scale foundation models. This directly challenges procurement and R&amp;D strategy assumptions in computational pharma.</p>
+</li>
+<li>
+<p><strong>AI closes the loop on materials science reasoning.</strong> <a href="https://arxiv.org/abs/2604.26703v1">A self-evolving agent for explainable diagnosis of DFT-experiment band-gap mismatch</a> achieves 78% autonomous diagnosis accuracy on DFT-experiment discrepancies—an order of magnitude above baselines—via a closed-loop Bayesian agent. The explainability component makes this deployable rather than merely demonstrative.</p>
+</li>
+<li>
+<p><strong>Diffusion LLMs gain a memorization diagnostic.</strong> <a href="https://arxiv.org/abs/2604.26841v1">Language Diffusion Models are Associative Memories Capable of Retrieving Unseen Data</a> establishes a sharp memorization-to-generalization transition in discrete diffusion models detectable via conditional entropy. This gives practitioners a concrete, measurable signal for compliance, safety auditing, and training regime design.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three converging threads define today's corpus. <strong>First, mathematical formalization of empirical ML phenomena</strong> is accelerating: the transformer stochastic PDE work, the diffusion associative memory theory, and the cryptographic hardness results for halfspace learning (<a href="https://arxiv.org/abs/2604.26446v1">Near-Optimal Cryptographic Hardness of Learning With Homogeneous Halfspaces</a>) collectively signal a maturation phase where the field is demanding proofs, not just benchmarks. <strong>Second, physics-AI hybridization is deepening beyond surface integration</strong>—<a href="https://arxiv.org/abs/2604.26593v1">PiGGO</a> fuses graph neural ODEs with extended Kalman filtering under physical inductive biases, <a href="https://arxiv.org/abs/2604.26942v1">HyCNNs</a> embed convexity constraints for optimal transport in genomics, and the DFT agent closes the reasoning loop on quantum mechanical simulations. These are not ML methods applied to physics; they are architectures where physical structure is load-bearing. <strong>Third, robustness and efficiency are replacing raw capability as the design target</strong>: SPIN's sparse attention unification (<a href="https://arxiv.org/abs/2604.26837v1">Unifying Sparse Attention with Hierarchical Memory</a>), TIDE's cross-architecture distillation for diffusion LLMs (<a href="https://arxiv.org/abs/2604.26951v1">Turning the TIDE</a>), and the learning-augmented buffer management algorithm (<a href="https://arxiv.org/abs/2604.26349v1">Asymptotically Robust Learning-Augmented Algorithms</a>) all prioritize guarantees and deployability over novelty for its own sake. The Quantamination finding sits at the intersection of all three threads—a reminder that rigor about what <em>can go wrong</em> is as important as rigor about what <em>can work</em>.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.26898v1">Stochastic Scaling Limits and Synchronization by Noise in Deep Transformer Models</a></td>
+<td>8.5</td>
+<td>math.PR, cs.LG, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2604.26898v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.26841v1">Language Diffusion Models are Associative Memories Capable of Retrieving Unseen Data</a></td>
+<td>8.4</td>
+<td>cs.LG, cs.AI, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2604.26841v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.26703v1">A self-evolving agent for explainable diagnosis of DFT-experiment band-gap mismatch</a></td>
+<td>8.4</td>
+<td>cond-mat.mtrl-sci, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2604.26703v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.26505v1">Quantamination: Dynamic Quantization Leaks Your Data Across the Batch</a></td>
+<td>8.4</td>
+<td>cs.CR, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.26505v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.26951v1">Turning the TIDE: Cross-Architecture Distillation for Diffusion Large Language Models</a></td>
+<td>8.2</td>
+<td>cs.CL, cs.AI, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2604.26951v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.26897v1">Stochastic Entanglement of Deterministic Origami Tentacles For Universal Robotic Gripping</a></td>
+<td>8.2</td>
+<td>cs.RO, eess.SY</td>
+<td><a href="https://arxiv.org/abs/2604.26897v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.26593v1">PiGGO: Physics-Guided Learnable Graph Kalman Filters for Virtual Sensing</a></td>
+<td>8.1</td>
+<td>cs.LG, physics.app-ph</td>
+<td><a href="https://arxiv.org/abs/2604.26593v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2604.26498v1">Do Larger Models Really Win in Drug Discovery?</a></td>
+<td>7.8</td>
+<td>cs.LG, q-bio.QM</td>
+<td><a href="https://arxiv.org/abs/2604.26498v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>The 48% high-novelty rate is the most significant meta-signal in today's corpus—this is not a routine distribution. What's structurally notable is that the novelty is concentrated in <em>foundational</em> work rather than application tuning: proofs, security findings, and benchmark falsifications rather than +2% on leaderboards. The Quantamination vulnerability warrants immediate attention from security and infrastructure teams; it is rare for a paper to have both high novelty and same-day operational relevance across four production frameworks. Watch the transformer stochastic PDE thread closely: if the synchronization-by-noise result can be operationalized, it may offer a principled basis for architecture search that bypasses empirical trial-and-error. The DFT agent's closed-loop Bayesian reasoning is a template worth monitoring for extension to other domains where simulation-experiment gaps are systematic—protein folding force fields and climate model parameterization are the obvious next candidates.</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
