@@ -1,15 +1,15 @@
 """
 ARIA SQLite Store Module
 ------------------------
-This module provides a data access layer for ARIA, managing persistent 
+This module provides a data access layer for ARIA, managing persistent
 storage for papers, reports, and baseline statistics in a SQLite database.
 """
 
-import os
-import sqlite3
 import json
 import logging
-from datetime import datetime, timezone, timedelta
+import os
+import sqlite3
+from datetime import datetime, timedelta, timezone
 
 # Module logger
 logger = logging.getLogger('aria.store')
@@ -120,7 +120,7 @@ class Database:
                 paper['published'],
                 now
             ))
-        
+
         self.conn.commit()
         logger.debug(f"Saved {len(papers)} papers")
 
@@ -129,8 +129,8 @@ class Database:
         self.connect()
         cursor = self.conn.cursor()
         cursor.execute('''
-            UPDATE papers 
-            SET novelty_score = ?, themes = ? 
+            UPDATE papers
+            SET novelty_score = ?, themes = ?
             WHERE id = ?
         ''', (novelty_score, json.dumps(themes), paper_id))
         self.conn.commit()
@@ -140,12 +140,12 @@ class Database:
         self.connect()
         cursor = self.conn.cursor()
         now = datetime.now(timezone.utc).isoformat()
-        
+
         cursor.execute('''
             INSERT INTO reports (title, content, triggers, paper_count, created_at)
             VALUES (?, ?, ?, ?, ?)
         ''', (title, content, json.dumps(triggers), paper_count, now))
-        
+
         report_id = cursor.lastrowid
         self.conn.commit()
         return report_id
@@ -155,10 +155,10 @@ class Database:
         self.connect()
         cursor = self.conn.cursor()
         cutoff = (datetime.now(timezone.utc) - timedelta(hours=hours)).isoformat()
-        
+
         cursor.execute('SELECT * FROM papers WHERE ingested_at >= ?', (cutoff,))
         rows = cursor.fetchall()
-        
+
         papers = []
         for row in rows:
             p = dict(row)
@@ -173,7 +173,7 @@ class Database:
         self.connect()
         cursor = self.conn.cursor()
         cursor.execute('SELECT * FROM reports ORDER BY created_at DESC LIMIT ?', (limit,))
-        
+
         reports = []
         for row in cursor.fetchall():
             r = dict(row)
@@ -187,7 +187,7 @@ class Database:
         cursor = self.conn.cursor()
         cursor.execute('SELECT * FROM reports WHERE id = ?', (report_id,))
         row = cursor.fetchone()
-        
+
         if row:
             r = dict(row)
             r['triggers'] = json.loads(r['triggers']) if r['triggers'] else []
@@ -212,13 +212,13 @@ class Database:
         self.connect()
         cursor = self.conn.cursor()
         cutoff = (datetime.now(timezone.utc) - timedelta(days=days)).strftime('%Y-%m-%d')
-        
+
         cursor.execute('''
-            SELECT * FROM baselines 
-            WHERE category = ? AND date >= ? 
+            SELECT * FROM baselines
+            WHERE category = ? AND date >= ?
             ORDER BY date ASC
         ''', (category, cutoff))
-        
+
         return [dict(row) for row in cursor.fetchall()]
 
     def get_paper_count_today(self) -> int:

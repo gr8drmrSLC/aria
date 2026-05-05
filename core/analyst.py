@@ -4,13 +4,14 @@ This module provides the Analyst class for evaluating research papers using Anth
 It also includes utility functions for domain-specific filtering.
 """
 
-import os
-import logging
 import json
-from typing import List, Dict
+import logging
+import os
+from typing import Dict, List
+
 import anthropic
 
-from core.budget_guard import BudgetGuard, BudgetExceeded  # noqa: F401 — re-exported
+from core.budget_guard import BudgetExceeded, BudgetGuard  # noqa: F401 — re-exported
 
 logger = logging.getLogger('aria.analyst')
 
@@ -44,7 +45,7 @@ class Analyst:
 
         analyzed_papers = []
         batch_size = 10
-        
+
         system_prompt = (
             "You are a research intelligence analyst for ARIA (Autonomous Research Intelligence Agent). "
             "Your task is to analyze scientific papers for novelty and relevance. "
@@ -90,15 +91,15 @@ class Analyst:
                     if lines and lines[-1].startswith("```"):
                         lines = lines[:-1]
                     content = "\n".join(lines).strip()
-                
+
                 batch_results = json.loads(content)
-                
+
                 if isinstance(batch_results, list):
                     for paper, result in zip(batch, batch_results):
                         # Ensure is_notable follows the specific threshold logic
                         if 'novelty_score' in result:
                             result['is_notable'] = result['novelty_score'] >= self.threshold
-                        
+
                         paper.update(result)
                         analyzed_papers.append(paper)
                 else:
@@ -121,13 +122,13 @@ def identify_cross_domain(papers: List[Dict]) -> List[Dict]:
         'Q_BIO': {'q-bio'},
         'ROBOTICS': {'cs.RO'}
     }
-    
+
     cross_domain = []
     for paper in papers:
         categories = paper.get('categories', [])
         if isinstance(categories, str):
             categories = [categories]
-            
+
         found_domains = set()
         for cat in categories:
             if any(cat.startswith(target) for target in domain_groups['AI_ML']):
@@ -136,8 +137,8 @@ def identify_cross_domain(papers: List[Dict]) -> List[Dict]:
                 found_domains.add('Q_BIO')
             if cat.startswith('cs.RO'):
                 found_domains.add('ROBOTICS')
-                
+
         if len(found_domains) >= 2:
             cross_domain.append(paper)
-            
+
     return cross_domain

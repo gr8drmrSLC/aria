@@ -98,6 +98,13 @@ Files changed: dashboard/app.py runner.py
 - Refactored smoke tests to instantiate isolated `BudgetGuard` instances with test-specific limits, eliminating brittle global state mutation and enabling parallel test execution.
 
 
+### 2026-05-05
+- Established an 8-step regression safety protocol to prevent silent failures during AI-assisted development, requiring baseline smoke test verification before and after each change to catch breaking changes early.
+- Created centralized configuration module (`core/config.py`) with single source of truth for environment settings, enabling future modules to safely read settings without duplicating `os.environ` calls across the codebase.
+- Standardized code style in `core/analyst.py` (import ordering, whitespace cleanup) to improve maintainability and reduce merge conflicts during future refactoring.
+- Documented ARIA's module dependency graph and cross-module impact analysis within the protocol to reduce risk of cascading failures when changing shared functions or constants.
+
+
 ---
 
 ## [0.1.0] — 2026-03-29

@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "aria"
+version = "0.1.0"
+description = "ARIA — Autonomous Research Intelligence Agent"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.40.0",
+    "feedparser>=6.0.0",
+    "flask>=3.0.0",
+    "apscheduler>=3.10.0",
+    "python-dotenv>=1.0.0",
+    "markdown>=3.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.4.0",
+]
+
+# ── Ruff ──────────────────────────────────────────────────────────────────────
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = [
+    "E501",   # line too long — enforced by formatter, not linter
+    "F401",   # unused import — some are re-exported intentionally
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["F811", "F841"]  # redefinition and unused vars common in test fixtures
