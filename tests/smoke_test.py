@@ -25,6 +25,7 @@ def check(name, condition, detail=""):
 # ── 1. Core imports ────────────────────────────────────────────────────────────
 try:
     from core.analyst import Analyst, identify_cross_domain, BudgetExceeded, _charge, SESSION_SPEND_LIMIT_USD
+    from core.budget_guard import BudgetGuard
     check("core.analyst imports", True)
 except Exception as e:
     check("core.analyst imports", False, str(e))
@@ -56,9 +57,6 @@ except Exception as e:
 
 # ── 2. Budget guard ────────────────────────────────────────────────────────────
 try:
-    import core.analyst as analyst_mod
-    original = analyst_mod._session_spend_usd
-    analyst_mod._session_spend_usd = 0.0
     check("SESSION_SPEND_LIMIT_USD set", SESSION_SPEND_LIMIT_USD == 5.00,
           f"got {SESSION_SPEND_LIMIT_USD}")
 except Exception as e:
@@ -66,19 +64,17 @@ except Exception as e:
 
 try:
     class FakeUsage:
-        input_tokens = 0
+        # 1M input tokens at Sonnet rates = $3.00, which exceeds a $0.01 limit
+        input_tokens = 1_000_000
         output_tokens = 0
 
-    analyst_mod._session_spend_usd = 4.9999
+    guard = BudgetGuard(session_limit_usd=0.01)
     raised = False
     try:
-        # This tiny charge should tip it over $5.00
-        analyst_mod._session_spend_usd = 5.001
-        analyst_mod._charge("claude-sonnet-4-6", FakeUsage())
+        guard.record("claude-sonnet-4-6", FakeUsage.input_tokens, FakeUsage.output_tokens)
     except BudgetExceeded:
         raised = True
     check("BudgetExceeded raised when over limit", raised)
-    analyst_mod._session_spend_usd = 0.0
 except Exception as e:
     check("BudgetExceeded raised when over limit", False, str(e))
 

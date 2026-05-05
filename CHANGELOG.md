@@ -90,6 +90,14 @@ Files changed: dashboard/app.py runner.py
 - Added `tests/smoke_test.py` smoke test suite covering core imports, budget guard enforcement, cross-domain filtering, decision logic, and `.gitignore` coverage validation to gate deployments.
 
 
+### 2026-05-05
+- Extracted budget tracking logic into dedicated `BudgetGuard` class in new `core/budget_guard.py` module to enable reusable, testable spend enforcement across multiple callsites (analyst.py and reporter.py share a single guard instance).
+- Replaced ad-hoc global `_session_spend_usd` counter and inline cost calculation with `BudgetGuard.record()` method, adding structured call history with timestamps and per-call cost breakdowns for operational visibility and debugging.
+- Added `CallRecord` dataclass and `summary()` method to provide detailed spend audit trail (model, token counts, costs per call) for compliance and cost analysis.
+- Improved pricing lookup robustness with case-insensitive model matching and fallback to Sonnet defaults, reducing risk of budget bypass due to model name mismatches.
+- Refactored smoke tests to instantiate isolated `BudgetGuard` instances with test-specific limits, eliminating brittle global state mutation and enabling parallel test execution.
+
+
 ---
 
 ## [0.1.0] — 2026-03-29

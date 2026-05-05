@@ -10,35 +10,21 @@ import json
 from typing import List, Dict
 import anthropic
 
+from core.budget_guard import BudgetGuard, BudgetExceeded  # noqa: F401 — re-exported
+
 logger = logging.getLogger('aria.analyst')
 
 # ── Budget guard ──────────────────────────────────────────────────────────────
+# Module-level instance shared by analyst.py and reporter.py (which imports _charge).
 # Daily run: ~50-200 papers in batches of 10 + 1 reporter call ≈ $0.50/day.
 # $5.00 ceiling covers ~10 normal days before halting a runaway process.
 SESSION_SPEND_LIMIT_USD = 5.00
-_session_spend_usd: float = 0.0
-
-_COST_PER_M = {
-    "claude-sonnet-4-6":        {"input": 3.00, "output": 15.00},
-    "claude-sonnet-4-20250514": {"input": 3.00, "output": 15.00},
-    "claude-haiku-4-5-20251001":{"input": 0.80, "output": 4.00},
-}
-
-
-class BudgetExceeded(RuntimeError):
-    pass
+_guard = BudgetGuard(session_limit_usd=SESSION_SPEND_LIMIT_USD)
 
 
 def _charge(model: str, usage) -> None:
-    global _session_spend_usd
-    rates = _COST_PER_M.get(model, _COST_PER_M["claude-sonnet-4-6"])
-    cost = (usage.input_tokens * rates["input"] + usage.output_tokens * rates["output"]) / 1_000_000
-    _session_spend_usd += cost
-    if _session_spend_usd > SESSION_SPEND_LIMIT_USD:
-        raise BudgetExceeded(
-            f"Session spend ${_session_spend_usd:.4f} exceeded limit "
-            f"${SESSION_SPEND_LIMIT_USD:.2f}. Restart ARIA to reset."
-        )
+    """Charge actual API usage to the session guard. Raises BudgetExceeded if over limit."""
+    _guard.record(model, usage.input_tokens, usage.output_tokens)
 
 class Analyst:
     def __init__(self):
