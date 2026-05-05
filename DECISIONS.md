@@ -97,6 +97,23 @@ unit file per process — acceptable given the benefits. See `docs/USER_MANUAL.m
 
 ---
 
+## ADR-013: LinkedIn posting runs from Windows, not EC2 (2026-05-05)
+
+LinkedIn actively blocks AWS datacenter IPs for Playwright browser automation — sessions
+created on a residential machine are immediately rejected when used from an EC2 IP, even
+with identical user-agent strings. Confirmed in live testing: the first request from EC2
+redirected to `uas/login` regardless of session validity.
+
+Posting runs from Windows Task Scheduler (`LinkedInARIA`, Tue–Sat 9 AM) using the same
+Playwright session and residential IP that created it. The script calls the public
+`aria-agent.duckdns.org` dashboard API for live content, so the Windows machine needs
+no local ARIA install. EC2 handles pipeline, dashboard, and data — Windows handles posting.
+
+**Rejected alternatives**: Xvfb virtual display on EC2 (complex, still an EC2 IP);
+LinkedIn API with OAuth (requires app approval); running headless with a proxy IP (fragile).
+
+---
+
 ## ADR-012: DuckDNS token moved from crontab to .env (2026-05-04)
 
 The DuckDNS update token was previously hardcoded in the crontab. Crontab is readable

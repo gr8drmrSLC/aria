@@ -73,11 +73,45 @@ Crontab:
 
 ---
 
-## Next tasks (in order)
+## LinkedIn posting pipeline — active
 
-1. Fix PostgreSQL `listen_addresses = 'localhost'` (requires sudo)
-2. Add `BUDGET_POLICY.md`
-3. Upgrade budget guard from global variable to `BudgetGuard` class
-4. Add `DEVELOPMENT_PROTOCOL.md`
-5. Add `pyproject.toml` with ruff config + commit `.pre-commit-config.yaml`
-6. Expand `smoke_test.py` to include functional checks
+- `scripts/update_linkedin.py` — posts live research findings (gitignored, manual deploy to EC2)
+- `scripts/save_linkedin_session.py` — one-time interactive session creator
+- `scripts/run_linkedin_post.bat` — Windows Task Scheduler wrapper
+- `scripts/setup_linkedin_task.ps1` — creates `LinkedInARIA` scheduled task
+- `scripts/linkedin_session.json` — local session file (gitignored, 600 permissions)
+- Windows Task Scheduler task `LinkedInARIA` — Tue–Sat 9 AM, catch-up enabled
+- Posts live ARIA research findings using public dashboard API (`aria-agent.duckdns.org`)
+- **Note**: posting runs from Windows, not EC2 — LinkedIn blocks AWS datacenter IPs for browser automation
+
+---
+
+## Retrofit audit — complete (2026-05-05)
+
+All items from the RETROFIT_GUIDE.md checklist are done:
+- [x] Secrets scan — CLEAN (32-commit history)
+- [x] .gitignore coverage verified
+- [x] SECURITY.md — full rewrite with threat model, EC2 section, per-secret incident response
+- [x] CLAUDE.md — 8-step protocol, session protocols, Wall Protocol, budget guard rule
+- [x] .env.example — all vars documented including AWS, DuckDNS, EC2
+- [x] PROJECT_STATUS.md — reflects live EC2 reality
+- [x] DECISIONS.md — ADR-008 through ADR-013 backfilled
+- [x] BUDGET_POLICY.md — spend limits, daily cost estimate, model selection
+- [x] DuckDNS token moved from crontab to .env
+- [x] .env permissions 600 on EC2
+- [x] Dashboard bound to 127.0.0.1 (fixed)
+- [x] PostgreSQL locked to localhost (Docker port binding)
+- [x] Budget guard upgraded to BudgetGuard class
+- [x] core/config.py — centralized settings
+- [x] pyproject.toml + ruff config
+- [x] scripts/pre-commit-hook.sh committed
+- [x] DEVELOPMENT_PROTOCOL.md
+- [x] smoke_test.py 11 → 17 checks
+
+---
+
+## Next tasks
+
+1. Session renewal — LinkedIn session expires ~2 years; re-run `scripts/save_linkedin_session.py` if posting fails
+2. PostgreSQL on EC2 confirmed localhost-only via Docker port binding (fixed); no further action needed
+3. No other open items
