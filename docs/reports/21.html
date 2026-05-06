@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-05-06 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-05-06</span>
+    <span>157 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 152 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 90/157 papers (57%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-05-06</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus shows an unusually concentrated novelty burst (57% high-novelty) across 157 papers, with the dominant signal being the maturation of AI deployment in high-stakes domains—medicine, security, and physical systems—accompanied by rigorous theoretical foundations replacing heuristic baselines. The most actionable finding: safety and accuracy in clinical AI are empirically decoupled scaling laws, directly invalidating a core assumption driving billions in medical AI investment.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Clinical AI trust is now measurable and improvable at scale.</strong> <a href="https://arxiv.org/abs/2605.03916v1">Atomic Fact-Checking Increases Clinician Trust in Large Language Model Recommendations for Oncology Decision Support: A Randomized Controlled Trial</a> reports Cohen's d = 0.94 across 356 clinicians—a large, clinically meaningful effect. Decomposing AI recommendations into individually verifiable claims linked to source guidelines is a deployable technique, not a research prototype.</p>
+</li>
+<li>
+<p><strong>Scaling clinical LLMs does not buy safety.</strong> <a href="https://arxiv.org/abs/2605.04039v1">Safety and accuracy follow different scaling laws in clinical large language models</a> evaluates 34 models under the new SaFE-Scale framework and finds that confident, evidence-contradicting errors persist and worsen independently of accuracy gains. This is a direct challenge to the scaling consensus and has immediate procurement implications for hospital AI systems.</p>
+</li>
+<li>
+<p><strong>RAG agent memory now has a formal security theory.</strong> <a href="https://arxiv.org/abs/2605.03482v1">MEMSAD: Gradient-Coupled Anomaly Detection for Memory Poisoning in Retrieval-Augmented Agents</a> proves a gradient coupling theorem establishing equivalence between anomaly score gradients and retrieval objective gradients, derives a minimax-optimal certified detection radius, and formally characterizes the synonym-invariance loophole—the first rigorous security framework for persistent LLM agent memory.</p>
+</li>
+<li>
+<p><strong>Self-supervised learning finally has a unifying theory.</strong> <a href="https://arxiv.org/abs/2605.03517v1">Understanding Self-Supervised Learning via Latent Distribution Matching</a> casts SSL (contrastive, masked, predictive) as a single latent distribution matching objective, proves identifiability under nonlinear predictors, and derives a novel Kalman-based model for high-dimensional timeseries—providing the principled foundation the field has lacked.</p>
+</li>
+<li>
+<p><strong>Physics-informed generative modeling achieves 320× speedup without sacrificing guarantees.</strong> <a href="https://arxiv.org/abs/2605.03548v1">PerFlow: Physics-Embedded Rectified Flow for Efficient Reconstruction and Uncertainty Quantification of Spatiotemporal Dynamics</a> decouples observation conditioning from physics enforcement using hard constraint-preserving projections, making uncertainty-quantified PDE reconstruction practical for real-time engineering applications.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three cross-cutting patterns are visible today. First, <strong>rigorous formalization of previously heuristic AI methods</strong> is accelerating: MEMSAD formalizes RAG security as a Stackelberg game; the SSL unification paper proves identifiability; <a href="https://arxiv.org/abs/2605.03542v1">Random test functions, H^{-1} norm equivalence, and stochastic variational physics-informed neural networks</a> replaces ad hoc PINN loss terms with a mathematically exact norm equivalence; and <a href="https://arxiv.org/abs/2605.03780v1">Task Vector Geometry Underlies Dual Modes of Task Inference in Transformers</a> provides rigorous geometric foundations for in-context learning. This signals a field transitioning from empirical tinkering to theoretical consolidation—results will become more reliable and transferable. Second, <strong>energy-based and generative sampling is converging across domains</strong>: <a href="https://arxiv.org/abs/2605.03984v1">Flow Sampling</a>, <a href="https://arxiv.org/abs/2605.03712v1">Tempered Guided Diffusion</a>, and <a href="https://arxiv.org/abs/2605.04013v1">Conditional Diffusion Sampling</a> all tackle unnormalized density sampling from distinct angles (flow matching, SMC, parallel tempering), while <a href="https://arxiv.org/abs/2605.03573v1">Stochastic Schrödinger Diffusion Models for Pure-State Ensemble Generation</a> extends the paradigm to complex projective space. The cross-pollination between Bayesian inference, physics simulation, and generative modeling is producing practically faster samplers with theoretical backing. Third, <strong>ecological and biological AI is entering a methodologically mature phase</strong>: <a href="https://arxiv.org/abs/2605.03914v1">Ecologically-Constrained Task Arithmetic for Multi-Taxa Bioacoustic Classifiers Without Shared Data</a> links task-vector geometry directly to the acoustic niche hypothesis, and <a href="https://arxiv.org/abs/2605.03606v1">Cusped singularities organize mixed-mode oscillations in mutually inhibitory slow-fast systems</a> delivers a universal geometric framework for neural oscillation theory—both reflecting domain-specific physical constraints being encoded as first-class mathematical structure rather than post-hoc regularization.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.03916v1">Atomic Fact-Checking Increases Clinician Trust in LLM Recommendations for Oncology Decision Support</a></td>
+<td>8.6</td>
+<td>cs.CL, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2605.03916v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.03984v1">Flow Sampling: Learning to Sample from Unnormalized Densities via Denoising Conditional Processes</a></td>
+<td>8.4</td>
+<td>cs.LG, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2605.03984v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.03482v1">MEMSAD: Gradient-Coupled Anomaly Detection for Memory Poisoning in Retrieval-Augmented Agents</a></td>
+<td>8.4</td>
+<td>cs.CR, cs.AI, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2605.03482v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.04039v1">Safety and accuracy follow different scaling laws in clinical large language models</a></td>
+<td>8.1</td>
+<td>cs.CL, cs.AI, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2605.04039v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.03517v1">Understanding Self-Supervised Learning via Latent Distribution Matching</a></td>
+<td>8.2</td>
+<td>cs.LG, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2605.03517v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.03548v1">PerFlow: Physics-Embedded Rectified Flow for Efficient Reconstruction and Uncertainty Quantification of Spatiotemporal Dynamics</a></td>
+<td>8.2</td>
+<td>cs.LG, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2605.03548v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.03871v1">EvoLM: Self-Evolving Language Models through Co-Evolved Discriminative Rubrics</a></td>
+<td>8.2</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2605.03871v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.03932v1">Magic-Informed Quantum Architecture Search</a></td>
+<td>8.1</td>
+<td>quant-ph, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2605.03932v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today's corpus is unusually cohesive for its size: the novelty burst is not random scatter but clusters around a single meta-trend—<strong>the transition from demonstrated capability to formal accountability</strong>. The clinical AI papers (fact-checking RCT, divergent scaling laws) show that the field is being held to evidentiary standards normally reserved for pharmaceuticals, and is meeting them. The security paper (MEMSAD) and the SSL</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
