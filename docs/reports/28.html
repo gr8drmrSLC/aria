@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-05-26 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-05-26</span>
+    <span>195 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 192 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 106/195 papers (54%) scor…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-05-26</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus is anomalous: 54% of 195 papers scored high-novelty, and 192 bridge multiple domains — a convergence signal, not noise. The dominant story is infrastructure maturation across AI's hardest unsolved problems: verifiable RL training at scale, multimodal safety failures, and foundational theory catching up to empirical practice. Separately, a cluster of papers is quietly rewriting assumptions about what small, well-designed models can do against large ones.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Verbatim memorization auditing just became a grey-box problem.</strong> <a href="https://arxiv.org/abs/2605.25902v1">Reading the Finetuning Prior: Verbatim Content Recovery via Contrastive Decoding Diffing</a> recovers finetuned training content using only output logits — no weight access required — at 170× speedup over white-box baselines. This collapses a critical security assumption: deployed API-only models are no longer private with respect to their finetuning data. Compliance and IP teams should treat this as an active threat vector today.</p>
+</li>
+<li>
+<p><strong>Cross-validation finally has a theoretical floor.</strong> <a href="https://arxiv.org/abs/2605.25859v1">Minimax Limits of k-Fold Cross-Validation via Majority</a> establishes the first principled Ω(√k/n) lower bound on cross-validation MSE, with the majority algorithm as a tight match. This resolves a decades-old gap in ML theory and provides actionable guidance for choosing k — particularly relevant for high-stakes model selection pipelines.</p>
+</li>
+<li>
+<p><strong>AI alignment has a formal impossibility result.</strong> <a href="https://arxiv.org/abs/2605.25739v1">The Behavioral Credibility Trilemma: When Calibrated Autonomy Becomes Impossible</a> proves geometrically that helpfulness, calibration, and autonomy cannot simultaneously hold under rational oversight when agent competence is bounded. This is not a philosophical claim — it has quantified detection bounds and direct implications for how safety researchers should think about confidence-gated deployment architectures.</p>
+</li>
+<li>
+<p><strong>Multimodal jailbreaks now exploit structural reasoning load.</strong> <a href="https://arxiv.org/abs/2605.25534v1">StructBreak: Structural Cognitive Overload-Induced Safety Failures in MLLMs</a> achieves 92% average attack success rate across six leading MLLMs in a black-box setting by inducing safety failures through complex structural reasoning tasks — a novel attack surface entirely distinct from typographic or pixel-level attacks. Current alignment techniques are blind to this vector.</p>
+</li>
+<li>
+<p><strong>Benchmarks are formally broken as deployment proxies.</strong> <a href="https://arxiv.org/abs/2605.25997v1">Deployment-complete benchmarking</a> introduces a decision-theoretic formalism showing that benchmark evidence frequently underdetermines deployment actions — i.e., the same score is consistent with both deploying and not deploying a model. This is an auditing and procurement problem as much as a research one.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three convergent signals stand out. <strong>First, RL training infrastructure for agents is consolidating rapidly.</strong> <a href="https://arxiv.org/abs/2605.26114v1">MobileGym</a> and <a href="https://arxiv.org/abs/2605.25624v1">CUA-Gym</a> both deliver verifiable, scalable training environments for GUI and computer-use agents — filling the data and reward-signal bottleneck that has blocked RLVR from reaching everyday app contexts. This mirrors what happened to math and code reasoning 18 months ago, and the trajectory is clear. <strong>Second, architectural inductive bias is staging a comeback against scaling.</strong> <a href="https://arxiv.org/abs/2605.25949v1">WaveLiT</a> matches billion-parameter PDE foundation models at 1–10M parameters via wavelet priors; <a href="https://arxiv.org/abs/2605.26106v1">LoopMDM</a> improves diffusion language model efficiency through selective layer looping; and <a href="https://arxiv.org/abs/2605.25880v1">The Quantization Benefits of Residual-Free Transformers</a> identifies residual connections as a structural cause of quantization pathology. The pattern suggests the field is entering a phase where architectural choices recover ground lost to brute-force scale. <strong>Third, theoretical foundations are catching up to practice simultaneously across multiple subfields</strong> — PAC learning with bandit feedback (<a href="https://arxiv.org/abs/2605.25678v1">PAC Learning with Bandit Feedback</a>), cross-validation limits, PDE solving with guarantees (<a href="https://arxiv.org/abs/2605.25509v1">FM4PDE</a>), and the alignment trilemma all arrive together. This is not coincidence; it reflects a maturing field demanding rigorous grounding for deployment decisions.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.26032v1">Everything at Every Scale: Scale-Invariant Diffusion with Continuous Super-Resolution</a></td>
+<td>8.5</td>
+<td>cs.CV, cs.LG, cond-mat.stat-mech</td>
+<td><a href="https://arxiv.org/abs/2605.26032v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.25678v1">PAC Learning with Bandit Feedback: Sharp Sample Complexity in the Realizable Setting</a></td>
+<td>8.5</td>
+<td>stat.ML, cs.LG, cs.DS</td>
+<td><a href="https://arxiv.org/abs/2605.25678v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.25902v1">Reading the Finetuning Prior: Verbatim Content Recovery via Contrastive Decoding Diffing</a></td>
+<td>8.3</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2605.25902v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.26087v1">DiscoverPhysics: Benchmarking LLMs for Out-of-the-Box Scientific Thinking</a></td>
+<td>8.2</td>
+<td>stat.ML, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2605.26087v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.25739v1">The Behavioral Credibility Trilemma: When Calibrated Autonomy Becomes Impossible</a></td>
+<td>8.1</td>
+<td>cs.LG, cs.GT</td>
+<td><a href="https://arxiv.org/abs/2605.25739v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.25710v1">Machine Learning Multiscale Interactions</a></td>
+<td>8.2</td>
+<td>physics.chem-ph, cs.LG, cond-mat.mtrl-sci</td>
+<td><a href="https://arxiv.org/abs/2605.25710v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.25534v1">StructBreak: Structural Cognitive Overload-Induced Safety Failures in MLLMs</a></td>
+<td>8.0</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2605.25534v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2605.25997v1">Deployment-complete benchmarking</a></td>
+<td>8.2</td>
+<td>cs.LG, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2605.25997v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>The simultaneous arrival of foundational impossibility results (alignment trilemma, CV minimax bounds, deployment-completeness formalism) alongside practical infrastructure breakthroughs (MobileGym, CUA-Gym, Paris 2.0) is the defining character of today's corpus — theory and engineering are closing their gap faster than at any point in recent memory. The most underappreciated finding is the Contrastive Decoding Diffing result: grey-box memorization extraction with no weight access and 170× speedup is a capabilities jump that outpaces current regulatory and compliance frameworks, which still assume white-box access as the meaningful threat model. Watch for rapid follow-on work extending this to base model pretraining data extraction and adversarial model auditing. The StructBreak cognitive overload attack surface similarly has no obvious mitigation path within current RL</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
