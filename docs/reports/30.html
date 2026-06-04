@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-06-04 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-06-04</span>
+    <span>173 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 171 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 105/173 papers (61%) scor…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief</h1>
+<p><strong>Date:</strong> 2026-06-04 | <strong>Corpus:</strong> 173 papers | <strong>Avg. Novelty:</strong> 6.9/10</p>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus is anomalous: 61% of papers scored high-novelty and 99% bridge multiple domains, signaling a genuine convergence moment rather than routine publication churn. The most consequential thread is a wave of papers correcting foundational theoretical errors in widely deployed ML methods—across PDE solving, safety alignment, and approximate optimization—while a parallel wave delivers structure-preserving learning frameworks grounded in physics and geometry. These are not incremental advances; they invalidate assumptions currently embedded in production systems.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>A formal error in physics-constrained generative modeling affects the entire field.</strong> <a href="https://arxiv.org/abs/2606.04804v1">The Right Measure for Physics-Constrained Generation: A Co-Area Correction for Posterior-Consistent PDE Inverse Problems</a> proves that diffusion/flow-matching models enforcing hard PDE constraints sample the wrong posterior due to a missing Fixman Jacobian (the "CoCoS" correction), with order-of-magnitude impact on accuracy. Every team using constrained diffusion for scientific inverse problems needs to audit their sampling pipeline immediately.</p>
+</li>
+<li>
+<p><strong>LLM safety alignment is vulnerable at every token, not just the first few.</strong> <a href="https://arxiv.org/abs/2606.04778v1">Inference-Time Vulnerability Beyond Shallow Safety: Alignment Along Generation Trajectories</a> demonstrates that "shallow safety" is a special case of a broader mid-sequence injection attack, showing that token injections at <em>any</em> generation step can redirect outputs toward harmful content. Current alignment evaluations that focus on response prefixes are systematically incomplete.</p>
+</li>
+<li>
+<p><strong>Humanoid manipulation can now be trained entirely in simulation at scale.</strong> <a href="https://arxiv.org/abs/2606.05160v1">GRAIL: Generating Humanoid Loco-Manipulation from 3D Assets and Video Priors</a> generates 20,000+ diverse loco-manipulation sequences using video foundation models and privileged 3D configurations, achieving real-world deployment without a single physical demonstration. This directly challenges the assumption that teleoperation data is necessary for dexterous humanoid training.</p>
+</li>
+<li>
+<p><strong>The first machine-learned planning heuristic with formal admissibility guarantees.</strong> <a href="https://arxiv.org/abs/2606.04597v1">Learning Admissible Heuristics via Cost Partitioning</a> uses Lagrangian duality equivalence between cost partitioning and optimal abstraction to guarantee no overestimation, combining Weisfeiler-Leman graph features with axial self-attention. This closes a decade-long gap between learned and classical heuristics in optimal planning.</p>
+</li>
+<li>
+<p><strong>MCP server tool descriptions are a live, undercharacterized attack surface.</strong> <a href="https://arxiv.org/abs/2606.04769v1">Description-Code Inconsistency in Real-world MCP Servers: Measurement, Detection, and Security Implications</a> is the first large-scale empirical study of this threat vector, finding widespread exploitable inconsistency between what MCP tools claim to do and what they actually execute. As agentic LLM deployments proliferate, this is an immediate production security concern.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three convergent patterns define today's corpus. <strong>First, a "foundations correction" wave:</strong> multiple high-novelty papers are not proposing new methods but formally disproving assumptions in existing, widely-used ones—CoCoS on PDE inverse problems, <a href="https://arxiv.org/abs/2606.04778v1">Inference-Time Vulnerability</a> on alignment, and <a href="https://arxiv.org/abs/2606.04834v1">Prediction Under Imperfect Compression: A Theory of Approximate MDL</a> on MDL optimization, which identifies a sharp phase transition at λ=1 separating reliable from unreliable approximate optimization. This suggests the field is entering a maturation phase where foundational audits are overdue. <strong>Second, structure-preserving learning across physics domains is consolidating:</strong> <a href="https://arxiv.org/abs/2606.04623v1">Learning symplectic model reduction based on a approximation theorem of symplectic embeddings</a>, <a href="https://arxiv.org/abs/2606.05131v1">Deep Embedded Multiplicative DMD for Algebra-Preserving Koopman Learning</a>, and <a href="https://arxiv.org/abs/2606.04822v1">Reconciling Causality and Non-Equilibrium Thermodynamics with Hamiltonian Causal Models</a> all enforce exact physical algebraic constraints within learned latent spaces—a coherent research program that is producing both theoretical guarantees and empirical superiority over unconstrained deep learning for dynamical systems. <strong>Third, scalable virtuality in robotics:</strong> GRAIL and the activation steering work <a href="https://arxiv.org/abs/2606.04775v1">LA-LQR</a> both reflect a broader trend of replacing expensive physical or manual processes (demonstrations, finetuning) with principled virtual or control-theoretic alternatives. Taken together, these threads suggest the field is simultaneously correcting its theoretical debts and constructing more rigorous replacements.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.04804v1">The Right Measure for Physics-Constrained Generation</a></td>
+<td>8.6</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2606.04804v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.05160v1">GRAIL: Generating Humanoid Loco-Manipulation from 3D Assets and Video Priors</a></td>
+<td>8.5</td>
+<td>cs.RO</td>
+<td><a href="https://arxiv.org/abs/2606.05160v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.04775v1">Activation Steering of Video Generation Models via Reduced-Order Linear Optimal Control</a></td>
+<td>8.5</td>
+<td>cs.LG, cs.CV, eess.SY</td>
+<td><a href="https://arxiv.org/abs/2606.04775v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.04597v1">Learning Admissible Heuristics via Cost Partitioning</a></td>
+<td>8.5</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.04597v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.04822v1">Reconciling Causality and Non-Equilibrium Thermodynamics with Hamiltonian Causal Models</a></td>
+<td>8.4</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2606.04822v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.05165v1">STRIDE: Training Data Attribution via Sparse Recovery from Subset Perturbations</a></td>
+<td>8.2</td>
+<td>cs.LG, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2606.05165v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.04769v1">Description-Code Inconsistency in Real-world MCP Servers</a></td>
+<td>8.0</td>
+<td>cs.CR, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.04769v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.04778v1">Inference-Time Vulnerability Beyond Shallow Safety</a></td>
+<td>8.2</td>
+<td>cs.AI, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2606.04778v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>The anomaly flags for today are real, not noise: a 61% high-novelty rate across 173 papers is a statistical outlier, and the content warrants the signal. The most operationally urgent items are the CoCoS correction and the MCP security findings—the former invalidates posterior claims in deployed scientific ML systems, the latter exposes a trust boundary that most agentic systems have not been designed to defend. The structure-preserving learning cluster (Hamiltonian causal models, symplectic autoencoders, Koopman algebra preservation) deserves sustained attention as a coherent program: these papers share a common thesis that physical symmetry constraints must be algebraically exact, not approximately</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
