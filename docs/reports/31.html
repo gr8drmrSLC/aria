@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-06-05 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-06-05</span>
+    <span>200 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 197 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 115/200 papers (57%) scor…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief</h1>
+<p><strong>Date:</strong> 2026-06-05 | <strong>Corpus:</strong> 200 papers | <strong>Avg. Novelty:</strong> 7.0/10</p>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus is anomalous: 57% of papers scored high-novelty and 197/200 bridge multiple domains — a convergence signal, not background noise. The dominant thrust is <strong>foundational correction</strong>: multiple top papers identify and fix structural errors in widely-adopted frameworks (score matching, SAEs, LLM self-correction, RNN training), while a parallel cluster advances principled unification across probabilistic inference, optimal transport, and generative modeling. This is a day where theoretical debt is being paid down rapidly and the payoffs are immediately practical.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Score matching has a measurable, provable flaw.</strong> <a href="https://arxiv.org/abs/2606.06179v1">Diffusion Models Observe Only Gradients: A Geometric Perspective on Score Matching Errors</a> demonstrates via Helmholtz-Hodge decomposition that L2 score error is not a valid proxy for distributional quality — a model can have arbitrarily large L2 error while producing perfect samples. The paper derives tighter KL bounds and a tractable estimator. This invalidates a foundational assumption in diffusion model theory and should trigger re-evaluation of existing theoretical guarantees across the field.</p>
+</li>
+<li>
+<p><strong>Formal theorem proving crosses a practical threshold.</strong> <a href="https://arxiv.org/abs/2606.06468v1">Goedel-Architect</a> achieves state-of-the-art on MiniF2F, PutnamBench, IMO 2025, and USAMO 2026 via blueprint-and-refinement in Lean 4, at up to 500× lower cost than comparable pipelines. The cost reduction is as significant as the accuracy: this moves AI-assisted formal proof from research curiosity to deployable infrastructure.</p>
+</li>
+<li>
+<p><strong>LLM self-correction failures are a prompt artifact, not a capability limit.</strong> <a href="https://arxiv.org/abs/2606.05976v1">The Self-Correction Illusion</a> shows across 13 model-domain conditions that correction rates depend causally on chat-template role labels, not on reasoning content. A training-free relabeling intervention recovers correction ability. This reframes a widely-cited capability gap and has immediate implications for RLHF pipeline design and agent architectures.</p>
+</li>
+<li>
+<p><strong>GFlowNets and optimal transport are the same thing.</strong> <a href="https://arxiv.org/abs/2606.06272v1">Your GFlowNet Secretly Learns an Optimal Transport Plan</a> proves that minimum-flow GFlowNets solve the Kantorovich OT problem with graph-induced shortest-path costs. This is a clean theoretical unification that opens scalable OT on large graphs as an immediate algorithmic consequence — and retroactively explains empirical GFlowNet behaviors.</p>
+</li>
+<li>
+<p><strong>SE(3)-equivariant belief propagation enables 100× faster molecular inference.</strong> <a href="https://arxiv.org/abs/2606.06344v1">Equivariant Neural Belief Propagation</a> combines SE(3)-equivariant Gaussian mixture messages with factor-graph BP, handling anisotropic uncertainty and multimodal energy landscapes that scalar/vector equivariant networks cannot represent. The 100× speedup over diffusion baselines with superior accuracy is significant for computational drug discovery and protein structure pipelines.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three convergent patterns dominate this corpus. <strong>First, geometric and topological methods are entering ML theory as load-bearing structure</strong> — not decoration. Helmholtz-Hodge decomposition appears in both <a href="https://arxiv.org/abs/2606.06179v1">score matching error analysis</a> and <a href="https://arxiv.org/abs/2606.06295v1">Reactive Flux Matching</a>; Borsuk-Ulam topology grounds <a href="https://arxiv.org/abs/2606.06148v1">tight list replicability bounds</a>; information geometry bridges to singular learning theory in <a href="https://arxiv.org/abs/2606.05957v1">Dead Directions</a>. This is a coherent methodological shift, not coincidence. <strong>Second, the rare-event problem is being attacked simultaneously from quantum (<a href="https://arxiv.org/abs/2606.06316v1">quantum rare event sampling</a>), generative (<a href="https://arxiv.org/abs/2606.06295v1">Flux Matching</a>), and discrete diffusion (<a href="https://arxiv.org/abs/2606.06303v1">GILC</a>) directions</strong> — suggesting the field recognizes this as a critical bottleneck in scientific simulation and AI safety simultaneously. <strong>Third, embodied AI is undergoing architectural consolidation</strong>: <a href="https://arxiv.org/abs/2606.05979v1">WLA</a>, <a href="https://arxiv.org/abs/2606.06194v1">ActiveMimic</a>, and <a href="https://arxiv.org/abs/2606.06281v1">MiTaS</a> each attack a different failure mode of robot learning (world modeling, video pretraining gap, tactile fusion) with unified architectures rather than modular patches — a sign of maturing engineering judgment in the subfield.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.06179v1">Diffusion Models Observe Only Gradients: A Geometric Perspective on Score Matching Errors</a></td>
+<td>8.8</td>
+<td>stat.ML, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2606.06179v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.06468v1">Goedel-Architect: Streamlining Formal Theorem Proving with Blueprint Generation and Refinement</a></td>
+<td>8.5</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.06468v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.06344v1">Equivariant Neural Belief Propagation</a></td>
+<td>8.5</td>
+<td>cs.LG, cs.SC</td>
+<td><a href="https://arxiv.org/abs/2606.06344v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.05976v1">The Self-Correction Illusion: LLMs Correct Others but Not Themselves</a></td>
+<td>8.5</td>
+<td>cs.AI, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2606.05976v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.06272v1">Your GFlowNet Secretly Learns an Optimal Transport Plan</a></td>
+<td>8.4</td>
+<td>cs.LG, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.06272v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.06148v1">Tight list replicability bounds via a novel sphere covering theorem</a></td>
+<td>8.4</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2606.06148v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.05957v1">Dead Directions: Geometric Singular Learning</a></td>
+<td>8.2</td>
+<td>cs.LG, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2606.05957v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.06333v1">Subspace-Aware Sparse Autoencoders for Effective Mechanistic Interpretability</a></td>
+<td>8.0</td>
+<td>cs.LG, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.06333v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>This corpus reads like a theoretical reckoning: the empirical scaling era produced powerful systems whose formal foundations were accepted on faith, and that faith is now being systematically audited. The invalidation of L2 score error as a diffusion model metric, the exposure of SAE feature splitting as provably architecture-induced, the reattribution of self-correction failures to prompt artifacts, and the GFlowNet-OT equivalence are not incremental results — they are structural corrections that will propagate through downstream work. Watch for: (1) rapid follow-on work re-deriving diffusion model sample complexity guarantees under the new geometric framework; (2) Goedel-Architect</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
