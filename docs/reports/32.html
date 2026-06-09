@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-06-09 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-06-09</span>
+    <span>200 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 198 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 112/200 papers (56%) scor…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-06-09</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus reflects a genuine convergence moment: 56% of papers scored high-novelty and nearly all bridge multiple domains, signaling coordinated progress rather than incremental churn. The dominant thrust is <strong>efficiency at the frontier</strong>—compressing inference, securing deployed models, and making robots real-time capable—while a parallel thread in <strong>hardware-native and physics-grounded learning</strong> is quietly maturing. The combination of AI safety precursor detection, biosignal privacy vulnerabilities, and world-model attack surfaces suggests the security layer of ML is reaching critical mass.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Long-context inference efficiency crosses a new threshold.</strong> <a href="https://arxiv.org/abs/2606.09659v1">End-to-End Context Compression at Scale</a> reports that encoder-decoder compression now reaches a new Pareto frontier over KV-cache methods through large-scale architecture search and continual pretraining, without requiring inputs to fit within the target context window. This has immediate production relevance for any LLM deployment bottlenecked by memory at long contexts.</p>
+</li>
+<li>
+<p><strong>Real-time humanoid whole-body control is now demonstrably feasible.</strong> <a href="https://arxiv.org/abs/2606.09215v1">MotionWAM: Towards Foundation World Action Models for Real-Time Humanoid Loco-Manipulation</a> eliminates the hierarchical upper/lower body split that has constrained prior systems, using video world model denoising features as a unified conditioning signal and achieving &gt;30% gains over VLA baselines on real hardware. This is the clearest signal yet that foundation world action models are ready for unstructured environments.</p>
+</li>
+<li>
+<p><strong>AI safety gains an early-warning instrument.</strong> <a href="https://arxiv.org/abs/2606.09711v1">Proxy Reward Internalization and Mechanistic Exploitation: A Learned Precursor to Reward Hacking and Its Generalization</a> (PRIME) identifies a staged, measurable internal capability—proxy-gold gap reasoning—that precedes visible reward hacking and generalizes across evaluators. This shifts alignment monitoring from post-hoc observation to prospective detection, a meaningful operational advance.</p>
+</li>
+<li>
+<p><strong>EEG foundation models harbor a critical undetected privacy vulnerability.</strong> <a href="https://arxiv.org/abs/2606.09189v1">Pretrained, Frozen, Still Leaking: Auditing Cross-Encoder Attribute Transfer in EEG Foundation Models</a> demonstrates that a linear bridge between frozen encoders exposes spectral attributes even when DP-SGD and all single-endpoint audits pass. Any organization deploying EEG foundation models should treat current audit frameworks as insufficient until the AEDS joint-audit approach is adopted.</p>
+</li>
+<li>
+<p><strong>World models in robot pipelines are an unguarded attack surface.</strong> <a href="https://arxiv.org/abs/2606.09499v1">Targeting World Models to Compromise Robot Learning Pipelines</a> shows that visually benign teleoperated datasets can carry backdoors that activate only through world model processing, bypassing existing data validation. As world-model-augmented training pipelines proliferate, this supply-chain vector will scale proportionally.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three distinct convergence patterns are visible today. <strong>First, the efficiency stack is closing end-to-end</strong>: context compression (<a href="https://arxiv.org/abs/2606.09659v1">End-to-End Context Compression at Scale</a>), quantum circuit training (<a href="https://arxiv.org/abs/2606.09734v1">Adaptive directional gradients for parameterised quantum circuits</a>), and real-time robot control (<a href="https://arxiv.org/abs/2606.09215v1">MotionWAM</a>) all attack the same bottleneck—compute and memory cost at deployment scale—from orthogonal directions simultaneously. <strong>Second, foundation models are colonizing biosignals</strong>: <a href="https://arxiv.org/abs/2606.09605v1">Next-Token Prediction Learns Generalisable Representations of Sleep Physiology</a> and <a href="https://arxiv.org/abs/2606.09189v1">Pretrained, Frozen, Still Leaking</a> together signal that autoregressive pretraining is becoming the default paradigm for physiological data, but the security and privacy infrastructure has not kept pace. <strong>Third, physics is re-entering the learning stack as a first-class citizen</strong>: <a href="https://arxiv.org/abs/2606.09756v1">Perturbative Contrastive Physical Learning</a> on mechanical/photonic substrates, <a href="https://arxiv.org/abs/2606.09266v1">Physics-Guided Sequence-Based Generative Framework for Acoustic Metamaterial Inverse Design</a>, and <a href="https://arxiv.org/abs/2606.09806v1">Topological Neural Operators</a> collectively suggest that pure data-driven approaches are being systematically replaced by physics-hybrid architectures in domains where sample efficiency and generalization matter. The cross-domain anomaly flag (198/200 papers) is not noise—it reflects genuine methodological transfer between ML, neuroscience, materials science, and robotics that is now happening at the paper level, not just the lab level.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.09659v1">End-to-End Context Compression at Scale</a></td>
+<td>8.5</td>
+<td>cs.CL, cs.AI, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2606.09659v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.09215v1">MotionWAM: Towards Foundation World Action Models for Real-Time Humanoid Loco-Manipulation</a></td>
+<td>8.5</td>
+<td>cs.RO</td>
+<td><a href="https://arxiv.org/abs/2606.09215v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.09287v1">Trajectory Geometry of Transformer Representations Across Layers</a></td>
+<td>8.4</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2606.09287v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.09189v1">Pretrained, Frozen, Still Leaking: Auditing Cross-Encoder Attribute Transfer in EEG Foundation Models</a></td>
+<td>8.2</td>
+<td>cs.CR, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.09189v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.09711v1">Proxy Reward Internalization and Mechanistic Exploitation</a></td>
+<td>8.0</td>
+<td>cs.AI, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2606.09711v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.09499v1">Targeting World Models to Compromise Robot Learning Pipelines</a></td>
+<td>8.1</td>
+<td>cs.RO, cs.AI, cs.CR</td>
+<td><a href="https://arxiv.org/abs/2606.09499v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.09806v1">Topological Neural Operators</a></td>
+<td>7.9</td>
+<td>cs.LG, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.09806v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.09605v1">Next-Token Prediction Learns Generalisable Representations of Sleep Physiology</a></td>
+<td>8.1</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.09605v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today's distribution—56% high-novelty with near-universal cross-domain bridging—is statistically unusual and operationally significant. The safe read is that several previously distinct research programs (world models, foundation biosignal models, physical learning, topological operators) have simultaneously crossed a maturity threshold where they are generating novel combinations rather than incremental extensions. The highest-leverage items to track going forward: (1) whether PRIME's reward-hacking precursor detection generalizes to frontier-scale RLHF pipelines beyond the paper's demonstrated scope—if it does, it becomes a mandatory component of safety monitoring; (2) the speed at which the world-model backdoor attack surface (<a href="https://arxiv.org/abs/2606.09499v1">Targeting World Models</a>) propagates into advers</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
