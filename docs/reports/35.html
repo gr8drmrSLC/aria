@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-06-12 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-06-12</span>
+    <span>200 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 193 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 121/200 papers (60%) scor…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-06-12</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus represents an unusually dense concentration of high-impact work: 60% of papers scored high-novelty, with near-total cross-domain coverage signaling a broad convergence across AI foundations, robotics, and scientific discovery. The most consequential thread is a maturation of inference-time understanding—researchers are now characterizing <em>mechanistically</em> how and when LLMs commit to answers, and building practical systems that exploit quantum, tactile, and causal structure at scale. This is not incremental progress; multiple papers today cross thresholds that reframe what is considered solved.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>LLM reasoning is largely epiphenomenal past a sharp commitment point.</strong> <a href="https://arxiv.org/abs/2606.13603v1">Beyond the Commitment Boundary: Probing Epiphenomenal Chain-of-Thought in Large Reasoning Models</a> identifies a mechanistically distinct "commitment boundary" in CoT traces after which further reasoning steps are causally inert. Attention-probe-based early exit achieves up to 55% CoT length reduction with negligible accuracy loss—directly attacking inference cost at the reasoning layer, not just the token layer.</p>
+</li>
+<li>
+<p><strong>Competition-level mathematics is now tractable for AI.</strong> <a href="https://arxiv.org/abs/2606.13473v1">MaxProof: Scaling Mathematical Proof with Generative-Verifier RL and Population-Level Test-Time Scaling</a> solves IMO 2025 and USAMO 2026 problems by unifying proof generation, verification, and critique-conditioned repair in a single model. The defense-in-depth verifier with engineered low false-positive rate is the key enabling mechanism—this is the architecture to watch for formal verification downstream.</p>
+</li>
+<li>
+<p><strong>A provable quantum-classical separation has been demonstrated on real hardware with weather forecasting impact.</strong> <a href="https://arxiv.org/abs/2606.13422v1">Foundations of Practical Quantum Advantage in Quantum-Informed Machine Learning for Predicting Chaos</a> establishes a two-stage advantage via k-indexed quantum statistical priors, validated on real quantum hardware with measurable improvement in weather forecasting skill. This is the first credible near-term quantum advantage claim with end-to-end empirical grounding in a consequential application domain.</p>
+</li>
+<li>
+<p><strong>Humanoid robots can now distinguish self from others without labels or kinematic priors.</strong> <a href="https://arxiv.org/abs/2606.13222v1">Proprioceptive-visual correspondence enables self-other distinction in humanoid robots</a> bootstraps a full predictive 3D self-model from proprioceptive-visual alignment alone, with demonstrated downstream utility in collision avoidance and human motion retargeting. This closes a foundational cognitive capability gap that has blocked safe human-robot cohabitation.</p>
+</li>
+<li>
+<p><strong>KV cache reuse is being reframed as a market infrastructure problem.</strong> <a href="https://arxiv.org/abs/2606.13361v1">Can I Buy Your KV Cache?</a> proposes a content-delivery-network architecture for sharing precomputed KV caches across agents with token-exact correctness guarantees. Given that prefill dominates inference compute costs at scale, the economic and systems implications for multi-agent deployments are immediate and large.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three converging patterns dominate today's corpus. <strong>First, mechanistic understanding is catching up to empirical capability</strong>: papers like <a href="https://arxiv.org/abs/2606.13603v1">Beyond the Commitment Boundary</a>, <a href="https://arxiv.org/abs/2606.13649v1">Operadic consistency</a>, and <a href="https://arxiv.org/abs/2606.13607v1">Reasoning as Pattern Matching</a> collectively show that researchers are moving past behavioral benchmarking toward <em>structural</em> accounts of why models succeed or fail—using causal probing, operad theory, and attention-head-level analysis respectively. This mechanistic turn is a prerequisite for reliable deployment. <strong>Second, inference-time efficiency is being attacked from multiple angles simultaneously</strong>: <a href="https://arxiv.org/abs/2606.13603v1">Beyond the Commitment Boundary</a> targets CoT length, <a href="https://arxiv.org/abs/2606.13392v1">MiniMax Sparse Attention</a> targets context window compute with 28.4x reduction at 1M tokens, <a href="https://arxiv.org/abs/2606.13501v1">GF-DiT</a> targets DiT serving throughput with 6x gains, and <a href="https://arxiv.org/abs/2606.13361v1">Can I Buy Your KV Cache?</a> targets prefill redundancy—the convergence suggests the field is entering a serious efficiency optimization phase as frontier model sizes stabilize. <strong>Third, scientific AI is gaining rigorous theoretical foundations</strong>: <a href="https://arxiv.org/abs/2606.13092v1">Scale Buys Interpolation, Structure Buys a Horizon</a> provides Lyapunov-grounded predictability certificates for world models, <a href="https://arxiv.org/abs/2606.13260v1">DYSCO</a> extends identifiability guarantees for latent dynamics discovery, and <a href="https://arxiv.org/abs/2606.13629v1">Valid Inference with Synthetic Data via Task Exchangeability</a> provides the first provably valid statistical framework for synthetic data inference—all signals that AI-for-science is transitioning from empirical demonstration to formal guarantees.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.13603v1">Beyond the Commitment Boundary: Probing Epiphenomenal Chain-of-Thought in Large Reasoning Models</a></td>
+<td>8.5</td>
+<td>cs.LG, cs.AI, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2606.13603v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.13473v1">MaxProof: Scaling Mathematical Proof with Generative-Verifier RL and Population-Level Test-Time Scaling</a></td>
+<td>8.5</td>
+<td>cs.LG, cs.AI, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2606.13473v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.13092v1">Scale Buys Interpolation, Structure Buys a Horizon: Certified Predictability for Equivariant World Models</a></td>
+<td>8.5</td>
+<td>cs.LG, cs.RO, math.DS</td>
+<td><a href="https://arxiv.org/abs/2606.13092v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.13422v1">Foundations of Practical Quantum Advantage in Quantum-Informed Machine Learning for Predicting Chaos</a></td>
+<td>8.4</td>
+<td>quant-ph, cs.LG, physics.flu-dyn</td>
+<td><a href="https://arxiv.org/abs/2606.13422v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.13222v1">Proprioceptive-visual correspondence enables self-other distinction in humanoid robots</a></td>
+<td>8.4</td>
+<td>cs.RO, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.13222v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.13102v1">FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation</a></td>
+<td>8.4</td>
+<td>cs.RO</td>
+<td><a href="https://arxiv.org/abs/2606.13102v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.13392v1">MiniMax Sparse Attention</a></td>
+<td>8.2</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.13392v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.13629v1">Valid Inference with Synthetic Data via Task Exchangeability</a></td>
+<td>8.1</td>
+<td>stat.ME, cs.AI, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2606.13629v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today's corpus is atypical in a meaningful way: the 60% high-novelty rate is not explained by a single hot topic but by genuine simultaneous progress across</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
