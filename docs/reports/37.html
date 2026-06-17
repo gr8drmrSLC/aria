@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-06-17 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-06-17</span>
+    <span>175 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 170 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 94/175 papers (54%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief</h1>
+<p><strong>Date:</strong> 2026-06-17 | <strong>Corpus:</strong> 175 papers | <strong>Avg Novelty:</strong> 7.0/10</p>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus shows an unusual concentration of foundational theoretical work landing simultaneously with high-impact applied results — 54% of papers scored high-novelty, a statistically significant burst. The dominant signal is a convergence of rigorous mathematical frameworks (type theory, conservation laws, stochastic analysis) with practical AI systems, suggesting the field is entering a phase of theoretical consolidation after years of empirical scaling. A parallel medical AI safety finding — models ignoring images entirely — demands immediate attention from anyone deploying multimodal systems in clinical settings.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Critical medical AI safety failure:</strong> <a href="https://arxiv.org/abs/2606.17710v1">Vision-language models for chest radiography do not always need the image</a> demonstrates via causal intervention that leading multimodal medical models frequently exploit text priors while ignoring the actual scan. No standard benchmark currently detects this. Clinical deployment of any VLM without causal grounding audits is now indefensible.</p>
+</li>
+<li>
+<p><strong>Neurosymbolic AI gets a rigorous mathematical foundation:</strong> <a href="https://arxiv.org/abs/2606.17851v1">A homotopy-type-theoretic generalization of neurosymbolic inference</a> unifies weighted model counting, fuzzy logic, and probabilistic logic under a single homotopy-type-theoretic functional, delivers a closed-form symmetry-invariant solution, and outperforms ensemble methods. This is the kind of theoretical unification that reshapes how a subfield thinks about itself.</p>
+</li>
+<li>
+<p><strong>Diffusion models extended beyond Markovian noise:</strong> <a href="https://arxiv.org/abs/2606.18071v1">Volterra Generative Models</a> replaces Brownian perturbations with path-dependent fractional kernels and constructs finite-dimensional Markovian lifts to preserve tractability. This opens generative modeling to a vastly broader class of temporal correlations with rigorous backing — a non-incremental advance.</p>
+</li>
+<li>
+<p><strong>Autonomous AI research agents generate pseudoscience almost without resistance:</strong> <a href="https://arxiv.org/abs/2606.18060v1">PseudoBench</a> reports near-zero resistance to pseudoscientific content generation in current agentic research systems. With autonomous paper-writing pipelines proliferating, this is an acute literature-contamination risk that the field has no deployed defenses against.</p>
+</li>
+<li>
+<p><strong>Dense retrieval has a formal successor:</strong> <a href="https://arxiv.org/abs/2606.17910v1">Non-negative Elastic Net Decoding for Information Retrieval</a> proves that its sparse joint reconstruction approach strictly subsumes dense retrieval — every query-document pair rankable by inner product is rankable by NNN, but not vice versa — and backs this with strong empirical gains. A theoretical separation result of this clarity is rare in IR.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three distinct but reinforcing trends are visible across today's corpus. <strong>First, theoretical unification is accelerating:</strong> papers like <a href="https://arxiv.org/abs/2606.17816v1">Conservation Laws for Modern Neural Architectures</a>, <a href="https://arxiv.org/abs/2606.18080v1">Edge Flow</a>, and the homotopy type theory paper are all extending rigorous mathematical frameworks — conservation laws, continuous-time ODE systems, dependent type theory — to cover modern architectures and training dynamics that were previously outside the scope of formal analysis. This is not incremental; these papers are building the theoretical infrastructure the field has lacked. <strong>Second, inference-time computation is becoming a first-class design axis:</strong> <a href="https://arxiv.org/abs/2606.18247v1">VERITAS</a>, <a href="https://arxiv.org/abs/2606.18208v1">Looped World Models</a>, <a href="https://arxiv.org/abs/2606.18066v1">NoiseTilt</a>, and <a href="https://arxiv.org/abs/2606.17803v1">Continual Self-Improvement with Lightweight Experiential Latent Memories</a> all treat inference-time compute as something to be structured, steered, and learned from — not simply scaled. <strong>Third, the biology-AI boundary is dissolving:</strong> <a href="https://arxiv.org/abs/2606.18154v1">LEADS</a> uses LLM agents to discover patient-specific cardiac physics-neural hybrid models; <a href="https://arxiv.org/abs/2606.17742v1">BrainWorld</a> generates whole-brain 4D fMRI dynamics conditioned on structural priors; <a href="https://arxiv.org/abs/2606.17745v1">connectome dynamics separation</a> applies ML-style analysis to complete neural wiring diagrams. The 170/175 cross-domain count is not noise — AI methods are becoming the primary toolkit for quantitative biology.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.17851v1">A homotopy-type-theoretic generalization of neurosymbolic inference</a></td>
+<td>8.7</td>
+<td>cs.AI, cs.LO</td>
+<td><a href="https://arxiv.org/abs/2606.17851v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.18071v1">Volterra Generative Models</a></td>
+<td>8.4</td>
+<td>cs.LG, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.18071v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.17710v1">Vision-language models for chest radiography do not always need the image</a></td>
+<td>8.4</td>
+<td>cs.CV, cs.AI, cs.CL, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2606.17710v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.18154v1">Learning Cardiac Electrophysiology Digital Twins Through Agentic Discovery of Hybrid Structure</a></td>
+<td>8.3</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.18154v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.17910v1">Non-negative Elastic Net Decoding for Information Retrieval</a></td>
+<td>8.3</td>
+<td>cs.IR, cs.AI, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2606.17910v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.18080v1">Edge Flow</a></td>
+<td>8.3</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2606.18080v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.17816v1">Conservation Laws for Modern Neural Architectures</a></td>
+<td>8.2</td>
+<td>cs.LG, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.17816v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.18060v1">PseudoBench: Measuring How Agentic Auto-Research Fuels Pseudoscience</a></td>
+<td>8.0</td>
+<td>cs.AI, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2606.18060v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today is not a normal day in the preprint record. A 54% high-novelty rate across 175 papers, combined with the specific <em>type</em> of novelty observed — mathematical foundations, formal impossibility results, causal audits, theoretical unification — suggests this is a inflection point rather than routine churn. The community appears to be simultaneously recognizing that empirical scaling alone is insufficient and mobilizing to build the theoretical scaffolding needed for the next phase. Watch three developments closely: (1) whether the chest radiography causal audit methodology (<a href="https://arxiv.org/abs/2606.17710v1">causal audit</a>) propagates into regulatory frameworks for medical AI, which it should; (2) whether <a href="https://arxiv.org/abs/2606.17910v1">NNN decoding</a> and its corpus-aware ranking paradigm displaces bi-encoder architectures in production retrieval systems, given the theoretical separation result; and (3) whether <a href="https://arxiv.org/abs/2606.18060v1">PseudoBench</a> findings trigger defensive responses from labs building autonomous research agents — the absence of such responses would itself</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
