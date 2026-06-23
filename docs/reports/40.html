@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-06-23 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-06-23</span>
+    <span>200 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 192 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 110/200 papers (55%) scor…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief</h1>
+<p><strong>Date:</strong> 2026-06-23 | <strong>Corpus:</strong> 200 papers | <strong>Anomaly Status:</strong> 🔴 ACTIVE — Novelty burst (55% high-novelty) + Cross-domain convergence (192/200 papers)</p>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus is anomalously dense with high-novelty work: 55% of papers scored above the high-novelty threshold, driven by simultaneous advances across LLM security, reasoning architecture, surgical robotics, and materials science. The dominant signal is a maturation of <em>principled rigor</em> replacing heuristic methods — geometric proofs for LLM security, causal priors for reward design, topological methods for interpretability — suggesting the field is exiting an empirical-first phase. The AI/robotics convergence is no longer nascent; VLA models with RL are now reaching clinically relevant surgical tasks.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Formal security for LLMs reaches production-relevant scale.</strong> <a href="https://arxiv.org/abs/2606.23277v1">GIF: Locally Sound Geometric Information Flow Control for LLMs</a> delivers a Lean 4–verified upper bound on mutual information flow using Jacobian analysis, the first formally grounded and scalable IFC method for agentic systems. This matters immediately for any deployment where LLMs mediate sensitive data and untrusted inputs — which is now most enterprise agentic pipelines.</p>
+</li>
+<li>
+<p><strong>Inference-time compute scaling gets its first unified training framework.</strong> <a href="https://arxiv.org/abs/2606.23595v1">SPIRAL: Learning to Search and Aggregate</a> trains a single model to jointly optimize sequential reasoning, parallel sampling, and trace aggregation via RL — closing the longstanding gap between post-training objectives and test-time compute strategies. Outperforming GRPO on inference scaling efficiency is a concrete, benchmark-validated result with direct implications for reasoning model development.</p>
+</li>
+<li>
+<p><strong>Provenance watermarking is a security liability, not a safeguard.</strong> <a href="https://arxiv.org/abs/2606.23335v1">The Watermark Shortcut: How Provenance Marking Sabotages Audio Deepfake Detection</a> demonstrates that watermarks create exploitable shortcuts — mark-to-frame and strip-to-evade attacks succeed against both white-box and commercial (ElevenLabs) black-box systems. Any organization relying on AudioSeal or similar for deepfake detection should treat this as an active vulnerability disclosure.</p>
+</li>
+<li>
+<p><strong>Generative materials AI novelty is largely illusory.</strong> <a href="https://arxiv.org/abs/2606.23166v1">Substitution-Based Analysis of Structural Novelty for Generative Models of Materials</a> quantifies that 81–92% of AI-generated crystal structures are reducible to training duplicates or elemental substitutions of known compounds. This is a direct challenge to published claims of genuine chemical space expansion and has implications for how the field evaluates and funds generative chemistry models.</p>
+</li>
+<li>
+<p><strong>Agent memory systems are a persistent attack vector.</strong> <a href="https://arxiv.org/abs/2606.23195v1">Memory Contagion: Cross-Temporal Propagation of Evaluator Bias via Agent Memory</a> formalizes a new vulnerability class: biased evaluator experiences encoded into memory propagate and amplify across agent generations, converting session-bounded attacks into lineage-persistent ones. Paired with <a href="https://arxiv.org/abs/2606.23075v1">Safety in Self-Evolving LLM Agent Systems</a>'s MLAS matrix analysis, these papers define an emerging threat taxonomy for autonomous agent deployments that has no current defensive standard.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three cross-cutting patterns define today's corpus. <strong>First, mathematical rigor is displacing heuristics as the primary mode of advance</strong> — <a href="https://arxiv.org/abs/2606.23277v1">GIF</a> brings formal verification to LLM security, <a href="https://arxiv.org/abs/2606.23567v1">Scheduling Thoughts</a> derives principled KL-divergence bounds for diffusion decoding order, <a href="https://arxiv.org/abs/2606.23364v1">Convergence of Gradient Descent for General Neural Network Architectures Beyond the NTK Regime</a> proves convergence for pre-normalized transformers using analyticity arguments, and <a href="https://arxiv.org/abs/2606.23590v1">The Topology of Ill-Posed Questions</a> applies persistent homology to LLM steering. This is not coincidental — it reflects a field maturing past scaling-law empiricism toward theoretical accountability. <strong>Second, agent and memory system security is crystallizing into a distinct subfield</strong>: <a href="https://arxiv.org/abs/2606.23195v1">Memory Contagion</a>, <a href="https://arxiv.org/abs/2606.23075v1">Safety in Self-Evolving LLM Agent Systems</a>, and <a href="https://arxiv.org/abs/2606.23277v1">GIF</a> collectively map threats that are architecturally novel to the agentic paradigm and for which existing security tooling has no answer. <strong>Third, the AI/bio-robotics convergence is producing clinically targeted systems</strong>: <a href="https://arxiv.org/abs/2606.23531v1">BiliVLA</a> deploys VLA+RL for ERCP endoscopy and <a href="https://arxiv.org/abs/2606.23623v1">dVLA-RL</a> solves a fundamental RL-over-diffusion intractability problem, while <a href="https://arxiv.org/abs/2606.23153v1">Asymmetric physics enables efficient learning in quadrupedal robot swarms</a> achieves zero-shot sim-to-real transfer at 512-agent scale. The gap between robotics research and deployment is narrowing faster than safety and regulatory frameworks are moving.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.23277v1">GIF: Locally Sound Geometric Information Flow Control for LLMs</a></td>
+<td>8.7</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.23277v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.23595v1">SPIRAL: Learning to Search and Aggregate</a></td>
+<td>8.5</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.23595v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.23531v1">BiliVLA: Scene-Aware VLA Model with RL for Autonomous Biliary Endoscopic Navigation</a></td>
+<td>8.5</td>
+<td>cs.RO</td>
+<td><a href="https://arxiv.org/abs/2606.23531v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.23335v1">The Watermark Shortcut: How Provenance Marking Sabotages Audio Deepfake Detection</a></td>
+<td>8.5</td>
+<td>cs.SD, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.23335v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.23280v1">Causal Reward World Models: Zero-shot Reward Design for Automated Skill Generation</a></td>
+<td>8.4</td>
+<td>cs.RO</td>
+<td><a href="https://arxiv.org/abs/2606.23280v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.23166v1">Substitution-Based Analysis of Structural Novelty for Generative Models of Materials</a></td>
+<td>8.1</td>
+<td>cs.LG, cond-mat.mtrl-sci</td>
+<td><a href="https://arxiv.org/abs/2606.23166v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.23195v1">Memory Contagion: Cross-Temporal Propagation of Evaluator Bias via Agent Memory</a></td>
+<td>8.1</td>
+<td>cs.LG, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.23195v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.23153v1">Asymmetric physics enables efficient learning in quadrupedal robot swarms</a></td>
+<td>8.3</td>
+<td>cs.RO</td>
+<td><a href="https://arxiv.org/abs/2606.23153v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2></h2>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
