@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-06-24 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-06-24</span>
+    <span>149 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 140 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 75/149 papers (50%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>Intelligence Brief: Emerging Research — 2026-06-24</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>An unusual concentration of high-novelty work (50% of papers scored ≥ high-novelty) signals a broad-front advance rather than incremental progress in any single area. The dominant pattern is <strong>AI as a reasoning layer atop physical, biological, and mathematical complexity</strong> — from chaotic dynamics to rare disease diagnosis to quantum error correction. Convergence between ML methodology and hard scientific domains is accelerating, with robotics and clinical AI showing the most mature deployment signals.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Inverse problems in chaotic systems receive a credible solution.</strong> <a href="https://arxiv.org/abs/2606.24824v1">Solving Inverse Problems of Chaotic Systems with Bidirectional Conditional Flow Matching</a> introduces Bi-CFM, a bidirectional generative framework that directly addresses the ill-posedness and instability of inferring initial conditions from final states — validated on real astrophysical (N-body) data. This is one of the few methods to make genuine progress on a problem the field has largely avoided.</p>
+</li>
+<li>
+<p><strong>Randomized clinical trial validates compact LLM for rare disease diagnosis.</strong> <a href="https://arxiv.org/abs/2606.24510v1">A specialized reasoning large language model for accelerating rare disease diagnosis</a> (RaDaR) demonstrates a 21.44 percentage point physician-accuracy improvement in a randomized trial — a methodological bar most clinical AI papers do not clear. The compact, deployable form factor addresses the practical gap between frontier LLM capability and clinical infrastructure.</p>
+</li>
+<li>
+<p><strong>Robotic VLA stack matures on three independent fronts.</strong> Three robotics papers advance the vision-language-action architecture simultaneously: <a href="https://arxiv.org/abs/2606.24472v1">G³VLA</a> injects calibrated 3D geometric structure via ray embeddings; <a href="https://arxiv.org/abs/2606.24448v1">Supervise What Survives</a> provides a principled asymmetric framework for learning from synthetic video without pseudo-action recovery; and <a href="https://arxiv.org/abs/2606.24742v1">World Value Models for Robotic Manipulation</a> adds temporal value estimation to address VLM backbones' inherent lack of forward-planning capacity.</p>
+</li>
+<li>
+<p><strong>LLM-guided discovery produces novel quantum LDPC codes.</strong> <a href="https://arxiv.org/abs/2606.24808v1">Large-Language-Model Discovery of Quantum LDPC Codes through Structured Concept Evolution</a> demonstrates that LLMs operating over structured algebraic grammars can navigate discrete combinatorial design spaces well enough to find new code families — a concrete proof of concept for AI-assisted mathematical discovery in quantum computing.</p>
+</li>
+<li>
+<p><strong>Misalignment detection moves inside the model.</strong> <a href="https://arxiv.org/abs/2606.24251v1">Probing the Misaligned Thinking Process of Language Models</a> achieves 0.935 AUROC on OOD benchmarks using linear probes over a novel 18-category cognitive taxonomy of misalignment indicators. Moving from behavioral evaluation to internal representation monitoring is a meaningful step change for AI safety instrumentation.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three cross-cutting patterns dominate today's corpus. First, <strong>generative models are being retooled as scientific inverse solvers</strong> — Bi-CFM on chaotic dynamics, ESPINN (<a href="https://arxiv.org/abs/2606.24660v1">Extended pseudo-spectral physics-informed neural networks</a>) on phase-field parameter recovery, and MotifGen (<a href="https://arxiv.org/abs/2606.24263v1">MotifGen: Spatiotemporal interpolation of misaligned satellite images</a>) on cyclone microwave imagery all repurpose generative architectures to answer "what caused this output?" rather than "what output does this input produce?" This inversion of the generative paradigm toward scientific inference is structurally new and likely to propagate. Second, <strong>geometry is being forced back into learned systems</strong> — G³VLA, OVBEVSeg (<a href="https://arxiv.org/abs/2606.24353v1">Open-Vocabulary BEV Segmentation with 3D-Aware Geometric Constraints</a>), and Supervise What Survives all independently converge on the diagnosis that 2D token representations are insufficient and that calibrated physical geometry must be injected as an inductive bias. This is a reactive correction to the over-parameterized, geometry-agnostic scaling trend of recent VLMs. Third, <strong>AI safety and agentic system security are bifurcating into complementary disciplines</strong>: internal probe-based misalignment detection (<a href="https://arxiv.org/abs/2606.24251v1">Probing the Misaligned Thinking Process</a>), active fault attribution (<a href="https://arxiv.org/abs/2606.24626v1">SAFARI</a>), and adversarial red-teaming of agentic systems themselves (<a href="https://arxiv.org/abs/2606.24496v1">Red-Teaming the Agentic Red-Team</a>) address different layers of the same problem — suggesting that a coherent agentic safety stack is beginning to self-organize from independent efforts.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.24824v1">Solving Inverse Problems of Chaotic Systems with Bidirectional Conditional Flow Matching</a></td>
+<td>8.5</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.24824v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.24510v1">A specialized reasoning LLM for accelerating rare disease diagnosis: a randomized AI physician assistance trial</a></td>
+<td>8.5</td>
+<td>cs.AI, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2606.24510v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.24246v1">Hierarchical models for large chemical reaction networks</a></td>
+<td>8.5</td>
+<td>q-bio.MN, physics.chem-ph</td>
+<td><a href="https://arxiv.org/abs/2606.24246v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.24621v1">Infinitesimal Causality</a></td>
+<td>8.4</td>
+<td>math.CT, cs.AI, math.ST</td>
+<td><a href="https://arxiv.org/abs/2606.24621v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.24742v1">World Value Models for Robotic Manipulation</a></td>
+<td>8.2</td>
+<td>cs.RO</td>
+<td><a href="https://arxiv.org/abs/2606.24742v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.24251v1">Probing the Misaligned Thinking Process of Language Models</a></td>
+<td>8.2</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.24251v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.24808v1">Large-Language-Model Discovery of Quantum LDPC Codes through Structured Concept Evolution</a></td>
+<td>8.0</td>
+<td>quant-ph, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.24808v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.24496v1">Red-Teaming the Agentic Red-Team</a></td>
+<td>7.8</td>
+<td>cs.CR, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.24496v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today's corpus is notable less for any single breakthrough than for the <strong>density and coherence of simultaneous advances across orthogonal domains</strong> — a pattern more consistent with a field-wide phase transition than with normal research diffusion. The robotics VLA stack in particular shows a dangerous-if-ignored maturation signal: three independently developed geometric and generative corrections are converging on the same architectural gap, which historically precedes rapid capability jumps when combined. The clinical AI results (RaDaR's randomized trial) set a new evidentiary standard that will increase pressure on LLM medical claims lacking equivalent validation. Watch the intersection of <a href="https://arxiv.org/abs/2606.24621v1">Infinitesimal Causality</a> and [Probing the Misaligned Thinking Process](https://arxiv.org/abs/2606</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
