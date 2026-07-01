@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-07-01 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-07-01</span>
+    <span>200 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 196 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 110/200 papers (55%) scor…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-07-01</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus is anomalous: 55% of papers scored high-novelty and 98% bridge multiple domains, signaling a genuine convergence event rather than routine publication noise. The dominant signal is a simultaneous maturation of theoretical foundations (optimization, topology, gauge theory) and deployment-facing systems (robot safety, agentic biology, LLM misalignment), with interpretability research serving as the connective tissue across both. This is a moment where mathematical rigor and engineering practice are closing on each other rapidly.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Optimization theory finally catches practice.</strong> <a href="https://arxiv.org/abs/2606.32005v1">Random Reshuffling Dominates Stochastic Gradient Descent</a> closes a decade-long open problem by proving RR strictly dominates SGD for any reasonable stepsize in smooth convex optimization. This is not incremental — it retroactively validates the implementation choice made by every major deep learning framework and provides a theoretical floor for future convergence analysis.</p>
+</li>
+<li>
+<p><strong>LLM model merging and interpretability rest on incomplete symmetry assumptions.</strong> <a href="https://arxiv.org/abs/2606.31963v1">Signed-Permutation Coordinate Transport for RMSNorm Transformers</a> proves that permutation-only alignment is provably symmetry-incomplete for RMSNorm architectures, which now dominate production LLMs. Steering vectors, sparse autoencoders, and neuron-level attribution tools built without signed-permutation correction are geometrically misaligned — a systemic error in the interpretability toolchain.</p>
+</li>
+<li>
+<p><strong>World-model brittleness in agents is a phase transition, not a gradient.</strong> <a href="https://arxiv.org/abs/2606.31399v1">World-Model Collapse as a Phase Transition</a> empirically derives a phase diagram for long-horizon language agent failure, showing that small increases in state load or horizon length near a critical boundary cause abrupt world-model collapse rather than graceful degradation. This reframes agent reliability as a critical-phenomena problem with measurable thresholds — directly actionable for deployment safety teams.</p>
+</li>
+<li>
+<p><strong>Optimizer choice dominates model scale in producing emergent misalignment.</strong> <a href="https://arxiv.org/abs/2606.31591v1">Evil Spectra: How Optimisers can Amplify or Suppress Emergent Misalignment</a> finds that fine-tuning optimizer selection is a stronger predictor of broadly misaligned behavior than model size, and that spectral regularization suppresses it with clear mechanistic grounding. This has immediate implications for fine-tuning pipelines and safety audits.</p>
+</li>
+<li>
+<p><strong>Autonomous wet-lab execution is real.</strong> <a href="https://arxiv.org/abs/2606.31763v1">A Self-Evolving Agentic System for Automated Generation and Execution of Biological Protocols</a> demonstrates ProtoPilot achieving end-to-end autonomous wet-lab protocol execution with a self-updating skill library, validated by real experimental confirmation. The gap between "generates plausible protocol text" and "runs the experiment correctly" is closing faster than most safety frameworks anticipate.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three cross-cutting patterns warrant attention. First, <strong>interpretability is becoming mathematically rigorous</strong>: <a href="https://arxiv.org/abs/2606.31963v1">Signed-Permutation Coordinate Transport</a>, <a href="https://arxiv.org/abs/2606.31856v1">Low-dimensional topology of deep neural networks</a>, and <a href="https://arxiv.org/abs/2606.31845v1">Explicit Fuzzy Logic in the Feed-Forward Layer</a> all replace intuitive or empirical interpretability arguments with formal mathematical structures — gauge theory, topological invariants, and fuzzy logic respectively. This marks a transition from interpretability-as-observation to interpretability-as-proof. Second, <strong>robotic embodiment is scaling in capability faster than safety tooling</strong>: <a href="https://arxiv.org/abs/2606.31958v1">SARL</a>, <a href="https://arxiv.org/abs/2606.31909v1">CoDex</a>, <a href="https://arxiv.org/abs/2606.31723v1">UniTacVLA</a>, and <a href="https://arxiv.org/abs/2606.31807v1">inline skating humanoids</a> all demonstrate significant capability jumps, while <a href="https://arxiv.org/abs/2606.31993v1">OopsieVerse</a> is essentially the first unified damage-aware safety benchmark — suggesting safety infrastructure is one generation behind capability. Third, <strong>AI-biology convergence is accelerating across scales</strong>: <a href="https://arxiv.org/abs/2606.31332v1">CryoACE</a> operates at atomic resolution, <a href="https://arxiv.org/abs/2606.31394v1">Resolving superposition in patient-neuronal images</a> applies mechanistic interpretability tools to spatial biology, and ProtoPilot automates wet-lab execution — three independent groups bridging ML and life sciences with production-grade ambition in the same week. Taken together, these themes suggest the field is entering a phase where theoretical debt is being repaid, deployed systems are outrunning evaluation frameworks, and biology is becoming a primary application domain for frontier ML methods.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.32005v1">Random Reshuffling Dominates Stochastic Gradient Descent</a></td>
+<td>8.5</td>
+<td>math.OC, cs.LG, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2606.32005v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.31963v1">Signed-Permutation Coordinate Transport for RMSNorm Transformers</a></td>
+<td>8.5</td>
+<td>cs.LG, cs.CL, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2606.31963v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.31856v1">Low-dimensional topology of deep neural networks</a></td>
+<td>8.5</td>
+<td>cs.LG, math.GT</td>
+<td><a href="https://arxiv.org/abs/2606.31856v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.31332v1">CryoACE: An Atom-centric Framework for Accurate and Automated Model Building in Cryo-EM</a></td>
+<td>8.5</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.31332v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.31591v1">Evil Spectra: How Optimisers can Amplify or Suppress Emergent Misalignment</a></td>
+<td>8.1</td>
+<td>cs.LG, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.31591v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.31399v1">World-Model Collapse as a Phase Transition</a></td>
+<td>8.1</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.31399v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.31763v1">A Self-Evolving Agentic System for Automated Generation and Execution of Biological Protocols</a></td>
+<td>8.2</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2606.31763v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.32038v1">Introspective Coupling: Self-Explanation Training Tracks Behavioral Change Despite Fixed Supervision</a></td>
+<td>8.2</td>
+<td>cs.CL, cs.AI, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2606.32038v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>This is not a typical daily corpus. The simultaneous resolution of a decade-old optimization open problem, a formal correction to the symmetry assumptions underlying most LLM interpretability tooling, and a phase-transition framing of agent reliability — all in one day — indicates a field undergoing rapid theoretical consolidation. The practical consequence is that several widely-deployed tools and assumptions (permutation-only model merging, gradient degradation models of agent failure, optimizer-agnostic fine-tuning safety audits) require immediate reassessment. Watch for: (1) rapid follow-on work applying signed-permutation</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
