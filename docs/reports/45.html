@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-07-02 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-07-02</span>
+    <span>170 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 164 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 91/170 papers (54%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief</h1>
+<p><strong>Date:</strong> 2026-07-02 | <strong>Corpus:</strong> 170 papers | <strong>Avg. Novelty:</strong> 6.9/10</p>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus shows an unusual concentration of high-novelty work (54%) spanning AI/ML convergence with chemistry, robotics, and formal methods — a multi-domain burst rather than incremental progress in any single area. Three structural themes dominate: LLMs acquiring new operational primitives (memory, message-passing, symbolic rule generation), generative models being repurposed as geometric and physical world-modeling infrastructure, and long-standing theoretical gaps in privacy and safety being closed with tight bounds. The convergence signal is real and accelerating.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Automated chemistry surpasses human curation at scale.</strong> <a href="https://arxiv.org/abs/2607.01061v1">Agentic generation of verifiable rules for deterministic, self-expanding reaction classification</a> deploys LLM multi-agent pipelines to generate and formally verify symbolic reaction rules, expanding a chemical taxonomy by &gt;200x without human input. This is the clearest demonstration to date that LLMs can bootstrap <em>verifiable</em> domain knowledge in hard sciences — not just fluent text.</p>
+</li>
+<li>
+<p><strong>RF drone detection benchmarks are systematically inflated.</strong> <a href="https://arxiv.org/abs/2607.01025v1">How Much Do RF Drone Benchmarks Overstate? A Controlled Study and Theory of Data Leakage in UAV Signal Identification</a> proves via Cover's function-counting theorem that high reported accuracies are mathematical artifacts of segment-level cross-validation on continuous recordings. This invalidates a substantial portion of the counter-UAS literature and has direct procurement and defense policy implications.</p>
+</li>
+<li>
+<p><strong>Hallucinated citations are surviving peer review at scale.</strong> <a href="https://arxiv.org/abs/2607.00738v1">Phantom References: Hallucinated Citations That Survive Peer Review at Top-Tier Conferences</a> presents the first large-scale empirical audit of LLM-generated phantom citations in top-venue proceedings, with a post-ChatGPT trend showing clear acceleration. The bibliographic record at flagship ML venues is measurably compromised.</p>
+</li>
+<li>
+<p><strong>Binary tree mechanism for private continual counting is provably optimal.</strong> <a href="https://arxiv.org/abs/2607.00876v1">The Binary Tree Mechanism is Optimal for Approximate Differentially Private Continual Counting</a> closes a decade-long open problem with a tight Ω(log^{3/2} n) lower bound, simultaneously yielding the largest-known separation between hereditary discrepancy and private ℓ∞ error. This settles the theoretical foundation for a class of federated learning and streaming privacy systems.</p>
+</li>
+<li>
+<p><strong>Single-layer RL training matches full-model fine-tuning.</strong> <a href="https://arxiv.org/abs/2607.01232v1">Is One Layer Enough? Training A Single Transformer Layer Can Match Full-Parameter RL Training</a> finds that training one middle transformer layer via RL achieves parity with full-parameter updates, with a consistent structural pattern across model families. The compute and interpretability implications for post-training pipelines are immediate.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three convergent patterns are visible across today's corpus. <strong>First, generative models are becoming geometric infrastructure.</strong> <a href="https://arxiv.org/abs/2607.01202v1">World from Motion: Generative Dynamic Gaussian Reconstruction from Monocular Video</a>, <a href="https://arxiv.org/abs/2607.00832v1">Pano2World: End-to-End 3D Generation via Unified Multi-View Sequences</a>, and <a href="https://arxiv.org/abs/2607.01128v1">GAIA: Geometry-Adaptive Operator Learning for Forward and Inverse Problems</a> all treat diffusion or flow models not as endpoints but as components feeding persistent geometric representations (3DGS, neural operators, PDEs). The direction is clear: generative models as real-time world-state estimators. <strong>Second, LLMs are acquiring structured cognitive primitives.</strong> <a href="https://arxiv.org/abs/2607.01224v1">AutoMem: Automated Learning of Memory as a Cognitive Skill</a> treats memory management as a trainable skill yielding 2–4x long-horizon gains; <a href="https://arxiv.org/abs/2607.01077v1">Message Passing Enables Efficient Reasoning</a> replaces fork-join parallelism with preemptible inter-thread communication; <a href="https://arxiv.org/abs/2607.01179v1">QuasiMoTTo: Quasi-Monte Carlo Test-Time Scaling</a> introduces correlated sampling to eliminate inference redundancy. Together these signal a shift from scaling raw compute to engineering the <em>structure</em> of LLM reasoning. <strong>Third, formal guarantees are arriving for previously heuristic systems.</strong> <a href="https://arxiv.org/abs/2607.01203v1">GPU-Parallel Linearization Error Bounds for Real-Time Robust Optimal Control of Nonlinear and Neural Network Dynamics</a>, <a href="https://arxiv.org/abs/2607.00776v1">From Prediction Uncertainty to Conformalized Distance Fields for Safe Motion Planning</a>, and the DP lower bound paper all demonstrate that the gap between theoretical guarantees and deployment-speed systems is narrowing rapidly — a prerequisite for regulated deployment of autonomous systems.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.01061v1">Agentic generation of verifiable rules for deterministic, self-expanding reaction classification</a></td>
+<td>8.7</td>
+<td>cs.AI, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2607.01061v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.01202v1">World from Motion: Generative Dynamic Gaussian Reconstruction from Monocular Video</a></td>
+<td>8.5</td>
+<td>cs.CV, cs.AI, cs.GR</td>
+<td><a href="https://arxiv.org/abs/2607.01202v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.01025v1">How Much Do RF Drone Benchmarks Overstate?</a></td>
+<td>8.5</td>
+<td>physics.app-ph, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.01025v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.00876v1">The Binary Tree Mechanism is Optimal for Approximate Differentially Private Continual Counting</a></td>
+<td>8.5</td>
+<td>cs.DS, cs.CR, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.00876v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.00738v1">Phantom References: Hallucinated Citations That Survive Peer Review at Top-Tier Conferences</a></td>
+<td>8.5</td>
+<td>cs.DL, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2607.00738v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.01224v1">AutoMem: Automated Learning of Memory as a Cognitive Skill</a></td>
+<td>8.3</td>
+<td>cs.AI, cs.CL, cs.MA</td>
+<td><a href="https://arxiv.org/abs/2607.01224v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.01232v1">Is One Layer Enough? Training A Single Transformer Layer Can Match Full-Parameter RL Training</a></td>
+<td>8.1</td>
+<td>cs.LG, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2607.01232v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.01128v1">GAIA: Geometry-Adaptive Operator Learning for Forward and Inverse Problems</a></td>
+<td>8.1</td>
+<td>cs.LG, math.NA</td>
+<td><a href="https://arxiv.org/abs/2607.01128v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today's burst is not noise. The 54% high-novelty rate, combined with 96% cross-domain coverage, suggests a genuine phase in which AI methods are maturing from demonstrations into infrastructure for adjacent fields — chemistry, control theory, robotics, and scientific publishing itself. The most strategically significant finding may be the one least discussed: [Phantom References](https://arxiv.</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
