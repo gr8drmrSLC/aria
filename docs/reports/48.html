@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-07-08 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-07-08</span>
+    <span>148 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 145 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 80/148 papers (54%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief</h1>
+<p><strong>Date:</strong> 2026-07-08 | <strong>Corpus:</strong> 148 papers | <strong>Avg Novelty:</strong> 6.8/10</p>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus is anomalous: 54% of papers scored high-novelty and 98% bridge multiple domains, signaling a genuine convergence moment rather than routine output. The most consequential development is a provable quantum-classical learning separation grounded in physically realistic dynamics, which may reframe what quantum advantage means in practice. Simultaneously, formal verification, neural network theory, and multi-modal robotics each received papers that close long-standing theoretical gaps.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Quantum-classical learning separation is now rigorous and physically grounded.</strong> <a href="https://arxiv.org/abs/2607.06472v1">Provable learning separation for predicting time-evolution of quantum many-body systems</a> embeds BQP-complete computation into Hamiltonian dynamics to prove, under standard complexity assumptions, that no classical PAC learner can match quantum predictors on a physically natural task. This is the strongest separation result in quantum learning theory to date and gives QML a concrete, defensible application target beyond contrived constructions.</p>
+</li>
+<li>
+<p><strong>LLM code agents have crossed a practical threshold in formal verification.</strong> <a href="https://arxiv.org/abs/2607.06341v1">Harnessing Code Agents for Automatic Software Verification</a> achieves 100% proof coverage on thousands of Iris/Coq lemmas using a general-purpose agent with a verification harness—far outperforming prior specialized provers. The key insight is that removing fixed proof-strategy constraints unlocks the model's full search capability. This has direct implications for software supply-chain security and the cost of certified systems.</p>
+</li>
+<li>
+<p><strong>The NTK debate is now quantitatively settled for compositional tasks.</strong> <a href="https://arxiv.org/abs/2607.06382v1">A Function-Space Dichotomy for Compositional Learning: Exponential Sub-Optimality of the Neural Tangent Kernel</a> delivers the first precise, exponential lower bound on the sample complexity gap between NTK-regime models and finite-width networks on compositionally structured targets. This gives practitioners a rigorous criterion for when scaling width is fundamentally insufficient—a long-missing design heuristic.</p>
+</li>
+<li>
+<p><strong>Entanglement is measurable as a generalization axis in quantum RL.</strong> <a href="https://arxiv.org/abs/2607.06230v1">Entanglement as a Structural Complexity Axis: A PAC-Bayesian View of Generalization in Quantum Policies and Value Functions</a> establishes Fisher effective dimension—driven by entanglement structure—as the governing generalization parameter for parameterized quantum circuits, validated on real hardware. This reframes quantum circuit design from an expressivity problem to a generalization problem, with immediate practical consequences for PQC architecture search.</p>
+</li>
+<li>
+<p><strong>Metabolic engineering gets a relational foundation model.</strong> <a href="https://arxiv.org/abs/2607.06224v1">Canopy: A Heterograph Foundation Model for Metabolic Engineering</a> integrates a large-scale heterogeneous biological knowledge graph with multi-modal domain-specific encoders to predict fermentation titers—a commercially critical task where tabular ML discards relational structure. The quantitative lift over tabular baselines is substantial and the approach is generalizable to other graph-structured biological design problems.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three convergence signals are visible across today's corpus. <strong>First, theoretical foundations are catching up to empirical practice across ML subfields simultaneously</strong>—the NTK dichotomy paper, the GP-limit quantitative bounds in <a href="https://arxiv.org/abs/2607.06290v1">Quantitative Gaussian-Process limits of Tensor Programs</a>, and the spectral treatment of graph attention in <a href="https://arxiv.org/abs/2607.06546v1">Graph Convolutional Attention: A Spectral Perspective on Graph Denoising and Diffusion</a> all close gaps that have been open for years, suggesting the field is entering a phase of theoretical consolidation. <strong>Second, physics-informed inductive biases are becoming architecturally first-class</strong>: <a href="https://arxiv.org/abs/2607.06132v1">Self-Supervised Implicit CEST Reconstruction via Physics-Informed Lorentz Encoding</a> encodes spectral physics directly into coordinate space, while the quantum Hamiltonian paper and Canopy's biological knowledge graph both treat domain structure as architectural prior rather than regularization afterthought. <strong>Third, robustness and attribution are maturing as engineering disciplines</strong>: <a href="https://arxiv.org/abs/2607.06009v1">Multi-Channel Spread-Spectrum Code Watermarking</a> brings formal payload guarantees to code provenance, <a href="https://arxiv.org/abs/2607.06485v1">AirflowAttack</a> exposes an unexamined attack surface in IR VLMs, and <a href="https://arxiv.org/abs/2607.06495v1">Pitwall</a> treats faithfulness as an architectural property enforced at inference time. Together these signals suggest the field is simultaneously maturing its theoretical understanding, its physical grounding, and its operational trustworthiness—an unusual simultaneous advance across all three axes.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.06472v1">Provable learning separation for predicting time-evolution of quantum many-body systems</a></td>
+<td>9.1</td>
+<td>quant-ph, cs.AI, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.06472v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.06341v1">Harnessing Code Agents for Automatic Software Verification</a></td>
+<td>8.5</td>
+<td>cs.FL, cs.AI, cs.SE</td>
+<td><a href="https://arxiv.org/abs/2607.06341v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.06382v1">A Function-Space Dichotomy for Compositional Learning: Exponential Sub-Optimality of the Neural Tangent Kernel</a></td>
+<td>8.4</td>
+<td>stat.ML, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.06382v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.06230v1">Entanglement as a Structural Complexity Axis: A PAC-Bayesian View of Generalization in Quantum Policies and Value Functions</a></td>
+<td>8.2</td>
+<td>quant-ph, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.06230v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.06132v1">Self-Supervised Implicit CEST Reconstruction via Physics-Informed Lorentz Encoding</a></td>
+<td>8.2</td>
+<td>cs.LG, cs.AI, physics.med-ph</td>
+<td><a href="https://arxiv.org/abs/2607.06132v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.06224v1">Canopy: A Heterograph Foundation Model for Metabolic Engineering</a></td>
+<td>8.0</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.06224v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.06009v1">Multi-Channel Spread-Spectrum Code Watermarking</a></td>
+<td>8.0</td>
+<td>cs.CR, cs.LG, cs.SE</td>
+<td><a href="https://arxiv.org/abs/2607.06009v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.06546v1">Graph Convolutional Attention: A Spectral Perspective on Graph Denoising and Diffusion</a></td>
+<td>8.0</td>
+<td>cs.LG, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2607.06546v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today's corpus is one of the more consequential single-day outputs ARIA has processed. The quantum learning separation result deserves immediate attention from anyone building the case for near-term quantum advantage: it is rigorous, physically motivated, and hardness-based—the three properties that prior QML separation claims have lacked. Watch for follow-on work characterizing which real Hamiltonians instantiate the hardness construction and whether current NISQ hardware can actually exploit the separation</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
