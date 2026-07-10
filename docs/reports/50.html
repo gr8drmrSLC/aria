@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-07-10 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-07-10</span>
+    <span>147 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 144 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 73/147 papers (50%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-07-10</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus shows an unusual concentration of foundational work: 50% of papers scored high-novelty, with the dominant signal being <strong>rigorous negative results and formal limitations</strong> that expose gaps in widely-deployed ML assumptions—spanning diffusion samplers, quantization, discrete bottlenecks, and interpretability. Simultaneously, a cross-domain convergence is accelerating between ML theory and adjacent fields including algebraic geometry, cryptographic watermarking, clinical AI, and physical fabrication, suggesting the field is entering a phase of structural consolidation after rapid empirical scaling.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Diffusion theory has a critical gap.</strong> <a href="https://arxiv.org/abs/2607.08757v1">Score Accuracy Along the Forward Diffusion Does Not Certify Numerical Stability in Diffusion Sampling</a> proves that low score-matching error under forward marginals provides <em>no</em> Wasserstein stability guarantee for the reverse sampler—a result that invalidates a common implicit assumption in diffusion model training. The constructive counterexample is smooth and the error is arbitrarily small, making this directly relevant to production samplers. A denoiser projection mitigation is proposed, but this result demands revisiting how diffusion model quality is evaluated at scale.</p>
+</li>
+<li>
+<p><strong>LLM reasoning internals can be weaponized for auditing—and for extraction.</strong> <a href="https://arxiv.org/abs/2607.08173v1">Overthinking: Amplifying Reasoning Weights to Extract Learned Secrets</a> demonstrates that amplifying reasoning task vectors in non-reasoning instruct models surfaces hidden behaviors and memorized information invisible to standard black-box probing. This is a dual-use capability: a powerful tool for pre-deployment auditing, and a novel attack surface for adversaries with model access. Safety teams should treat this as an immediate methodology to adopt and defend against.</p>
+</li>
+<li>
+<p><strong>Language-grounded world models have a structural flaw that is fixable.</strong> <a href="https://arxiv.org/abs/2607.08312v1">Write-Protected Discrete Bottlenecks for Language-Grounded World Models</a> formally proves that end-to-end LLM/VLM gradient injection into robot world models (the paradigm underlying RT-2, PaLM-E, Octo) corrupts discrete physical symbol representations—"symbol collapse." A three-constraint architectural fix achieves 97.2% grounding accuracy with near-zero parameter overhead. This is a direct challenge to dominant embodied AI architectures.</p>
+</li>
+<li>
+<p><strong>High-dimensional Procrustes matching is now tractable.</strong> <a href="https://arxiv.org/abs/2607.08538v1">High-Dimensional Procrustes Matching via Tree Counts</a> delivers the first polynomial-time algorithm for simultaneous permutation and rotation recovery when <em>d</em> ≫ log <em>n</em> at constant correlation—resolving a long-standing open problem. Downstream implications include graph alignment, multi-omics data integration, and point-cloud registration at scale.</p>
+</li>
+<li>
+<p><strong>CFG quantization has a provable blind spot.</strong> <a href="https://arxiv.org/abs/2607.08241v1">Closing the Null Space: Guidance-Aware Quantization for Classifier-Free Diffusion</a> analytically identifies a "branch-drift null space" in standard PTQ calibration of CFG diffusion models: because calibration ignores the paired conditional/unconditional branch structure, quantization error is invisible under standard metrics but degrades guided outputs. This affects virtually every quantized diffusion deployment in production today.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three cross-cutting patterns are visible across today's corpus. <strong>First, formal methods are converging on ML practice at pace.</strong> <a href="https://arxiv.org/abs/2607.08370v1">Tubular Neighbourhoods of Pfaffian Sets and Applications to Neural Networks</a> applies real algebraic geometry to derive probabilistic robustness bounds for classifiers; <a href="https://arxiv.org/abs/2607.08349v1">Certified Interventional Fidelity</a> imports anytime-valid sequential inference into mechanistic interpretability; <a href="https://arxiv.org/abs/2607.08444v1">Statistical Efficiency and Inference of Quantile Distributional Reinforcement Learning</a> brings semiparametric efficiency theory to distributional RL. This is not decoration—these results change what claims practitioners can make. <strong>Second, the agent supply chain is becoming a security surface.</strong> <a href="https://arxiv.org/abs/2607.08400v1">TRACE</a> watermarks agent <em>trajectories</em> against reseller substitution; <a href="https://arxiv.org/abs/2607.08180v1">Out of Sight / CAPE</a> exploits context compression in agent pipelines as a content-protection vector. Together these signal that adversarial and provenance concerns are moving from model weights to agent infrastructure. <strong>Third, physical-world validation is being integrated into generative design.</strong> <a href="https://arxiv.org/abs/2607.08392v1">IrisFlow</a> validates its joint discrete-continuous flow matching for optical coating design via actual fabrication; <a href="https://arxiv.org/abs/2607.08741v1">ARDY</a> targets real-time humanoid robotics. The gap between generative ML and deployable physical artifacts is narrowing in multiple domains simultaneously.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.08757v1">Score Accuracy Along the Forward Diffusion Does Not Certify Numerical Stability in Diffusion Sampling</a></td>
+<td>8.6</td>
+<td>stat.ML, cs.LG, math.NA</td>
+<td><a href="https://arxiv.org/abs/2607.08757v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.08538v1">High-Dimensional Procrustes Matching via Tree Counts</a></td>
+<td>8.6</td>
+<td>stat.ML, cs.IT, math.ST</td>
+<td><a href="https://arxiv.org/abs/2607.08538v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.08444v1">Statistical Efficiency and Inference of Quantile Distributional Reinforcement Learning</a></td>
+<td>8.5</td>
+<td>stat.ML, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.08444v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.08392v1">Joint Discrete-Continuous Flow Matching for Open-Vocabulary Inverse Design of Multilayer Optical Coatings</a></td>
+<td>8.5</td>
+<td>physics.optics, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.08392v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.08173v1">Overthinking: Amplifying Reasoning Weights to Extract Learned Secrets</a></td>
+<td>8.4</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2607.08173v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.08370v1">Tubular Neighbourhoods of Pfaffian Sets and Applications to Neural Networks</a></td>
+<td>8.4</td>
+<td>math.AG, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.08370v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.08312v1">Write-Protected Discrete Bottlenecks for Language-Grounded World Models</a></td>
+<td>8.2</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.08312v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.08241v1">Closing the Null Space: Guidance-Aware Quantization for Classifier-Free Diffusion</a></td>
+<td>8.0</td>
+<td>cs.CV, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.08241v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today's anomaly flags—50% high-novelty rate and near-universal cross-domain bridging—are consistent with a field hitting structural limits and compensating by importing external frameworks. The concentration of <strong>negative results with constructive fixes</strong> is particularly significant: the diffusion stability paper, the CFG quantization null-space paper, and the discrete bottleneck paper all follow the same pattern of proving that a widely-used assumption fails, then offering a minimal correction. This is characteristic of a maturing field performing rigorous self-</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
