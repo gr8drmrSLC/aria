@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-07-15 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-07-15</span>
+    <span>128 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 124 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 70/128 papers (55%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief</h1>
+<p><strong>Date:</strong> 2026-07-15 | <strong>Corpus:</strong> 128 papers | <strong>Avg. Novelty:</strong> 6.8/10 | <strong>High-Novelty Rate:</strong> 55%</p>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus shows an unusual concentration of foundational work — 55% of papers scored high-novelty, well above baseline, with 97% crossing domain boundaries. The dominant signal is a shift from empirical tinkering toward rigorous theoretical grounding: multiple papers establish first-of-kind formal guarantees in generative model forensics, stochastic process conditioning, and MCMC sampling. Simultaneously, a cluster of papers is exposing structural limits in current AI architectures — not new benchmarks, but proofs that certain failures are intrinsic — which warrants immediate attention from teams building on these foundations.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Watermark forensics gets a theoretical backbone.</strong> <a href="https://arxiv.org/abs/2607.13003v1">Watermark Forensics for Generative Models: An Information-Theoretic Perspective</a> derives the first tight Θ(log N/h) token-cost law for multi-user watermark attribution — a sharp, provable bound that unifies detection, attribution, payload extraction, and localization under a single entropy-rate framework. This is the result practitioners have been waiting for to make watermarking production-credible.</p>
+</li>
+<li>
+<p><strong>Video diffusion has a provable architectural flaw.</strong> <a href="https://arxiv.org/abs/2607.13031v1">The Seriality Gap in Video Diffusion Models</a> rigorously proves that bidirectional diffusion architectures degrade with causal chain length regardless of denoising budget — not an empirical shortcoming but a structural one. Teams betting on video diffusion for physics simulation, robotics, or world modeling need to treat this as a load-bearing constraint, not a tuning problem.</p>
+</li>
+<li>
+<p><strong>Self-improving AI systems escape the evaluation bootstrapping trap.</strong> <a href="https://arxiv.org/abs/2607.12790v1">Who Grades the Grader? Co-Evolving Evaluation Metrics and Skills for Self-Improving LLM Agents</a> introduces the Double Ratchet framework, which co-evolves metrics and skills simultaneously without ground-truth verifiers. This directly unblocks a class of open-domain agent tasks where no external oracle exists — a practical advance, not a theoretical one.</p>
+</li>
+<li>
+<p><strong>Bioinformatics tools reveal cultural evolution obeys different rules than molecular evolution.</strong> <a href="https://arxiv.org/abs/2607.12673v1">Contrasting statistical patterns in melodic and molecular evolution reveal distinctive constraints in a culturally evolving system</a> applies rhythm-aware sequence alignment to 40,000 folk melody variants and finds systematic divergence from molecular evolutionary patterns. The methodological transfer here is the story: this opens a rigorous computational lane for cultural evolution research that has lacked one.</p>
+</li>
+<li>
+<p><strong>Neural connectome mapping becomes tractable.</strong> <a href="https://arxiv.org/abs/2607.12930v1">Optimal photostimulation selection for iterative activity maps</a> demonstrates exhaustive connectome recovery using only 5% of trials via Bayesian active learning with Beta-Bernoulli inference and compressed sensing. At a time when all-optical neuroscience is scaling fast, this is the kind of sample efficiency gain that could redefine experimental throughput.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three cross-cutting patterns dominate today's corpus. First, <strong>spectral diagnostics are becoming a preferred internal audit mechanism</strong>: both <a href="https://arxiv.org/abs/2607.12438v1">Fisher Rank Inflation</a> and <a href="https://arxiv.org/abs/2607.12616v1">The Geometry of Memorization</a> independently converge on spectral analysis of gradient or velocity-field geometry to detect memorization without external reference data — suggesting a nascent field of model-internal pathology detection. Second, <strong>training-free and annotation-free methods are maturing into first-class solutions</strong>: <a href="https://arxiv.org/abs/2607.12922v1">LatentFlow</a> conditions arbitrary stochastic processes without learned approximations, <a href="https://arxiv.org/abs/2607.12747v1">OAT (Tracing Agentic Failure)</a> attributes agent failures without step-level annotations, and <a href="https://arxiv.org/abs/2607.12571v1">TrustVLA</a> defends VLA models against backdoors at inference time with no retraining — collectively signaling that the field is moving past the assumption that supervision is always available. Third, <strong>structural limits in AI are being formally characterized rather than empirically observed</strong>: the seriality gap proof, the Double Ratchet's formalization of the evaluation bootstrapping problem, and the RHMC acceleration guarantee (analogous to Nesterov acceleration for sampling) all represent a maturation toward rigorous theory that will constrain — and guide — the next generation of system design.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.13003v1">Watermark Forensics for Generative Models: An Information-Theoretic Perspective</a></td>
+<td>8.7</td>
+<td>cs.CR, cs.IT, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.13003v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.12673v1">Contrasting statistical patterns in melodic and molecular evolution</a></td>
+<td>8.6</td>
+<td>q-bio.PE, cs.SD, physics.soc-ph</td>
+<td><a href="https://arxiv.org/abs/2607.12673v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.12790v1">Who Grades the Grader? Co-Evolving Evaluation Metrics and Skills for Self-Improving LLM Agents</a></td>
+<td>8.5</td>
+<td>cs.AI, cs.CL, cs.MA</td>
+<td><a href="https://arxiv.org/abs/2607.12790v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.13031v1">The Seriality Gap in Video Diffusion Models</a></td>
+<td>8.4</td>
+<td>cs.LG, cs.CV</td>
+<td><a href="https://arxiv.org/abs/2607.13031v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.12922v1">LatentFlow: A General Framework for Conditioning Stochastic Processes</a></td>
+<td>8.4</td>
+<td>stat.ML, cs.LG, stat.ME</td>
+<td><a href="https://arxiv.org/abs/2607.12922v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.12930v1">Optimal photostimulation selection for iterative activity maps</a></td>
+<td>8.1</td>
+<td>q-bio.NC, q-bio.QM</td>
+<td><a href="https://arxiv.org/abs/2607.12930v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.12626v1">Gradient-free learning of a closed-loop wall controller for turbulent drag reduction</a></td>
+<td>8.0</td>
+<td>physics.flu-dyn, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.12626v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.12902v1">Accelerated Mixing Time of Randomized Hamiltonian Monte Carlo</a></td>
+<td>7.9</td>
+<td>stat.ML, cs.DS, math.PR</td>
+<td><a href="https://arxiv.org/abs/2607.12902v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today's session is atypical in a meaningful way: the novelty burst is not driven by a single subfield breakthrough but by a broad-front advance in theoretical rigor across ML, biology, physics, and security simultaneously. The most consequential near-term item is the seriality gap result — if it holds under scrutiny, it constrains the roadmap for every video foundation model lab building toward causal world modeling, and the architectural implications are non-trivial. The watermark forensics framework deserves parallel attention as regulatory pressure on AI provenance accelerates; the Θ(log N/h) bound gives legal and compliance teams an actual number to work with. Watch for follow-on work citing <a href="https://arxiv.org/abs/2607.12922v1">LatentFlow</a> — a provably exact, training-free conditioning framework with this generality will either be quietly absorbed into standard</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
