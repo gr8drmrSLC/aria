@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-07-28 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-07-28</span>
+    <span>170 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 160 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 98/170 papers (58%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-07-28</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus of 170 papers shows an unusual concentration of high-novelty work (58% above threshold), with foundational results appearing simultaneously across LLM internals, nonequilibrium physics, network epidemiology, and robotics. The unifying signal is <strong>rigorous formalization of previously assumed-stable structures</strong>—geometric representations in LLMs, drift in generative models, outbreak distributions in epidemics—paired with discovery that those structures are more dynamic, correctable, or intractable than assumed. This is a day of theoretical consolidation with direct engineering consequences.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>LLM geometry is context-constructed, not context-retrieved.</strong> <a href="https://arxiv.org/abs/2607.24425v1">Context Is King: How In-Context Specification Shapes the Geometry of Concepts</a> uses causal activation patching to demonstrate that in-context rules dynamically construct topological manifolds—including non-default ones from arbitrary tokens—overriding pretrained geometric priors entirely. This fundamentally challenges the "lookup table" model of LLM world knowledge and has immediate implications for prompt engineering, interpretability, and model editing.</p>
+</li>
+<li>
+<p><strong>Observation-based correction of temporal graph drift is provably impossible.</strong> <a href="https://arxiv.org/abs/2607.24662v1">When Can You Correct Distribution Drift in Temporal Graph Generation?</a> proves via formal decomposition that the degradation gap in temporal graph generative models contains an irreducible entropy term that cannot be eliminated from observations alone, regardless of correction strategy. Any deployed temporal graph model must be treated as fundamentally time-limited—a hard constraint for infrastructure and social network modeling applications.</p>
+</li>
+<li>
+<p><strong>SAE features split into two mechanistically distinct classes.</strong> <a href="https://arxiv.org/abs/2607.24645v1">Sparse Autoencoders Encode Both Concepts and Functions</a> introduces FEGA to show that sparse autoencoder features decompose into value-like ("concepts") and pointer-like ("functions") types with geometrically incompatible effect structures. This directly explains why feature-based steering is unreliable and invalidates the assumption that interpretable activation patterns correspond to stable intervention handles—a critical caveat for anyone building SAE-based safety tools.</p>
+</li>
+<li>
+<p><strong>A new attack surface exists in two-tier inference pipelines.</strong> <a href="https://arxiv.org/abs/2607.24692v1">Denial of Deadline: Network-Driven Accuracy Collapse in Distributed Inference Pipelines</a> identifies that shaped network workload attacks can silently degrade prediction accuracy by forcing deadline misses on the slow path, requiring zero model or data access. As distributed inference architectures proliferate in autonomous systems, this is an unaddressed production security gap.</p>
+</li>
+<li>
+<p><strong>Single-image medical segmentation reaches practical viability.</strong> <a href="https://arxiv.org/abs/2607.24453v1">ESRVS: Extreme Semi-Supervised Retinal Vessel Segmentation with a Single Annotated Image</a> combines DINOv2 transfer, physics-inspired vascular priors, and adversarial refinement to match methods using 10–20× more labeled data. The framework generalizes the principle that foundation model features plus domain priors can substitute for annotation volume in structured biological segmentation tasks.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three cross-cutting patterns dominate today's corpus. First, <strong>formalization of dynamic versus static structure</strong>: papers across LLM internals, network epidemics, and complex systems are replacing assumed-fixed representations (geometric manifolds, Markovian dynamics, dimensional embeddings) with rigorous proofs that these structures are protocol-dependent or reducible—see <a href="https://arxiv.org/abs/2607.24425v1">Context Is King</a>, <a href="https://arxiv.org/abs/2607.24615v1">Extreme outbreaks in non-Markovian epidemics</a>, and <a href="https://arxiv.org/abs/2607.24121v1">Nonlinear Model Reduction of Complex Networks via Spectral Submanifolds</a> in parallel. Second, <strong>machine learning penetrating classical physical simulation</strong>: <a href="https://arxiv.org/abs/2607.24393v1">Stochastic Counterdiabatic Driving via Biorthogonal Liouvillian Eigenmodes</a> and <a href="https://arxiv.org/abs/2607.24513v1">Physics Transformer</a> both deliver ML-driven precision improvements to longstanding computational physics problems, with the former achieving machine-precision lag suppression in free energy estimation. Third, <strong>contact-rich and sensory-rich robotics converging on world models</strong>: <a href="https://arxiv.org/abs/2607.24267v1">FeelWorld</a>'s contact-gated tactile attention represents a maturation point where robotic world models are no longer purely visual, signaling that the next generation of manipulation systems will require multimodal physical imagination. The 160/170 cross-domain papers reinforce that the productive research frontier is now consistently at domain boundaries rather than within any single field.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.24425v1">Context Is King: How In-Context Specification Shapes the Geometry of Concepts</a></td>
+<td>8.5</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.24425v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.24393v1">Stochastic Counterdiabatic Driving via Biorthogonal Liouvillian Eigenmodes</a></td>
+<td>8.5</td>
+<td>physics.comp-ph, cond-mat.stat-mech, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.24393v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.24662v1">When Can You Correct Distribution Drift in Temporal Graph Generation?</a></td>
+<td>8.4</td>
+<td>cs.LG, cs.SI</td>
+<td><a href="https://arxiv.org/abs/2607.24662v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.24121v1">Nonlinear Model Reduction of Complex Networks via Spectral Submanifolds</a></td>
+<td>8.2</td>
+<td>physics.soc-ph, math.DS, q-bio.QM</td>
+<td><a href="https://arxiv.org/abs/2607.24121v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.24615v1">Extreme outbreaks in non-Markovian epidemics on complex networks</a></td>
+<td>8.1</td>
+<td>physics.soc-ph, cond-mat.stat-mech</td>
+<td><a href="https://arxiv.org/abs/2607.24615v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.24267v1">FeelWorld: Visuo-Tactile World Model for Hierarchical Contact Prediction and Planning</a></td>
+<td>8.1</td>
+<td>cs.RO</td>
+<td><a href="https://arxiv.org/abs/2607.24267v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.24645v1">Sparse Autoencoders Encode Both Concepts and Functions</a></td>
+<td>7.8</td>
+<td>cs.LG, cs.AI, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2607.24645v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.24692v1">Denial of Deadline: Network-Driven Accuracy Collapse in Distributed Inference Pipelines</a></td>
+<td>7.8</td>
+<td>cs.NI, cs.AI, cs.CR</td>
+<td><a href="https://arxiv.org/abs/2607.24692v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today is notable less for any single breakthrough than for a coordinated tightening of theoretical foundations across multiple fields simultaneously—a pattern that historically precedes rapid applied progress. The two highest-priority threads to watch: (1) The implications of <a href="https://arxiv.org/abs/2607.24425v1">Context Is King</a> for mechanistic interpretability are severe—if geometric structure is protocol-constructed rather than stored, then circuit-level analyses that assume stable relational manifolds may need full replication under controlled context conditions. Expect follow-on work auditing prior interpretability findings. (2) The [Denial of Deadline](https://arxiv.org/abs/2607.</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
