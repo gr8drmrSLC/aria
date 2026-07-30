@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-07-30 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-07-30</span>
+    <span>174 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 171 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 103/174 papers (59%) scor…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief</h1>
+<p><strong>Date:</strong> 2026-07-30 | <strong>Corpus:</strong> 174 papers | <strong>Avg. Novelty:</strong> 6.9/10</p>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus shows an unusual concentration of high-novelty work (59% above threshold) across a narrow set of convergent themes: AI agent capability limits, geometric structure of learned representations, and information-theoretic frameworks unifying biology with machine learning. The most consequential signal is a cluster of papers that simultaneously expose what current AI agents <em>cannot</em> do reliably while proposing novel architectures to close those gaps—a rare coincidence of critique and construction that suggests the field is entering a self-corrective phase.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>AI agents fail at open-ended science, not engineering.</strong> <a href="https://arxiv.org/abs/2607.27191v1">Can AI agents conduct open-ended AI research?</a> introduces a rigorous "shadow evaluation" methodology and provides the first concrete empirical evidence that frontier agents handle engineering tasks adequately but systematically break down on open-ended scientific reasoning—directly undermining the most optimistic timelines for AI-driven R&amp;D acceleration.</p>
+</li>
+<li>
+<p><strong>Frontier VLMs confabulate structured medical diagnoses from demographics alone.</strong> <a href="https://arxiv.org/abs/2607.26886v1">Hearsay: Vision-Language Medical Diagnoses Without an Image</a> documents a critical safety failure: Claude Opus-4.7, GPT-5.4, and Gemini-3.1-Pro generate demographically biased, structured diagnostic outputs with no image present, and standard prose-based safety audits miss this entirely because hedging appears in prose but not in structured output fields. This is a deployment-blocking finding for any clinical VLM pipeline.</p>
+</li>
+<li>
+<p><strong>LLMs encode a curved, irreducible sky-sphere manifold in their residual stream.</strong> <a href="https://arxiv.org/abs/2607.27092v1">Sky sphere representation in language models</a> identifies the first confirmed high-dimensional curved feature manifold decodable from ~100B-parameter LLMs—a structurally significant empirical discovery about how world knowledge is geometrically organized, with implications for mechanistic interpretability and the limits of linear probing.</p>
+</li>
+<li>
+<p><strong>Implementation variance invalidates most automated research conclusions.</strong> <a href="https://arxiv.org/abs/2607.26587v1">One Run Is Not an Idea: The Implementation Lottery in Automated Research</a> demonstrates empirically that winner reversals across reruns exceed 40% in some automated research settings, formally distinguishing idea-level reliability from artifact-level performance. This directly undermines the validity of single-run automated research pipelines now being deployed at scale.</p>
+</li>
+<li>
+<p><strong>A parameter-free algorithm resolves an open problem in online learning under heavy-tailed noise.</strong> <a href="https://arxiv.org/abs/2607.27073v1">HT-PAder</a> achieves the first minimax-universal dynamic regret guarantee without parameter tuning under heavy-tailed stochastic gradients in non-stationary environments, with a matching lower bound. This closes a meaningful theoretical gap relevant to robust real-world optimization.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three cross-cutting patterns dominate today's corpus. First, a <strong>representation geometry thread</strong> runs through multiple high-novelty papers: <a href="https://arxiv.org/abs/2607.27092v1">Sky sphere representation</a> finds curved manifolds in LLM residual streams, <a href="https://arxiv.org/abs/2607.27017v1">What Can Latent World Models Know?</a> establishes which physical parameters are identifiable from learned latents as a function of modality and prediction objective, and <a href="https://arxiv.org/abs/2607.26798v1">Navigation driven by bidirectional information transmission</a> derives system-independent Behavioral Equations of State linking information geometry to navigation performance in biological systems. Together, these suggest that information-theoretic and geometric frameworks are converging across biology, robotics, and LLM internals—a signal worth tracking for unified theory. Second, a <strong>capability-limit diagnosis cluster</strong> is visible: <a href="https://arxiv.org/abs/2607.26886v1">Hearsay</a>, <a href="https://arxiv.org/abs/2607.27191v1">Can AI agents conduct open-ended research?</a>, <a href="https://arxiv.org/abs/2607.26587v1">One Run Is Not an Idea</a>, and <a href="https://arxiv.org/abs/2607.26899v1">Human diversity fuels collective creativity that LLMs cannot simulate</a> all deliver empirical evidence of systematic AI failure modes invisible to current evaluation practices—a coordinated reality check on AI capability claims. Third, <strong>efficiency-driven architectural departures</strong> from LLM-centric designs appear in <a href="https://arxiv.org/abs/2607.27205v1">TurboVLA</a> (0.2B VLA at 32 Hz) and <a href="https://arxiv.org/abs/2607.26760v1">Metis</a> (native persistent memory in foundation models), signaling that practitioners are now aggressively rejecting heavyweight defaults in favor of deployable, specialized architectures.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.26798v1">Navigation driven by bidirectional information transmission between sensing and actuation</a></td>
+<td>8.6</td>
+<td>physics.bio-ph, cond-mat, q-bio</td>
+<td><a href="https://arxiv.org/abs/2607.26798v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.27191v1">Can AI agents conduct open-ended AI research?</a></td>
+<td>8.5</td>
+<td>cs.AI, cs.LG, cs.CY</td>
+<td><a href="https://arxiv.org/abs/2607.27191v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.27092v1">Sky sphere representation in language models</a></td>
+<td>8.5</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.27092v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.26886v1">Hearsay: Vision-Language Medical Diagnoses Without an Image</a></td>
+<td>8.4</td>
+<td>cs.CV, cs.AI, cs.CL, cs.CY</td>
+<td><a href="https://arxiv.org/abs/2607.26886v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.26760v1">Metis: Memory Foundation Model</a></td>
+<td>8.5</td>
+<td>cs.CL, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.26760v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.27205v1">TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz</a></td>
+<td>8.2</td>
+<td>cs.CV, cs.RO</td>
+<td><a href="https://arxiv.org/abs/2607.27205v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.26587v1">One Run Is Not an Idea: The Implementation Lottery in Automated Research</a></td>
+<td>8.2</td>
+<td>cs.MA, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2607.26587v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.26998v1">AgentSnare: Learning to Delay, Divert, and Defuse Autonomous Penetration Agents</a></td>
+<td>8.2</td>
+<td>cs.CR, cs.CL, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.26998v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today's corpus is notable less for any single breakthrough than for the coherence of its critical signal: the field is producing simultaneous, methodologically independent evidence that current AI evaluation frameworks are structurally inadequate. <a href="https://arxiv.org/abs/2607.26886v1">Hearsay</a> shows that structured output auditing is categorically different from prose auditing; <a href="https://arxiv.org/abs/2607.26587v1">One Run Is Not an Idea</a> shows that single-run evaluation of automated research is statistically indefensible; <a href="https://arxiv.org/abs/2607.27191v1">Can AI agents conduct open-ended research?</a> shows that narrow benchmark performance doesn't transfer to scientific reasoning. These are not isolated critiques—they converge on a single meta-finding: deployment and evaluation</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
