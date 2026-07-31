@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-07-31 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-07-31</span>
+    <span>200 papers analyzed</span>
+    
+      <span class="trigger-tag">Volume spike: 200 papers today vs. 122 h…</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 196 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 113/200 papers (56%) scor…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-07-31</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus represents a genuine volume and novelty spike: 200 papers at 1.5× historical rate, with 56% scoring high-novelty and 196 bridging multiple domains. The dominant signal is <strong>convergence across abstraction layers</strong>—foundation models pushing into numerical science, physical simulation, and real-world agent execution simultaneously, while theoretical foundations (convergence guarantees, generalization bounds) are catching up to empirical practice. The practical implication: the gap between frontier model capability and deployment-ready reliability is being measured rigorously for the first time, and the numbers are sobering.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>LLM agents are far from production-ready for SRE work.</strong> <a href="https://arxiv.org/abs/2607.28545v1">ORCA-bench: How Ready Are Language Model Agents for Oncall?</a> establishes the first production-fidelity benchmark for oncall root cause analysis using real telemetry stacks. The best frontier agent achieves only <strong>25.3% accuracy</strong>—a hard quantitative ceiling on a task class that practitioners have been deploying LLMs for anyway. This number will anchor the field.</p>
+</li>
+<li>
+<p><strong>Neural RL now has provable order-optimal guarantees in safety-critical settings.</strong> <a href="https://arxiv.org/abs/2607.28390v1">Hierarchical Multilevel Monte Carlo for Order-Optimal Neural Actor-Critic in Average-Reward CMDPs</a> closes a long-standing theoretical gap: O(T⁻¹/²) convergence with neural critics in constrained MDPs, enabling credible deployment of actor-critic methods in safety-critical domains with formal backing.</p>
+</li>
+<li>
+<p><strong>Transformer training theory gets a rigorous foundation.</strong> <a href="https://arxiv.org/abs/2607.27975v1">Generalization Bounds on Optimal Control for Transformer Training and Wasserstein Distributional Robustness</a> reformulates Transformer training as a measure-valued Markovian control problem and derives explicit finite-sample generalization bounds—a mathematically serious contribution that most empirical scaling work has dodged entirely.</p>
+</li>
+<li>
+<p><strong>AI safety benchmarking gains a live, adversarially grounded tool.</strong> <a href="https://arxiv.org/abs/2607.28503v1">InfoOps Bench: A live information operations safety benchmark</a> draws on 2,100+ real state-backed influence operations from Russian, Chinese, and Iranian sources to continuously test frontier models. Finding: substantial inter-model variance in susceptibility, plus systematic political bias in Chinese-developed models. A benchmark that updates with adversary behavior is qualitatively different from static evals.</p>
+</li>
+<li>
+<p><strong>Unsupervised structure prediction without ground-truth labels is now viable.</strong> <a href="https://arxiv.org/abs/2607.28553v1">APO: Unsupervised Atomic Policy Optimization for 3D Structure Prediction of Atomic Systems</a> adapts group-relative policy optimization to crystal/protein structure prediction using physics-motivated dual rewards alone, outperforming supervised baselines in data-scarce regimes. This matters immediately for novel materials discovery where labels don't exist.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three cross-cutting patterns dominate today's corpus. First, <strong>theory is catching up to practice</strong>: the MLMC actor-critic paper, the Transformer optimal-control bounds paper, and the inductive cardinality estimator <a href="https://arxiv.org/abs/2607.28311v1">FICE</a> all provide formal guarantees for capabilities the community has been using empirically without justification. This is a maturation signal, not incremental work. Second, <strong>foundation models are colonizing non-language scientific domains</strong>: <a href="https://arxiv.org/abs/2607.28432v1">UNICON</a> extends in-context operator learning across scientific and social disciplines, <a href="https://arxiv.org/abs/2607.28466v1">EndoCLIP</a> builds a colonoscopy-specific VLM from 280K routine reports, and <a href="https://arxiv.org/abs/2607.28553v1">APO</a> removes the label requirement from materials structure prediction entirely. The pattern is consistent: domain-specific supervision is being replaced or augmented by self-supervised or physics-grounded signals at scale. Third, <strong>world models are diverging into specialized architectures</strong>: <a href="https://arxiv.org/abs/2607.27924v1">ODEWorld</a> goes continuous-time, <a href="https://arxiv.org/abs/2607.28391v1">TacWAM</a> adds tactile mechanics, and <a href="https://arxiv.org/abs/2607.28362v1">ShadowDancer</a> learns action representations without labels or motion estimators. The monolithic video world model is fracturing into modality-aware and physics-aware variants—watch for consolidation battles in robotics benchmarks over the next six months.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.28545v1">ORCA-bench: How Ready Are Language Model Agents for Oncall?</a></td>
+<td>8.5</td>
+<td>cs.CL, cs.AI, cs.SE</td>
+<td><a href="https://arxiv.org/abs/2607.28545v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.28390v1">Hierarchical Multilevel Monte Carlo for Order-Optimal Neural Actor-Critic in Average-Reward CMDPs</a></td>
+<td>8.5</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2607.28390v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.27975v1">Generalization Bounds on Optimal Control for Transformer Training and Wasserstein Distributional Robustness</a></td>
+<td>8.5</td>
+<td>cs.LG, math.OC</td>
+<td><a href="https://arxiv.org/abs/2607.27975v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.28250v1">Causal Architecture Dynamics Prior to Arrival of Self-replicators in a Model of Catalytic Networks Relevant to Origin-of-Life</a></td>
+<td>8.4</td>
+<td>q-bio.PE</td>
+<td><a href="https://arxiv.org/abs/2607.28250v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.28466v1">A report-grounded vision-language foundation model for colonoscopy from 280000 routine reports</a></td>
+<td>8.3</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2607.28466v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.28503v1">InfoOps Bench: A live information operations safety benchmark</a></td>
+<td>8.0</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2607.28503v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.28553v1">APO: Unsupervised Atomic Policy Optimization for 3D Structure Prediction of Atomic Systems</a></td>
+<td>8.1</td>
+<td>cs.LG, cs.AI, cs.MA</td>
+<td><a href="https://arxiv.org/abs/2607.28553v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2607.28287v1">Tycho: Active Abstraction with Programmatic World Models for ARC-AGI-3</a></td>
+<td>8.1</td>
+<td>cs.AI, cs.CV, cs.SC</td>
+<td><a href="https://arxiv.org/abs/2607.28287v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>The 25.3% ceiling from ORCA-bench is the most operationally significant number in today's corpus—not because it's surprising, but because it's now <em>measured</em> against a realistic environment rather than curated evals. Expect this benchmark to become a standard citation in every serious SRE-agent paper for the next two years, similar to how HumanEval anchored coding capability discussions. The convergence of formal guarantees (MLMC actor-critic, Transformer bounds, FICE) arriving simultaneously with deployment-stress results (ORCA-bench, InfoOps Bench) suggests the field is entering a phase where theoretical and empirical credibility are being demanded together—a healthy but demanding standard. Watch the tactile world model space closely: <a href="https://arxiv.org/abs/2607.28391v1">TacWAM</a>'</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
