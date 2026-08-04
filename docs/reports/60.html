@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-08-04 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-08-04</span>
+    <span>200 papers analyzed</span>
+    
+      <span class="trigger-tag">Volume spike: 200 papers today vs. 119 h…</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 197 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 105/200 papers (52%) scor…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-08-04</h1>
+<h2>Executive Summary</h2>
+<p>Today's corpus is anomalous on three independent axes: 1.5× volume spike, 52% high-novelty rate, and near-universal cross-domain bridging. The day is dominated by foundational theoretical closures—long-standing open problems in complexity, statistics, and sampling theory resolved simultaneously—alongside a parallel surge in robotics/VLA systems work and a genuinely novel O(1) memory architecture for edge AI. The convergence of rigorous theory and deployable systems in a single day's output is unusual and suggests a field-wide maturation inflection.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Complexity theory landmark:</strong> <a href="https://arxiv.org/abs/2608.02533v1">Optimal Unambiguous DNFs and Alon-Saks-Seymour</a> delivers an optimal refutation of the Alon-Saks-Seymour conjecture with a constant-gadget lifting theorem—a clean, cascading result that simultaneously tightens Clique vs. Independent Set communication bounds and advances certificate complexity and learning theory. This is the day's highest-novelty paper (9.2/10) and its implications ripple across query complexity and PAC learning.</p>
+</li>
+<li>
+<p><strong>Scientific ML structural fix:</strong> <a href="https://arxiv.org/abs/2608.02036v1">Convex Neural Energy Elements</a> identifies and resolves a fundamental indefiniteness failure in geometry-parameterized neural operators that causes Newton's method to converge to spurious minima (247% error even with 1%-accurate field predictions). The convex reformulation enables classical FEM assembly guarantees with neural operators—a prerequisite for production scientific ML in engineering simulation pipelines.</p>
+</li>
+<li>
+<p><strong>Distributed inference theory closed:</strong> <a href="https://arxiv.org/abs/2608.02538v1">Interaction Is Not Necessary for Order-Optimal 1-Bit Mean Estimation</a> resolves a COLT 2026 open problem by proving a fully non-adaptive protocol achieves minimax optimality. This matters for federated learning and distributed sensor systems where round-trip communication is expensive or impossible.</p>
+</li>
+<li>
+<p><strong>Edge AI architecture breakthrough:</strong> <a href="https://arxiv.org/abs/2608.02560v1">PRECOG (Structured Memory for Edge Language Models)</a> exploits the fixed-size recurrent state of SSMs to pre-encode entire corpora and inject context in O(1) time, achieving ~4500× latency reduction over standard RAG. This is a fundamental architectural departure from Transformer-based retrieval and makes persistent memory viable on resource-constrained hardware.</p>
+</li>
+<li>
+<p><strong>AI-generated proof enters the literature:</strong> <a href="https://arxiv.org/abs/2608.02588v1">The Condition-Number Barrier in Sparse Least Squares</a> confirms the Axiotis-Sviridenko hardness conjecture for sparse least-squares via a conditional lower bound on Small-Set Expansion—and is explicitly the first published result with a proof generated by an AI agentic system. The mathematical result is significant independently; the provenance claim marks a disciplinary threshold worth tracking.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three cross-cutting patterns are visible today. First, <strong>theoretical closure is accelerating</strong>: a single day yields resolutions to the Alon-Saks-Seymour conjecture, the COLT 2026 interaction open problem, the Axiotis-Sviridenko sparse optimization conjecture, and meaningful improvements to Langevin mixing time bounds—collectively, this density of long-standing problem closures is highly atypical and may reflect maturation of proof techniques (lifting theorems, SSE-based reductions, non-asymptotic methods) reaching simultaneous applicability. Second, <strong>VLA robotic systems are entering a diagnostic phase</strong>: <a href="https://arxiv.org/abs/2608.02197v1">AtVLA</a>, <a href="https://arxiv.org/abs/2608.02497v1">GSR</a>, and <a href="https://arxiv.org/abs/2608.02547v1">action chunking analysis</a> each identify specific architectural or mechanistic failure modes in deployed VLA models rather than proposing new architectures wholesale—suggesting the field is shifting from "build" to "understand and repair." Third, <strong>data-efficient medical AI is converging on self-supervised representation learning</strong>: <a href="https://arxiv.org/abs/2608.02208v1">LeDXA</a> with ~11K scans outperforms large general-purpose models on disease prediction and heritability, consistent with a broader signal that domain-specific SSL on small curated corpora is outpacing scale-first approaches in clinical imaging. The cross-domain bridge from biology to ML is particularly strong today, likely driving the 197/200 cross-domain paper count.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.02533v1">Optimal Unambiguous DNFs and Alon-Saks-Seymour</a></td>
+<td>9.2</td>
+<td>cs.CC, cs.DM, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2608.02533v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.02036v1">Convex Neural Energy Elements</a></td>
+<td>8.7</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2608.02036v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.02538v1">Interaction Is Not Necessary for Order-Optimal 1-Bit Mean Estimation</a></td>
+<td>8.6</td>
+<td>stat.ML, cs.IT, cs.LG, math.ST</td>
+<td><a href="https://arxiv.org/abs/2608.02538v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.02487v1">Computational and Statistical Guarantees of the c-Rectified Flow</a></td>
+<td>8.5</td>
+<td>stat.ML, cs.LG, math.OC</td>
+<td><a href="https://arxiv.org/abs/2608.02487v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.02560v1">Structured Memory for Edge Language Models (PRECOG)</a></td>
+<td>8.4</td>
+<td>cs.LG, cs.AI, cs.IR</td>
+<td><a href="https://arxiv.org/abs/2608.02560v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.02588v1">The Condition-Number Barrier in Sparse Least Squares</a></td>
+<td>8.1</td>
+<td>cs.DS, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2608.02588v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.02208v1">Self-supervised DXA representations (LeDXA)</a></td>
+<td>8.5</td>
+<td>cs.CV, q-bio.QM</td>
+<td><a href="https://arxiv.org/abs/2608.02208v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.02464v1">Real-Time Detection and Repair of LLM Agent Failures</a></td>
+<td>8.2</td>
+<td>cs.AI, cs.LG, cs.SE</td>
+<td><a href="https://arxiv.org/abs/2608.02464v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today's session is best characterized as a <strong>theory-systems convergence burst</strong> rather than incremental progress across a broad front. The simultaneous closure of multiple complexity and statistics open problems is not easily explained by coincidence; more likely it reflects shared methodological tools (lifting, SSE reductions, non-asymptotic coupling) reaching a maturity threshold where previously intractable problems become tractable in quick succession—watch for further cascading results in communication complexity and distributed inference over the next 60–90 days. The AI-generated proof in <a href="https://arxiv.org/abs/2608.02588v1">The Condition-Number Barrier</a> deserves separate attention: if the claim survives peer verification, it establishes a precedent for AI-originated mathematical contributions entering archival literature, with significant implications for how the research community attributes, verifies, and builds on formal results. On the systems side, PRECOG's O(1) SSM injection architecture should be stress-tested against retrieval quality degradation at scale—the latency gains are real, but the compression fidelity question is unresolved and critical for production deployment. Finally, the VLA diagnostic cluster suggests that 2026 H2 robotics research will increasingly focus on understanding existing deployed models rather than</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
