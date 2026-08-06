@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-08-06 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-08-06</span>
+    <span>154 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 151 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 92/154 papers (60%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-08-06</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus is anomalously dense with high-signal work: 60% of papers scored high-novelty, and 98% bridge multiple research domains—a combination that signals a genuine convergence moment rather than routine publication churn. The two dominant threads are <em>foundational corrections</em> (benchmark audits, optimizer theory, and algorithm convergence proofs that overturn established assumptions) and <em>cross-domain transfer</em> (Earth AI models repurposed for Mars, wireless, and atmospheric physics). Both threads have immediate engineering consequences.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Benchmarks are systematically broken, and the consequences are large.</strong> <a href="https://arxiv.org/abs/2608.04975v1">SciCode-Verified: How Benchmark Defects Underestimated the Scientific-Coding Ability of Language Models</a> audited the standard SciCode benchmark with domain experts and found 91% of problems contain score-suppressing defects; correcting them shifts frontier model accuracy from 45–60% to <strong>84–98%</strong>. This is not marginal—it means the research community has been operating on a false baseline for LLM scientific coding capability for at least a year.</p>
+</li>
+<li>
+<p><strong>Adam's failure to recover low-rank solutions is now formally explained.</strong> <a href="https://arxiv.org/abs/2608.05136v1">The Loss Does Not See the Basis, but Adam Does</a> proves via gauge symmetry theory that gradient descent's low-rank implicit bias is only available to <em>gauge-equivariant</em> optimizers—Adam is not one, gradient flow is. This structure theorem and the accompanying transfer theorem unify a decade of scattered empirical observations and have direct implications for practitioners choosing optimizers for matrix factorization and low-rank fine-tuning.</p>
+</li>
+<li>
+<p><strong>CoT monitoring has a critical blind spot.</strong> <a href="https://arxiv.org/abs/2608.04735v1">Chain-of-Thought Monitoring Can Be Unreliable in Implicit-Influence Settings</a> demonstrates that monitoring detection rates drop to as low as <strong>5%</strong> when influence is implicit rather than explicit. Prior evaluations that found CoT monitoring effective were testing easy cases; real-world deployment settings are predominantly implicit. This materially weakens the safety case for CoT transparency as a control layer.</p>
+</li>
+<li>
+<p><strong>Earth AI weather models transfer to Mars with minimal fine-tuning.</strong> <a href="https://arxiv.org/abs/2608.05054v1">MarsCast: Transfer Learning of AI Weather Foundation Models to Planetary Atmospheres</a> adapts GraphCast to Martian atmospheric forecasting using the Mars Climate Database, demonstrating zero-shot capability and rapid fine-tuning convergence. The implication extends beyond Mars: foundation models trained on one planet's physics appear to encode transferable atmospheric dynamics primitives, opening AI-driven forecasting for any body with reanalysis-quality data.</p>
+</li>
+<li>
+<p><strong>Myopic experiment selection in automated scientific discovery has provably unbounded approximation ratios.</strong> <a href="https://arxiv.org/abs/2608.05085v1">Capability-Gated Planning: Cost-to-Goal Discovery and the Limits of Myopic Experiment Selection</a> formally proves that maximizing expected information gain per cost fails catastrophically when actions are <em>constructive</em> (tool-building, capability-unlocking). This is the dominant structure of real scientific workflows, meaning most deployed AI lab systems have a fundamental planning flaw that cannot be patched with better scoring functions.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three cross-cutting patterns define today's corpus. First, <strong>foundational auditing is maturing into a discipline</strong>: <a href="https://arxiv.org/abs/2608.04975v1">SciCode-Verified</a>, <a href="https://arxiv.org/abs/2608.04719v1">Diagnosing Tool-Selection Reasoning in LLM Agents with Canary Tools</a>, <a href="https://arxiv.org/abs/2608.04893v1">When Does Latent Communication Pay? A Causal Audit of Relayed KV Caches in Multi-Agent LLMs</a>, and <a href="https://arxiv.org/abs/2608.04591v1">When Absence Is Evidence: Evaluating Completeness-Sensitive Negative Reasoning in Large Language Models</a> all share a methodology: plant controlled probes or use causal ablations to expose capability gaps that aggregate metrics conceal. This is no longer ad hoc—it signals an emerging evaluation science with shared tooling conventions. Second, <strong>implicit bias and geometry are unifying optimizer and generative model theory</strong>: <a href="https://arxiv.org/abs/2608.05136v1">The Loss Does Not See the Basis, but Adam Does</a>, <a href="https://arxiv.org/abs/2608.04827v1">Intrinsic-Hybrid Latent Diffusion Models for Generative Modeling on Unknown Manifolds</a>, and <a href="https://arxiv.org/abs/2608.05112v1">Stable Density Ridges</a> all root practical algorithmic behavior in differential geometry, suggesting the field is converging on a geometric language for understanding learning dynamics. Third, <strong>domain-agnostic foundation models are actively being stress-tested at the physics boundary</strong>: MarsCast, <a href="https://arxiv.org/abs/2608.05103v1">Multimodal Spatiotemporal Atmospheric Data Assimilation with Latent Flow-matching</a>, and <a href="https://arxiv.org/abs/2608.05076v1">MultiPathFormer: Towards a Foundation Model for Multipath Wireless Propagation</a> all ask whether models trained on one physical domain generalize to another—and are finding that the answer depends critically on whether the pretraining objective respects the domain's underlying physical structure.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.05136v1">The Loss Does Not See the Basis, but Adam Does</a></td>
+<td>8.5</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2608.05136v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.05112v1">Stable Density Ridges: Consistency and Convergence of Subspace Constrained Mean Shift</a></td>
+<td>8.5</td>
+<td>stat.ML, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2608.05112v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.04719v1">Diagnosing Tool-Selection Reasoning in LLM Agents with Canary Tools</a></td>
+<td>8.5</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2608.04719v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.04975v1">SciCode-Verified: How Benchmark Defects Underestimated the Scientific-Coding Ability of Language Models</a></td>
+<td>8.4</td>
+<td>cs.SE, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2608.04975v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.04735v1">Chain-of-Thought Monitoring Can Be Unreliable in Implicit-Influence Settings</a></td>
+<td>8.1</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2608.04735v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.05085v1">Capability-Gated Planning: Cost-to-Goal Discovery and the Limits of Myopic Experiment Selection</a></td>
+<td>8.2</td>
+<td>cs.LG, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2608.05085v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.05054v1">MarsCast: Transfer Learning of AI Weather Foundation Models to Planetary Atmospheres</a></td>
+<td>8.2</td>
+<td>astro-ph.EP, cs.AI, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2608.05054v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.05103v1">Multimodal Spatiotemporal Atmospheric Data Assimilation with Latent Flow-matching</a></td>
+<td>8.3</td>
+<td>cs.LG, physics.ao-ph</td>
+<td><a href="https://arxiv.org/abs/2608.05103v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>The 60% high-novelty rate is not noise—it reflects simultaneous pressure on</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
