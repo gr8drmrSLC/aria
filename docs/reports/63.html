@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-08-19 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-08-19</span>
+    <span>148 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 143 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 78/148 papers (53%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief</h1>
+<p><strong>Date:</strong> 2026-08-19 | <strong>Corpus:</strong> 148 papers | <strong>Anomaly Status:</strong> 🔴 ACTIVE (dual trigger)</p>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus is anomalous on two dimensions: 53% of papers scored high-novelty and 97% bridge multiple domains — a combination that historically precedes field-reshaping consolidation rather than incremental progress. The dominant signal is <strong>unification</strong>: across learning theory, causal inference, neuro-symbolic AI, and robot control, researchers are collapsing previously separate frameworks into single formal structures, suggesting the field is entering a compression phase where foundational concepts are being re-derived from common primitives.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Bayesian inference, regret, and concentration inequalities are the same object.</strong> <a href="https://arxiv.org/abs/2608.18061v1">The concentration game: Bayesian updating, regret, and information</a> derives all three from a single two-player zero-sum game, with the terminal payoff being the maximum comparator gain at fixed relative entropy. This is not a pedagogical unification — it generates new results in each domain simultaneously and likely reshapes how practitioners think about the sample complexity of online learning.</p>
+</li>
+<li>
+<p><strong>The regret-instability tradeoff in bandits is now settled.</strong> <a href="https://arxiv.org/abs/2608.17841v1">Toward the Optimal Regret-Instability Trade-off in Multi-Armed Bandits</a> closes an open problem by proving a sharp finite-time lower bound on the regret-instability product and constructing SLE-UCB to match it. The offline top-prefix representation is a technique worth tracking — variance control without path dependence has broad implications for bandit applications in high-stakes sequential decision systems.</p>
+</li>
+<li>
+<p><strong>Full OWL 2 DL ontologies can now participate in differentiable learning.</strong> <a href="https://arxiv.org/abs/2608.17741v1">Neuro-symbolic learning over OWL 2 DL via consequence-based compilation to differentiable circuits</a> (Baobab) is the first system to compile SROIQ — the logic underlying biomedical knowledge graphs — into differentiable circuits, while formally characterizing and mitigating reasoning shortcuts. Machine-checked proofs in Lean 4 give this unusually high epistemic credibility. This directly unblocks NeSy applications over SNOMED CT, Gene Ontology, and similar critical knowledge bases.</p>
+</li>
+<li>
+<p><strong>Pixel motion as a universal robot action representation enables zero-shot cross-embodiment transfer.</strong> <a href="https://arxiv.org/abs/2608.18077v1">Hydra-0: Action Flow for Generalist World Modeling and Control</a> achieves 90.4% lower robot-motion error by grounding action representations in visual flow rather than embodiment-specific coordinates. The emergent inverse mode — demonstration-conditioned control without task-specific robot data — is the finding to watch: it suggests generalist video models may be closer to universal robot policies than previously estimated.</p>
+</li>
+<li>
+<p><strong>Debate training is a viable, deployable defense against reward hacking.</strong> <a href="https://arxiv.org/abs/2608.17776v1">Debate Training Reduces Reward Hacking in RLAIF</a> shows that adversarial debate with a weaker judge recovers up to 45% of the performance gap caused by reward hacking during RLAIF fine-tuning. This is one of the first empirically grounded, architecture-agnostic interventions for scalable oversight that doesn't require a stronger judge — a meaningful practical advance for production alignment pipelines.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three cross-cutting patterns are visible. <strong>First, formal unification of adjacent theories:</strong> <a href="https://arxiv.org/abs/2608.18061v1">The concentration game</a> and <a href="https://arxiv.org/abs/2608.17634v1">Graph Surgery and the Do-Operator</a> both resolve longstanding informal equivalences with precise mathematical proofs, while <a href="https://arxiv.org/abs/2608.17802v1">Fourth-Moment Geometry of Rademacher Sums</a> closes multiple open conjectures in classical probability. The volume of "we finally proved the thing everyone assumed" papers in a single day is unusual. <strong>Second, inference-time architectural innovation over retraining:</strong> <a href="https://arxiv.org/abs/2608.17981v1">Recirculation</a> introduces training-free recurrence into frozen transformers (23% perplexity reduction, 21% GSM8k gain at near-zero latency), <a href="https://arxiv.org/abs/2608.17896v1">Dynamic Compression in Recurrent Networks</a> enables selective state revision, and <a href="https://arxiv.org/abs/2608.17666v1">PiX-MC</a> achieves 50x speedup in Bayesian imaging via Picard-parallel sampling. The theme is squeezing substantially more from existing models without gradient updates — a strong signal given compute cost pressures. <strong>Third, measurement validity as a first-class concern:</strong> <a href="https://arxiv.org/abs/2608.17713v1">Cross-View Correspondence Is a Measurement Intervention</a> and <a href="https://arxiv.org/abs/2608.17843v1">Encoded but Not Actionable</a> both attack the implicit assumption that evaluation infrastructure is neutral, finding empirically that it is not. Credit assignment disagreement in over half of trajectory pairs and a systematic gap between what LLMs encode and what they act upon are findings that should make practitioners revisit evaluation pipelines immediately. Taken together, these themes suggest the field is simultaneously formalizing its theoretical foundations, maximizing inference-time efficiency, and reckoning with the validity of its own measurements — a maturation pattern, not a scatter pattern.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.18061v1">The concentration game: Bayesian updating, regret, and information</a></td>
+<td>8.5</td>
+<td>cs.LG, cs.GT, math.PR, math.ST</td>
+<td><a href="https://arxiv.org/abs/2608.18061v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.17841v1">Toward the Optimal Regret-Instability Trade-off in Multi-Armed Bandits</a></td>
+<td>8.5</td>
+<td>stat.ML, cs.LG, math.OC, math.ST</td>
+<td><a href="https://arxiv.org/abs/2608.17841v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.17741v1">Neuro-symbolic learning over OWL 2 DL via consequence-based compilation to differentiable circuits</a></td>
+<td>8.4</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2608.17741v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.18077v1">Hydra-0: Action Flow for Generalist World Modeling and Control</a></td>
+<td>8.2</td>
+<td>cs.RO</td>
+<td><a href="https://arxiv.org/abs/2608.18077v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.17981v1">Recirculation</a></td>
+<td>8.1</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2608.17981v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.17666v1">Picard Proximal Monte Carlo for Parallel Bayesian Imaging with Score-Based Generative Priors</a></td>
+<td>8.1</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2608.17666v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.17776v1">Debate Training Reduces Reward Hacking in RLAIF</a></td>
+<td>7.8</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2608.17776v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.17713v1">Cross-View Correspondence Is a Measurement Intervention</a></td>
+<td>8.2</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2608.17713v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>The dual anomaly trigger — novelty burst coinciding with near-total cross-domain bridging — is the highest-confidence convergence signal ARIA has flagged in recent cycles</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
