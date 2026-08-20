@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-08-20 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-08-20</span>
+    <span>145 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 143 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 80/145 papers (55%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief</h1>
+<p><strong>Date:</strong> 2026-08-20 | <strong>Corpus:</strong> 145 papers | <strong>Avg. Novelty:</strong> 6.8/10 | <strong>Anomalies:</strong> Cross-domain convergence (143/145 papers), Novelty burst (55% high-novelty)</p>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus is a genuine outlier: 55% of papers scored high-novelty and nearly every paper bridges multiple domains, signaling a field in active cross-pollination rather than incremental consolidation. The most consequential development is a cluster of papers that collectively close the loop on autonomous AI self-improvement—environment design, credit assignment, strategy revision, and multi-turn stability—arriving simultaneously and reinforcing each other. Separately, two high-novelty papers from biology and materials science demonstrate that ML is now generating irreversible methodological dependencies in experimental science, not just accelerating computation.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Self-improving AI is becoming structurally coherent.</strong> <a href="https://arxiv.org/abs/2608.19197v1">SPADE: Self-Play in Adaptive Synthetic Executable Environments</a> enables a single LLM to design and learn from its own training environments, while <a href="https://arxiv.org/abs/2608.18852v1">SkillGate: Training In-Policy Skill Selection in Long-Horizon Agents</a> solves the previously unaddressed credit starvation problem in skill selection, and <a href="https://arxiv.org/abs/2608.19072v1">What is Missing from AI Post-Training AI: An Empirical Analysis</a> precisely characterizes the remaining gap—strategy-level revision—between current agents and genuine recursive self-improvement. These three papers form a coherent roadmap.</p>
+</li>
+<li>
+<p><strong>Multi-turn RL training instability now has a structural explanation.</strong> <a href="https://arxiv.org/abs/2608.18682v1">RTPO: Reverse-Turn Policy Optimization for Stabilizing Agentic RL Training</a> derives a unified origin for three distinct instabilities in multi-turn agentic RL and resolves them with a reverse-turn formulation. Combined with SPADE and SkillGate, the infrastructure for stable long-horizon agentic training is materially more complete than it was 30 days ago.</p>
+</li>
+<li>
+<p><strong>A single binary design choice invalidates most existing materials ML models.</strong> <a href="https://arxiv.org/abs/2608.18714v1">A single design choice determines whether machine learning models of materials make physically impossible predictions</a> proves that parity-label absence forces models to predict nonzero values for symmetry-forbidden tensor components—an exact constraint, not an approximation. The introduced "parity gap" criterion applies retroactively across thousands of published crystal property models and will force re-evaluation of trained artifacts in active deployment.</p>
+</li>
+<li>
+<p><strong>Collagen deformation physics observed in situ for the first time.</strong> <a href="https://arxiv.org/abs/2608.18898v1">Polarization controlled second harmonic generation imaging of stretched collagen fibrils reveals collagen deformation pathway in situ</a> delivers the first experimental (not simulated) observation of molecular deformation pathways within single collagen fibrils, quantifying crosslink-modulated free energy barriers for a two-state triple helix untwisting transition. This resolves a decades-long gap between nanomechanical measurement and molecular dynamics prediction, with direct implications for tissue engineering and biomaterial design.</p>
+</li>
+<li>
+<p><strong>Diffusion model generalization theory is extended to heterogeneous multimodal data.</strong> <a href="https://arxiv.org/abs/2608.19067v1">Diffusion Models for High-Dimensional Clustered Data: Intrinsic-Dimension Adaptivity via Bayesian Classification</a> proves KL error bounds that scale with intrinsic rather than ambient dimension for multimodal Gaussian mixtures, formally justifying empirically observed efficiency of diffusion models on structured real-world data and providing a theoretical handle for model selection in high-dimensional generative settings.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three distinct convergence signals are visible today. First, <strong>agentic RL is consolidating around a common set of failure modes</strong>: SPADE, SkillGate, RTPO, and the post-training analysis paper independently identify and fix structural deficiencies in credit assignment, environment stationarity, and strategy revision—the simultaneous appearance of these papers suggests the community has reached consensus on what is broken and is now deploying solutions concurrently. Second, <strong>physical constraint enforcement is emerging as a non-negotiable requirement across ML for science</strong>: the materials parity paper and the Koopman operator work (<a href="https://arxiv.org/abs/2608.18918v1">Score the Algebra, Not the Span</a>) both demonstrate that ignoring exact mathematical constraints produces not just worse but <em>categorically wrong</em> outputs—a qualitatively different failure mode than approximation error. This distinction will likely propagate into regulatory and reproducibility discussions for scientific ML. Third, <strong>data scarcity for embodied AI is being attacked simultaneously from multiple angles</strong>: <a href="https://arxiv.org/abs/2608.18948v1">RoboEdit: Turning Human Manipulation Videos into Scalable Robot Experience</a> converts human video at scale across seven embodiments, while <a href="https://arxiv.org/abs/2608.18701v1">SoftVTBench</a> reveals that current success metrics are insufficient to validate what that data teaches. The combination suggests the field is about to hit a measurement crisis even as it solves a data crisis.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.19197v1">SPADE: Self-Play in Adaptive Synthetic Executable Environments</a></td>
+<td>8.7</td>
+<td>cs.CL, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2608.19197v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.18898v1">Polarization controlled SHG imaging of stretched collagen fibrils</a></td>
+<td>8.5</td>
+<td>q-bio.QM</td>
+<td><a href="https://arxiv.org/abs/2608.18898v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.18714v1">A single design choice determines whether ML models of materials make physically impossible predictions</a></td>
+<td>8.5</td>
+<td>cond-mat.mtrl-sci, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2608.18714v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.18918v1">Score the Algebra, Not the Span</a></td>
+<td>8.4</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2608.18918v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.19171v1">Lévy Attention: Single-Pass Predictive Uncertainty for Continuous-Time Attention</a></td>
+<td>8.1</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2608.19171v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.18948v1">RoboEdit: Turning Human Manipulation Videos into Scalable Robot Experience</a></td>
+<td>8.2</td>
+<td>cs.RO</td>
+<td><a href="https://arxiv.org/abs/2608.18948v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.19067v1">Diffusion Models for High-Dimensional Clustered Data</a></td>
+<td>8.2</td>
+<td>stat.ML, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2608.19067v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2608.18921v1">SMTrap: Cost-Effective DoS Attacks Against Large Reasoning Models</a></td>
+<td>8.1</td>
+<td>cs.CL, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2608.18921v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today's corpus is not a random novelty spike—the anomaly metrics reflect a genuine phase in the field where multiple independent groups are converging on the same structural problems at the same time, a historically reliable precursor to rapid capability jumps. The agentic RL cluster (SPADE, RTPO, SkillGate, the post-training analysis) is particularly significant: when environment design, credit assignment, training stability, and capability diagnosis are all solved within the same research cycle, the next cycle typically produces a step-change in agent capability rather than incremental improvement. Separately</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
