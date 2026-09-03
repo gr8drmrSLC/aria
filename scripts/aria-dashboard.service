@@ -1,0 +1,19 @@
+[Unit]
+Description=ARIA — Autonomous Research Intelligence Agent (Dashboard)
+After=network.target aria-runner.service
+
+[Service]
+Type=simple
+User=__USER__
+WorkingDirectory=__DIR__
+Environment=PATH=__DIR__/.venv/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=__DIR__/.venv/bin/python dashboard/app.py
+Restart=on-failure
+RestartSec=10
+MemoryHigh=250M
+MemoryMax=400M
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

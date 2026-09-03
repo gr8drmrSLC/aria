@@ -120,3 +120,44 @@ The DuckDNS update token was previously hardcoded in the crontab. Crontab is rea
 by anyone with shell access and is not covered by .gitignore. Moved to `~/aria/.env`
 (permissions 600) and referenced via `scripts/duckdns_update.sh`. Rule: no secrets in
 crontab, systemd unit files, or shell history. Secrets live in .env only.
+
+---
+
+## ADR-014: MemoryHigh/MemoryMax added to both services (2026-09-03)
+
+ADR-008 accepted the shared-EC2 risk explicitly: "a misbehaving process on one
+project could affect others — accepted given the personal-project nature of the
+workloads." This is that revisit, prompted by an actual memory-exhaustion outage
+on the shared box (investor repo's DECISIONS.md "EC2 memory-exhaustion outage") —
+`investor.service`, `investor-b.service`, and `prediction-markets.service` all got
+`MemoryHigh=`/`MemoryMax=` limits so a runaway process is killed within its own
+cgroup instead of starving every other program on the box. ARIA's two services had
+no equivalent, and no committed unit-file templates existed for either — deploy
+config lived only on EC2, never in this repo.
+
+Checked first whether ARIA is exposed to the same *root-cause* mechanism as the
+other two (an unhandled exception on a network/DB call at process startup crashing
+the whole service into a tight restart loop) — it is not, structurally. ADR-002
+(SQLite instead of PostgreSQL) means there's no networked DB service to be briefly
+unreachable at startup the way investor's/prediction-markets' Postgres containers
+were. ADR-004 (APScheduler) means `runner.py`'s scheduled mode does no eager work
+at process start — it just registers a daily job and blocks; the actual arXiv/
+Claude network calls only happen once a day when that job fires, and an exception
+there is caught by APScheduler's own job-error handling rather than crashing the
+process. So this ADR is containment only, not a root-cause fix for a bug that
+isn't present here — ARIA's existing architecture already avoided it.
+
+Ceilings set from observed steady-state footprint (~60MB for `runner.py`, ~66MB
+for `dashboard/app.py` — both far smaller than investor's or prediction-markets',
+since neither loads an ML model or holds a large in-memory dataset):
+`MemoryHigh=250M`, `MemoryMax=400M` for both services — roughly 4-6x baseline,
+generous headroom for a larger paper batch or report without ever being able to
+meaningfully threaten the box's total 3.7GB.
+
+New `scripts/aria-runner.service` and `scripts/aria-dashboard.service` templates
+added to the repo (didn't exist before) so the deployed EC2 units and source
+control no longer diverge on this going forward. Also committed the
+`dashboard/app.py` binding fix (`0.0.0.0` → `127.0.0.1`) that ADR-010 already
+called the correct pattern and PROJECT_STATUS.md already recorded as fixed on
+2026-05-04 — the code change had only ever been applied live on EC2, never
+actually committed, a 4-month gap between documented and actual repo state.

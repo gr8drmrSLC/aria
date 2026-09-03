@@ -1,6 +1,6 @@
 # ARIA — Project Status
 
-**Last updated:** 2026-05-04
+**Last updated:** 2026-09-03
 **Phase:** Live on EC2 — pipeline running, dashboard public, retrofit audit in progress
 
 ---
@@ -11,8 +11,17 @@ ARIA is fully deployed and operational on EC2 (`3.139.164.142`, us-east-2).
 
 - Pipeline runs Tue–Fri at 07:00 UTC under `aria-runner.service` (systemd, since 2026-04-23)
 - Dashboard live at https://aria-agent.duckdns.org (nginx + Let's Encrypt)
-- Dashboard binds to 127.0.0.1:5051 — nginx is the only public face (fixed 2026-05-04)
+- Dashboard binds to 127.0.0.1:5051 — nginx is the only public face (fixed 2026-05-04;
+  the `dashboard/app.py` code change itself had only ever been applied live on EC2 and
+  was finally committed 2026-09-03 — see DECISIONS.md ADR-014)
 - `.env` permissions set to 600 on EC2 (fixed 2026-05-04)
+- `MemoryHigh=250M`/`MemoryMax=400M` added to both `aria-runner.service` and
+  `aria-dashboard.service` (2026-09-03, ADR-014) — new
+  `scripts/aria-runner.service`/`scripts/aria-dashboard.service` templates added to
+  the repo, which had none before (deploy config previously lived only on EC2).
+  Confirmed ARIA isn't exposed to the memory-exhaustion mechanism that hit investor/
+  prediction-markets on this same box (no networked DB, no eager startup work) — see
+  ADR-014 for the full reasoning.
 - GitHub Actions exports static pages to `docs/` Mon–Fri at 08:30 UTC
 - Weekly S3 backup running (Sundays 08:00 UTC via `scripts/backup_db.sh`)
 - DuckDNS token moved from crontab to `.env`, wrapper script at `scripts/duckdns_update.sh`

@@ -112,6 +112,13 @@ Files changed: dashboard/app.py runner.py
 - Designed session lifecycle management with ~2-year validity window and manual refresh trigger on expiration, reducing operational friction for long-running autonomous posting workflows.
 
 
+### 2026-09-03
+- Added memory limits (`MemoryHigh=250M`/`MemoryMax=400M`) to both `aria-runner.service` and `aria-dashboard.service` to contain runaway processes within their own cgroups after a memory-exhaustion outage on the shared EC2 box affected sibling services; confirmed ARIA's architecture (SQLite, APScheduler with deferred network calls) already avoids the root cause that hit investor/prediction-markets repos.
+- Committed systemd unit-file templates (`scripts/aria-runner.service` and `scripts/aria-dashboard.service`) to the repo for the first time, closing a 5-month gap where production EC2 config diverged from source control with no templates present.
+- Fixed `dashboard/app.py` Flask binding from `0.0.0.0` to `127.0.0.1` in code (had been applied only live on EC2 since 2026-05-04, never committed despite being documented as fixed in PROJECT_STATUS.md).
+- Updated PROJECT_STATUS.md timestamp and clarified that the dashboard binding fix was finally committed 4 months after it was first applied and recorded.
+
+
 ---
 
 ## [0.1.0] — 2026-03-29
