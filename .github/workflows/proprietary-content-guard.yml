@@ -1,0 +1,64 @@
+name: Proprietary content guard
+
+# Server-side check: runs once GitHub receives a push, regardless of
+# whether the push was made with `git push --no-verify` (which only
+# skips client-side hooks, not this). Fails loudly and blocks nothing
+# retroactively already pushed; this is fast detection, not prevention.
+#
+# Compares hashes of pushed lines against .github/quasars-fingerprints.txt,
+# a list of SHA-256 hashes of substantive lines from CupOfOwls/quasars-fortress's
+# agents/skills files. The actual proprietary text is never stored in this
+# repo, only irreversible hashes, so this check itself cannot leak anything.
+
+on:
+  push:
+    branches: ["**"]
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check pushed lines against proprietary-content fingerprints
+        run: |
+          set -eu
+          FINGERPRINTS=".github/quasars-fingerprints.txt"
+          if [ ! -f "$FINGERPRINTS" ]; then
+            echo "No fingerprints file found at $FINGERPRINTS; skipping."
+            exit 0
+          fi
+
+          BEFORE="${{ github.event.before }}"
+          AFTER="${{ github.event.after }}"
+          ZERO="0000000000000000000000000000000000000000"
+
+          if [ "$BEFORE" = "$ZERO" ]; then
+            EMPTY_TREE=$(git hash-object -t tree /dev/null)
+            DIFF=$(git diff --unified=0 "$EMPTY_TREE" "$AFTER" -- . 2>/dev/null || true)
+          else
+            DIFF=$(git diff --unified=0 "$BEFORE" "$AFTER" -- . 2>/dev/null || true)
+          fi
+
+          ADDED=$(echo "$DIFF" | grep -E '^\+[^+]' | sed 's/^\+//' | awk 'length($0) >= 40' || true)
+          if [ -z "$ADDED" ]; then
+            echo "No substantive added lines; clean."
+            exit 0
+          fi
+
+          MATCHES=0
+          while IFS= read -r line; do
+            HASH=$(printf '%s' "$line" | sha256sum | awk '{print $1}')
+            if grep -qx "$HASH" "$FINGERPRINTS"; then
+              MATCHES=$((MATCHES + 1))
+            fi
+          done <<< "$ADDED"
+
+          echo "Matched $MATCHES line(s) against proprietary-content fingerprints."
+          if [ "$MATCHES" -ge 3 ]; then
+            echo "::error::This push matches 3+ lines of content fingerprinted as proprietary (CupOfOwls/quasars-fortress agents/skills). Review immediately; this content should not be public."
+            exit 1
+          fi
+          exit 0
