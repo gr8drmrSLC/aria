@@ -2,17 +2,27 @@ name: Proprietary content guard
 
 # Server-side check: runs once GitHub receives a push, regardless of
 # whether the push was made with `git push --no-verify` (which only
-# skips client-side hooks, not this). Fails loudly and blocks nothing
-# retroactively already pushed; this is fast detection, not prevention.
+# skips client-side hooks, not this).
 #
 # Compares hashes of pushed lines against .github/quasars-fingerprints.txt,
 # a list of SHA-256 hashes of substantive lines from CupOfOwls/quasars-fortress's
 # agents/skills files. The actual proprietary text is never stored in this
 # repo, only irreversible hashes, so this check itself cannot leak anything.
+#
+# On a match, force-pushes the branch back to its pre-push state instead of
+# flipping the repo private, since this repo's GitHub Pages site requires
+# staying public. This removes the content from the branch tip and normal
+# browsing/history immediately; the underlying commit object may remain
+# reachable by its exact SHA until GitHub garbage-collects it, so this is
+# fast containment, not an instant, total guarantee of erasure.
 
 on:
   push:
     branches: ["**"]
+
+permissions:
+  contents: write
+  issues: write
 
 jobs:
   guard:
@@ -21,13 +31,16 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check pushed lines against proprietary-content fingerprints
+        id: check
         run: |
           set -eu
           FINGERPRINTS=".github/quasars-fingerprints.txt"
           if [ ! -f "$FINGERPRINTS" ]; then
             echo "No fingerprints file found at $FINGERPRINTS; skipping."
+            echo "matched=0" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
@@ -45,6 +58,7 @@ jobs:
           ADDED=$(echo "$DIFF" | grep -E '^\+[^+]' | sed 's/^\+//' | awk 'length($0) >= 40' || true)
           if [ -z "$ADDED" ]; then
             echo "No substantive added lines; clean."
+            echo "matched=0" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
@@ -57,8 +71,33 @@ jobs:
           done <<< "$ADDED"
 
           echo "Matched $MATCHES line(s) against proprietary-content fingerprints."
-          if [ "$MATCHES" -ge 3 ]; then
-            echo "::error::This push matches 3+ lines of content fingerprinted as proprietary (CupOfOwls/quasars-fortress agents/skills). Review immediately; this content should not be public."
-            exit 1
-          fi
-          exit 0
+          echo "matched=$MATCHES" >> "$GITHUB_OUTPUT"
+          echo "before_sha=$BEFORE" >> "$GITHUB_OUTPUT"
+          echo "after_sha=$AFTER" >> "$GITHUB_OUTPUT"
+
+      - name: Auto-revert the push and open an alert issue
+        if: steps.check.outputs.matched >= 3 && github.event.before != '0000000000000000000000000000000000000000'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -eu
+          BEFORE="${{ steps.check.outputs.before_sha }}"
+          AFTER="${{ steps.check.outputs.after_sha }}"
+          BRANCH="${GITHUB_REF#refs/heads/}"
+
+          echo "::error::This push matched ${{ steps.check.outputs.matched }} line(s) fingerprinted as proprietary content. Force-pushing '$BRANCH' back to $BEFORE to remove it from the branch tip."
+
+          git config user.name "proprietary-content-guard"
+          git config user.email "actions@github.com"
+          git push --force origin "$BEFORE:refs/heads/$BRANCH"
+
+          gh issue create \
+            --title "SECURITY: proprietary content auto-reverted on $BRANCH" \
+            --body "Commit $AFTER matched ${{ steps.check.outputs.matched }} line(s) fingerprinted as proprietary content (CupOfOwls/quasars-fortress agents/skills) and was force-reverted back to $BEFORE automatically. The commit object may still be reachable by its exact SHA ($AFTER) until GitHub garbage-collects it; review whether further action (contacting GitHub support to purge it, rotating anything else exposed) is needed." \
+            || echo "::warning::Could not open alert issue automatically; the revert itself already completed."
+
+      - name: New branch matched fingerprints (cannot auto-revert a new branch push)
+        if: steps.check.outputs.matched >= 3 && github.event.before == '0000000000000000000000000000000000000000'
+        run: |
+          echo "::error::This push created a new branch/ref and matched ${{ steps.check.outputs.matched }} line(s) fingerprinted as proprietary content. Auto-revert only handles updates to an existing branch; delete this ref manually: git push origin --delete ${GITHUB_REF#refs/heads/}"
+          exit 1
