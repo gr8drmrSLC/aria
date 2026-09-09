@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-09-09 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-09-09</span>
+    <span>177 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 171 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 106/177 papers (60%) scor…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief</h1>
+<p><strong>Date:</strong> 2026-09-09 | <strong>Corpus:</strong> 177 papers | <strong>Anomaly Status:</strong> 🔴 ACTIVE (2 triggers)</p>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus shows an unusual concentration of foundational work: 60% of papers scored high-novelty, with results closing open theoretical questions in optimization, exposing critical evaluation failures in machine unlearning, and delivering production-scale systems at the intersection of robotics, climate AI, and security. The cross-domain signal is not superficial—the same 171 papers that bridge AI/ML with robotics and physical sciences are producing systems that actually deploy: humanoid navigation, ocean forecasting, and 100K-scale recommendation. The field is simultaneously tightening its theoretical foundations and shipping at scale.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Optimization theory reaches closure on two fronts.</strong> <a href="https://arxiv.org/abs/2609.09152v1">Silver Rate Is (Almost) Optimal for Gradient Descent Acceleration</a> proves near-matching lower bounds confirming the silver schedule achieves essentially optimal polynomial convergence exponents—an open problem settled. Simultaneously, <a href="https://arxiv.org/abs/2609.08537v1">The Exact Time-Uniform Rate Frontier for Stochastic Gradient Descent on Smooth Convex Objectives</a> establishes sharp necessary-and-sufficient conditions for time-uniform SGD convergence, proving the rate approaches but never reaches √(log n / n). Both papers close gaps that have persisted for years; practitioners should treat hyperparameter and convergence assumptions as now having firm theoretical ground under them.</p>
+</li>
+<li>
+<p><strong>A foundational flaw invalidates broad classes of machine unlearning benchmarks.</strong> <a href="https://arxiv.org/abs/2609.08901v1">The BatchNorm Illusion: Diagnosing Normalization Artifacts in Machine Unlearning Evaluation</a> proves formally that a single forward pass—zero weight updates—can reverse apparent unlearning by up to 78 percentage points on BatchNorm architectures. Any unlearning result on ResNet-family or BatchNorm-based models published without controlling for running-statistic updates should be treated as unreliable. This is an immediate reproducibility emergency for regulatory and compliance applications.</p>
+</li>
+<li>
+<p><strong>Differentiable simulation takes a 50x step forward.</strong> <a href="https://arxiv.org/abs/2609.08800v1">Ostrich: Taking Large Strides Through Stiff Contact in Differentiable Dynamics</a> achieves O(1) memory per timestep and feasible timesteps 50× larger than MuJoCo via non-smooth Newton iteration combined with implicit function theorem differentiation. This removes the primary computational barrier to gradient-based trajectory optimization through contact, directly enabling more capable sim-to-real pipelines like those used by <a href="https://arxiv.org/abs/2609.09158v1">TANGO: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model</a>.</p>
+</li>
+<li>
+<p><strong>Secure aggregation in federated learning is demonstrably broken under realistic topologies.</strong> <a href="https://arxiv.org/abs/2609.08476v1">When Topology Betrays Privacy: Lattice-Based Reconstruction Attacks on Secure Aggregation in Decentralized Federated Learning</a> formally connects local neighborhood aggregation to the Hidden Subset Sum Problem and demonstrates practical lattice-based attacks that reconstruct individual updates despite SA. Any decentralized FL deployment assuming neighborhood aggregation provides privacy guarantees needs immediate reassessment.</p>
+</li>
+<li>
+<p><strong>MoE hyperparameter transfer now has principled, empirically validated scaling laws.</strong> <a href="https://arxiv.org/abs/2609.08690v1">Hyperparameter Scaling Laws Across MoE Sparsity</a> resolves conflicting prior findings by showing optimal learning rate and batch size vary with activation ratio in ways standard scaling laws cannot capture. At ultra-sparse MoE regimes increasingly common in frontier models, this is directly actionable for training efficiency.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three convergent patterns stand out. <strong>First, theoretical foundations are catching up to empirical practice.</strong> The back-to-back closures on SGD convergence, silver-rate optimality, transformer length generalization (<a href="https://arxiv.org/abs/2609.08851v1">Length Generalization for Transformers via Compression</a>), and in-context learning mechanics (<a href="https://arxiv.org/abs/2609.08981v1">Transformers as In-Context Samplers</a>) suggest the field is entering a consolidation phase where heuristics become theorems—important for knowing what to trust at scale. <strong>Second, the robotics stack is vertically integrating.</strong> Ostrich handles simulation, TANGO handles whole-body control and navigation, AURORA (<a href="https://arxiv.org/abs/2609.08493v1">Active Uncertainty-Driven Re-Orientation for In-Hand Reconstruction</a>) handles perception, and DeCAL (<a href="https://arxiv.org/abs/2609.09119v1">Dexterous Vision-Language-Action Models via Contact-Aware Latent Co-Imagination</a>) handles tactile manipulation—distinct papers, but together they constitute a nearly complete autonomy stack for physical humanoid operation. <strong>Third, evaluation infrastructure is under systematic attack.</strong> The BatchNorm Illusion in unlearning, the MLIP Detective (<a href="https://arxiv.org/abs/2609.08399v1">Active Failure Mode Discovery Beyond Benchmark Scores</a>) exposing hidden MLIP failures, and the federated learning privacy break all share a common structure: systems believed robust are revealed as fragile by targeted analysis. This is a recurring pattern that should raise caution about benchmark-gated deployment decisions across ML subfields.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.08800v1">Ostrich: Taking Large Strides Through Stiff Contact in Differentiable Dynamics</a></td>
+<td>8.7</td>
+<td>cs.RO, cs.GR, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2609.08800v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.08537v1">The Exact Time-Uniform Rate Frontier for SGD on Smooth Convex Objectives</a></td>
+<td>8.7</td>
+<td>math.OC, cs.LG, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2609.08537v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.08873v1">High-Magnetization Sampling at Low Temperatures: Ising Models and Bayesian Sparse Linear Regression</a></td>
+<td>8.6</td>
+<td>cs.DS, cs.LG, math.PR</td>
+<td><a href="https://arxiv.org/abs/2609.08873v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.09152v1">Silver Rate Is (Almost) Optimal for Gradient Descent Acceleration</a></td>
+<td>8.5</td>
+<td>math.OC, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2609.09152v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.08476v1">When Topology Betrays Privacy: Lattice-Based Reconstruction Attacks on Secure Aggregation in DFL</a></td>
+<td>8.5</td>
+<td>cs.CR, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2609.08476v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.08901v1">The BatchNorm Illusion: Diagnosing Normalization Artifacts in Machine Unlearning Evaluation</a></td>
+<td>8.3</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2609.08901v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.08606v1">Neptune: An AI Model for Global Ocean Subseasonal Prediction</a></td>
+<td>8.4</td>
+<td>physics.ao-ph, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2609.08606v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.08690v1">Hyperparameter Scaling Laws Across MoE Sparsity</a></td>
+<td>8.4</td>
+<td>cs.LG, cs.AI, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2609.08690v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
