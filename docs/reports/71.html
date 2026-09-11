@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-09-11 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-09-11</span>
+    <span>190 papers analyzed</span>
+    
+      <span class="trigger-tag">Volume spike: 190 papers today vs. 125 h…</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 187 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 100/190 papers (53%) scor…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-09-11</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's output is anomalous: 190 papers at 1.5× baseline volume, with 53% scoring high-novelty and 187 bridging multiple domains—a convergence signal, not noise. The day's defining pattern is <strong>infrastructure maturity meeting theoretical foundations</strong>: GPU-scale game-solving, compiler-derived robotics control, formal verification closing on Olympiad mathematics, and multiple impossibility theorems overturned. The field is simultaneously deepening its mathematical underpinnings and eliminating longstanding computational bottlenecks.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>GPU-CFR solves a decade-old inversion</strong>: <a href="https://arxiv.org/abs/2609.11923v1">GPU-CFR: 80x Faster Counterfactual Regret Minimization by Compiling the Game to Static Dataflow and CUDA Graph Replay</a> eliminates the kernel-launch overhead that has kept CFR on CPUs by compiling the game tree into a static dataflow graph replayed via CUDA Graph. This is not incremental GPU tuning—it's a compiler-based paradigm shift that makes GPU-resident CFR viable for billion-state games, with direct implications for poker AI, auction design, and any large-scale extensive-form game solver.</p>
+</li>
+<li>
+<p><strong>Kleinberg's impossibility falls in the hierarchical setting</strong>: <a href="https://arxiv.org/abs/2609.11173v1">Hierarchical Clustering Can Jointly Satisfy Richness, Consistency, and Scale Invariance</a> proves that the three axioms Kleinberg showed to be incompatible for flat clustering are jointly satisfiable when the output is a hierarchy, characterizing an uncountable admissible family. This is a foundational result that reframes two decades of clustering theory and practice.</p>
+</li>
+<li>
+<p><strong>Magenta solves all IMO 2026 problems</strong>: <a href="https://arxiv.org/abs/2609.11319v1">Magenta: Closing the Loop Between Mathematical Reasoning and Lean Verification</a> achieves 100% on olympiad-level benchmarks via a training-free pipeline that couples informal LLM reasoning with formal Lean 4 verification in a closed loop. The absence of fine-tuning makes this reproducible and immediately deployable on top of existing LLMs—the verification loop does the heavy lifting.</p>
+</li>
+<li>
+<p><strong>Dexterous robot writing without simulation or demonstrations</strong>: <a href="https://arxiv.org/abs/2609.11775v1">Rapid Learning of Dexterous In-Hand Pen Writing through Real-Time Jacobian Estimation</a> achieves arbitrary single-stroke in-hand pen writing on an anthropomorphic hand using only real-time Jacobian estimation, bypassing the contact modeling and data-collection bottlenecks that have constrained dexterous manipulation. Sub-millimeter precision with no simulator dependency is a compelling existence proof against data-heavy paradigms.</p>
+</li>
+<li>
+<p><strong>Graph reification transfers zero-shot without specialized architectures</strong>: <a href="https://arxiv.org/abs/2609.11347v1">Reification as a Transferable Vocabulary: Zero-Shot Link Prediction with Vanilla GNNs</a> demonstrates that transferability in knowledge graph foundation models can be achieved purely by restructuring the input representation—turning facts into nodes—rather than engineering bespoke architectures. Off-the-shelf GNNs trained on a single small graph match ULTRA, a dedicated foundation model. The implication: representational reification may generalize far beyond knowledge graphs.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three cross-cutting patterns dominate today's corpus. <strong>First, compilation and static representation as the route to performance</strong>: GPU-CFR compiles dynamic game traversal into static dataflow; Reification converts relational structure into static graph topology; Magenta converts informal reasoning into verifiable formal proof. In each case, the insight is that dynamic, interpretive execution is the bottleneck, and the fix is ahead-of-time structural commitment. <strong>Second, theoretical rehabilitation of prior impossibility results</strong>: both the Kleinberg clustering theorem and (implicitly) the long-standing assumption that spiking networks are expressively inferior to ReLU networks (<a href="https://arxiv.org/abs/2609.11227v1">Polyhedral Geometry of Time-to-First-Spike Neural Networks</a>) are overturned with rigorous proofs. This suggests the theoretical community is maturing past establishing limits and toward characterizing the full solution space. <strong>Third, bias and data quality formalized rather than argued</strong>: <a href="https://arxiv.org/abs/2609.11532v1">Prompt Revision as a Source of Cultural Bias in Text-to-Image Systems</a> isolates prompt revision as a causal mechanism; <a href="https://arxiv.org/abs/2609.11449v1">Prevalence Determines Precision</a> derives silent label contamination analytically via Bayes. Both shift AI fairness and data quality discourse from empirical audits to mechanistic accounts—a necessary precondition for principled remediation. The cross-domain clustering (AI/ML + bio, robotics) visible in <a href="https://arxiv.org/abs/2609.11877v1">Biology-in-the-loop</a> and the Jacobian-based robotics work suggests that amortized learning and real-time estimation are becoming the connective tissue between ML and physical/biological systems.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.11923v1">GPU-CFR: 80x Faster Counterfactual Regret Minimization</a></td>
+<td>8.9</td>
+<td>cs.DC, cs.AI, cs.GT</td>
+<td><a href="https://arxiv.org/abs/2609.11923v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.11894v1">3D Point Splatting for mmWave Radar Novel View Synthesis</a></td>
+<td>8.5</td>
+<td>cs.CV, cs.GR, eess.SP</td>
+<td><a href="https://arxiv.org/abs/2609.11894v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.11347v1">Reification as a Transferable Vocabulary: Zero-Shot Link Prediction with Vanilla GNNs</a></td>
+<td>8.5</td>
+<td>cs.LG, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2609.11347v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.11173v1">Hierarchical Clustering Can Jointly Satisfy Richness, Consistency, and Scale Invariance</a></td>
+<td>8.5</td>
+<td>cs.LG, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2609.11173v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.11775v1">Rapid Learning of Dexterous In-Hand Pen Writing through Real-Time Jacobian Estimation</a></td>
+<td>8.4</td>
+<td>cs.RO</td>
+<td><a href="https://arxiv.org/abs/2609.11775v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.11319v1">Magenta: Closing the Loop Between Mathematical Reasoning and Lean Verification</a></td>
+<td>8.2</td>
+<td>cs.AI</td>
+<td><a href="https://arxiv.org/abs/2609.11319v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.11877v1">Biology-in-the-loop: Amortized Adaptive Hit Discovery in CRISPR Screens</a></td>
+<td>8.2</td>
+<td>q-bio.QM, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2609.11877v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.11227v1">Polyhedral Geometry of Time-to-First-Spike Neural Networks</a></td>
+<td>8.5</td>
+<td>cs.LG, math.CO</td>
+<td><a href="https://arxiv.org/abs/2609.11227v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today is not a routine high-volume day. The combination of multiple foundational overturns (Kleinberg's theorem, CPU-superior CFR, ReLU expressivity assumptions), a training-free system solving IMO 2026, and a manipulation approach that bypasses simulation entirely suggests a phase transition across several subfields simultaneously—consistent with the anomaly triggers. <strong>Watch GPU-CFR most closely</strong>: if its compiler approach generalizes to other tree-structured workloads (Monte Carlo tree search</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
