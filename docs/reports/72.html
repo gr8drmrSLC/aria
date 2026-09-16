@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-09-16 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-09-16</span>
+    <span>178 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 177 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 95/178 papers (53%) score…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-09-16</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's batch shows a field in simultaneous convergence across multiple fronts: principled structure-preservation in learned systems, rigorous safety guarantees for deployed AI, and the emergence of molecular computation as a legitimate computing paradigm. The 53% high-novelty rate is anomalous — this is not routine incremental work, but a cohort of papers each closing specific long-standing gaps. The cross-domain signal is real: biology, physics, robotics, and ML theory are generating solutions to each other's problems.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Nonequilibrium thermodynamics unlocks molecular computation.</strong> <a href="https://arxiv.org/abs/2609.17339v1">Local energetic coupling enhances the expressivity of chemical computation</a> demonstrates via inverse-designed CRNs that internal nonequilibrium drives — not network topology — are the dominant resource for computational expressivity. This provides the first principled physicochemical theory of what makes chemistry "compute," with direct implications for synthetic biology and wetware computing.</p>
+</li>
+<li>
+<p><strong>A critical, previously invisible clinical AI failure mode identified.</strong> <a href="https://arxiv.org/abs/2609.17223v1">Memorisation bias in medical AI</a> empirically characterizes a novel risk: models trained on anonymized historical patient data produce systematically distorted predictions on those same patients' future data — across decades and multiple modalities. This is not a theoretical concern; it is a deployment-day problem for any longitudinal health AI system currently in production.</p>
+</li>
+<li>
+<p><strong>Game-theoretic learning achieves a landmark bound.</strong> <a href="https://arxiv.org/abs/2609.16751v1">Constant Swap Regret in General-Sum Games via Optimistic Transition Matrices</a> delivers constant (horizon-independent) individual swap regret in multiplayer general-sum games, breaking the previously accepted O(T^{1/2}) floor. This advances the theory of decentralized multi-agent learning and has direct implications for mechanism design and equilibrium computation.</p>
+</li>
+<li>
+<p><strong>Bitwise reproducibility across heterogeneous hardware is now demonstrated.</strong> <a href="https://arxiv.org/abs/2609.17380v1">OPEN-1B: A Fully Auditable Training Run</a> solves a problem every open-source LLM release has quietly avoided: floating-point non-associativity across hardware prevents true reproducibility. By deterministically ordering all nondeterminism sources, this enables collective step-wise auditing — a new standard that the field will have difficulty ignoring for long.</p>
+</li>
+<li>
+<p><strong>Fine-tuning misalignment localized and surgically suppressed.</strong> <a href="https://arxiv.org/abs/2609.16754v1">TAME: Token Attribution and Masking for Emergent Misalignment</a> identifies the specific training tokens responsible for emergent misalignment and masks them, achieving up to 36× reduction in misalignment. This is the first mechanistic intervention directly targeting the token-level source of a phenomenon that has resisted weight- and activation-level analysis.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three convergent signals stand out. <strong>Structure preservation in learned systems</strong> appears across robotics (<a href="https://arxiv.org/abs/2609.17249v1">Port-Hamiltonian Koopman Operator Synthesis for Mechanical Systems</a>), memory models (<a href="https://arxiv.org/abs/2609.16827v1">Information Geometric Self-Organization at the Edge of Stability in High-Capacity Kernel Associative Memories</a>), and matrix recovery (<a href="https://arxiv.org/abs/2609.17048v1">Near-Optimal Nonconvex Matrix Completion</a>) — the field is increasingly demanding that learned models respect the geometric and energetic constraints of their domains, not merely fit trajectories. <strong>Safety formalization</strong> is maturing from heuristic to rigorous: <a href="https://arxiv.org/abs/2609.17296v1">Conformal Policy Learning with Distribution-Free Safety Guarantees</a> provides finite-sample harm-control guarantees in policy learning, while TAME and memorisation bias work together to suggest that the next phase of AI safety research will be mechanistic and mathematically grounded rather than behavioral and empirical. Finally, <strong>agentic AI is reaching into hard-verification domains</strong>: <a href="https://arxiv.org/abs/2609.17439v1">Evaluating Verified Autonomy in Quantum Engineering</a> and <a href="https://arxiv.org/abs/2609.17523v1">ScienceBuddy: Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents</a> both push AI agents into scientific workflows where outputs are externally verifiable — a critical prerequisite for trust. The <a href="https://arxiv.org/abs/2609.17464v1">Decomposition Buys Integrity, Not Yield</a> result cuts across all of these: it provides a mathematical proof that multi-agent decomposition systematically loses information regardless of tree structure, which should be read as a warning to anyone designing production agentic pipelines.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.17339v1">Local energetic coupling enhances the expressivity of chemical computation</a></td>
+<td>8.6</td>
+<td>q-bio.MN, cond-mat, cs.ET, physics</td>
+<td><a href="https://arxiv.org/abs/2609.17339v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.17249v1">Port-Hamiltonian Koopman Operator Synthesis for Mechanical Systems</a></td>
+<td>8.5</td>
+<td>cs.RO, eess.SY</td>
+<td><a href="https://arxiv.org/abs/2609.17249v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.17223v1">Memorisation bias in medical AI</a></td>
+<td>8.5</td>
+<td>cs.LG, cs.CY</td>
+<td><a href="https://arxiv.org/abs/2609.17223v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.16751v1">Constant Swap Regret in General-Sum Games via Optimistic Transition Matrices</a></td>
+<td>8.5</td>
+<td>cs.GT, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2609.16751v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.17380v1">OPEN-1B: A Fully Auditable Training Run</a></td>
+<td>8.4</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2609.17380v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.16754v1">TAME: Token Attribution and Masking for Emergent Misalignment</a></td>
+<td>8.2</td>
+<td>cs.LG, cs.AI, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2609.16754v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.17296v1">Conformal Policy Learning with Distribution-Free Safety Guarantees</a></td>
+<td>8.2</td>
+<td>stat.ME, cs.LG, math.ST</td>
+<td><a href="https://arxiv.org/abs/2609.17296v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.17464v1">Decomposition Buys Integrity, Not Yield</a></td>
+<td>8.1</td>
+<td>cs.MA, cs.AI, cs.DC</td>
+<td><a href="https://arxiv.org/abs/2609.17464v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>The simultaneous appearance of bitwise-reproducible training (<a href="https://arxiv.org/abs/2609.17380v1">OPEN-1B</a>), token-level misalignment surgery (<a href="https://arxiv.org/abs/2609.16754v1">TAME</a>), and finite-sample policy safety (<a href="https://arxiv.org/abs/2609.17296v1">Conformal Policy Learning</a>) suggests the field is entering a phase where "trustworthy AI" transitions from aspiration to engineering specification — with formal proofs and empirical audits, not just stated intentions. The memorisation bias result deserves urgent attention from any organization deploying AI against longitudinal patient records; regulatory bodies are almost certainly unaware this failure mode exists. On the theory side, the constant swap regret result and near-optimal matrix completion paper close gaps that have been open for years, and both are likely to propagate quickly into adjacent applied work. Watch for the CRN expressivity paper ([Local</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
