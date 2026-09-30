@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-09-30 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-09-30</span>
+    <span>200 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 197 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 131/200 papers (66%) scor…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-09-30</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's batch is anomalous by any measure: 66% of papers scored high-novelty, and nearly the entire corpus bridges multiple research domains—a convergence signal, not noise. The dominant story is the simultaneous maturation of theoretical foundations (quantum learning, SSL identifiability, scaling laws, loss landscape geometry) alongside an aggressive push toward physically grounded, self-improving robotic and scientific systems. This is not a normal distribution of incremental work; multiple papers here are likely to be cited as field-inflection points within 12–24 months.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Quantum learning theory gets its first optimal separation beyond textbook paradigms.</strong> <a href="https://arxiv.org/abs/2609.38073v1">Optimal Quantum-Classical Separations for Exact Learning</a> refutes a longstanding conjecture by constructing exact separations between randomized and quantum query complexities that match known upper bounds, while demonstrating speedups that cannot be attributed to Grover or Bernstein-Vazirani. This closes a decades-old open problem and redraws the boundary of what quantum advantage actually means for learning.</p>
+</li>
+<li>
+<p><strong>Self-supervised learning theory resolves its core paradox.</strong> <a href="https://arxiv.org/abs/2609.37789v1">Predictive Self-Supervised Learning Provably Identifies Stochastic Signals under Nuisance</a> delivers a formal proof that latent-space predictive SSL provably recovers stochastic causal signals without reconstruction—answering why methods like JEPA and BYOL work at all. This gives practitioners a theoretical license to design reconstruction-free architectures with confidence in identifiability.</p>
+</li>
+<li>
+<p><strong>Foundation models reach quantum chemistry.</strong> <a href="https://arxiv.org/abs/2609.37733v1">Foundation Neural-Network Quantum States for Molecular Potential Energy Surfaces in Second Quantization</a> demonstrates a single autoregressive model that generalizes across molecular geometries via orbital alignment, cutting per-geometry compute by ~986×. This is the clearest evidence yet that foundation model methodology is transferring intact into ab initio quantum chemistry.</p>
+</li>
+<li>
+<p><strong>Robot world models gain a self-improvement loop that doesn't need environment access.</strong> <a href="https://arxiv.org/abs/2609.38057v1">EVO-WAM: Evolving World Action Models through Video-Action Verification</a> bootstraps policy improvement from generated rollouts alone—no expert demos, no simulator execution—achieving ~2.5× success rate gains on unseen tasks and real-world long-horizon manipulation. The self-verification mechanism is the key novelty; it filters hallucinated successes that previously made video-based RL unreliable.</p>
+</li>
+<li>
+<p><strong>Loss landscape traversal becomes a practical interpretability tool.</strong> <a href="https://arxiv.org/abs/2609.38081v1">Traversing the solution space of neural networks with Hessian Null Space Continuation</a> provides the first scalable method to move through low-loss connected regions while steering toward functionally distinct solutions, directly linking mode connectivity to representational degeneracy. This unifies two previously separate literatures and has immediate implications for mechanistic interpretability and model merging.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three convergent signals dominate this batch. <strong>First, theory is catching up to practice across the board.</strong> In a single day, rigorous proofs appeared for SSL identifiability, quantum learning separations, data mixture scaling laws, and identifiability of stochastic delayed differential equations—each resolving questions practitioners have been working around empirically for years. This is not coincidental; it reflects a maturing field where empirical leads have accumulated enough structure to become theoretically tractable. <strong>Second, physical grounding is becoming the differentiating axis in robotics and world models.</strong> <a href="https://arxiv.org/abs/2609.37970v1">PhysWAM</a>, <a href="https://arxiv.org/abs/2609.38105v1">FORM</a>, and <a href="https://arxiv.org/abs/2609.38057v1">EVO-WAM</a> all share the same architectural philosophy: learned dynamics must be constrained by or verified against physical laws, not just visual plausibility. The era of purely appearance-based video prediction for robotics appears to be ending. <strong>Third, biological and evolutionary priors are re-entering ML architecture design.</strong> <a href="https://arxiv.org/abs/2609.37675v1">LEMON-ZEST</a> uses evolutionary conservation to redesign tokenization—outperforming models 15× larger—while <a href="https://arxiv.org/abs/2609.37791v1">A neural network that maintains and retrieves memories based on context</a> grounds a novel memory architecture in prefrontal cortex neuroscience and validates against fMRI data. The pattern suggests that domain-specific inductive biases, long displaced by scale, are staging a measurable comeback.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.38073v1">Optimal Quantum-Classical Separations for Exact Learning</a></td>
+<td>9.0</td>
+<td>quant-ph, cs.CC, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2609.38073v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.38035v1">The finite-horizon five-expert prediction problem</a></td>
+<td>8.8</td>
+<td>math.AP, cs.GT, cs.LG, math.OC</td>
+<td><a href="https://arxiv.org/abs/2609.38035v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.37789v1">Predictive Self-Supervised Learning Provably Identifies Stochastic Signals under Nuisance</a></td>
+<td>8.7</td>
+<td>cs.LG, cs.AI</td>
+<td><a href="https://arxiv.org/abs/2609.37789v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.37733v1">Foundation Neural-Network Quantum States for Molecular Potential Energy Surfaces in Second Quantization</a></td>
+<td>8.7</td>
+<td>physics.chem-ph, cs.LG, quant-ph</td>
+<td><a href="https://arxiv.org/abs/2609.37733v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.38081v1">Traversing the solution space of neural networks with Hessian Null Space Continuation</a></td>
+<td>8.5</td>
+<td>cs.LG, q-bio.NC, stat.ML</td>
+<td><a href="https://arxiv.org/abs/2609.38081v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.37675v1">LEMON-ZEST: Evolution-Informed Tokenization for Efficient Protein Language Modeling</a></td>
+<td>8.5</td>
+<td>cs.LG, q-bio.BM</td>
+<td><a href="https://arxiv.org/abs/2609.37675v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.38057v1">EVO-WAM: Evolving World Action Models through Video-Action Verification</a></td>
+<td>8.5</td>
+<td>cs.CV, cs.RO</td>
+<td><a href="https://arxiv.org/abs/2609.38057v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2609.37976v1">S³: Spectral Null-Space Swap Makes Reasoning Models Efficient</a></td>
+<td>8.3</td>
+<td>cs.LG, cs.AI, cs.CL, cs.CV</td>
+<td><a href="https://arxiv.org/abs/2609.37976v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>This batch has the statistical signature of a field undergoing simultaneous phase transitions in multiple subdomains—rare and worth taking seriously. The quantum learning result alone would anchor a typical week; that it shares a day with provable SSL identifiability, a 986× speedup in quantum chemistry, and a self-improving robot policy loop suggests the novelty burst anomaly is real rather than a scoring artifact. Watch three things: (1) whether the <a href="https://arxiv.org/abs/2609.37733v1">Foundation NQS</a> orbital-alignment approach scales to larger, more electronically complex molecules—if it does, the implications for drug discovery are immediate; (2) whether <a href="https://arxiv.org/abs/2609.38057v1">EVO-WAM</a>'s self-verification loop generalizes to contact-rich manipulation, which is where video hallucination is most dangerous; and (</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
