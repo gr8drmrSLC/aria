@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-10-14 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-10-14</span>
+    <span>200 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 199 papers bridge …</span>
+    
+      <span class="trigger-tag">Novelty burst: 128/200 papers (64%) scor…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-10-14</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's corpus is unusually dense with high-signal work: 64% of papers scored high-novelty, and virtually every paper bridges multiple domains—a convergence pattern suggesting the field is in active structural reorganization rather than incremental refinement. The most significant throughline is the collapse of long-standing modular boundaries: between world models and policies in robotics, between data-hungry training and data-free inference in generative modeling, and between discrete and continuous reasoning in LLM agents.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Grokking gets its first closed-form theory.</strong> <a href="https://arxiv.org/abs/2610.18811v1">Statistical Vignettes on the Grokking Phenomenon</a> derives sharp analytical conditions for delayed generalization, disentangling initialization, weight decay, sample size, and signal strength—factors previously conflated in empirical studies. The chemical-kinetics analogy provides a predictive dynamical systems frame, not just a post-hoc description. This matters because grokking has become a proxy for understanding how deep networks transition between memorization and generalization regimes; a tractable theory enables controlled experimental design rather than hyperparameter fishing.</p>
+</li>
+<li>
+<p><strong>Diffusion models escape their data dependency for physics sampling.</strong> <a href="https://arxiv.org/abs/2610.18863v1">Data Free Training of Diffusion Models for Lattice Field Theories</a> resolves the circular dependency that previously forced lattice QCD samplers to rely on HMC-generated data by deriving importance-weighted score identities that allow self-training. This is a genuine algorithmic breakthrough for computational physics: if competitive with HMC at scale, it removes one of the last major barriers to ML-native Monte Carlo for quantum field theory.</p>
+</li>
+<li>
+<p><strong>Cross-embodiment robot world models are now empirically viable.</strong> <a href="https://arxiv.org/abs/2610.18774v1">GreenWAM: A World Foundation Model for Robotics</a> unifies world modeling and policy learning across 20 robot families via a shared anatomical action space, demonstrating real-world humanoid performance. Combined with <a href="https://arxiv.org/abs/2610.18873v1">LoopWAM: Closed-Loop Generalist Policy Improvement from Deployment Rollouts</a>—which continuously improves from mixed-quality deployment data—and <a href="https://arxiv.org/abs/2610.18711v1">Steertuning Policies from a Few Human Videos</a>—which achieves 71% task success from 5 human demos in under 5 minutes—the robotics stack is converging toward a credible generalist learning loop.</p>
+</li>
+<li>
+<p><strong>A critical alignment failure mode is now formally characterized.</strong> <a href="https://arxiv.org/abs/2610.18684v1">Knowing the User Is Not Knowing What We Established</a> identifies that personal agents conflate remembered proposals with accepted instructions—a subtle but high-stakes failure in agentic deployment contexts. The benchmark exposes counterintuitive failures in strong memory systems and provides a training-free remedy, making this immediately actionable for teams deploying memory-augmented agents.</p>
+</li>
+<li>
+<p><strong>ML accelerates across compute and bio simultaneously.</strong> <a href="https://arxiv.org/abs/2610.18393v1">LunaTP</a> achieves up to 250× speedup over e3nn for Clebsch-Gordan tensor products, directly unblocking equivariant MLIP scaling for molecular simulation. <a href="https://arxiv.org/abs/2610.18481v1">ProTok</a> unifies protein sequence, structure, and function into a single discrete vocabulary via multi-codebook quantization, outperforming per-modality tokenizers across a broad benchmark suite. Both papers address bottlenecks that have limited scientific ML at scale.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p><strong>The dominant pattern today is boundary dissolution.</strong> Historically separate pipelines—train then align, model then control, encode then generate—are being replaced by unified architectures that handle multiple roles simultaneously. GreenWAM and LoopWAM treat world modeling and policy learning as a single problem. <a href="https://arxiv.org/abs/2610.18861v1">HybridAgents</a> interleaves latent and text-based reasoning within a single generation pass. <a href="https://arxiv.org/abs/2610.18598v1">PORTAL</a> eliminates the projector pretraining stage entirely via optimal transport initialization, and the lattice field theory diffusion work eliminates the data-collection stage for physics sampling. This is not incremental efficiency work—it reflects a maturing understanding that modular pipeline design introduced unnecessary bottlenecks and failure surfaces. A secondary pattern is <strong>formal rigor returning to ML</strong>: the grokking theory, <a href="https://arxiv.org/abs/2610.18658v1">BridgeTwist's</a> twisted SMC formulation for Schrödinger bridges, <a href="https://arxiv.org/abs/2610.18638v1">COMPASS's</a> theoretically grounded model compatibility diagnostic, and the stochastic singularity timing framework all represent a move toward closed-form analysis of phenomena previously studied only empirically. The security implications are also notable: <a href="https://arxiv.org/abs/2610.18609v1">DPOison-VL</a> demonstrates 98% attack success on VLM alignment with only 2% clean-label poisoned data, signaling that multimodal preference pipelines are a significant attack surface that the community has underweighted.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2610.18811v1">Statistical Vignettes on the Grokking Phenomenon</a></td>
+<td>8.5</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2610.18811v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2610.18863v1">Data Free Training of Diffusion Models for Lattice Field Theories</a></td>
+<td>8.4</td>
+<td>hep-lat, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2610.18863v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2610.18774v1">GreenWAM: A World Foundation Model for Robotics</a></td>
+<td>8.3</td>
+<td>cs.RO</td>
+<td><a href="https://arxiv.org/abs/2610.18774v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2610.18861v1">Hybrid Reasoning Agents</a></td>
+<td>8.2</td>
+<td>cs.CL, cs.AI, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2610.18861v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2610.18598v1">Rethinking Projector Training in Multimodal LLMs</a></td>
+<td>8.2</td>
+<td>cs.CV, cs.AI, cs.CL</td>
+<td><a href="https://arxiv.org/abs/2610.18598v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2610.18609v1">DPOison-VL: Clean Preference Poisoning in Vision-Language DPO</a></td>
+<td>8.1</td>
+<td>cs.CR, cs.AI, cs.CV</td>
+<td><a href="https://arxiv.org/abs/2610.18609v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2610.18481v1">ProTok: Unified Protein Tokenization via Modular Multi-Codebook Quantization</a></td>
+<td>8.1</td>
+<td>cs.LG</td>
+<td><a href="https://arxiv.org/abs/2610.18481v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2610.18393v1">LunaTP: Enabling Efficient and Scalable Tensor Product for Equivariant MLIPs</a></td>
+<td>8.1</td>
+<td>cs.DC, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2610.18393v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>Today's session has the statistical fingerprint of a field-level inflection point, not a routine publication cycle: 64% high-novelty rate, near-universal cross-domain bridging, and a cluster of papers that each independently invalidate a previously assumed requirement (paired training data, modular pipelines, per-modality encoders, empirically searched model compatibility). The robotics convergence cluster—GreenWAM, LoopWA</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
