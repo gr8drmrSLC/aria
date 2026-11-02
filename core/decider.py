@@ -34,15 +34,19 @@ DOMAIN_GROUPS = {
 
 
 def _count_domains(paper: dict) -> set[str]:
-    """Return which monitored domain groups a paper touches."""
+    """Return which monitored domain groups a paper touches.
+
+    A category matches a group entry exactly, or as a parent: the entry "q-bio" matches
+    "q-bio.NC". It must NOT match on the shared "cs." prefix. The previous prefix test
+    (cat.startswith(entry.split(".")[0] + ".")) made every cs.* paper count as both ai_ml
+    and robotics, so ~98% of papers looked cross-domain. See DECISIONS.md ADR-016.
+    """
     cats = set(paper.get("categories", []))
     hit_domains = set()
     for domain_name, domain_cats in DOMAIN_GROUPS.items():
-        # Check if any category starts with a domain prefix (handles q-bio.* etc.)
         for cat in cats:
-            for d_cat in domain_cats:
-                if cat == d_cat or cat.startswith(d_cat.split(".")[0] + "."):
-                    hit_domains.add(domain_name)
+            if any(cat == d_cat or cat.startswith(d_cat + ".") for d_cat in domain_cats):
+                hit_domains.add(domain_name)
     return hit_domains
 
 

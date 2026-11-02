@@ -130,6 +130,19 @@ except Exception as e:
     check("decider cross_domain trigger fires", False, str(e))
 
 try:
+    from core.decider import _count_domains
+    ok = (
+        _count_domains({"categories": ["cs.CV"]}) == set()                    # not a monitored domain
+        and _count_domains({"categories": ["cs.AI", "cs.LG"]}) == {"ai_ml"}   # one domain, not two
+        and _count_domains({"categories": ["cs.AI", "cs.RO"]}) == {"ai_ml", "robotics"}
+        and _count_domains({"categories": ["cs.LG", "q-bio.NC"]}) == {"ai_ml", "bio"}
+    )
+    check("decider domain matching has no cs.* prefix leak", ok,
+          "cs.CV must not count as a monitored domain (ADR-016)")
+except Exception as e:
+    check("decider domain matching has no cs.* prefix leak", False, str(e))
+
+try:
     analyzed = [
         {"novelty_score": 8.5, "is_notable": True,  "categories": ["cs.AI"]},
         {"novelty_score": 8.0, "is_notable": True,  "categories": ["cs.LG"]},
