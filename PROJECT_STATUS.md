@@ -1,6 +1,6 @@
 # ARIA — Project Status
 
-**Last updated:** 2026-09-03
+**Last updated:** 2026-11-02
 **Phase:** Live on EC2 — pipeline running, dashboard public, retrofit audit in progress
 
 ---
@@ -82,18 +82,19 @@ Crontab:
 
 ---
 
-## LinkedIn posting pipeline — active
+## LinkedIn posting pipeline — repaired 2026-11-02, awaiting first live run
 
-- `scripts/update_linkedin.py` — posts live research findings (gitignored, manual deploy to EC2)
-- `scripts/save_linkedin_session.py` — one-time interactive session creator
-- `scripts/run_linkedin_post.bat` — Windows Task Scheduler wrapper
-- `scripts/setup_linkedin_task.ps1` — creates `LinkedInARIA` scheduled task
-- `scripts/linkedin_session.json` — local session file (gitignored, 600 permissions)
-- Windows Task Scheduler task `LinkedInARIA` — Tue–Sat 9 AM, catch-up enabled
-- Posts live ARIA research findings using public dashboard API (`aria-agent.duckdns.org`)
-- **Note**: posting runs from Windows, not EC2 — LinkedIn blocks AWS datacenter IPs for browser automation
-
----
+- `scripts/update_linkedin.py` — posts research findings (gitignored, local-only, manual deploy)
+- `scripts/run_linkedin_post.bat` — the only scheduled entry point; exits with the script's real exit code
+- Windows Task Scheduler: **`LinkedInARIA` only** (Tue–Sat 9 AM, catch-up on). `\ARIA\LinkedInPost` and
+  `\ARIA\ReenableLinkedIn` are **disabled** (not deleted).
+- Posted-state: `scripts/linkedin_posted.json` (gitignored). Duplicates are refused in code (ADR-015).
+- Failures: `scripts/linkedin_post.log` plus `scripts/LINKEDIN_POST_FAILED.txt` (flag, cleared on success)
+- Posting runs from Windows, not EC2 (ADR-013). A residential-proxy EC2 plan exists in
+  `docs/LINKEDIN_EC2_MIGRATION.md` and is only a proposal.
+- Was failing from 2026-08-15 (last logged success 2026-08-14). Details: `docs/LINKEDIN_POSTING_ANALYSIS_2026-11-02.md`
+- **Not yet verified live**: the editor and "Next" fixes were checked against LinkedIn's composer with a
+  non-posting inspection, but the Post click and state write have not run against LinkedIn since the fix.
 
 ## Retrofit audit — complete (2026-05-05)
 
@@ -121,6 +122,8 @@ All items from the RETROFIT_GUIDE.md checklist are done:
 
 ## Next tasks
 
-1. Session renewal — LinkedIn session expires ~2 years; re-run `scripts/save_linkedin_session.py` if posting fails
-2. PostgreSQL on EC2 confirmed localhost-only via Docker port binding (fixed); no further action needed
-3. No other open items
+1. Watch the next scheduled LinkedIn run (Tue 2026-11-03): confirm a post appears and `linkedin_posted.json` gains a key
+2. Decide on a real failure alert (email/toast); the flag file is soft
+3. Session renewal — re-run `scripts/save_linkedin_session.py` if posting fails with a login error
+4. Confirm the $20/month Anthropic Console spend cap is set
+5. Decide whether the stale GitHub Pages feed (last update 2026-09-04) is intentional

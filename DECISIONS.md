@@ -161,3 +161,38 @@ control no longer diverge on this going forward. Also committed the
 called the correct pattern and PROJECT_STATUS.md already recorded as fixed on
 2026-05-04 — the code change had only ever been applied live on EC2, never
 actually committed, a 4-month gap between documented and actual repo state.
+
+
+---
+
+## ADR-015: LinkedIn poster — persisted dedupe, refuse-on-missing-data, one scheduled task (2026-11-02)
+
+The poster (`scripts/update_linkedin.py`, local-only/gitignored) failed or misbehaved in ways the
+2026-11-02 analysis documented. Decisions:
+
+1. **Posted-state is persisted and enforced in code.** `scripts/linkedin_posted.json` (gitignored)
+   stores keys: `report:<id>` (daily), `weekly:<ISO week>`, `perf:<ISO week>`. A key already present
+   is never posted again. A key is written only after the Post click succeeds. A corrupt state file
+   makes the run abort (fail closed), not post. *Structural.*
+   Cause: the old script posted `reports[0]` on every run, and ARIA only writes a report on anomalous
+   days, so the same report was re-posted (report 62: six confirmed successful posts).
+2. **Refuse rather than print missing data.** No new report = no daily post. `/api/stats` returns
+   `avg_novelty = 0` when there were no papers in the last 24h; that is "no data", so the performance
+   post is skipped instead of printing "0.0 out of 10". *Structural.*
+3. **Weekly counts are filtered by date in the script.** `/api/reports` ignores `?limit=` and always
+   returns 20 rows, which produced "20 briefs this week" and "20 of 20 days". *Structural.*
+4. **Exactly one scheduled task: `LinkedInARIA` (runs `run_linkedin_post.bat`).** `\ARIA\LinkedInPost`
+   (ran Python directly with no logging, so its runs were invisible) and the dead
+   `\ARIA\ReenableLinkedIn` were **disabled, not deleted**. `StartWhenAvailable` catch-up plus manual
+   runs explain the off-hour entries in the log. `run_linkedin_post.bat` now exits with the script's
+   real exit code (a trailing `echo` previously made every run report result 0) and writes
+   `scripts/LINKEDIN_POST_FAILED.txt` on failure. *Structural for the exit code; the flag file is only
+   an alert if someone looks at it, so true alerting (email/toast) remains open and is **soft**.*
+5. **Wording: "AI-assisted", not "autonomous"** in the post templates, matching the owner's other
+   projects. The About/Project profile text is out of scope here and unchanged.
+6. **Composer selectors updated.** The editor is now a light-DOM ProseMirror `div[role=textbox]`
+   with no `aria-label`; the old aria-label/shadow-DOM lookup matched nothing. "Next" now takes the
+   last visible match to avoid Playwright strict-mode errors.
+
+Rejected: keeping both tasks with a lock file (more moving parts than one task); moving the poster
+into git (it holds personal profile text, which is why it is gitignored).

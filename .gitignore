@@ -18,3 +18,10 @@ scripts/post_images/*.png
 scripts/update_linkedin.py
 scripts/diag_*.png
 scripts/linkedin_session.json
+
+# LinkedIn poster runtime state (ADR-015)
+scripts/linkedin_posted.json
+scripts/linkedin_posted.json.tmp
+scripts/linkedin_post.log
+scripts/LINKEDIN_POST_FAILED.txt
+scripts/screenshot_*.png

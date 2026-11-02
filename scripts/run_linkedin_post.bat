@@ -21,8 +21,15 @@ if exist "%VENV_PY%" (
     python "%SCRIPT%" --post >> "%LOG%" 2>&1
 )
 
-if %ERRORLEVEL% NEQ 0 (
-    echo FAILED with exit code %ERRORLEVEL% >> "%LOG%"
+set RC=%ERRORLEVEL%
+if %RC% NEQ 0 (
+    echo FAILED with exit code %RC% >> "%LOG%"
+    echo %DATE% %TIME% exit code %RC% - see linkedin_post.log > "%PROJECT_DIR%\scripts\LINKEDIN_POST_FAILED.txt"
 ) else (
     echo SUCCESS >> "%LOG%"
+    if exist "%PROJECT_DIR%\scripts\LINKEDIN_POST_FAILED.txt" del "%PROJECT_DIR%\scripts\LINKEDIN_POST_FAILED.txt"
 )
+
+REM Propagate the real result so Task Scheduler's Last Run Result is truthful
+REM (previously the trailing echo made every run exit 0).
+exit /b %RC%

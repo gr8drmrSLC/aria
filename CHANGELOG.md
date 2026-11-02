@@ -157,3 +157,10 @@ Files changed: dashboard/app.py runner.py
 - `requirements.txt`, `.env.example`, `.gitignore`
 - `CLAUDE.md`, `PROJECT_STATUS.md`, `DECISIONS.md`
 - `docs/USER_MANUAL.md` — Full setup and operations guide
+
+
+### 2026-11-02
+- LinkedIn poster: persist posted report/week keys and skip duplicates; skip posts whose numbers are missing (0.0 novelty); filter weekly counts by date (API ignores `limit`); switch to AI-assisted wording; update composer selectors after LinkedIn's markup change. Local-only (`update_linkedin.py` is gitignored). See ADR-015.
+- `run_linkedin_post.bat` now exits with the script's real exit code and writes a failure flag file.
+- Disabled duplicate scheduled tasks `\ARIA\LinkedInPost` and `\ARIA\ReenableLinkedIn`; `LinkedInARIA` is the only poster task.
+- `.gitignore`: poster runtime state, log, failure flag and screenshots.
