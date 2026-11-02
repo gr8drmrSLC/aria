@@ -21,10 +21,19 @@ import sqlite3
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from core.decider import decide  # noqa: E402
 
-CATEGORIES = ["cs.AI", "cs.LG", "cs.RO", "q-bio.*"]  # as stored in the baselines table
-MIN_SCORED_FRACTION = 0.5
+HISTORY_DAYS = 35  # how much paper history runner.py hands to build_history()
+
+
+def _apply_overrides(argv):
+    """--z must be applied before core.decider is imported (thresholds are read at import)."""
+    for i, a in enumerate(argv):
+        if a == "--z" and i + 1 < len(argv):
+            os.environ["ARIA_Z_THRESHOLD"] = argv[i + 1]
+
+
+_apply_overrides(sys.argv)
+from core.decider import MIN_SCORED_FRACTION, build_history, decide  # noqa: E402
 
 
 def load(db_path: str):
@@ -35,6 +44,7 @@ def load(db_path: str):
         by_day[r["ingested_at"][:10]].append({
             "categories": json.loads(r["categories"] or "[]"),
             "novelty_score": r["novelty_score"] or 0,
+            "ingested_at": r["ingested_at"],
         })
     baselines = [dict(r) for r in con.execute("SELECT * FROM baselines ORDER BY date")]
     return by_day, baselines
@@ -50,18 +60,28 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("db")
     ap.add_argument("--max-per-week", type=float, default=None)
+    ap.add_argument("--z", type=float, default=None, help="override ARIA_Z_THRESHOLD for this run")
     args = ap.parse_args()
 
     by_day, baselines = load(args.db)
     fired_by = collections.Counter()
+    modes = collections.Counter()
     reported, skipped = [], []
+    rel_days, rel_reported = [], []
     for day in sorted(by_day):
         papers = by_day[day]
         scored = [p for p in papers if p["novelty_score"] > 0]
         if len(scored) < MIN_SCORED_FRACTION * len(papers):
             skipped.append(day)
             continue
-        result = decide(papers, baselines_as_of(baselines, day))
+        start = (dt.date.fromisoformat(day) - dt.timedelta(days=HISTORY_DAYS)).isoformat()
+        rows = [p for d, ps in by_day.items() if start <= d <= day for p in ps]
+        result = decide(papers, baselines_as_of(baselines, day), build_history(rows, day))
+        modes[result["mode"]] += 1
+        if result["mode"] == "relative":
+            rel_days.append(day)
+            if result["should_report"]:
+                rel_reported.append(day)
         for name in result["trigger_names"]:
             fired_by[name] += 1
         if result["should_report"]:
@@ -73,7 +93,12 @@ def main() -> int:
     per_week = len(reported) / weeks
     print(f"days replayed: {evaluated}  (skipped, mostly unscored: {len(skipped)})")
     print(f"days that would report: {len(reported)} ({100 * len(reported) / max(1, evaluated):.0f}%)")
-    print(f"mean reports/week: {per_week:.2f}  over {weeks:.1f} weeks")
+    print(f"modes: {dict(modes)}")
+    print(f"mean reports/week: {per_week:.2f}  over {weeks:.1f} weeks (includes cold-start days)")
+    if rel_days:
+        rate = len(rel_reported) / len(rel_days)
+        print(f"relative mode only: {len(rel_reported)}/{len(rel_days)} days = {rate:.0%}"
+              f"  (~{rate * 4:.1f} reports/week at 4 runs/week)")
     for name, n in fired_by.most_common():
         print(f"  {name:20s} fired {n:3d} days")
     months = collections.Counter(d[:7] for d in reported)

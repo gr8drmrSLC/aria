@@ -1,17 +1,24 @@
 """
 decider.py — Autonomous decision layer for ARIA.
 
-Evaluates today's analyzed papers against historical baselines and fires
-four independent anomaly triggers to decide whether a report is warranted.
-The decision is made without human prompting — this is the agentic core of ARIA.
+Evaluates today's analyzed papers against ARIA's own recent history and fires four
+independent triggers to decide whether a report is warranted (ADR-016).
 
-Triggers:
-  1. Volume Spike     — today's paper count > baseline mean * 1.5
-  2. Cross-Domain     — significant cluster of papers bridging multiple monitored domains
-  3. Novelty Burst    — >30% of papers scored as high-novelty (>= threshold)
-  4. Significance Surge — avg novelty score > baseline avg * 1.3
+Each trigger compares one daily metric with its trailing window using a robust z-score
+(median and MAD, so one odd day does not distort the baseline):
+
+  1. Volume Spike        — paper count (note: ingest is capped at 200 per run, so this
+                           can rarely fire; kept for interface compatibility)
+  2. Cross-Domain        — share of papers bridging two or more monitored domains
+  3. Novelty Burst       — share of papers scoring >= HIGH_NOVELTY
+  4. Significance Surge  — mean novelty score
+
+A trigger fires when its z-score >= Z_THRESHOLD. With fewer than MIN_HISTORY_DAYS of
+history (cold start) it falls back to the original absolute thresholds. The previous
+absolute rules fired on ~every run (see docs/ARIA_TREND_ANALYSIS_2026-11-02.md).
 """
 
+import collections
 import logging
 import os
 import statistics
@@ -19,6 +26,12 @@ import statistics
 logger = logging.getLogger("aria.decider")
 
 # Configurable thresholds
+Z_THRESHOLD = float(os.environ.get("ARIA_Z_THRESHOLD", "1.5"))
+MIN_HISTORY_DAYS = int(os.environ.get("ARIA_MIN_HISTORY_DAYS", "10"))
+HIGH_NOVELTY = float(os.environ.get("ARIA_HIGH_NOVELTY", "8"))
+MIN_SCORED_FRACTION = 0.5   # days with fewer scored papers are analysis failures, not signal
+
+# Cold-start (fallback) absolute thresholds — the original rules
 VOLUME_SPIKE_MULTIPLIER = float(os.environ.get("ARIA_VOLUME_SPIKE", "1.5"))
 NOVELTY_BURST_PCT = float(os.environ.get("ARIA_NOVELTY_BURST_PCT", "0.30"))
 SIGNIFICANCE_SURGE_MULTIPLIER = float(os.environ.get("ARIA_SIGNIFICANCE_SURGE", "1.3"))
@@ -50,137 +63,159 @@ def _count_domains(paper: dict) -> set[str]:
     return hit_domains
 
 
-def _trigger_volume_spike(papers: list[dict], baselines: list[dict]) -> tuple[bool, str]:
-    """Fires when today's paper count significantly exceeds the historical mean."""
-    today_count = len(papers)
-    if not baselines:
-        logger.debug("Volume spike: no baseline data, skipping")
+def day_metrics(papers: list[dict]) -> dict | None:
+    """Daily metrics for one day's papers, or None if too few were scored to be trusted."""
+    if not papers:
+        return None
+    scored = [p["novelty_score"] for p in papers if (p.get("novelty_score") or 0) > 0]
+    if len(scored) < MIN_SCORED_FRACTION * len(papers):
+        return None  # analysis failure, not a real quiet day
+    return {
+        "paper_count": len(papers),
+        "avg_novelty": statistics.mean(scored),
+        "high_share": sum(1 for v in scored if v >= HIGH_NOVELTY) / len(scored),
+        "cross_share": sum(1 for p in papers if len(_count_domains(p)) >= 2) / len(papers),
+    }
+
+
+def build_history(rows: list[dict], before_date: str) -> list[dict]:
+    """
+    Turn paper rows ({categories, novelty_score, ingested_at}) into one metrics dict per
+    prior day. Days on or after `before_date` are excluded so today never baselines itself.
+    """
+    by_day: dict[str, list[dict]] = collections.defaultdict(list)
+    for r in rows:
+        day = (r.get("ingested_at") or "")[:10]
+        if day and day < before_date:
+            by_day[day].append(r)
+    history = []
+    for day in sorted(by_day):
+        m = day_metrics(by_day[day])
+        if m:
+            m["date"] = day
+            history.append(m)
+    return history
+
+
+def _robust_z(value: float, series: list[float]) -> tuple[float, float] | None:
+    """(z, median) of value against series, using median/MAD. None if no usable spread."""
+    med = statistics.median(series)
+    sigma = 1.4826 * statistics.median(abs(x - med) for x in series)
+    if sigma < 1e-9:
+        sigma = statistics.pstdev(series)
+    if sigma < 1e-9:
+        return None
+    return (value - med) / sigma, med
+
+
+def _relative(metric: str, today: dict | None, history: list[dict] | None):
+    """Robust z-score of today's metric vs history, or None when there is not enough history."""
+    if today is None or not history or len(history) < MIN_HISTORY_DAYS:
+        return None
+    return _robust_z(today[metric], [h[metric] for h in history])
+
+
+def _trigger_volume_spike(papers, baselines, today=None, history=None) -> tuple[bool, str]:
+    """Paper count well above its trailing window. Ingest is capped, so this rarely fires."""
+    rel = _relative("paper_count", today, history)
+    if rel is not None:
+        z, med = rel
+        if z >= Z_THRESHOLD:
+            return True, f"Volume spike: {len(papers)} papers vs trailing median {med:.0f} (z={z:.1f})"
         return False, ""
-
-    counts = [b["paper_count"] for b in baselines if b.get("paper_count")]
-    if not counts:
-        return False, ""
-
-    baseline_mean = statistics.mean(counts)
-    threshold = baseline_mean * VOLUME_SPIKE_MULTIPLIER
-    fired = today_count >= threshold
-
-    logger.debug(
-        "Volume spike: today=%d, baseline_mean=%.1f, threshold=%.1f, fired=%s",
-        today_count, baseline_mean, threshold, fired,
-    )
-    if fired:
-        return True, (
-            f"Volume spike: {today_count} papers today vs. "
-            f"{baseline_mean:.0f} historical mean ({VOLUME_SPIKE_MULTIPLIER}x threshold)"
-        )
+    counts = [b["paper_count"] for b in (baselines or []) if b.get("paper_count")]
+    if counts and len(papers) >= statistics.mean(counts) * VOLUME_SPIKE_MULTIPLIER:  # cold start
+        return True, f"Volume spike: {len(papers)} papers vs. {statistics.mean(counts):.0f} historical mean"
     return False, ""
 
 
-def _trigger_cross_domain(papers: list[dict]) -> tuple[bool, str]:
-    """Fires when multiple papers bridge two or more monitored research domains."""
-    cross_domain_papers = [p for p in papers if len(_count_domains(p)) >= 2]
-    count = len(cross_domain_papers)
-    fired = count >= CROSS_DOMAIN_MIN_PAPERS
-
-    logger.debug("Cross-domain: %d bridging papers, min=%d, fired=%s", count, CROSS_DOMAIN_MIN_PAPERS, fired)
-    if fired:
-        return True, (
-            f"Cross-domain cluster: {count} papers bridge multiple research domains "
-            f"(AI/ML + bio or robotics) — potential convergence signal"
-        )
+def _trigger_cross_domain(papers, today=None, history=None) -> tuple[bool, str]:
+    """Share of papers bridging two or more monitored domains, vs trailing window."""
+    count = sum(1 for p in papers if len(_count_domains(p)) >= 2)
+    rel = _relative("cross_share", today, history)
+    if rel is not None:
+        z, med = rel
+        if z >= Z_THRESHOLD:
+            return True, (
+                f"Cross-domain cluster: {count} papers ({count / len(papers):.0%}) bridge monitored "
+                f"domains vs trailing median {med:.0%} (z={z:.1f})"
+            )
+        return False, ""
+    if count >= CROSS_DOMAIN_MIN_PAPERS:  # cold start
+        return True, f"Cross-domain cluster: {count} papers bridge multiple research domains"
     return False, ""
 
 
-def _trigger_novelty_burst(papers: list[dict]) -> tuple[bool, str]:
-    """Fires when an unusually high fraction of papers score as high-novelty."""
+def _trigger_novelty_burst(papers, today=None, history=None) -> tuple[bool, str]:
+    """Share of papers scoring >= HIGH_NOVELTY, vs trailing window."""
     if not papers:
         return False, ""
-
-    high_novelty = [p for p in papers if p.get("novelty_score", 0) >= NOVELTY_THRESHOLD]
-    pct = len(high_novelty) / len(papers)
-    fired = pct >= NOVELTY_BURST_PCT
-
-    logger.debug(
-        "Novelty burst: %d/%d high-novelty (%.0f%%), threshold=%.0f%%, fired=%s",
-        len(high_novelty), len(papers), pct * 100, NOVELTY_BURST_PCT * 100, fired,
-    )
-    if fired:
-        return True, (
-            f"Novelty burst: {len(high_novelty)}/{len(papers)} papers ({pct:.0%}) "
-            f"scored high-novelty — unusual concentration of significant work"
-        )
+    rel = _relative("high_share", today, history)
+    if rel is not None:
+        z, med = rel
+        if z >= Z_THRESHOLD:
+            return True, (
+                f"Novelty burst: {today['high_share']:.0%} of papers scored >= {HIGH_NOVELTY:g} "
+                f"vs trailing median {med:.0%} (z={z:.1f})"
+            )
+        return False, ""
+    high = [p for p in papers if p.get("novelty_score", 0) >= NOVELTY_THRESHOLD]  # cold start
+    pct = len(high) / len(papers)
+    if pct >= NOVELTY_BURST_PCT:
+        return True, f"Novelty burst: {len(high)}/{len(papers)} papers ({pct:.0%}) scored high-novelty"
     return False, ""
 
 
-def _trigger_significance_surge(papers: list[dict], baselines: list[dict]) -> tuple[bool, str]:
-    """Fires when average novelty score significantly exceeds historical baseline."""
-    scored = [p for p in papers if p.get("novelty_score") is not None and p["novelty_score"] > 0]
-    if not scored:
+def _trigger_significance_surge(papers, baselines, today=None, history=None) -> tuple[bool, str]:
+    """Mean novelty score vs trailing window."""
+    rel = _relative("avg_novelty", today, history)
+    if rel is not None:
+        z, med = rel
+        if z >= Z_THRESHOLD:
+            return True, (
+                f"Significance surge: mean novelty {today['avg_novelty']:.2f} "
+                f"vs trailing median {med:.2f} (z={z:.1f})"
+            )
         return False, ""
-
-    avg_today = statistics.mean(p["novelty_score"] for p in scored)
-
-    if not baselines:
-        return False, ""
-
-    avg_baselines = [b["avg_novelty"] for b in baselines if b.get("avg_novelty")]
-    if not avg_baselines:
-        return False, ""
-
-    baseline_avg = statistics.mean(avg_baselines)
-    threshold = baseline_avg * SIGNIFICANCE_SURGE_MULTIPLIER
-    fired = avg_today >= threshold
-
-    logger.debug(
-        "Significance surge: today_avg=%.2f, baseline_avg=%.2f, threshold=%.2f, fired=%s",
-        avg_today, baseline_avg, threshold, fired,
-    )
-    if fired:
-        return True, (
-            f"Significance surge: avg novelty {avg_today:.1f} vs. "
-            f"{baseline_avg:.1f} historical average ({SIGNIFICANCE_SURGE_MULTIPLIER}x threshold)"
-        )
+    scored = [p["novelty_score"] for p in papers if (p.get("novelty_score") or 0) > 0]  # cold start
+    avgs = [b["avg_novelty"] for b in (baselines or []) if b.get("avg_novelty")]
+    if scored and avgs and statistics.mean(scored) >= statistics.mean(avgs) * SIGNIFICANCE_SURGE_MULTIPLIER:
+        return True, f"Significance surge: mean novelty {statistics.mean(scored):.1f} vs. {statistics.mean(avgs):.1f}"
     return False, ""
 
 
-def decide(papers: list[dict], baselines: list[dict] | None = None) -> dict:
+def decide(papers: list[dict], baselines: list[dict] | None = None,
+           history: list[dict] | None = None) -> dict:
     """
-    Run all four anomaly triggers and decide whether to publish a report.
+    Run all four triggers and decide whether to publish a report.
 
     Args:
         papers:    Today's analyzed papers (must have novelty_score set).
-        baselines: Historical baseline records from store.get_baselines().
-                   If None or empty, baseline-dependent triggers are skipped.
+        baselines: Legacy per-category baseline rows (used only in cold start).
+        history:   Per-day metrics for prior days from build_history(). With at least
+                   MIN_HISTORY_DAYS entries, triggers are relative; otherwise cold-start rules.
 
     Returns:
-        {
-            "should_report": bool,
-            "triggers": list[str],       # human-readable trigger descriptions
-            "trigger_names": list[str],  # machine names of fired triggers
-            "stats": dict,               # summary stats for logging/reporting
-        }
+        {"should_report": bool, "triggers": [...descriptions], "trigger_names": [...],
+         "stats": {...}, "mode": "relative" | "cold_start"}
     """
-    if baselines is None:
-        baselines = []
+    today = day_metrics(papers)
+    relative = bool(history) and len(history) >= MIN_HISTORY_DAYS and today is not None
+
+    checks = [
+        ("volume_spike", _trigger_volume_spike(papers, baselines, today, history)),
+        ("cross_domain", _trigger_cross_domain(papers, today, history)),
+        ("novelty_burst", _trigger_novelty_burst(papers, today, history)),
+        ("significance_surge", _trigger_significance_surge(papers, baselines, today, history)),
+    ]
 
     fired_triggers: list[str] = []
     fired_names: list[str] = []
-
-    checks = [
-        ("volume_spike", _trigger_volume_spike(papers, baselines)),
-        ("cross_domain", _trigger_cross_domain(papers)),
-        ("novelty_burst", _trigger_novelty_burst(papers)),
-        ("significance_surge", _trigger_significance_surge(papers, baselines)),
-    ]
-
     for name, (fired, description) in checks:
         if fired:
             fired_triggers.append(description)
             fired_names.append(name)
             logger.info("Trigger fired: %s", name)
-
-    should_report = len(fired_triggers) >= 1
 
     novelty_scores = [p.get("novelty_score", 0) for p in papers if p.get("novelty_score")]
     stats = {
@@ -190,15 +225,14 @@ def decide(papers: list[dict], baselines: list[dict] | None = None) -> dict:
         "cross_domain_count": sum(1 for p in papers if len(_count_domains(p)) >= 2),
         "triggers_fired": len(fired_triggers),
     }
-
-    logger.info(
-        "Decision: should_report=%s, triggers=%s, stats=%s",
-        should_report, fired_names, stats,
-    )
+    mode = "relative" if relative else "cold_start"
+    logger.info("Decision (%s): should_report=%s, triggers=%s, stats=%s",
+                mode, bool(fired_triggers), fired_names, stats)
 
     return {
-        "should_report": should_report,
+        "should_report": len(fired_triggers) >= 1,
         "triggers": fired_triggers,
         "trigger_names": fired_names,
         "stats": stats,
+        "mode": mode,
     }

@@ -14,11 +14,11 @@ Every day at 07:00 UTC, ARIA:
 
 1. **Ingests** new papers from arXiv across four research domains: AI/ML (cs.AI, cs.LG), biology (q-bio.*), and robotics (cs.RO)
 2. **Analyzes** each paper with Claude — assigning novelty scores (0–10), identifying themes, and flagging notable work
-3. **Decides** autonomously whether today's activity is significant using four anomaly triggers:
-   - **Volume Spike** — unusually high paper count vs. historical baseline
-   - **Cross-Domain Cluster** — papers bridging AI, biology, and robotics simultaneously
-   - **Novelty Burst** — concentration of high-scoring papers above the threshold
-   - **Significance Surge** — average novelty score significantly exceeds historical mean
+3. **Decides** whether today stands out from ARIA's own trailing 30 days, using four relative triggers (robust z-score, see `docs/METHODS.md`):
+   - **Volume Spike** — paper count well above its recent median (ingest is capped at 200 per run, so this rarely fires)
+   - **Cross-Domain Cluster** — unusually high share of papers bridging AI/ML, biology, and robotics
+   - **Novelty Burst** — unusually high share of papers scoring 8 or above
+   - **Significance Surge** — mean novelty score well above its recent median
 4. **Reports** — when any trigger fires, Claude drafts a structured intelligence brief covering key findings, emerging themes, and notable papers
 5. **Displays** everything on a newspaper-style dashboard with a live paper feed and published reports
 
@@ -86,7 +86,7 @@ aria/
 │   ├── ingest.py       # arXiv API fetching
 │   ├── store.py        # SQLite data layer
 │   ├── analyst.py      # Claude API analysis
-│   ├── decider.py      # Autonomous anomaly detection
+│   ├── decider.py      # Relative-trigger decision logic (ADR-016)
 │   └── reporter.py     # Intelligence brief generation
 ├── dashboard/
 │   ├── app.py          # Flask app

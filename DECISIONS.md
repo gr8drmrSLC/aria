@@ -174,8 +174,12 @@ The poster (`scripts/update_linkedin.py`, local-only/gitignored) failed or misbe
    stores keys: `report:<id>` (daily), `weekly:<ISO week>`, `perf:<ISO week>`. A key already present
    is never posted again. A key is written only after the Post click succeeds. A corrupt state file
    makes the run abort (fail closed), not post. *Structural.*
-   Cause: the old script posted `reports[0]` on every run, and ARIA only writes a report on anomalous
-   days, so the same report was re-posted (report 62: six confirmed successful posts).
+   Cause: the old script posted `reports[0]` on every run, so any run with no new report re-posted the
+   old one (report 62: six confirmed successful posts). *Correction, 2026-11-02:* this ADR first said
+   ARIA writes reports only on anomalous days. The production database shows a report on 87 of 90
+   ingest days, so the real reasons for "no new report" are the poster's Saturday runs and pipeline
+   outages (e.g. no ingest 2026-08-11 to 2026-08-18, which covers the report-62 repeats).
+   See `docs/ARIA_TREND_ANALYSIS_2026-11-02.md`.
 2. **Refuse rather than print missing data.** No new report = no daily post. `/api/stats` returns
    `avg_novelty = 0` when there were no papers in the last 24h; that is "no data", so the performance
    post is skipped instead of printing "0.0 out of 10". *Structural.*
@@ -196,3 +200,41 @@ The poster (`scripts/update_linkedin.py`, local-only/gitignored) failed or misbe
 
 Rejected: keeping both tasks with a lock file (more moving parts than one task); moving the poster
 into git (it holds personal profile text, which is why it is gitignored).
+
+
+---
+
+## ADR-016: Relative triggers and a history backtest (2026-11-02)
+
+**Problem.** A replay of 90 days of stored history (`docs/ARIA_TREND_ANALYSIS_2026-11-02.md`) showed
+the four absolute-threshold triggers produced a report on 87 of 90 ingest days (cross-domain 87,
+novelty burst 87, volume spike 18, significance surge 0), contradicting the "only when unusual"
+framing. Causes: (a) `_count_domains` matched on the shared `cs.` prefix, so about 98% of papers
+counted as cross-domain (5.5% intended); (b) novelty scores are compressed (about 85% fall between
+6 and 8), so "30% scoring >= 7" was met on 85 of 90 days; (c) the 1.3x significance rule needed a
+mean near 9.0; (d) ingest is capped at 200, so the volume rule had almost no variation.
+
+**Decision.**
+1. Fix the domain matching bug (exact or parent match). Own commit, with a smoke check.
+2. Make every trigger relative: a robust z-score (median, MAD) of one daily metric against the
+   trailing 30 days, firing at z >= 1.5 (`ARIA_Z_THRESHOLD`). Metrics: paper count, cross-domain
+   share, share of papers scoring >= 8, mean score. Cold start (under 10 days of history) keeps the
+   old absolute rules. Days with under half the papers scored are excluded as analysis failures.
+3. Choose z = 1.5 from a backtest, with a target of about one or two reports per week (owner
+   approved this target). At z = 1.5 the replay reports on 32% of relative-mode runs, about 1.3 a
+   week. At z = 1.25, 1.75 and 2.0 the rate is about 1.7, 1.0 and 0.8.
+4. `tests/backtest_decider.py` replays any database snapshot read-only and can fail on a
+   `--max-per-week` ceiling. It is *structural* only if run before threshold changes; the smoke
+   test and CI do not run it (the production snapshot is not in git), so as wired today it is *soft*.
+5. Public wording becomes "AI-assisted", "sampled", and "notable relative to the previous month";
+   no claim of statistical unusualness. `docs/METHODS.md` records the description and limits.
+
+**Consequences.** Report volume falls from about 87 in 7 months to roughly 1 to 2 a week. The
+decision depends on history in the `papers` table (read through `Database.get_paper_rows`), so any
+archive plan must keep scores and categories for old rows. Trigger names and `decide()` return keys
+are unchanged (a `mode` key is added), so the reporter and dashboard need no change.
+
+**Rejected.** Raising the absolute thresholds (fragile, drifts with the scoring model); a fixed
+"one report per week" rule (ignores the data); correcting for multiple comparisons (reports would
+become too rare for the one-to-two target). Deferred: embeddings, nearest-neighbour novelty and
+stratified sampling.

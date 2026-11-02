@@ -29,6 +29,17 @@ ARIA is fully deployed and operational on EC2 (`3.139.164.142`, us-east-2).
 
 ---
 
+## Decision logic — changed 2026-11-02 (ADR-016), not yet deployed to EC2
+
+- Replay of history showed the old triggers reported on 87 of 90 days. Cross-domain prefix bug fixed
+  (commit 6519d11); triggers are now relative (robust z >= 1.5 vs trailing 30 days), about 1.3 reports
+  per week in backtest. See `docs/METHODS.md`, `docs/ARIA_TREND_ANALYSIS_2026-11-02.md`.
+- Local repo only: needs push, `git pull` on EC2 and a service restart. First production run after
+  deploy will use relative mode only if at least 10 days of history exist (they do).
+- Known gaps: 34 expected run days have no ingest (undiagnosed outages); some papers unscored.
+
+---
+
 ## What is working
 
 - arXiv ingest (Tue–Fri, ~100–200 papers/day across cs.AI, cs.LG, q-bio.*, cs.RO)

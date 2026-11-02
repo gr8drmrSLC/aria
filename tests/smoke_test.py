@@ -143,6 +143,29 @@ except Exception as e:
     check("decider domain matching has no cs.* prefix leak", False, str(e))
 
 try:
+    from core.decider import build_history
+    def _day(d, hi_share, n=20):
+        k = round(n * hi_share)
+        return ([{"categories": ["cs.AI"], "novelty_score": 8.5, "ingested_at": f"{d}T07:00:00"}] * k
+                + [{"categories": ["cs.AI"], "novelty_score": 6.0, "ingested_at": f"{d}T07:00:00"}] * (n - k))
+    rows = []
+    for i in range(14):   # 14 quiet days with a small wobble in the high-novelty share
+        rows += _day(f"2026-05-{i + 1:02d}", 0.10 + 0.05 * (i % 2))
+    hist = build_history(rows, "2026-05-20")
+    calm = _day("2026-05-20", 0.10)
+    spike = _day("2026-05-20", 0.80)
+    d_calm, d_spike = decide(calm, [], hist), decide(spike, [], hist)
+    check("decider relative mode: quiet day does not report",
+          d_calm["mode"] == "relative" and not d_calm["should_report"], str(d_calm["trigger_names"]))
+    check("decider relative mode: genuine spike reports",
+          d_spike["should_report"] and "novelty_burst" in d_spike["trigger_names"], str(d_spike["trigger_names"]))
+    failed_day = [{"categories": ["cs.AI"], "novelty_score": 0, "ingested_at": "2026-05-15T07:00:00"}] * 20
+    check("build_history drops unscored (failed-analysis) days",
+          len(build_history(rows + failed_day, "2026-05-20")) == len(hist), "unscored day leaked into baseline")
+except Exception as e:
+    check("decider relative mode checks", False, str(e))
+
+try:
     analyzed = [
         {"novelty_score": 8.5, "is_notable": True,  "categories": ["cs.AI"]},
         {"novelty_score": 8.0, "is_notable": True,  "categories": ["cs.LG"]},

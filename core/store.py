@@ -168,6 +168,25 @@ class Database:
             papers.append(p)
         return papers
 
+    def get_paper_rows(self, days=35) -> list[dict]:
+        """Lightweight paper rows (categories, novelty_score, ingested_at) for trend baselines.
+
+        Skips abstracts/authors on purpose: build_history() only needs these three fields.
+        """
+        self.connect()
+        cursor = self.conn.cursor()
+        cutoff = (datetime.now(timezone.utc) - timedelta(days=days)).isoformat()
+        cursor.execute(
+            "SELECT categories, novelty_score, ingested_at FROM papers WHERE ingested_at >= ?",
+            (cutoff,),
+        )
+        rows = []
+        for row in cursor.fetchall():
+            r = dict(row)
+            r["categories"] = json.loads(r["categories"]) if r["categories"] else []
+            rows.append(r)
+        return rows
+
     def get_reports(self, limit=20) -> list[dict]:
         """Retrieves the most recent reports up to the specified limit."""
         self.connect()

@@ -164,3 +164,5 @@ Files changed: dashboard/app.py runner.py
 - `run_linkedin_post.bat` now exits with the script's real exit code and writes a failure flag file.
 - Disabled duplicate scheduled tasks `\ARIA\LinkedInPost` and `\ARIA\ReenableLinkedIn`; `LinkedInARIA` is the only poster task.
 - `.gitignore`: poster runtime state, log, failure flag and screenshots.
+
+- Decider: triggers are now relative (robust z-score against the trailing 30 days, z >= 1.5) instead of absolute thresholds that fired on nearly every run; cold start keeps the old rules. Added tests/backtest_decider.py, Database.get_paper_rows, three smoke checks (21 total), docs/METHODS.md, ADR-016. README trigger descriptions updated.

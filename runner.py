@@ -27,7 +27,7 @@ load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 from core.ingest import fetch_papers, get_categories
 from core.store import Database
 from core.analyst import Analyst, identify_cross_domain
-from core.decider import decide
+from core.decider import build_history, decide
 from core.reporter import generate_report
 
 LOG_LEVEL = os.environ.get("ARIA_LOG_LEVEL", "INFO").upper()
@@ -106,7 +106,10 @@ def run_pipeline() -> dict:
         for category in categories:
             all_baselines.extend(db.get_baselines(category, days=30))
 
-        decision = decide(analyzed, all_baselines)
+        # Relative triggers compare today with ARIA's own trailing days (ADR-016). Today's papers
+        # are already saved, so build_history() excludes run_date from its own baseline.
+        history = build_history(db.get_paper_rows(days=35), run_date)
+        decision = decide(analyzed, all_baselines, history)
         logger.info(
             "Decision: should_report=%s, triggers=%s",
             decision["should_report"],
