@@ -173,7 +173,7 @@ def main():
 
     scheduler = BlockingScheduler(timezone="UTC")
     scheduler.add_job(run_pipeline, "cron", day_of_week="tue-fri", hour=args.hour, minute=0)
-    logger.info("ARIA scheduler started — running Tue-Sat at %02d:00 UTC", args.hour)
+    logger.info("ARIA scheduler started — running Tue-Fri at %02d:00 UTC", args.hour)
     logger.info("Press Ctrl+C to stop")
 
     try:

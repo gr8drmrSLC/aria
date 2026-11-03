@@ -166,3 +166,8 @@ Files changed: dashboard/app.py runner.py
 - `.gitignore`: poster runtime state, log, failure flag and screenshots.
 
 - Decider: triggers are now relative (robust z-score against the trailing 30 days, z >= 1.5) instead of absolute thresholds that fired on nearly every run; cold start keeps the old rules. Added tests/backtest_decider.py, Database.get_paper_rows, three smoke checks (21 total), docs/METHODS.md, ADR-016. README trigger descriptions updated.
+
+### 2026-11-03
+- Confirmed the first production run under relative triggers (no report on a quiet day) and the first successful poster run after the ADR-015 fixes.
+- runner.py: scheduler start message now says Tue-Fri to match the cron job.
+- Ops: removed the stale LinkedIn session file from EC2.

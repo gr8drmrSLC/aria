@@ -36,7 +36,8 @@ ARIA is fully deployed and operational on EC2 (`3.139.164.142`, us-east-2).
   per week in backtest. See `docs/METHODS.md`, `docs/ARIA_TREND_ANALYSIS_2026-11-02.md`.
 - Deployed 2026-11-02 22:13 UTC (commit e1f82ad): pushed, pulled on EC2, smoke test 21/21, both services restarted.
   Server dry-run on 10/30 data used relative mode (19 history days). Pre-deploy DB copy: `data/aria.db.pre-adr016` on EC2.
-  First live run under the new logic: Tue 2026-11-03 07:00 UTC — check `logs/aria.log` for `Decision (relative)`.
+  First live run under the new logic (Tue 2026-11-03 07:00 UTC) confirmed: `Decision (relative)`, 163 papers, cross-domain 6/163,
+  no triggers, no report. Still to judge: the real report rate (target 1-2/week) over the next few weeks.
 - Known gaps: 34 expected run days have no ingest (undiagnosed outages); some papers unscored.
 
 ---
@@ -94,7 +95,12 @@ Crontab:
 
 ---
 
-## LinkedIn posting pipeline — repaired 2026-11-02, awaiting first live run
+## LinkedIn posting pipeline — repaired 2026-11-02, first live post 2026-11-03
+
+- 2026-11-03 09:00: first run with the fixed poster ran once and logged success (`weekly:2026-W45` stored, task result 0).
+  The final screenshot showed LinkedIn's posting spinner, so the live post itself was not visually confirmed. Editor failures on
+  10/27-10/31 were the old code. The weekly text still counts reports made under the old triggers.
+- 2026-11-03: deleted the stale `data/linkedin_session.json` on EC2 (poster runs from Windows only).
 
 - `scripts/update_linkedin.py` — posts research findings (gitignored, local-only, manual deploy)
 - `scripts/run_linkedin_post.bat` — the only scheduled entry point; exits with the script's real exit code
