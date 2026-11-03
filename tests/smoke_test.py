@@ -265,6 +265,65 @@ except Exception as e:
     check(".gitignore covers secrets", False, str(e))
 
 
+# ── 10. Weekly post writer (ADR-017) ──────────────────────────────────────────
+try:
+    from datetime import datetime, timezone
+    from types import SimpleNamespace
+    from core import postwriter as pw
+
+    _now = datetime(2026, 11, 8, tzinfo=timezone.utc)
+    _content = chr(10).join([
+        "# Brief", "", "## Executive Summary", "", "World models meet proofs, 62% novelty.", "",
+        "## Key Findings", "",
+        "- **Formal proofs for agents.** [Algebraic World Model: From Exploration to Proofs]"
+        "(https://arxiv.org/abs/2610.40503v1) does things.", "",
+    ])
+    _reports = [
+        {"id": 90, "created_at": "2026-11-05T07:00:00+00:00", "paper_count": 200,
+         "triggers": ["novelty_burst"], "content": _content},
+        {"id": 87, "created_at": "2026-11-02T07:00:00+00:00", "paper_count": 150,
+         "triggers": ["Cross-domain cluster: 193"], "content": _content},
+        {"id": 50, "created_at": "2026-10-01T07:00:00+00:00", "paper_count": 99, "content": _content},
+    ]
+    _facts = pw.build_facts(_reports, _now)
+    check("postwriter facts: window filter and counts",
+          _facts["report_count"] == 2 and _facts["paper_count"] == 350, str(_facts["report_count"]))
+    check("postwriter facts: legacy triggers hidden, new ones kept",
+          "triggers" in _facts["reports"][0] and "triggers" not in _facts["reports"][1], "")
+
+    _title = "Algebraic World Model: From Exploration to Proofs"
+    _good = f"This week ARIA flagged {_title}, which pairs search with formal proofs. These are model readings of abstracts, not verified results."
+    check("postwriter accepts a grounded draft", pw.validate(_good, _facts, []) == [], str(pw.validate(_good, _facts, [])))
+    check("postwriter rejects invented numbers", any("number" in x for x in pw.validate(_good + " It scored 96.5.", _facts, [])), "")
+    check("postwriter rejects banned wording", any("banned" in x for x in pw.validate(_good + " It is autonomous.", _facts, [])), "")
+    check("postwriter rejects ungrounded draft", any("exact title" in x for x in pw.validate("Something interesting happened.", _facts, [])), "")
+    _hist = [{"key": "weekly:x", "posted_at": "2026-11-03T00:00:00+00:00", "had_intro": True, "text": _good}]
+    check("postwriter rejects a near-duplicate of a past post", any("similar" in x for x in pw.validate(_good, _facts, _hist)), "")
+    check("postwriter intro rule: no intro within 28 days, intro after",
+          not pw.wants_intro(_hist, _now) and pw.wants_intro(_hist, datetime(2026, 12, 20, tzinfo=timezone.utc)), "")
+
+    class _FakeClient:
+        def __init__(self, texts):
+            self.texts, self.calls = list(texts), 0
+            self.messages = SimpleNamespace(create=self._create)
+        def _create(self, **kw):
+            self.calls += 1
+            return SimpleNamespace(content=[SimpleNamespace(text=self.texts.pop(0))],
+                                   usage=SimpleNamespace(input_tokens=1000, output_tokens=200))
+
+    _fc = _FakeClient(["no title here", _good])
+    check("postwriter retries after a rejected draft and charges the guard",
+          pw.generate_post(_facts, [], False, client=_fc) == _good and _fc.calls == 2, str(_fc.calls))
+    _fc2 = _FakeClient(["bad"] * pw.MAX_ATTEMPTS)
+    try:
+        pw.generate_post(_facts, [], False, client=_fc2)
+        check("postwriter raises PostRejected when nothing passes", False, "no exception")
+    except pw.PostRejected:
+        check("postwriter raises PostRejected when nothing passes", _fc2.calls == pw.MAX_ATTEMPTS, str(_fc2.calls))
+except Exception as e:
+    check("postwriter checks run", False, repr(e))
+
+
 # ── Summary ────────────────────────────────────────────────────────────────────
 total = len(PASS) + len(FAIL)
 print(f"\n{len(PASS)}/{total} checks passed")

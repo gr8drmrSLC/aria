@@ -18,7 +18,7 @@ Run the smoke test. Record its output. That output is your baseline.
 
 ```bash
 python tests/smoke_test.py
-# Expected: 21/21 checks passed
+# Expected: 31/31 checks passed
 ```
 
 **2. Identify the smallest change that achieves the goal.**
@@ -156,5 +156,5 @@ Expected output when all checks pass:
   PASS  reporter fallback report generates
   PASS  .gitignore covers secrets
 
-21/21 checks passed
+31/31 checks passed
 ```

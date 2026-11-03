@@ -171,3 +171,8 @@ Files changed: dashboard/app.py runner.py
 - Confirmed the first production run under relative triggers (no report on a quiet day) and the first successful poster run after the ADR-015 fixes.
 - runner.py: scheduler start message now says Tue-Fri to match the cron job.
 - Ops: removed the stale LinkedIn session file from EC2.
+
+### 2026-11-03 (later)
+- Added `core/postwriter.py`: Claude-written weekly LinkedIn post, validated in code (numbers, banned wording, exact paper title, similarity to the last 10 posts), budget-guard charged. See ADR-017.
+- Poster (local-only): weekly post now generated with an approval gate (`--draft`, `--approve`, `ARIA_POST_REQUIRE_APPROVAL`); legacy trigger names no longer shown for reports before 2026-11-03.
+- 10 new smoke checks (31 total). `.gitignore` covers draft, history and waiting-note files.

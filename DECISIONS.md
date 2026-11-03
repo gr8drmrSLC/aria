@@ -238,3 +238,38 @@ are unchanged (a `mode` key is added), so the reporter and dashboard need no cha
 "one report per week" rule (ignores the data); correcting for multiple comparisons (reports would
 become too rare for the one-to-two target). Deferred: embeddings, nearest-neighbour novelty and
 stratified sampling.
+
+---
+
+## ADR-017: Claude-written weekly LinkedIn post with code-enforced checks (2026-11-03)
+
+**Context.** Every template post repeated the same intro paragraph, and the 2026-11-03 weekly post
+printed "cross-domain cluster, present in 3 of those 3 briefs", a figure produced by the ADR-016
+prefix bug. Reach is low (median about 180 impressions), so repeated filler costs more than it earns.
+
+**Decision.**
+1. `core/postwriter.py` has Claude write the weekly post from the week's briefs (summary, key-finding
+   headlines, exact paper titles). It is a Claude call wired to the budget guard (`_charge`), about
+   $0.02 per attempt, at most 3 attempts per week.
+2. Every draft is validated in code before it can be used: length, banned wording ("autonomous",
+   hype words, trigger and anomaly language), any number not supplied in the facts or a title, at
+   least one exact paper title named, and word-trigram similarity under 0.30 against the last 10
+   posts. A failing draft is retried with the problems fed back; if none passes, nothing is posted.
+   *Structural* for these checks (they run on every draft); *soft* for tone, which the prompt only
+   asks for.
+3. Trigger names and stats from reports created before 2026-11-03 are never shown (legacy bug).
+   The same cutover applies to the daily-report template.
+4. The "what ARIA is" sentence appears about once every 28 days, tracked in
+   `scripts/linkedin_post_history.json`. A corrupt history fails closed.
+5. Approval gate, default on (`ARIA_POST_REQUIRE_APPROVAL=0` disables it): the first run of a week
+   saves a draft and writes `scripts/LINKEDIN_DRAFT_WAITING.txt`; `update_linkedin.py --approve`
+   releases it for the next scheduled run, `--draft` regenerates it. This gate is *soft*: it relies on
+   the owner approving, and an unapproved week produces no weekly post.
+6. The poster itself stays local and gitignored; the generator and its tests are in the repo.
+
+**Consequences.** Weekly posts vary and stay grounded, at a cost of well under $1 a month. The daily
+and system-stats templates are unchanged and still repeat the intro. Content is still model-written
+text under the owner's name, so approval is on by default.
+
+**Rejected.** Rotating fixed templates (still repetitive); letting the model cite trigger stats
+(the legacy data is unreliable); auto-posting with no gate while the generator is new.

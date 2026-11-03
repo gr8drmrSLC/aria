@@ -100,6 +100,10 @@ Crontab:
 - 2026-11-03 09:00: first run with the fixed poster ran once and logged success (`weekly:2026-W45` stored, task result 0).
   The final screenshot showed LinkedIn's posting spinner, so the live post itself was not visually confirmed. Editor failures on
   10/27-10/31 were the old code. The weekly text still counts reports made under the old triggers.
+- 2026-11-03 (later): weekly post is now Claude-written and checked in code (ADR-017, `core/postwriter.py`). Approval is required by
+  default: the first run of a week saves a draft and writes `scripts/LINKEDIN_DRAFT_WAITING.txt`; run
+  `python scripts/update_linkedin.py --approve` (or `--draft` to regenerate). Not yet exercised on a live scheduled run; first test is
+  Tue 2026-11-10. Daily and stats templates still repeat the intro.
 - 2026-11-03: deleted the stale `data/linkedin_session.json` on EC2 (poster runs from Windows only).
 
 - `scripts/update_linkedin.py` — posts research findings (gitignored, local-only, manual deploy)

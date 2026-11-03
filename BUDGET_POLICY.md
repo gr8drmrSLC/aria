@@ -38,6 +38,10 @@ Prices in USD per 1,000,000 tokens (as of 2026-05):
 | Report generation (1 call, top 20 papers) | 1 | 3,000 in / 800 out | ~$0.021 |
 | **Daily total** | 21 | — | **~$0.075** |
 
+**Weekly LinkedIn post (ADR-017):** 1 to 3 Claude calls per week from `core/postwriter.py`
+(about 1,500 in / 300 out each, about $0.01 per attempt), charged to the budget guard in the
+poster's own process. Roughly $0.20 a month at most.
+
 Pipeline runs 4 days/week (Tue–Fri). Monthly estimate: ~$1.20.
 The $5.00 session cap provides ~65× headroom before the guard trips.
 

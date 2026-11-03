@@ -25,3 +25,9 @@ scripts/linkedin_posted.json.tmp
 scripts/linkedin_post.log
 scripts/LINKEDIN_POST_FAILED.txt
 scripts/screenshot_*.png
+
+scripts/linkedin_draft.json
+scripts/linkedin_draft.json.tmp
+scripts/linkedin_post_history.json
+scripts/linkedin_post_history.json.tmp
+scripts/LINKEDIN_DRAFT_WAITING.txt
