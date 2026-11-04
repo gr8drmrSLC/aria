@@ -313,3 +313,31 @@ to EC2 and the post type are still to do.
 
 **Rejected.** 95 percent bands from 3 or 4 runs per week (so wide they hid the data); correlating
 field shares with each other; a dual-axis chart; calling novelty differences between fields findings.
+
+---
+
+## ADR-019: Report tag counts and cross-listing from arXiv's own totals (2026-11-04)
+
+**Context.** ARIA's daily sample covers about 9 hours of submissions (ADR-018), so it cannot say how
+large a field is or how fast it grows, and a first single-month check showed that "all four fields are
+growing rapidly" is not supported: Oct 2021 to Oct 2025, all arXiv +67 percent, cs.LG +65, q-bio +64,
+cs.RO +134. The owner also clarified the scope: ARIA reports how papers are TAGGED, not what they say.
+
+**Decision.**
+1. The quarterly report states only tag counts and combinations (arXiv categories chosen by authors),
+   never content, quality, performance or demand. Abstract-term lists and novelty scores are kept out of it.
+2. `scripts/arxiv_counts.py` pulls monthly counts (total arXiv, AI, ML, robotics, bio, and their
+   cross-listings) from arXiv's API totals back to 2020-01. It is read-only, one request at a time at
+   least 3.5 s apart, retried, and cached after every query so a run resumes without refetching.
+3. Hypotheses are declared before the data is read: (H1) each field grows faster than arXiv overall;
+   (H2) the share of robotics papers also tagged AI or ML rises; (H3) the same for bio in aggregate.
+   Each is reported whether it holds or not.
+4. Growth is always stated relative to arXiv's total, since arXiv itself grew 67 percent.
+
+**Consequences.** Conclusions rest on complete counts, not the sample; the sample is used only for
+within-day detail. Bio subcategories are too small for monthly figures (q-bio.GN about 26 papers a
+month), so bio is reported in aggregate, by quarter or year. Cross-listing reflects author and
+moderator tagging behavior, which can change with arXiv policy; it is not evidence about the science.
+
+**Rejected.** Using the ARIA sample for growth claims; reporting abstract-term prevalence in the
+quarterly report (it is a content claim); claims about demand or performance (no data for them).

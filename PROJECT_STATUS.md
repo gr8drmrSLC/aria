@@ -102,6 +102,8 @@ Crontab:
 - First result: 1 of 9 exploratory tests supported (robotics share up about 0.4 points a week); novelty associations indistinguishable from zero.
 - Idea parked (private, not in this repo): full-text analysis as a paid/profile-gated offering.
 
+- 2026-11-04: `scripts/arxiv_counts.py` backfills monthly arXiv counts to `data/arxiv_counts.json` (ADR-019); the quarterly tag-count report is not built yet. Single-month check: arXiv overall +67%, cs.LG +65%, q-bio +64%, cs.RO +134% (Oct 2021 to Oct 2025), so only robotics clearly outgrew arXiv.
+
 ## LinkedIn posting pipeline — repaired 2026-11-02, first live post 2026-11-03
 
 - 2026-11-03 09:00: first run with the fixed poster ran once and logged success (`weekly:2026-W45` stored, task result 0).

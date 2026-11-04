@@ -370,6 +370,34 @@ try:
 except Exception as e:
     check("trend summary checks run", False, repr(e))
 
+# ── 12. arXiv monthly counts (ADR-019) ─────────────────────────────────────────
+try:
+    import tempfile
+    _cp = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts", "arxiv_counts.py")
+    _cs = _ilu.spec_from_file_location("arxiv_counts", _cp)
+    ac = _ilu.module_from_spec(_cs)
+    _cs.loader.exec_module(ac)
+
+    check("counts: months span a year boundary inclusively",
+          ac.months("2020-11", "2021-02") == ["2020-11", "2020-12", "2021-01", "2021-02"], "")
+    check("counts: query uses the month window and the category clause",
+          ac.build_query("cat:cs.RO", "2025-12") == "cat:cs.RO AND submittedDate:[202512010000 TO 202601010000]"
+          and ac.build_query(None, "2025-10") == "submittedDate:[202510010000 TO 202511010000]", "")
+    check("counts: total parsed from arXiv XML",
+          ac.parse_total("<opensearch:totalResults xmlns:opensearch='x'>1031</opensearch:totalResults>") == 1031, "")
+    _calls = []
+    def _fake_fetch(q):
+        _calls.append(q)
+        return None if "2020-02" in q else 7
+    _tmp = os.path.join(tempfile.mkdtemp(), "c.json")
+    _r1 = ac.run("2020-01", "2020-01", _tmp, sleep=lambda s: None, fetch=_fake_fetch)
+    _n1 = len(_calls)
+    ac.run("2020-01", "2020-01", _tmp, sleep=lambda s: None, fetch=_fake_fetch)
+    check("counts: results cached and not fetched twice (resumable)",
+          len(_r1["counts"]) == len(ac.SERIES) and len(_calls) == _n1, str(len(_calls)))
+except Exception as e:
+    check("arxiv counts checks run", False, repr(e))
+
 # ── Summary ────────────────────────────────────────────────────────────────────
 total = len(PASS) + len(FAIL)
 print(f"\n{len(PASS)}/{total} checks passed")
