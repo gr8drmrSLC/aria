@@ -320,6 +320,15 @@ try:
         check("postwriter raises PostRejected when nothing passes", False, "no exception")
     except pw.PostRejected:
         check("postwriter raises PostRejected when nothing passes", _fc2.calls == pw.MAX_ATTEMPTS, str(_fc2.calls))
+    _daily = pw.build_daily_facts(_reports[0])
+    check("postwriter daily facts: one brief, kind daily",
+          _daily["kind"] == "daily" and _daily["report_count"] == 1 and _daily["paper_count"] == 200, "")
+    _stats = pw.build_stats_facts({"reports_total": 87, "avg_novelty": 6.8})
+    check("postwriter stats facts: built only when numbers exist",
+          _stats is not None and pw.build_stats_facts({"reports_total": 87, "avg_novelty": 0}) is None, "")
+    _ok_stats = "ARIA has now filed 87 briefs. The latest average novelty score is 6.8 out of 10, a model reading of abstracts."
+    check("postwriter stats post needs no paper title but still rejects invented numbers",
+          pw.validate(_ok_stats, _stats, []) == [] and any("number" in x for x in pw.validate(_ok_stats + " That is up 12.", _stats, [])), "")
 except Exception as e:
     check("postwriter checks run", False, repr(e))
 

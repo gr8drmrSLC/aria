@@ -266,7 +266,9 @@ prefix bug. Reach is low (median about 180 impressions), so repeated filler cost
    `scripts/LINKEDIN_DRAFT_WAITING.txt`; `--approve` releases it, `--draft` regenerates it. With the
    gate off, the code checks above are the only review, and tone is only prompt-enforced (*soft*).
    A week with no briefs or no passing draft posts nothing and writes the same note file.
-6. The poster itself stays local and gitignored; the generator and its tests are in the repo.
+6. Daily-report and status posts use the same generator and checks (added 2026-11-04). A report older
+   than 2 days is not posted, so history before the state file existed cannot be reposted.
+7. The poster itself stays local and gitignored; the generator and its tests are in the repo.
 
 **Consequences.** Weekly posts vary and stay grounded, at a cost of well under $1 a month. The daily
 and system-stats templates are unchanged and still repeat the intro. Content is still model-written

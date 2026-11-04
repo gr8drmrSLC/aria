@@ -43,13 +43,15 @@ BANNED = [
     "delve", "unlock", "in today's fast-paced",
 ]
 
-SYSTEM_PROMPT = """You write one short LinkedIn post per week about ARIA, a research monitor that
+SYSTEM_PROMPT = """You write one short LinkedIn post at a time about ARIA, a research monitor that
 reads a sample of new arXiv papers, has the Claude API score each abstract for novelty and tag
 its themes, and files a brief on days that stand out from its own previous month.
 
 Rules:
-- Lead with ONE specific finding from this week's briefs, naming the paper by its exact title
-  as given. Then one or two sentences on why it is interesting, in plain words.
+- For posts about briefs: lead with ONE specific finding, naming the paper by its exact title
+  as given, then one or two sentences on why it is interesting, in plain words.
+- For a system-status post (no briefs given): say plainly how ARIA is doing using only the facts
+  listed, and what a reader should and should not conclude from them.
 - Use only the facts you are given. Do not invent numbers, results, authors or affiliations.
   Do not use any percentage or number except those listed under ALLOWED NUMBERS or inside a title.
 - Say these are ARIA's model-assigned readings of abstracts, not verified results.
@@ -113,6 +115,7 @@ def build_facts(reports: list[dict], now: datetime | None = None, days: int = 7)
             item["triggers"] = r.get("triggers") or []
         items.append(item)
     return {
+        "kind": "weekly",
         "window_days": days,
         "report_count": len(window),
         "paper_count": sum(int(r.get("paper_count") or 0) for r in window),
@@ -120,8 +123,38 @@ def build_facts(reports: list[dict], now: datetime | None = None, days: int = 7)
     }
 
 
+def build_daily_facts(report: dict) -> dict | None:
+    """Facts for a post about one new brief. None if the brief has no usable content."""
+    content = report.get("content") or ""
+    date = (report.get("created_at") or "")[:10]
+    if not content or not date:
+        return None
+    facts = build_facts([report], datetime.fromisoformat(date + "T12:00:00+00:00"), days=1)
+    if facts is None:
+        return None
+    facts["kind"] = "daily"
+    return facts
+
+
+def build_stats_facts(stats: dict) -> dict | None:
+    """Facts for a system-status post. None when the numbers are missing (0 means no data)."""
+    total, avg = stats.get("reports_total"), stats.get("avg_novelty")
+    if not total or not avg:
+        return None
+    return {
+        "kind": "stats", "window_days": 0, "report_count": int(total), "paper_count": 0, "reports": [],
+        "stats_lines": [
+            f"ARIA has filed {int(total)} briefs since launch.",
+            f"Average model-assigned novelty score of the last 24 hours of papers: {float(avg):.1f} out of 10.",
+            "The pipeline runs Tuesday to Friday at 07:00 UTC and reads a sample of up to 200 papers per run.",
+        ],
+        "extra_numbers": [f"{float(avg):.1f}", "10", "07", "00", "200", "4"],
+    }
+
+
 def _allowed_numbers(facts: dict) -> set[str]:
     allowed = {str(facts["report_count"]), str(facts["paper_count"]), str(facts["window_days"])}
+    allowed.update(facts.get("extra_numbers", []))
     for r in facts["reports"]:
         for t in r["paper_titles"] + r["headlines"]:
             allowed.update(re.findall(r"\d+(?:\.\d+)?", t))
@@ -206,7 +239,7 @@ def validate(text: str, facts: dict, history: list[dict]) -> list[str]:
         if num not in allowed:
             problems.append(f"number not in the supplied facts: {num}")
     all_titles = [x for r in facts["reports"] for x in r["paper_titles"]]
-    if all_titles and not any(title.lower() in low for title in all_titles):
+    if facts.get("kind") != "stats" and all_titles and not any(title.lower() in low for title in all_titles):
         problems.append("does not name any supplied paper by its exact title")
     for h in history[-HISTORY_WINDOW:]:
         s = similarity(t, h.get("text", ""))
@@ -218,12 +251,20 @@ def validate(text: str, facts: dict, history: list[dict]) -> list[str]:
 # ── Generation ────────────────────────────────────────────────────────────────
 
 def _build_prompt(facts: dict, history: list[dict], include_intro: bool, problems: list[str]) -> str:
+    kind = facts.get("kind", "weekly")
+    if kind == "stats":
+        head = "POST TYPE: system status (no briefs). FACTS:" + "".join(
+            chr(10) + "- " + x for x in facts["stats_lines"])
+    elif kind == "daily":
+        head = f"POST TYPE: one new brief just filed, covering {facts['paper_count']} papers."
+    else:
+        head = (f"POST TYPE: weekly. WINDOW: last {facts['window_days']} days. ARIA filed "
+                f"{facts['report_count']} brief(s) covering {facts['paper_count']} papers.")
     lines = [
-        f"WINDOW: last {facts['window_days']} days. ARIA filed {facts['report_count']} brief(s) "
-        f"covering {facts['paper_count']} papers.",
+        head,
         "ALLOWED NUMBERS: " + ", ".join(sorted(_allowed_numbers(facts), key=lambda x: float(x))),
         "",
-        "THIS WEEK'S BRIEFS:",
+        "BRIEFS:" if facts["reports"] else "",
     ]
     for r in facts["reports"]:
         lines.append(f"- Brief {r['id']} ({r['date']}): {r['summary']}")
