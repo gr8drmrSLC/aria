@@ -180,3 +180,4 @@ Files changed: dashboard/app.py runner.py
 ### 2026-11-04
 - Weekly LinkedIn post now posts automatically once the code checks pass (owner decision); the approval gate is opt-in (`ARIA_POST_REQUIRE_APPROVAL=1`). A week with no passing draft writes `scripts/LINKEDIN_DRAFT_WAITING.txt`. See ADR-017.
 - Generator now writes all post types (weekly, new-report, system-status); a report older than 2 days is never posted (the posted-state file only started on 2026-11-03, so an old report would otherwise have looked new). Manual override: `update_linkedin.py --post --kind status`. 3 more smoke checks (34).
+- Added scripts/trend_summary.py (read-only weekly/monthly field shares, overlaps, nine pre-declared exploratory tests) and scripts/chart_trends.py (two-panel chart), with 5 smoke checks (39). METHODS.md now documents the measured sampling window (median 8.7 hours of submissions per run) and the abstracts-only limit. See ADR-018.

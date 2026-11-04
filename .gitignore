@@ -31,3 +31,7 @@ scripts/linkedin_draft.json.tmp
 scripts/linkedin_post_history.json
 scripts/linkedin_post_history.json.tmp
 scripts/LINKEDIN_DRAFT_WAITING.txt
+
+scripts/trend_summary.json
+scripts/trends_preview.png
+scripts/post_images/trends.png

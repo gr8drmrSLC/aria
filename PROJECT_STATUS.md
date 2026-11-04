@@ -95,6 +95,13 @@ Crontab:
 
 ---
 
+## Trend analysis (ADR-018, 2026-11-04) - built locally, not deployed
+
+- `scripts/trend_summary.py` and `scripts/chart_trends.py` run on the local snapshot; EC2 deploy, the monthly trend post and a generator check requiring the sampling/abstracts-only caveat are NOT done.
+- Finding: each daily run covers a median 8.7 hours of arXiv submissions (not a random sample); see `docs/METHODS.md`.
+- First result: 1 of 9 exploratory tests supported (robotics share up about 0.4 points a week); novelty associations indistinguishable from zero.
+- Idea parked (private, not in this repo): full-text analysis as a paid/profile-gated offering.
+
 ## LinkedIn posting pipeline — repaired 2026-11-02, first live post 2026-11-03
 
 - 2026-11-03 09:00: first run with the fixed poster ran once and logged success (`weekly:2026-W45` stored, task result 0).

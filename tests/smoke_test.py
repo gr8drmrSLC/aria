@@ -333,6 +333,43 @@ except Exception as e:
     check("postwriter checks run", False, repr(e))
 
 
+from datetime import date, timedelta  # noqa: E402
+
+# ── 11. Trend summary (ADR-018) ────────────────────────────────────────────────
+try:
+    import importlib.util as _ilu
+    _sp = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts", "trend_summary.py")
+    _spec = _ilu.spec_from_file_location("trend_summary", _sp)
+    ts = _ilu.module_from_spec(_spec)
+    _spec.loader.exec_module(ts)
+
+    check("trend fields: AI and ML are separate, ML includes stat.ML",
+          ts.field_flags(["cs.AI"]) == {"AI": True, "ML": False, "RO": False, "BIO": False}
+          and ts.field_flags(["stat.ML"])["ML"] and ts.field_flags(["q-bio.GN"])["BIO"], "")
+    _lab = ts.paper_labels(["cs.AI", "cs.LG"])
+    check("trend labels: AI+ML overlap counts as multi-field, plain AI does not",
+          _lab["AI&ML"] and _lab["multi"] and not ts.paper_labels(["cs.AI"])["multi"], "")
+    check("trend stats: spearman is 1 for monotone data, interval needs 2+ runs",
+          abs(ts.spearman([1, 2, 3, 4], [10, 20, 30, 40]) - 1) < 1e-9 and ts.interval([0.5])[1] != ts.interval([0.5])[1], "")
+
+    def _mkrun(n_ai, n_ml, n=200):
+        return [{"labels": ts.paper_labels((["cs.AI"] if i < n_ai else []) + (["cs.LG"] if i < n_ml else [])),
+                 "nov": 7} for i in range(n)]
+    _runs = {}
+    for wk in range(10):
+        for day in (6, 7, 8):  # three runs per week
+            d = date(2026, 5, 4) + timedelta(days=7 * wk + day - 6)
+            _runs[d.isoformat()] = _mkrun(100, 60)
+    _runs["2026-09-01"] = _mkrun(10, 10, n=50)  # failed/partial run: excluded
+    _res = ts.summarize(_runs)
+    check("trend summary: weeks built, partial run excluded, shares correct",
+          len(_res["weeks"]) == 10 and _res["runs_excluded"] == 1
+          and abs(_res["weeks"][0]["shares"]["AI"]["share"] - 0.5) < 1e-9, str(len(_res["weeks"])))
+    check("trend summary: every exploratory test is labelled with its family size",
+          all(t["tests_in_family"] == 9 for t in _res["exploratory_tests"]) and len(_res["caveats"]) >= 5, "")
+except Exception as e:
+    check("trend summary checks run", False, repr(e))
+
 # ── Summary ────────────────────────────────────────────────────────────────────
 total = len(PASS) + len(FAIL)
 print(f"\n{len(PASS)}/{total} checks passed")

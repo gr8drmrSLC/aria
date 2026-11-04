@@ -276,3 +276,40 @@ text under the owner's name and now posts without review, so the code checks car
 
 **Rejected.** Rotating fixed templates (still repetitive); letting the model cite trigger stats
 (the legacy data is unreliable). The owner chose auto-posting over keeping the approval gate on.
+
+---
+
+## ADR-018: Trend analysis and chart built for a skeptical reader (2026-11-04)
+
+**Context.** The owner wants multi-field trend charts and a "trend since launch" post, and will not
+publish anything a critical reader could call pseudoscience. Checking the data first found three
+validity limits: (1) each daily run is the 200 newest arXiv submissions, spanning a median 8.7 hours
+(3.6 to 14.3, 43 runs), so shares describe a daily slice, not arXiv; (2) novelty scores cluster at 5 to
+7 and differ by at most about 0.5 between fields, which is within plausible scorer noise and is
+unvalidated; (3) shares of a capped sample are compositional, so share-vs-share correlation (AI/ML vs
+robotics -0.91) is arithmetic, not evidence.
+
+**Decision.**
+1. AI (cs.AI) and ML (cs.LG, stat.ML) are separate fields in the analysis, with robotics and bio, plus
+   pairwise overlaps (AI+ML 15 percent of papers). The decider keeps its three-group definition, since
+   splitting it would make AI+ML overlap fire the cross-domain trigger almost daily.
+2. `scripts/trend_summary.py` is read-only, uses intervals across daily runs (not papers), excludes runs
+   under 150 papers and weeks under 400, and reports a fixed list of nine tests with bootstrap intervals
+   adjusted for nine tests. No share-vs-share correlation. First result on the snapshot: one of nine
+   tests is supported (robotics share rising about 0.4 points a week), with autocorrelation making even
+   that tentative; all novelty associations are not distinguishable from zero.
+3. `scripts/chart_trends.py` plots weekly shares for four fields and four overlaps on separate
+   single-axis panels, breaks lines across outage gaps, shows the run-to-run noise in the footnote, and
+   carries the "sample, tags, abstracts only" caveats on the image. Palette validated with the dataviz
+   validator. *Structural* for the caveats (drawn on every image); *soft* for how a reader interprets it.
+4. Every post that uses this must state the sampling and abstracts-only limits; a code check for that
+   wording in the generator is the next step. Full-text analysis is not planned: roughly 100 times the
+   cost (an estimate) and it would not fix sampling or scorer validity. Limits are documented in
+   `docs/METHODS.md`.
+
+**Consequences.** Charts will show mostly flat, noisy lines, which is the honest picture. The monthly
+post will lead with what is stable and what is not distinguishable from noise. Deploying the summary
+to EC2 and the post type are still to do.
+
+**Rejected.** 95 percent bands from 3 or 4 runs per week (so wide they hid the data); correlating
+field shares with each other; a dual-axis chart; calling novelty differences between fields findings.
