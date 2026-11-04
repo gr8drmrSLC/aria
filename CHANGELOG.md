@@ -176,3 +176,6 @@ Files changed: dashboard/app.py runner.py
 - Added `core/postwriter.py`: Claude-written weekly LinkedIn post, validated in code (numbers, banned wording, exact paper title, similarity to the last 10 posts), budget-guard charged. See ADR-017.
 - Poster (local-only): weekly post now generated with an approval gate (`--draft`, `--approve`, `ARIA_POST_REQUIRE_APPROVAL`); legacy trigger names no longer shown for reports before 2026-11-03.
 - 10 new smoke checks (31 total). `.gitignore` covers draft, history and waiting-note files.
+
+### 2026-11-04
+- Weekly LinkedIn post now posts automatically once the code checks pass (owner decision); the approval gate is opt-in (`ARIA_POST_REQUIRE_APPROVAL=1`). A week with no passing draft writes `scripts/LINKEDIN_DRAFT_WAITING.txt`. See ADR-017.

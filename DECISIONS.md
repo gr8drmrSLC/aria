@@ -261,15 +261,16 @@ prefix bug. Reach is low (median about 180 impressions), so repeated filler cost
    The same cutover applies to the daily-report template.
 4. The "what ARIA is" sentence appears about once every 28 days, tracked in
    `scripts/linkedin_post_history.json`. A corrupt history fails closed.
-5. Approval gate, default on (`ARIA_POST_REQUIRE_APPROVAL=0` disables it): the first run of a week
-   saves a draft and writes `scripts/LINKEDIN_DRAFT_WAITING.txt`; `update_linkedin.py --approve`
-   releases it for the next scheduled run, `--draft` regenerates it. This gate is *soft*: it relies on
-   the owner approving, and an unapproved week produces no weekly post.
+5. Posting is automatic once the checks pass (owner decision 2026-11-04). An optional approval gate
+   exists (`ARIA_POST_REQUIRE_APPROVAL=1`): the first run of a week saves a draft and writes
+   `scripts/LINKEDIN_DRAFT_WAITING.txt`; `--approve` releases it, `--draft` regenerates it. With the
+   gate off, the code checks above are the only review, and tone is only prompt-enforced (*soft*).
+   A week with no briefs or no passing draft posts nothing and writes the same note file.
 6. The poster itself stays local and gitignored; the generator and its tests are in the repo.
 
 **Consequences.** Weekly posts vary and stay grounded, at a cost of well under $1 a month. The daily
 and system-stats templates are unchanged and still repeat the intro. Content is still model-written
-text under the owner's name, so approval is on by default.
+text under the owner's name and now posts without review, so the code checks carry the safety.
 
 **Rejected.** Rotating fixed templates (still repetitive); letting the model cite trigger stats
-(the legacy data is unreliable); auto-posting with no gate while the generator is new.
+(the legacy data is unreliable). The owner chose auto-posting over keeping the approval gate on.
