@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Intelligence Brief — 2026-11-06 — ARIA</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a1a; --ink-light: #4a4a4a; --rule: #2a2a2a;
+      --rule-light: #d0cfc8; --bg: #f5f3ee; --bg-card: #faf9f6;
+      --accent: #8b0000;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', Courier, monospace;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .masthead {
+      border-bottom: 3px double var(--rule); padding: 1rem 2rem;
+      background: var(--bg-card); display: flex; align-items: center; gap: 1.5rem;
+    }
+    .masthead-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; }
+    .masthead-title span { font-size: 0.75rem; font-weight: 400; color: var(--ink-light);
+      letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .report-meta {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--ink-light);
+      border-bottom: 1px solid var(--rule-light); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+
+    .trigger-tag {
+      background: var(--accent); color: #fff; font-family: var(--sans);
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+    }
+
+    /* Markdown-rendered content styles */
+    .report-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--rule-light); padding-bottom: 0.3rem; }
+    .report-body h2 { font-size: 1.25rem; margin: 1.3rem 0 0.4rem; }
+    .report-body h3 { font-size: 1rem; margin: 1rem 0 0.3rem; }
+    .report-body p { margin: 0.6rem 0; }
+    .report-body ul, .report-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+    .report-body li { margin: 0.25rem 0; }
+    .report-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+    .report-body th { background: var(--rule); color: #fff; padding: 0.4rem 0.75rem; text-align: left; }
+    .report-body td { border: 1px solid var(--rule-light); padding: 0.35rem 0.75rem; }
+    .report-body tr:nth-child(even) td { background: var(--bg); }
+    .report-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg);
+      border: 1px solid var(--rule-light); padding: 0.1rem 0.3rem; border-radius: 2px; }
+    .report-body blockquote { border-left: 3px solid var(--accent); padding-left: 1rem;
+      color: var(--ink-light); font-style: italic; margin: 0.75rem 0; }
+    .report-body strong { font-weight: 700; }
+    .report-body em { font-style: italic; }
+    .report-body hr { border: none; border-top: 1px solid var(--rule-light); margin: 1.5rem 0; }
+
+    footer {
+      border-top: 2px solid var(--rule); margin-top: 3rem; padding: 1rem 2rem;
+      font-family: var(--sans); font-size: 0.68rem; color: var(--ink-light);
+      text-align: center; background: var(--bg-card);
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <a href="../index.html" style="color:var(--ink);">
+      <p class="masthead-title">ARIA<span>Autonomous Research Intelligence Agent</span></p>
+    </a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="report-meta">
+    <span>Published: 2026-11-06</span>
+    <span>200 papers analyzed</span>
+    
+      <span class="trigger-tag">Cross-domain cluster: 22 papers (11%) br…</span>
+    
+  </div>
+
+  <div class="report-body">
+    <h1>ARIA Intelligence Brief — 2026-11-06</h1>
+<hr />
+<h2>Executive Summary</h2>
+<p>Today's 200-paper sweep is anchored by a cluster of exact theoretical results and certifiably optimal algorithms landing simultaneously across generative modeling, 4D reconstruction, and mechanism design—a rare density of papers with closed-form or provably optimal solutions rather than heuristic improvements. Cross-domain bridging runs at nearly double the trailing median (11% vs. 6%), driven by statistical physics entering ML theory and computational biology entering agent architectures. The biosecurity finding warrants immediate attention from policymakers and model developers.</p>
+<hr />
+<h2>Key Findings</h2>
+<ul>
+<li>
+<p><strong>Physics-to-ML bridge with closed-form results.</strong> <a href="https://arxiv.org/abs/2611.07845v1">Masked diffusion as random sequential adsorption</a> derives exact optimal decoding schedules for masked diffusion text generation by proving a rigorous mapping to driven many-particle systems and thermodynamic dissipation. This is not an analogy—it yields closed-form expressions directly applicable to accelerating production inference. Expect this to shift how the field thinks about parallel decoding trade-offs.</p>
+</li>
+<li>
+<p><strong>Agentic biosecurity risk now empirically demonstrated.</strong> <a href="https://arxiv.org/abs/2611.08218v1">Building Barricades: Red-Teaming Agentic Biosynthesis Planning</a> presents BioBulbul, an agent that couples LLMs with open-source biodesign tools to autonomously produce credible biosynthesis pathways for toxins from natural-language prompts. This is concrete empirical proof-of-concept, not theoretical concern—a threshold moment for dual-use AI governance.</p>
+</li>
+<li>
+<p><strong>Sim-to-real gaps closing in two sensing modalities simultaneously.</strong> <a href="https://arxiv.org/abs/2611.08342v1">4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering</a> and <a href="https://arxiv.org/abs/2611.07881v1">TactileLab</a> each introduce the first physics-grounded differentiable simulators in their domain (mmWave radar and shear-sensitive tactile sensing, respectively), enabling scalable synthetic data generation for tasks previously bottlenecked by real-data scarcity. Combined, these accelerate the roadmap toward contact-rich dexterous manipulation with multi-modal sensing.</p>
+</li>
+<li>
+<p><strong>Certifiable global optimality reaches 4D reconstruction.</strong> <a href="https://arxiv.org/abs/2611.07902v1">XM4D: 4D Reconstruction through Certifiable Geometric Optimization</a> applies SDP relaxations to jointly certify global optimality in camera motion and non-rigid deformation estimation—a capability that has been standard in rigid SLAM for years but was considered intractable in dynamic scenes. This matters for robotics and autonomous systems where undetected local optima cause silent failures.</p>
+</li>
+<li>
+<p><strong>Interpretable many-body interaction laws extracted from animal data.</strong> <a href="https://arxiv.org/abs/2611.08314v1">Interpretable many-body interaction laws for collective motion from few trajectories</a> adapts atomic cluster expansion—a tool from quantum chemistry—to self-propelled agents, rigorously disentangling pairwise and higher-order contributions to collective behavior in fish schools. This is a methodological transplant with immediate applications in systems biology, swarm robotics, and crowd simulation.</p>
+</li>
+</ul>
+<hr />
+<h2>Emerging Themes</h2>
+<p>Three convergent signals stand out. <strong>First, statistical physics is becoming a source of exact ML theory:</strong> the RSA-masked-diffusion mapping is the strongest example today, but the dACE paper similarly borrows from interatomic potential theory. This suggests a productive pipeline where physicists with ML awareness are producing results ML practitioners cannot derive from within the field. <strong>Second, the infrastructure layer for AI scientists is consolidating:</strong> <a href="https://arxiv.org/abs/2611.08478v1">Scientist World</a> and <a href="https://arxiv.org/abs/2611.08177v1">BabyTheorist</a> both build executable or evaluable environments for autonomous scientific reasoning, while <a href="https://arxiv.org/abs/2611.08483v1">SwarmEvolve</a> supplies a latent-space agent architecture 8–20× faster than current evolutionary search. These papers form a coherent stack—benchmark, training environment, and inference engine—suggesting that automated research is moving from concept to infrastructure. <strong>Third, the belief/representation gap in LLMs is being exposed with increasing precision:</strong> <a href="https://arxiv.org/abs/2611.07913v1">Same Answer, Different Future</a> demonstrates that identical output probabilities across different elicitation routes mask fundamentally different internal belief-update dynamics, which has direct implications for any application relying on LLMs for sequential probabilistic reasoning or Bayesian updating. Combined with <a href="https://arxiv.org/abs/2611.08136v1">PRISM's</a> result that training is unnecessary for competitive anomaly detection, the field is accumulating evidence that learned representations are neither sufficient nor always necessary for the tasks we use them for.</p>
+<hr />
+<h2>Notable Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Score</th>
+<th>Categories</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2611.07845v1">Masked diffusion as random sequential adsorption</a></td>
+<td>9.1</td>
+<td>cond-mat, cs.AI, cs.CL, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2611.07845v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2611.08342v1">4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering</a></td>
+<td>8.9</td>
+<td>cs.CV, cs.GR, cs.LG, eess.SP</td>
+<td><a href="https://arxiv.org/abs/2611.08342v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2611.08363v1">StrataFlux: Memory-Hierarchy-Native Low-Bit LLM Inference</a></td>
+<td>8.7</td>
+<td>cs.LG, cs.DC</td>
+<td><a href="https://arxiv.org/abs/2611.08363v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2611.08218v1">Building Barricades: Red-Teaming Agentic Biosynthesis Planning</a></td>
+<td>8.4</td>
+<td>q-bio.OT</td>
+<td><a href="https://arxiv.org/abs/2611.08218v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2611.07902v1">XM4D: 4D Reconstruction through Certifiable Geometric Optimization</a></td>
+<td>8.5</td>
+<td>cs.CV, cs.RO, math.OC</td>
+<td><a href="https://arxiv.org/abs/2611.07902v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2611.08314v1">Interpretable many-body interaction laws for collective motion</a></td>
+<td>8.5</td>
+<td>cs.LG, physics.bio-ph, q-bio.QM</td>
+<td><a href="https://arxiv.org/abs/2611.08314v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2611.08478v1">Scientist World: Grow a Research World for AI-Scientists</a></td>
+<td>8.4</td>
+<td>cs.AI, cs.CL, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2611.08478v1">arXiv</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2611.07867v1">PlayGen2: Learning Real-Time Playable Worlds with Explicit 3D State</a></td>
+<td>8.5</td>
+<td>cs.CV, cs.LG</td>
+<td><a href="https://arxiv.org/abs/2611.07867v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Analyst Note</h2>
+<p>The RSA-masked-diffusion paper is the single most consequential theoretical result in this sweep: closed-form optimal schedules for a class of generative models in production use at scale is immediately actionable, and the physics-to-ML pipeline it exemplifies is underutilized. Watch for follow-on work extending this to continuous diffusion and flow matching. The BioBulbul biosecurity result demands urgent attention—the paper's red-team methodology and policy recommendations should be reviewed by any organization deploying or governing LLM-integrated biodesign tools, and anticipate regulatory responses within 6–12 months. On the infrastructure side, the simultaneous publication of Scientist World, SwarmEvolve, and BabyTheorist in one sweep is not coinc</p>
+  </div>
+
+  <p style="margin-top:2rem;">
+    <a href="../index.html">&larr; Back to ARIA dashboard</a>
+  </p>
+</main>
+
+<footer>
+  ARIA &mdash; Autonomous Research Intelligence Agent &mdash; Built with Claude API
+</footer>
+
+</body>
+</html>
