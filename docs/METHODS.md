@@ -78,6 +78,18 @@ narrow. Shares are not correlated with each other: with a capped sample they com
 slots, which produces a strong negative correlation by arithmetic (about -0.9 for AI/ML against
 robotics) that means nothing. Nothing here establishes cause.
 
+## What the category tags are (ADR-019, ADR-020)
+
+"Field" everywhere in ARIA means arXiv category tags. Authors choose the primary category and any
+cross-lists; volunteer moderators can add, remove or reclassify them, including after a paper is announced,
+so counts for past months can change. arXiv discourages heavy cross-listing (rarely more than one or two).
+stat.ML-primary papers are automatically cross-listed to cs.LG. Since 2025-10-31 cs review and position papers
+need documented peer review. We found no study of how often tags are wrong or padded for exposure, and no
+documented cause for the shifts in our counts (for example, the share of cs.AI papers also tagged ML fell
+from 51 to 33 percent between 2020 and 2026). Tag counts are therefore descriptive: they show how papers are
+labelled, not what they contain or how the research is changing. Full-arXiv monthly counts are in
+`data/arxiv_counts.json` (`scripts/arxiv_counts.py`).
+
 ## Possible future work (not built)
 
 Embedding-based topic clustering, nearest-neighbour novelty against ARIA's own history, stratified

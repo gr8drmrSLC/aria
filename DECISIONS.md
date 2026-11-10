@@ -341,3 +341,39 @@ moderator tagging behavior, which can change with arXiv policy; it is not eviden
 
 **Rejected.** Using the ARIA sample for growth claims; reporting abstract-term prevalence in the
 quarterly report (it is a content claim); claims about demand or performance (no data for them).
+
+
+## ADR-020: What arXiv category tags can and cannot support (2026-11-10)
+
+**Context.** The ADR-019 backfill finished (1,066 cells, 0 failed, `data/arxiv_counts.json`, Jan-Oct of each year).
+Hypotheses as declared: H1 (each field outgrows arXiv) partly supported - AI 6.8x and robotics 2.9x against
+arXiv 1.6x from 2020 to 2025, ML 1.8x (share flat at 15-17 percent), bio 1.15x with its share of arXiv falling
+from 2.5 to 1.3 percent. H2 (robotics also tagged AI or ML rises) NOT supported: 35 percent in 2020, 31 in 2025,
+27 in 2026, driven by ML tagging (26 to 12 percent). H3 (bio also tagged AI or ML rises) supported, 17 percent
+in 2020 to 36 in 2024, flat since. Also: AI papers also tagged ML fell from 51 to 33 percent. These are complete
+counts, so no sampling interval applies.
+
+A research pass (read-only agent) on how reliable the tags are found:
+- Established (arXiv pages): authors choose the primary category and cross-lists; volunteer moderators can add,
+  remove or reclassify, including after announcement, so past counts can change. arXiv calls excessive
+  cross-listing bad etiquette (rarely more than one or two) and says bad cross-lists will be removed.
+  stat.ML-primary papers are auto-cross-listed to cs.LG (stated Dec 2019; ML series here uses cs.LG or stat.ML,
+  so it is not distorted). Since 2025-10-31 cs review and position papers need documented peer review.
+- Plausible, no evidence: over-tagging for exposure. No study or moderator statement quantifies it or its motive.
+- Not found: any documented cause for the four shifts above; any study of cs cross-list error rates; any arXiv
+  statement on automated classification at submission. The one classification-consistency study found is
+  mathematics-only (arXiv:2109.00954). 2026 endorsement and AI-content ban reports are secondary sources only
+  and are not to be cited.
+
+**Decision.**
+1. Tag trends are reported as descriptive only. No explanation of the shifts is offered without evidence.
+2. No recurring quarterly tag-count post is built. The trend would barely change between posts and, alone, says
+   little to an informed reader.
+3. A one-off post and a methods note about tag reliability are a TODO awaiting the owner's decision on whether
+   they have value (see PROJECT_STATUS.md). Nothing is drafted for posting; any post stays out of the
+   auto-poster.
+4. Statements that may be made: authors pick tags, moderators adjust them, arXiv discourages heavy cross-listing.
+   Statements that may not: that over-tagging for exposure occurs at any rate, or that any policy explains the shifts.
+
+**Rejected.** A recurring tag-trend post (repetition, weak claim); explaining the AI/ML and robotics/ML overlap
+declines by policy or author behavior (no evidence).

@@ -104,6 +104,9 @@ Crontab:
 
 - 2026-11-04: `scripts/arxiv_counts.py` backfills monthly arXiv counts to `data/arxiv_counts.json` (ADR-019); the quarterly tag-count report is not built yet. Single-month check: arXiv overall +67%, cs.LG +65%, q-bio +64%, cs.RO +134% (Oct 2021 to Oct 2025), so only robotics clearly outgrew arXiv.
 
+- 2026-11-10: backfill complete (1,066 cells, 0 failed). Jan-Oct 2020 to 2025: arXiv 1.6x, AI 6.8x, robotics 2.9x, ML 1.8x, bio 1.15x. H1 partly supported, H2 not supported, H3 supported then flat since 2024. Tag-reliability research recorded in ADR-020 and METHODS.md; causes of the shifts are unknown. No quarterly tag post will be built.
+- TODO (owner to decide): is a one-off post and/or methods note on tag reliability worthwhile? Content would be: tags are author-chosen and moderator-adjusted, our AI-also-ML share fell 51 to 33 percent with no documented cause, tag trends are descriptive only, and an open question to readers. Not drafted, not auto-posted.
+
 ## LinkedIn posting pipeline — repaired 2026-11-02, first live post 2026-11-03
 
 - 2026-11-03 09:00: first run with the fixed poster ran once and logged success (`weekly:2026-W45` stored, task result 0).
@@ -152,6 +155,7 @@ All items from the RETROFIT_GUIDE.md checklist are done:
 
 ## Next tasks
 
+0. Owner decision: tag-reliability post / methods note (see Trend analysis section, ADR-020)
 1. Watch the next scheduled LinkedIn run (Tue 2026-11-03): confirm a post appears and `linkedin_posted.json` gains a key
 2. Decide on a real failure alert (email/toast); the flag file is soft
 3. Session renewal — re-run `scripts/save_linkedin_session.py` if posting fails with a login error

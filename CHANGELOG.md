@@ -182,3 +182,8 @@ Files changed: dashboard/app.py runner.py
 - Generator now writes all post types (weekly, new-report, system-status); a report older than 2 days is never posted (the posted-state file only started on 2026-11-03, so an old report would otherwise have looked new). Manual override: `update_linkedin.py --post --kind status`. 3 more smoke checks (34).
 - Added scripts/trend_summary.py (read-only weekly/monthly field shares, overlaps, nine pre-declared exploratory tests) and scripts/chart_trends.py (two-panel chart), with 5 smoke checks (39). METHODS.md now documents the measured sampling window (median 8.7 hours of submissions per run) and the abstracts-only limit. See ADR-018.
 - Added scripts/arxiv_counts.py (monthly arXiv category and cross-listing counts from the API totals, resumable, polite rate) with 4 smoke checks (43). See ADR-019.
+
+
+### 2026-11-10
+- arXiv count backfill complete and committed (`data/arxiv_counts.json`, 1,066 cells, 0 failed). H1 partly supported, H2 not supported, H3 supported (ADR-020).
+- Researched arXiv tag reliability and moderation; documented in ADR-020 and METHODS.md. Quarterly tag-count post not built; a one-off tag-reliability post is a TODO for the owner to decide on.
